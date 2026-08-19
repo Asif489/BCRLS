@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Become a Member | BCRLS
+    </title>
+
+    <meta
+        name="description"
+        content="Join the Bangladesh Centre for Refugee Law Studies community as a member."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <!-- Get Involved CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/get-involved.css"
+    >
+
+    <!-- Responsive CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+    <!-- PAGE ONLY CSS -->
+    <style>
+
+        /* =====================================================
+           MEMBER PAGE
+        ===================================================== */
+
+        .member-page {
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           MEMBER HERO
+        ===================================================== */
+
+        .member-hero {
+            position: relative;
+
+            padding:
+                145px 24px 80px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(112, 186, 157, .15),
+                    transparent 32%
+                );
+        }
+
+
+        .member-hero-inner {
+
+            width: min(
+                100%,
+                1180px
+            );
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.1fr)
+                minmax(300px, .9fr);
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .member-hero-content {
+            min-width: 0;
+        }
+
+
+        .member-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 14px;
+
+            margin-bottom: 22px;
+
+            border:
+                1px solid
+                rgba(24,105,77,.12);
+
+            border-radius: 999px;
+
+            background: rgba(
+                255,
+                255,
+                255,
+                .85
+            );
+
+            color: #197052;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .member-label span {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #70b89b;
+        }
+
+
+        .member-hero h1 {
+
+            max-width: 720px;
+
+            margin:
+                0 0 20px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px, 6vw, 70px);
+
+            line-height: 1.02;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .member-hero h1 span {
+
+            color: #217a59;
+        }
+
+
+        .member-hero-text {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: #6c8179;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ===================================================== */
+
+        .member-visual {
+
+            width: 100%;
+
+            min-width: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .member-visual-card {
+
+            width: min(
+                100%,
+                390px
+            );
+
+            min-height: 350px;
+
+            padding: 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 28px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 25px 70px
+                rgba(34,91,70,.10);
+        }
+
+
+        .member-visual-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+
+            height: 190px;
+
+            right: -90px;
+
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(112,186,157,.12);
+        }
+
+
+        .member-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #e5f3ed;
+
+            color: #177153;
+
+            font-size: 25px;
+        }
+
+
+        .member-visual-card h3 {
+
+            margin:
+                30px 0 12px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 29px;
+
+            line-height: 1.15;
+        }
+
+
+        .member-visual-card p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .member-visual-points {
+
+            margin-top: 28px;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .member-point {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #557168;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .member-point i {
+
+            width: 25px;
+
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           MEMBER CONTENT
+        ===================================================== */
+
+        .member-content {
+
+            width: min(
+                calc(100% - 48px),
+                1180px
+            );
+
+            margin: 0 auto;
+
+            padding:
+                20px 0 100px;
+        }
+
+
+        .member-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, .85fr)
+                minmax(0, 1.15fr);
+
+            gap: 35px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .member-info {
+
+            padding: 35px;
+
+            background: #edf7f2;
+
+            border:
+                1px solid
+                rgba(24,105,77,.08);
+
+            border-radius: 25px;
+        }
+
+
+        .member-info-label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .member-info h2 {
+
+            margin:
+                0 0 15px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.15;
+        }
+
+
+        .member-info > p {
+
+            margin:
+                0 0 25px;
+
+            color: #657c73;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+
+        .benefit-list {
+
+            display: grid;
+
+            gap: 14px;
+        }
+
+
+        .benefit-item {
+
+            display: flex;
+
+            gap: 13px;
+
+            align-items: flex-start;
+        }
+
+
+        .benefit-icon {
+
+            width: 36px;
+
+            height: 36px;
+
+            flex: 0 0 36px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #ffffff;
+
+            color: #197052;
+
+            font-size: 13px;
+        }
+
+
+        .benefit-item h3 {
+
+            margin:
+                0 0 3px;
+
+            color: #294b3f;
+
+            font-size: 14px;
+        }
+
+
+        .benefit-item p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           FORM CARD
+        ===================================================== */
+
+        .member-application {
+
+            padding: 40px;
+
+            background: #ffffff;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(34,91,70,.07);
+        }
+
+
+        .form-header {
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-label {
+
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .form-header h2 {
+
+            margin:
+                0 0 9px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 32px;
+        }
+
+
+        .form-header p {
+
+            margin: 0;
+
+            color: #72857e;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .member-form {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+
+        .member-form .form-group {
+
+            min-width: 0;
+        }
+
+
+        .member-form .form-group.full {
+
+            grid-column:
+                1 / -1;
+        }
+
+
+        .member-form label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .member-form input,
+        .member-form select,
+        .member-form textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding:
+                13px 14px;
+
+            border:
+                1px solid
+                #dbe9e3;
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background: #f9fcfa;
+
+            color: #294b3f;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .member-form textarea {
+
+            min-height: 125px;
+
+            resize: vertical;
+        }
+
+
+        .member-form input::placeholder,
+        .member-form textarea::placeholder {
+
+            color: #a2b1ac;
+        }
+
+
+        .member-form input:focus,
+        .member-form select:focus,
+        .member-form textarea:focus {
+
+            border-color: #4b9b79;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(75,155,121,.10);
+        }
+
+
+        .form-hint {
+
+            margin-top: 6px;
+
+            color: #94a59f;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           FORM ACTION
+        ===================================================== */
+
+        .member-form .form-actions {
+
+            grid-column:
+                1 / -1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        .required-note {
+
+            color: #8a9b95;
+
+            font-size: 10px;
+        }
+
+
+        .member-submit {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                13px 23px;
+
+            border: 0;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #176e50,
+                    #278160
+                );
+
+            color: #ffffff;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,110,80,.15);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .member-submit:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,110,80,.20);
+        }
+
+
+        .form-message {
+
+            display: none;
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                12px 14px;
+
+            border-radius: 10px;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 12px;
+        }
+
+
+        .form-message.show {
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .member-hero {
+
+                padding:
+                    120px 20px 65px;
+            }
+
+
+            .member-hero-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .member-visual {
+
+                justify-content: flex-start;
+            }
+
+
+            .member-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .member-hero {
+
+                padding:
+                    105px 17px 55px;
+            }
+
+
+            .member-hero h1 {
+
+                font-size:
+                    clamp(40px, 12vw, 53px);
+            }
+
+
+            .member-hero-text {
+
+                font-size: 14px;
+            }
+
+
+            .member-visual-card {
+
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 28px;
+
+                border-radius: 22px;
+            }
+
+
+            .member-content {
+
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 65px;
+            }
+
+
+            .member-info {
+
+                padding: 27px;
+
+                border-radius: 21px;
+            }
+
+
+            .member-info h2 {
+
+                font-size: 30px;
+            }
+
+
+            .member-application {
+
+                padding: 27px 19px;
+
+                border-radius: 21px;
+            }
+
+
+            .form-header h2 {
+
+                font-size: 29px;
+            }
+
+
+            .member-form {
+
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .member-form .form-group.full {
+
+                grid-column: auto;
+            }
+
+
+            .member-form .form-actions {
+
+                grid-column: auto;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .member-submit {
+
+                width: 100%;
+            }
+
+
+            .required-note {
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 390px) {
+
+            .member-hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .member-visual-card {
+
+                padding: 24px;
+            }
+
+
+            .member-info {
+
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="involved-page member-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
+
+                <div>
+
+                    <strong>BCRLS</strong>
+
+                    <small>
+                        BANGLADESH CENTRE FOR REFUGEE LAW STUDIES
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>About</span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                        ></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../about.html">
+                            Who We Are
+                        </a>
+
+                        <a href="../about.html#mission">
+                            Mission
+                        </a>
+
+                        <a href="../about.html#vision">
+                            Vision
+                        </a>
+
+                        <a href="../about.html#team">
+                            Team
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESEARCH -->
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>
+                            Research &amp; Publications
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                        ></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../research/index.html">
+                            Research
+                        </a>
+
+                        <a href="../publications/index.html">
+                            Publications
+                        </a>
+
+                        <a href="../research/journal.html">
+                            Journal
+                        </a>
+
+                        <a href="../research/call-for-papers.html">
+                            Call for Papers
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIBRARY -->
+
+                <a
+                    href="../library/index.html"
+                    class="nav-link"
+                >
+                    Library
+                </a>
+
+
+                <!-- EDUCATION -->
+
+                <a
+                    href="../education/index.html"
+                    class="nav-link"
+                >
+                    Education
+                </a>
+
+
+                <!-- GET INVOLVED -->
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle active"
+                        type="button"
+                    >
+
+                        <span>
+                            Get Involved
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                        ></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="index.html">
+                            Overview
+                        </a>
+
+                        <a
+                            href="become-a-member.html"
+                            class="active"
+                        >
+                            Become a Member
+                        </a>
+
+                        <a href="research-fellow.html">
+                            Research Fellow
+                        </a>
+
+                        <a href="volunteer-programme.html">
+                            Volunteer Programme
+                        </a>
+
+                        <a href="internship-programme.html">
+                            Internship Programme
+                        </a>
+
+                        <a href="partner-with-us.html">
+                            Partner With Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <a
+                    href="../contact.html"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- OVERLAY -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="member-hero">
+
+            <div class="member-hero-inner">
+
+
+                <!-- TEXT -->
+
+                <div class="member-hero-content">
+
+                    <div class="member-label">
+
+                        <span></span>
+
+                        BCRLS Membership
+
+                    </div>
+
+
+                    <h1>
+
+                        Become Part of the
+                        <span>BCRLS Community</span>
+
+                    </h1>
+
+
+                    <p class="member-hero-text">
+
+                        Join a growing community of researchers,
+                        students, professionals and individuals
+                        committed to advancing knowledge and
+                        dialogue on refugee law, displacement
+                        and human rights.
+
+                    </p>
+
+                </div>
+
+
+                <!-- VISUAL -->
+
+                <div class="member-visual">
+
+                    <div class="member-visual-card">
+
+                        <div>
+
+                            <div class="member-icon">
+
+                                <i
+                                    class="fa-solid fa-people-group"
+                                ></i>
+
+                            </div>
+
+
+                            <h3>
+                                Connect,
+                                Learn &amp;
+                                Contribute
+                            </h3>
+
+
+                            <p>
+
+                                Membership offers an opportunity
+                                to stay connected with BCRLS
+                                activities, research, academic
+                                discussions and community
+                                initiatives.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="member-visual-points">
+
+                            <div class="member-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Research &amp; knowledge sharing
+
+                            </div>
+
+
+                            <div class="member-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Academic and professional networking
+
+                            </div>
+
+
+                            <div class="member-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Engagement with BCRLS activities
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================= -->
+
+        <section class="member-content">
+
+
+            <div class="member-layout">
+
+
+                <!-- =================================================
+                     LEFT — BENEFITS
+                ================================================= -->
+
+                <div class="member-info">
+
+                    <span class="member-info-label">
+                        Why Join BCRLS
+                    </span>
+
+
+                    <h2>
+                        Be part of a meaningful
+                        knowledge network.
+                    </h2>
+
+
+                    <p>
+
+                        BCRLS membership is designed for
+                        individuals who want to engage with
+                        refugee law research, education,
+                        professional dialogue and related
+                        areas of knowledge.
+
+                    </p>
+
+
+                    <div class="benefit-list">
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+
+                                <i
+                                    class="fa-solid fa-book-open"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Access to Knowledge
+                                </h3>
+
+                                <p>
+                                    Stay connected with
+                                    research, publications
+                                    and academic resources.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+
+                                <i
+                                    class="fa-solid fa-users"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Community
+                                </h3>
+
+                                <p>
+                                    Connect with people working
+                                    and learning in related fields.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+
+                                <i
+                                    class="fa-solid fa-calendar-days"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Activities &amp; Events
+                                </h3>
+
+                                <p>
+                                    Learn about relevant
+                                    seminars, workshops and
+                                    academic activities.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+
+                                <i
+                                    class="fa-solid fa-handshake"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Professional Connection
+                                </h3>
+
+                                <p>
+                                    Build meaningful academic
+                                    and professional connections.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     RIGHT — APPLICATION FORM
+                ================================================= -->
+
+                <div class="member-application">
+
+
+                    <div class="form-header">
+
+                        <span class="form-label">
+                            Membership Application
+                        </span>
+
+
+                        <h2>
+                            Join BCRLS
+                        </h2>
+
+
+                        <p>
+
+                            Complete the form below and share
+                            a little about yourself and your
+                            interest in BCRLS.
+
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="member-form"
+                        id="memberForm"
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="memberName">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="memberName"
+                                name="name"
+                                placeholder="Your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="memberEmail">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="memberEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="memberPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="memberPhone"
+                                name="phone"
+                                placeholder="+880 1XXX-XXXXXX"
+                            >
+
+                        </div>
+
+
+                        <!-- INSTITUTION -->
+
+                        <div class="form-group">
+
+                            <label for="memberInstitution">
+                                University / Institution
+                            </label>
+
+                            <input
+                                type="text"
+                                id="memberInstitution"
+                                name="institution"
+                                placeholder="University / Institution"
+                            >
+
+                        </div>
+
+
+                        <!-- ROLE -->
+
+                        <div class="form-group">
+
+                            <label for="memberRole">
+                                Current Role *
+                            </label>
+
+                            <select
+                                id="memberRole"
+                                name="role"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your role
+                                </option>
+
+                                <option value="Student">
+                                    Student
+                                </option>
+
+                                <option value="Researcher">
+                                    Researcher
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Legal Professional">
+                                    Legal Professional
+                                </option>
+
+                                <option value="Practitioner">
+                                    Practitioner
+                                </option>
+
+                                <option value="Policy Professional">
+                                    Policy Professional
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MEMBERSHIP TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="membershipType">
+                                Membership Interest *
+                            </label>
+
+                            <select
+                                id="membershipType"
+                                name="membershipType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option value="General Membership">
+                                    General Membership
+                                </option>
+
+                                <option value="Academic Membership">
+                                    Academic Membership
+                                </option>
+
+                                <option value="Student Membership">
+                                    Student Membership
+                                </option>
+
+                                <option value="Professional Membership">
+                                    Professional Membership
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- INTEREST -->
+
+                        <div class="form-group full">
+
+                            <label for="memberInterest">
+                                Area of Interest *
+                            </label>
+
+                            <select
+                                id="memberInterest"
+                                name="interest"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your primary interest
+                                </option>
+
+                                <option value="Refugee Law">
+                                    Refugee Law
+                                </option>
+
+                                <option value="Human Rights">
+                                    Human Rights
+                                </option>
+
+                                <option value="Displacement">
+                                    Displacement
+                                </option>
+
+                                <option value="Migration">
+                                    Migration
+                                </option>
+
+                                <option value="Research">
+                                    Research
+                                </option>
+
+                                <option value="Education">
+                                    Education
+                                </option>
+
+                                <option value="Policy">
+                                    Policy
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div class="form-group full">
+
+                            <label for="memberMessage">
+                                Why would you like to join BCRLS?
+                            </label>
+
+                            <textarea
+                                id="memberMessage"
+                                name="message"
+                                placeholder="Tell us briefly about your interests and how you would like to engage with BCRLS..."
+                            ></textarea>
+
+                            <div class="form-hint">
+                                A short introduction is enough.
+                            </div>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            class="form-message"
+                            id="memberFormMessage"
+                        ></div>
+
+
+                        <!-- ACTION -->
+
+                        <div class="form-actions">
+
+                            <span class="required-note">
+                                * Required fields
+                            </span>
+
+
+                            <button
+                                type="submit"
+                                class="member-submit"
+                            >
+
+                                Submit Membership Request
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="involved-footer">
+
+        ©
+        <span id="currentYear"></span>
+        BCRLS. All rights reserved.
+
+    </footer>
+
+
+    <!-- =====================================================
+         JS
+    ===================================================== -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/get-involved.js"
+    ></script>
+
+
+    <!-- MEMBER PAGE FORM -->
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "memberForm"
+                    );
+
+                const message =
+                    document.getElementById(
+                        "memberFormMessage"
+                    );
+
+
+                if (!form) return;
+
+
+                form.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        if (
+                            !form.checkValidity()
+                        ) {
+
+                            form.reportValidity();
+
+                            return;
+
+                        }
+
+
+                        message.textContent =
+                            "Thank you for your interest in BCRLS. Your membership request has been received.";
+
+                        message.classList.add(
+                            "show"
+                        );
+
+
+                        message.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+
+                        /*
+                         * Keep form data for future backend
+                         * integration.
+                         */
+
+                        const formData =
+                            new FormData(form);
+
+                        console.log(
+                            "BCRLS Membership Application:",
+                            Object.fromEntries(
+                                formData.entries()
+                            )
+                        );
+
+                    }
+                );
+
+
+                /* Current Year */
+
+                const year =
+                    document.getElementById(
+                        "currentYear"
+                    );
+
+                if (year) {
+
+                    year.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

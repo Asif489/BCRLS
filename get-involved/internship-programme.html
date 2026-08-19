@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Internship Programme | BCRLS</title>
+
+    <meta
+        name="description"
+        content="Explore internship opportunities at the Bangladesh Centre for Refugee Law Studies."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/get-involved.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           INTERNSHIP PAGE
+        ===================================================== */
+
+        .internship-page {
+            overflow-x: hidden;
+        }
+
+
+        .internship-hero {
+            padding: 145px 24px 80px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(112,186,157,.16),
+                    transparent 32%
+                );
+        }
+
+
+        .internship-hero-inner {
+            width: min(1180px,100%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                minmax(0,1.1fr)
+                minmax(300px,.9fr);
+
+            gap: 70px;
+            align-items: center;
+        }
+
+
+        .internship-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(24,105,77,.12);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.85);
+
+            color: #197052;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+
+        .internship-label span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #70b89b;
+        }
+
+
+        .internship-hero h1 {
+            max-width: 720px;
+            margin: 0 0 20px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px,6vw,70px);
+
+            line-height: 1.02;
+            letter-spacing: -.035em;
+        }
+
+
+        .internship-hero h1 span {
+            color: #217a59;
+        }
+
+
+        .internship-hero-text {
+            max-width: 650px;
+            margin: 0;
+
+            color: #6c8179;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           VISUAL CARD
+        ===================================================== */
+
+        .internship-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .internship-visual-card {
+            width: min(100%,390px);
+            min-height: 360px;
+
+            padding: 38px;
+
+            position: relative;
+            overflow: hidden;
+
+            border: 1px solid rgba(24,105,77,.10);
+            border-radius: 28px;
+
+            background: #fff;
+
+            box-shadow:
+                0 25px 70px
+                rgba(34,91,70,.10);
+        }
+
+
+        .internship-visual-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -90px;
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(112,186,157,.13);
+        }
+
+
+        .internship-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #e5f3ed;
+            color: #177153;
+
+            font-size: 25px;
+        }
+
+
+        .internship-visual-card h3 {
+            margin: 30px 0 12px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 29px;
+            line-height: 1.15;
+        }
+
+
+        .internship-visual-card p {
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        .internship-points {
+            margin-top: 28px;
+
+            display: grid;
+            gap: 12px;
+        }
+
+
+        .internship-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #557168;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        .internship-point i {
+            width: 25px;
+            height: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7f2;
+            color: #197052;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .internship-content {
+            width: min(
+                calc(100% - 48px),
+                1180px
+            );
+
+            margin: auto;
+
+            padding: 20px 0 100px;
+        }
+
+
+        .internship-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,.85fr)
+                minmax(0,1.15fr);
+
+            gap: 35px;
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           INFORMATION
+        ===================================================== */
+
+        .internship-info {
+            padding: 35px;
+
+            background: #edf7f2;
+
+            border: 1px solid rgba(24,105,77,.08);
+            border-radius: 25px;
+        }
+
+
+        .internship-info-label {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #217a59;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+
+        .internship-info h2 {
+            margin: 0 0 15px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+            line-height: 1.15;
+        }
+
+
+        .internship-info > p {
+            margin: 0 0 25px;
+
+            color: #657c73;
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        .internship-list {
+            display: grid;
+            gap: 15px;
+        }
+
+
+        .internship-item {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+        }
+
+
+        .internship-item-icon {
+            width: 36px;
+            height: 36px;
+
+            flex: 0 0 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #fff;
+            color: #197052;
+
+            font-size: 13px;
+        }
+
+
+        .internship-item h3 {
+            margin: 0 0 3px;
+
+            color: #294b3f;
+
+            font-size: 14px;
+        }
+
+
+        .internship-item p {
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           APPLICATION
+        ===================================================== */
+
+        .internship-application {
+            padding: 40px;
+
+            background: #fff;
+
+            border: 1px solid rgba(24,105,77,.10);
+            border-radius: 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(34,91,70,.07);
+        }
+
+
+        .internship-form-header {
+            margin-bottom: 30px;
+        }
+
+
+        .internship-form-label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #217a59;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+
+        .internship-form-header h2 {
+            margin: 0 0 9px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 32px;
+        }
+
+
+        .internship-form-header p {
+            margin: 0;
+
+            color: #72857e;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .internship-form {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 20px;
+        }
+
+
+        .internship-form-group {
+            min-width: 0;
+        }
+
+
+        .internship-form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .internship-form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #36574b;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        .internship-form input,
+        .internship-form select,
+        .internship-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+
+            padding: 13px 14px;
+
+            border: 1px solid #dbe9e3;
+            border-radius: 11px;
+
+            outline: none;
+
+            background: #f9fcfa;
+
+            color: #294b3f;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .internship-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+
+        .internship-form input::placeholder,
+        .internship-form textarea::placeholder {
+            color: #a2b1ac;
+        }
+
+
+        .internship-form input:focus,
+        .internship-form select:focus,
+        .internship-form textarea:focus {
+            border-color: #4b9b79;
+
+            background: #fff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(75,155,121,.10);
+        }
+
+
+        /* =====================================================
+           FILE UPLOAD
+        ===================================================== */
+
+        .internship-file {
+            padding: 18px;
+
+            border: 1px dashed #bcd8cc;
+            border-radius: 12px;
+
+            background: #f9fcfa;
+
+            cursor: pointer;
+        }
+
+
+        .internship-file input {
+            border: 0;
+            padding: 0;
+            background: transparent;
+        }
+
+
+        .internship-file small {
+            display: block;
+
+            margin-top: 7px;
+
+            color: #91a39c;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           ACTION
+        ===================================================== */
+
+        .internship-form-actions {
+            grid-column: 1 / -1;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        .internship-required {
+            color: #8a9b95;
+            font-size: 10px;
+        }
+
+
+        .internship-submit {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 23px;
+
+            border: 0;
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #176e50,
+                    #278160
+                );
+
+            color: #fff;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,110,80,.15);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .internship-submit:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,110,80,.20);
+        }
+
+
+        .internship-message {
+            display: none;
+
+            grid-column: 1 / -1;
+
+            padding: 12px 14px;
+
+            border-radius: 10px;
+
+            background: #edf7f2;
+            color: #197052;
+
+            font-size: 12px;
+        }
+
+
+        .internship-message.show {
+            display: block;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width:900px) {
+
+            .internship-hero {
+                padding: 120px 20px 65px;
+            }
+
+
+            .internship-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+
+            .internship-visual {
+                justify-content: flex-start;
+            }
+
+
+            .internship-layout {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width:650px) {
+
+            .internship-hero {
+                padding: 105px 17px 55px;
+            }
+
+
+            .internship-hero h1 {
+                font-size:
+                    clamp(40px,12vw,53px);
+            }
+
+
+            .internship-hero-text {
+                font-size: 14px;
+            }
+
+
+            .internship-visual-card {
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 28px;
+
+                border-radius: 22px;
+            }
+
+
+            .internship-content {
+                width: calc(100% - 32px);
+
+                padding-bottom: 65px;
+            }
+
+
+            .internship-info {
+                padding: 27px;
+
+                border-radius: 21px;
+            }
+
+
+            .internship-info h2 {
+                font-size: 30px;
+            }
+
+
+            .internship-application {
+                padding: 27px 19px;
+
+                border-radius: 21px;
+            }
+
+
+            .internship-form-header h2 {
+                font-size: 29px;
+            }
+
+
+            .internship-form {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .internship-form-group.full {
+                grid-column: auto;
+            }
+
+
+            .internship-form-actions {
+                grid-column: auto;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .internship-submit {
+                width: 100%;
+            }
+
+
+            .internship-required {
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width:390px) {
+
+            .internship-hero h1 {
+                font-size: 38px;
+            }
+
+
+            .internship-visual-card {
+                padding: 24px;
+            }
+
+
+            .internship-info {
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="involved-page internship-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
+
+                <div>
+
+                    <strong>BCRLS</strong>
+
+                    <small>
+                        BANGLADESH CENTRE FOR REFUGEE LAW STUDIES
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+                        <span>About</span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../about.html">
+                            Who We Are
+                        </a>
+
+                        <a href="../about.html#mission">
+                            Mission
+                        </a>
+
+                        <a href="../about.html#vision">
+                            Vision
+                        </a>
+
+                        <a href="../about.html#team">
+                            Team
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>
+                            Research &amp; Publications
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../research/index.html">
+                            Research
+                        </a>
+
+                        <a href="../publications/index.html">
+                            Publications
+                        </a>
+
+                        <a href="../research/journal.html">
+                            Journal
+                        </a>
+
+                        <a href="../research/call-for-papers.html">
+                            Call for Papers
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../library/index.html"
+                    class="nav-link"
+                >
+                    Library
+                </a>
+
+
+                <a
+                    href="../education/index.html"
+                    class="nav-link"
+                >
+                    Education
+                </a>
+
+
+                <!-- GET INVOLVED -->
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle active"
+                        type="button"
+                    >
+
+                        <span>
+                            Get Involved
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="index.html">
+                            Overview
+                        </a>
+
+                        <a href="become-a-member.html">
+                            Become a Member
+                        </a>
+
+                        <a href="research-fellow.html">
+                            Research Fellow
+                        </a>
+
+                        <a href="volunteer-programme.html">
+                            Volunteer Programme
+                        </a>
+
+                        <a
+                            href="internship-programme.html"
+                            class="active"
+                        >
+                            Internship Programme
+                        </a>
+
+                        <a href="partner-with-us.html">
+                            Partner With Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../contact.html"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="internship-hero">
+
+            <div class="internship-hero-inner">
+
+
+                <div>
+
+                    <div class="internship-label">
+
+                        <span></span>
+
+                        BCRLS Internship Programme
+
+                    </div>
+
+
+                    <h1>
+
+                        Learn, Research
+                        &amp; <span>Grow With BCRLS</span>
+
+                    </h1>
+
+
+                    <p class="internship-hero-text">
+
+                        The BCRLS Internship Programme provides
+                        students and early-career individuals with
+                        an opportunity to develop practical research,
+                        academic and professional skills while
+                        engaging with issues surrounding refugee
+                        law, displacement and human rights.
+
+                    </p>
+
+                </div>
+
+
+                <div class="internship-visual">
+
+                    <div class="internship-visual-card">
+
+                        <div class="internship-icon">
+
+                            <i
+                                class="fa-solid fa-briefcase"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            Start Your
+                            Learning Journey
+                        </h3>
+
+
+                        <p>
+
+                            Gain experience through research,
+                            knowledge development, academic
+                            activities and meaningful engagement
+                            with the BCRLS community.
+
+                        </p>
+
+
+                        <div class="internship-points">
+
+                            <div class="internship-point">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Research experience
+
+                            </div>
+
+
+                            <div class="internship-point">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Academic learning
+
+                            </div>
+
+
+                            <div class="internship-point">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Professional development
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT -->
+
+        <section class="internship-content">
+
+            <div class="internship-layout">
+
+
+                <!-- INFORMATION -->
+
+                <div class="internship-info">
+
+                    <span class="internship-info-label">
+                        Internship Experience
+                    </span>
+
+
+                    <h2>
+                        Build skills through
+                        meaningful work.
+                    </h2>
+
+
+                    <p>
+
+                        The programme is intended for motivated
+                        individuals who want to explore refugee
+                        law, displacement, human rights, research,
+                        policy and related fields.
+
+                    </p>
+
+
+                    <div class="internship-list">
+
+
+                        <div class="internship-item">
+
+                            <div class="internship-item-icon">
+
+                                <i
+                                    class="fa-solid fa-magnifying-glass"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Research Exposure
+                                </h3>
+
+                                <p>
+                                    Develop practical experience
+                                    in research and knowledge
+                                    development.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="internship-item">
+
+                            <div class="internship-item-icon">
+
+                                <i
+                                    class="fa-solid fa-book-open"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Academic Learning
+                                </h3>
+
+                                <p>
+                                    Explore relevant academic
+                                    materials, discussions and
+                                    research activities.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="internship-item">
+
+                            <div class="internship-item-icon">
+
+                                <i
+                                    class="fa-solid fa-users"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Professional Networking
+                                </h3>
+
+                                <p>
+                                    Connect with researchers,
+                                    academics and professionals.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="internship-item">
+
+                            <div class="internship-item-icon">
+
+                                <i
+                                    class="fa-solid fa-lightbulb"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Skill Development
+                                </h3>
+
+                                <p>
+                                    Strengthen your communication,
+                                    research and analytical skills.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="internship-item">
+
+                            <div class="internship-item-icon">
+
+                                <i
+                                    class="fa-solid fa-scale-balanced"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Refugee Law &amp; Human Rights
+                                </h3>
+
+                                <p>
+                                    Engage with important questions
+                                    surrounding displacement and
+                                    protection.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- APPLICATION FORM -->
+
+                <div class="internship-application">
+
+
+                    <div class="internship-form-header">
+
+                        <span class="internship-form-label">
+                            Internship Application
+                        </span>
+
+
+                        <h2>
+                            Apply for the Programme
+                        </h2>
+
+
+                        <p>
+
+                            Tell us about your academic background,
+                            interests and why you would like to
+                            join the BCRLS Internship Programme.
+
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="internship-form"
+                        id="internshipForm"
+                    >
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internName">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="internName"
+                                name="name"
+                                placeholder="Your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internEmail">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="internEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="internPhone"
+                                name="phone"
+                                placeholder="+880 1XXX-XXXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internInstitution">
+                                University / Institution *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="internInstitution"
+                                name="institution"
+                                placeholder="University / Institution"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internProgramme">
+                                Degree / Programme *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="internProgramme"
+                                name="programme"
+                                placeholder="e.g. LL.B, LL.M, CSE, Political Science"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internYear">
+                                Current Year / Semester
+                            </label>
+
+                            <input
+                                type="text"
+                                id="internYear"
+                                name="year"
+                                placeholder="e.g. 3rd Year / 6th Semester"
+                            >
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internArea">
+                                Area of Interest *
+                            </label>
+
+                            <select
+                                id="internArea"
+                                name="interest"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your interest
+                                </option>
+
+                                <option value="Refugee Law">
+                                    Refugee Law
+                                </option>
+
+                                <option value="Human Rights">
+                                    Human Rights
+                                </option>
+
+                                <option value="Displacement">
+                                    Displacement
+                                </option>
+
+                                <option value="Migration">
+                                    Migration
+                                </option>
+
+                                <option value="Research">
+                                    Research
+                                </option>
+
+                                <option value="Policy">
+                                    Policy
+                                </option>
+
+                                <option value="Education">
+                                    Education
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="internship-form-group">
+
+                            <label for="internDuration">
+                                Preferred Duration
+                            </label>
+
+                            <select
+                                id="internDuration"
+                                name="duration"
+                            >
+
+                                <option value="">
+                                    Select duration
+                                </option>
+
+                                <option value="1-2 Months">
+                                    1–2 Months
+                                </option>
+
+                                <option value="3 Months">
+                                    3 Months
+                                </option>
+
+                                <option value="4-6 Months">
+                                    4–6 Months
+                                </option>
+
+                                <option value="Flexible">
+                                    Flexible
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="internship-form-group full">
+
+                            <label for="internMotivation">
+                                Why do you want to join BCRLS? *
+                            </label>
+
+                            <textarea
+                                id="internMotivation"
+                                name="motivation"
+                                placeholder="Briefly describe your interests, motivation and what you hope to learn..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="internship-form-group full">
+
+                            <label for="internCV">
+                                CV / Resume
+                            </label>
+
+                            <div class="internship-file">
+
+                                <input
+                                    type="file"
+                                    id="internCV"
+                                    name="cv"
+                                    accept=".pdf,.doc,.docx"
+                                >
+
+                                <small>
+                                    PDF, DOC or DOCX recommended.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="internship-message"
+                            id="internshipMessage"
+                        ></div>
+
+
+                        <div class="internship-form-actions">
+
+                            <span class="internship-required">
+                                * Required fields
+                            </span>
+
+
+                            <button
+                                type="submit"
+                                class="internship-submit"
+                            >
+
+                                Submit Application
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="involved-footer">
+
+        ©
+        <span id="currentYear"></span>
+        BCRLS. All rights reserved.
+
+    </footer>
+
+
+    <!-- EXISTING JS -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/get-involved.js"
+    ></script>
+
+
+    <!-- INTERNSHIP FORM JS -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "internshipForm"
+                    );
+
+                const message =
+                    document.getElementById(
+                        "internshipMessage"
+                    );
+
+
+                if (form) {
+
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+
+                            event.preventDefault();
+
+
+                            if (
+                                !form.checkValidity()
+                            ) {
+
+                                form.reportValidity();
+
+                                return;
+
+                            }
+
+
+                            message.textContent =
+                                "Thank you for applying. Your internship application has been received.";
+
+                            message.classList.add(
+                                "show"
+                            );
+
+
+                            const formData =
+                                new FormData(form);
+
+
+                            console.log(
+                                "BCRLS Internship Application:",
+                                Object.fromEntries(
+                                    formData.entries()
+                                )
+                            );
+
+
+                            message.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+                        }
+                    );
+
+                }
+
+
+                const year =
+                    document.getElementById(
+                        "currentYear"
+                    );
+
+                if (year) {
+
+                    year.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

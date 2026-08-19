@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Partner With Us | BCRLS</title>
+
+    <meta
+        name="description"
+        content="Partner with the Bangladesh Centre for Refugee Law Studies for research, education, collaboration and knowledge exchange."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS - DO NOT MODIFY -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <!-- Get Involved CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/get-involved.css"
+    >
+
+    <!-- Responsive CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           PARTNER PAGE
+        ===================================================== */
+
+        .partner-page {
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .partner-hero {
+
+            padding:
+                145px 24px 80px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(112,186,157,.16),
+                    transparent 32%
+                );
+        }
+
+
+        .partner-hero-inner {
+
+            width:
+                min(1180px,100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.1fr)
+                minmax(300px,.9fr);
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .partner-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 14px;
+
+            margin-bottom: 22px;
+
+            border:
+                1px solid
+                rgba(24,105,77,.12);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.85);
+
+            color: #197052;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .partner-label span {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #70b89b;
+        }
+
+
+        .partner-hero h1 {
+
+            max-width: 720px;
+
+            margin:
+                0 0 20px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px,6vw,70px);
+
+            line-height: 1.02;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .partner-hero h1 span {
+
+            color: #217a59;
+        }
+
+
+        .partner-hero-text {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: #6c8179;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HERO CARD
+        ===================================================== */
+
+        .partner-visual {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .partner-visual-card {
+
+            width:
+                min(100%,390px);
+
+            min-height: 360px;
+
+            padding: 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 28px;
+
+            background: #fff;
+
+            box-shadow:
+                0 25px 70px
+                rgba(34,91,70,.10);
+        }
+
+
+        .partner-visual-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+
+            height: 190px;
+
+            right: -90px;
+
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(112,186,157,.13);
+        }
+
+
+        .partner-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #e5f3ed;
+
+            color: #177153;
+
+            font-size: 25px;
+        }
+
+
+        .partner-visual-card h3 {
+
+            margin:
+                30px 0 12px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 29px;
+
+            line-height: 1.15;
+        }
+
+
+        .partner-visual-card p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .partner-points {
+
+            margin-top: 28px;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .partner-point {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #557168;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .partner-point i {
+
+            width: 25px;
+
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .partner-content {
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1180px
+                );
+
+            margin: auto;
+
+            padding:
+                20px 0 100px;
+        }
+
+
+        .partner-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,.85fr)
+                minmax(0,1.15fr);
+
+            gap: 35px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           WHY PARTNER
+        ===================================================== */
+
+        .partner-info {
+
+            padding: 35px;
+
+            background: #edf7f2;
+
+            border:
+                1px solid
+                rgba(24,105,77,.08);
+
+            border-radius: 25px;
+        }
+
+
+        .partner-info-label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .partner-info h2 {
+
+            margin:
+                0 0 15px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.15;
+        }
+
+
+        .partner-info > p {
+
+            margin:
+                0 0 25px;
+
+            color: #657c73;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+
+        .partner-list {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .partner-item {
+
+            display: flex;
+
+            gap: 13px;
+
+            align-items: flex-start;
+        }
+
+
+        .partner-item-icon {
+
+            width: 36px;
+
+            height: 36px;
+
+            flex: 0 0 36px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #fff;
+
+            color: #197052;
+
+            font-size: 13px;
+        }
+
+
+        .partner-item h3 {
+
+            margin:
+                0 0 3px;
+
+            color: #294b3f;
+
+            font-size: 14px;
+        }
+
+
+        .partner-item p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           PARTNERSHIP FORM
+        ===================================================== */
+
+        .partner-application {
+
+            padding: 40px;
+
+            background: #fff;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(34,91,70,.07);
+        }
+
+
+        .partner-form-header {
+
+            margin-bottom: 30px;
+        }
+
+
+        .partner-form-label {
+
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .partner-form-header h2 {
+
+            margin:
+                0 0 9px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 32px;
+        }
+
+
+        .partner-form-header p {
+
+            margin: 0;
+
+            color: #72857e;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .partner-form {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 20px;
+        }
+
+
+        .partner-form-group {
+
+            min-width: 0;
+        }
+
+
+        .partner-form-group.full {
+
+            grid-column:
+                1 / -1;
+        }
+
+
+        .partner-form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .partner-form input,
+        .partner-form select,
+        .partner-form textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding:
+                13px 14px;
+
+            border:
+                1px solid
+                #dbe9e3;
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background: #f9fcfa;
+
+            color: #294b3f;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .partner-form textarea {
+
+            min-height: 125px;
+
+            resize: vertical;
+        }
+
+
+        .partner-form input::placeholder,
+        .partner-form textarea::placeholder {
+
+            color: #a2b1ac;
+        }
+
+
+        .partner-form input:focus,
+        .partner-form select:focus,
+        .partner-form textarea:focus {
+
+            border-color: #4b9b79;
+
+            background: #fff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(75,155,121,.10);
+        }
+
+
+        /* =====================================================
+           CHECKBOXES
+        ===================================================== */
+
+        .partner-check-title {
+
+            margin-bottom: 12px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .partner-checks {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 10px;
+        }
+
+
+        .partner-check {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 11px 12px;
+
+            border:
+                1px solid
+                #e0ece7;
+
+            border-radius: 10px;
+
+            background: #f9fcfa;
+
+            color: #60766d;
+
+            font-size: 11px;
+
+            cursor: pointer;
+        }
+
+
+        .partner-check input {
+
+            width: 15px;
+
+            height: 15px;
+
+            accent-color: #197052;
+        }
+
+
+        /* =====================================================
+           ACTION
+        ===================================================== */
+
+        .partner-form-actions {
+
+            grid-column:
+                1 / -1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        .partner-required {
+
+            color: #8a9b95;
+
+            font-size: 10px;
+        }
+
+
+        .partner-submit {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                13px 23px;
+
+            border: 0;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #176e50,
+                    #278160
+                );
+
+            color: #fff;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,110,80,.15);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .partner-submit:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,110,80,.20);
+        }
+
+
+        .partner-message {
+
+            display: none;
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                12px 14px;
+
+            border-radius: 10px;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 12px;
+        }
+
+
+        .partner-message.show {
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width:900px) {
+
+            .partner-hero {
+
+                padding:
+                    120px 20px 65px;
+            }
+
+
+            .partner-hero-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .partner-visual {
+
+                justify-content: flex-start;
+            }
+
+
+            .partner-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width:650px) {
+
+            .partner-hero {
+
+                padding:
+                    105px 17px 55px;
+            }
+
+
+            .partner-hero h1 {
+
+                font-size:
+                    clamp(40px,12vw,53px);
+            }
+
+
+            .partner-hero-text {
+
+                font-size: 14px;
+            }
+
+
+            .partner-visual-card {
+
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 28px;
+
+                border-radius: 22px;
+            }
+
+
+            .partner-content {
+
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 65px;
+            }
+
+
+            .partner-info {
+
+                padding: 27px;
+
+                border-radius: 21px;
+            }
+
+
+            .partner-info h2 {
+
+                font-size: 30px;
+            }
+
+
+            .partner-application {
+
+                padding:
+                    27px 19px;
+
+                border-radius: 21px;
+            }
+
+
+            .partner-form-header h2 {
+
+                font-size: 29px;
+            }
+
+
+            .partner-form {
+
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .partner-form-group.full {
+
+                grid-column: auto;
+            }
+
+
+            .partner-checks {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .partner-form-actions {
+
+                grid-column: auto;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .partner-submit {
+
+                width: 100%;
+            }
+
+
+            .partner-required {
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width:390px) {
+
+            .partner-hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .partner-visual-card {
+
+                padding: 24px;
+            }
+
+
+            .partner-info {
+
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="involved-page partner-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
+
+                <div>
+
+                    <strong>BCRLS</strong>
+
+                    <small>
+                        BANGLADESH CENTRE FOR REFUGEE LAW STUDIES
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>About</span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../about.html">
+                            Who We Are
+                        </a>
+
+                        <a href="../about.html#mission">
+                            Mission
+                        </a>
+
+                        <a href="../about.html#vision">
+                            Vision
+                        </a>
+
+                        <a href="../about.html#team">
+                            Team
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>
+                            Research &amp; Publications
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../research/index.html">
+                            Research
+                        </a>
+
+                        <a href="../publications/index.html">
+                            Publications
+                        </a>
+
+                        <a href="../research/journal.html">
+                            Journal
+                        </a>
+
+                        <a href="../research/call-for-papers.html">
+                            Call for Papers
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../library/index.html"
+                    class="nav-link"
+                >
+                    Library
+                </a>
+
+
+                <a
+                    href="../education/index.html"
+                    class="nav-link"
+                >
+                    Education
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle active"
+                        type="button"
+                    >
+
+                        <span>
+                            Get Involved
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="index.html">
+                            Overview
+                        </a>
+
+                        <a href="become-a-member.html">
+                            Become a Member
+                        </a>
+
+                        <a href="research-fellow.html">
+                            Research Fellow
+                        </a>
+
+                        <a href="volunteer-programme.html">
+                            Volunteer Programme
+                        </a>
+
+                        <a href="internship-programme.html">
+                            Internship Programme
+                        </a>
+
+                        <a
+                            href="partner-with-us.html"
+                            class="active"
+                        >
+                            Partner With Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../contact.html"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="partner-hero">
+
+            <div class="partner-hero-inner">
+
+
+                <div>
+
+                    <div class="partner-label">
+
+                        <span></span>
+
+                        BCRLS Partnership
+
+                    </div>
+
+
+                    <h1>
+
+                        Let's Build
+                        <span>Something Meaningful Together</span>
+
+                    </h1>
+
+
+                    <p class="partner-hero-text">
+
+                        BCRLS welcomes collaboration with
+                        universities, research institutions,
+                        legal organizations, civil society,
+                        humanitarian actors and other
+                        organizations working to advance
+                        refugee protection, human rights and
+                        knowledge.
+
+                    </p>
+
+                </div>
+
+
+                <div class="partner-visual">
+
+                    <div class="partner-visual-card">
+
+                        <div class="partner-icon">
+
+                            <i
+                                class="fa-solid fa-handshake"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+
+                            Connect.
+                            Collaborate.
+                            Create Impact.
+
+                        </h3>
+
+
+                        <p>
+
+                            Partnerships can create space
+                            for research, education, events,
+                            knowledge exchange and wider
+                            engagement.
+
+                        </p>
+
+
+                        <div class="partner-points">
+
+                            <div class="partner-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Research collaboration
+
+                            </div>
+
+
+                            <div class="partner-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Academic partnerships
+
+                            </div>
+
+
+                            <div class="partner-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Events &amp; knowledge exchange
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================= -->
+
+        <section class="partner-content">
+
+            <div class="partner-layout">
+
+
+                <!-- =================================================
+                     LEFT
+                ================================================= -->
+
+                <div class="partner-info">
+
+                    <span class="partner-info-label">
+                        Partnership Opportunities
+                    </span>
+
+
+                    <h2>
+
+                        Explore ways to
+                        work together.
+
+                    </h2>
+
+
+                    <p>
+
+                        We are interested in building
+                        thoughtful partnerships that
+                        contribute to research, education,
+                        professional dialogue and rights-based
+                        approaches to refugee protection.
+
+                    </p>
+
+
+                    <div class="partner-list">
+
+
+                        <div class="partner-item">
+
+                            <div class="partner-item-icon">
+
+                                <i
+                                    class="fa-solid fa-flask"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Research Collaboration
+                                </h3>
+
+                                <p>
+
+                                    Joint research projects,
+                                    publications, knowledge
+                                    production and academic
+                                    initiatives.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="partner-item">
+
+                            <div class="partner-item-icon">
+
+                                <i
+                                    class="fa-solid fa-graduation-cap"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Education &amp; Training
+                                </h3>
+
+                                <p>
+
+                                    Lectures, workshops,
+                                    training programmes and
+                                    academic learning activities.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="partner-item">
+
+                            <div class="partner-item-icon">
+
+                                <i
+                                    class="fa-solid fa-calendar-days"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Events &amp; Conferences
+                                </h3>
+
+                                <p>
+
+                                    Collaborate on conferences,
+                                    seminars, public lectures
+                                    and academic events.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="partner-item">
+
+                            <div class="partner-item-icon">
+
+                                <i
+                                    class="fa-solid fa-globe"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Regional &amp; Global Engagement
+                                </h3>
+
+                                <p>
+
+                                    Develop networks for
+                                    regional dialogue and
+                                    international knowledge exchange.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="partner-item">
+
+                            <div class="partner-item-icon">
+
+                                <i
+                                    class="fa-solid fa-people-arrows"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Institutional Partnership
+                                </h3>
+
+                                <p>
+
+                                    Explore longer-term
+                                    collaboration between
+                                    institutions and organizations.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM
+                ================================================= -->
+
+                <div class="partner-application">
+
+
+                    <div class="partner-form-header">
+
+                        <span class="partner-form-label">
+                            Partnership Inquiry
+                        </span>
+
+
+                        <h2>
+                            Start a Conversation
+                        </h2>
+
+
+                        <p>
+
+                            Tell us about your organization
+                            and how you would like to
+                            collaborate with BCRLS.
+
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="partner-form"
+                        id="partnerForm"
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerName">
+                                Your Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="partnerName"
+                                name="name"
+                                placeholder="Full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerEmail">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="partnerEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ORGANIZATION -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerOrganization">
+                                Organization *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="partnerOrganization"
+                                name="organization"
+                                placeholder="Organization name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- POSITION -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerPosition">
+                                Position / Role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="partnerPosition"
+                                name="position"
+                                placeholder="Your position"
+                            >
+
+                        </div>
+
+
+                        <!-- ORGANIZATION TYPE -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerType">
+                                Organization Type *
+                            </label>
+
+                            <select
+                                id="partnerType"
+                                name="organizationType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select type
+                                </option>
+
+                                <option value="University">
+                                    University
+                                </option>
+
+                                <option value="Research Institution">
+                                    Research Institution
+                                </option>
+
+                                <option value="NGO">
+                                    NGO / Civil Society
+                                </option>
+
+                                <option value="Legal Organization">
+                                    Legal Organization
+                                </option>
+
+                                <option value="Government Institution">
+                                    Government Institution
+                                </option>
+
+                                <option value="International Organization">
+                                    International Organization
+                                </option>
+
+                                <option value="Humanitarian Organization">
+                                    Humanitarian Organization
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PARTNERSHIP TYPE -->
+
+                        <div class="partner-form-group">
+
+                            <label for="partnerCategory">
+                                Partnership Area *
+                            </label>
+
+                            <select
+                                id="partnerCategory"
+                                name="partnershipArea"
+                                required
+                            >
+
+                                <option value="">
+                                    Select area
+                                </option>
+
+                                <option value="Research">
+                                    Research Collaboration
+                                </option>
+
+                                <option value="Education">
+                                    Education &amp; Training
+                                </option>
+
+                                <option value="Events">
+                                    Events &amp; Conferences
+                                </option>
+
+                                <option value="Publication">
+                                    Publications
+                                </option>
+
+                                <option value="Knowledge Exchange">
+                                    Knowledge Exchange
+                                </option>
+
+                                <option value="Institutional Partnership">
+                                    Institutional Partnership
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- INTERESTS -->
+
+                        <div class="partner-form-group full">
+
+                            <div class="partner-check-title">
+
+                                Areas you would like to explore
+
+                            </div>
+
+
+                            <div class="partner-checks">
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Research"
+                                    >
+
+                                    Research
+
+                                </label>
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Education"
+                                    >
+
+                                    Education
+
+                                </label>
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Events"
+                                    >
+
+                                    Events
+
+                                </label>
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Publications"
+                                    >
+
+                                    Publications
+
+                                </label>
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Training"
+                                    >
+
+                                    Training
+
+                                </label>
+
+
+                                <label class="partner-check">
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Knowledge Exchange"
+                                    >
+
+                                    Knowledge Exchange
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div class="partner-form-group full">
+
+                            <label for="partnerMessage">
+                                Tell Us About Your Idea *
+                            </label>
+
+                            <textarea
+                                id="partnerMessage"
+                                name="message"
+                                placeholder="Briefly describe your organization, proposed collaboration and what you would like to achieve together..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- SUCCESS -->
+
+                        <div
+                            class="partner-message"
+                            id="partnerMessageBox"
+                        ></div>
+
+
+                        <!-- ACTION -->
+
+                        <div class="partner-form-actions">
+
+                            <span class="partner-required">
+                                * Required fields
+                            </span>
+
+
+                            <button
+                                type="submit"
+                                class="partner-submit"
+                            >
+
+                                Send Partnership Inquiry
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="involved-footer">
+
+        ©
+        <span id="currentYear"></span>
+        BCRLS. All rights reserved.
+
+    </footer>
+
+
+    <!-- =====================================================
+         EXISTING JS
+    ===================================================== -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/get-involved.js"
+    ></script>
+
+
+    <!-- =====================================================
+         PARTNER PAGE JS
+    ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "partnerForm"
+                    );
+
+                const message =
+                    document.getElementById(
+                        "partnerMessageBox"
+                    );
+
+
+                if (form) {
+
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+
+                            event.preventDefault();
+
+
+                            if (
+                                !form.checkValidity()
+                            ) {
+
+                                form.reportValidity();
+
+                                return;
+
+                            }
+
+
+                            const formData =
+                                new FormData(form);
+
+
+                            console.log(
+                                "BCRLS Partnership Inquiry:",
+                                Object.fromEntries(
+                                    formData.entries()
+                                )
+                            );
+
+
+                            message.textContent =
+                                "Thank you for contacting BCRLS. Your partnership inquiry has been received. Our team will review your proposal and get in touch.";
+
+                            message.classList.add(
+                                "show"
+                            );
+
+
+                            message.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+                        }
+                    );
+
+                }
+
+
+                const year =
+                    document.getElementById(
+                        "currentYear"
+                    );
+
+
+                if (year) {
+
+                    year.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

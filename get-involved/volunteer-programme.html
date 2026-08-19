@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Volunteer Programme | BCRLS</title>
+
+    <meta
+        name="description"
+        content="Join the BCRLS Volunteer Programme and contribute to research, education, events and community engagement."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- MAIN CSS — DO NOT MODIFY -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <!-- GET INVOLVED CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/get-involved.css"
+    >
+
+    <!-- RESPONSIVE CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           VOLUNTEER PAGE
+        ===================================================== */
+
+        .volunteer-page {
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .volunteer-hero {
+
+            padding:
+                145px 24px 80px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(112,186,157,.16),
+                    transparent 32%
+                );
+        }
+
+
+        .volunteer-hero-inner {
+
+            width:
+                min(1180px,100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.1fr)
+                minmax(300px,.9fr);
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .volunteer-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 14px;
+
+            margin-bottom: 22px;
+
+            border:
+                1px solid
+                rgba(24,105,77,.12);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.85);
+
+            color: #197052;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .volunteer-label span {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #70b89b;
+        }
+
+
+        .volunteer-hero h1 {
+
+            max-width: 720px;
+
+            margin:
+                0 0 20px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px,6vw,70px);
+
+            line-height: 1.02;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .volunteer-hero h1 span {
+
+            color: #217a59;
+        }
+
+
+        .volunteer-hero-text {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: #6c8179;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HERO CARD
+        ===================================================== */
+
+        .volunteer-visual {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .volunteer-visual-card {
+
+            width:
+                min(100%,390px);
+
+            min-height: 360px;
+
+            padding: 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 28px;
+
+            background: #fff;
+
+            box-shadow:
+                0 25px 70px
+                rgba(34,91,70,.10);
+        }
+
+
+        .volunteer-visual-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+
+            height: 190px;
+
+            right: -90px;
+
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(112,186,157,.13);
+        }
+
+
+        .volunteer-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #e5f3ed;
+
+            color: #177153;
+
+            font-size: 25px;
+        }
+
+
+        .volunteer-visual-card h3 {
+
+            margin:
+                30px 0 12px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 29px;
+
+            line-height: 1.15;
+        }
+
+
+        .volunteer-visual-card p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .volunteer-points {
+
+            margin-top: 28px;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .volunteer-point {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #557168;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .volunteer-point i {
+
+            width: 25px;
+
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .volunteer-content {
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1180px
+                );
+
+            margin: auto;
+
+            padding:
+                20px 0 100px;
+        }
+
+
+        .volunteer-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,.85fr)
+                minmax(0,1.15fr);
+
+            gap: 35px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           INFORMATION
+        ===================================================== */
+
+        .volunteer-info {
+
+            padding: 35px;
+
+            background: #edf7f2;
+
+            border:
+                1px solid
+                rgba(24,105,77,.08);
+
+            border-radius: 25px;
+        }
+
+
+        .volunteer-info-label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .volunteer-info h2 {
+
+            margin:
+                0 0 15px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.15;
+        }
+
+
+        .volunteer-info > p {
+
+            margin:
+                0 0 25px;
+
+            color: #657c73;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+
+        .volunteer-list {
+
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .volunteer-item {
+
+            display: flex;
+
+            gap: 13px;
+
+            align-items: flex-start;
+        }
+
+
+        .volunteer-item-icon {
+
+            width: 36px;
+
+            height: 36px;
+
+            flex: 0 0 36px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #fff;
+
+            color: #197052;
+
+            font-size: 13px;
+        }
+
+
+        .volunteer-item h3 {
+
+            margin:
+                0 0 3px;
+
+            color: #294b3f;
+
+            font-size: 14px;
+        }
+
+
+        .volunteer-item p {
+
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           APPLICATION
+        ===================================================== */
+
+        .volunteer-application {
+
+            padding: 40px;
+
+            background: #fff;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(34,91,70,.07);
+        }
+
+
+        .volunteer-form-header {
+
+            margin-bottom: 30px;
+        }
+
+
+        .volunteer-form-label {
+
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .volunteer-form-header h2 {
+
+            margin:
+                0 0 9px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 32px;
+        }
+
+
+        .volunteer-form-header p {
+
+            margin: 0;
+
+            color: #72857e;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .volunteer-form {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 20px;
+        }
+
+
+        .volunteer-form-group {
+
+            min-width: 0;
+        }
+
+
+        .volunteer-form-group.full {
+
+            grid-column:
+                1 / -1;
+        }
+
+
+        .volunteer-form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .volunteer-form input,
+        .volunteer-form select,
+        .volunteer-form textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding:
+                13px 14px;
+
+            border:
+                1px solid
+                #dbe9e3;
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background: #f9fcfa;
+
+            color: #294b3f;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .volunteer-form textarea {
+
+            min-height: 125px;
+
+            resize: vertical;
+        }
+
+
+        .volunteer-form input::placeholder,
+        .volunteer-form textarea::placeholder {
+
+            color: #a2b1ac;
+        }
+
+
+        .volunteer-form input:focus,
+        .volunteer-form select:focus,
+        .volunteer-form textarea:focus {
+
+            border-color: #4b9b79;
+
+            background: #fff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(75,155,121,.10);
+        }
+
+
+        /* =====================================================
+           VOLUNTEER AREAS
+        ===================================================== */
+
+        .volunteer-interest-title {
+
+            margin-bottom: 12px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .volunteer-interest-options {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 10px;
+        }
+
+
+        .volunteer-interest-option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                11px 12px;
+
+            border:
+                1px solid
+                #e0ece7;
+
+            border-radius: 10px;
+
+            background: #f9fcfa;
+
+            color: #60766d;
+
+            font-size: 11px;
+
+            cursor: pointer;
+        }
+
+
+        .volunteer-interest-option input {
+
+            width: 15px;
+
+            height: 15px;
+
+            accent-color: #197052;
+        }
+
+
+        /* =====================================================
+           AVAILABILITY
+        ===================================================== */
+
+        .volunteer-availability {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 10px;
+        }
+
+
+        /* =====================================================
+           ACTION
+        ===================================================== */
+
+        .volunteer-form-actions {
+
+            grid-column:
+                1 / -1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        .volunteer-required {
+
+            color: #8a9b95;
+
+            font-size: 10px;
+        }
+
+
+        .volunteer-submit {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                13px 23px;
+
+            border: 0;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #176e50,
+                    #278160
+                );
+
+            color: #fff;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,110,80,.15);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .volunteer-submit:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,110,80,.20);
+        }
+
+
+        .volunteer-message {
+
+            display: none;
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                12px 14px;
+
+            border-radius: 10px;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 12px;
+        }
+
+
+        .volunteer-message.show {
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width:900px) {
+
+            .volunteer-hero {
+
+                padding:
+                    120px 20px 65px;
+            }
+
+
+            .volunteer-hero-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .volunteer-visual {
+
+                justify-content: flex-start;
+            }
+
+
+            .volunteer-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width:650px) {
+
+            .volunteer-hero {
+
+                padding:
+                    105px 17px 55px;
+            }
+
+
+            .volunteer-hero h1 {
+
+                font-size:
+                    clamp(40px,12vw,53px);
+            }
+
+
+            .volunteer-hero-text {
+
+                font-size: 14px;
+            }
+
+
+            .volunteer-visual-card {
+
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 28px;
+
+                border-radius: 22px;
+            }
+
+
+            .volunteer-content {
+
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 65px;
+            }
+
+
+            .volunteer-info {
+
+                padding: 27px;
+
+                border-radius: 21px;
+            }
+
+
+            .volunteer-info h2 {
+
+                font-size: 30px;
+            }
+
+
+            .volunteer-application {
+
+                padding:
+                    27px 19px;
+
+                border-radius: 21px;
+            }
+
+
+            .volunteer-form-header h2 {
+
+                font-size: 29px;
+            }
+
+
+            .volunteer-form {
+
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .volunteer-form-group.full {
+
+                grid-column: auto;
+            }
+
+
+            .volunteer-interest-options {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .volunteer-availability {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .volunteer-form-actions {
+
+                grid-column: auto;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .volunteer-submit {
+
+                width: 100%;
+            }
+
+
+            .volunteer-required {
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width:390px) {
+
+            .volunteer-hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .volunteer-visual-card {
+
+                padding: 24px;
+            }
+
+
+            .volunteer-info {
+
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="involved-page volunteer-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
+
+                <div>
+
+                    <strong>BCRLS</strong>
+
+                    <small>
+                        BANGLADESH CENTRE FOR REFUGEE LAW STUDIES
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>About</span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../about.html">
+                            Who We Are
+                        </a>
+
+                        <a href="../about.html#mission">
+                            Mission
+                        </a>
+
+                        <a href="../about.html#vision">
+                            Vision
+                        </a>
+
+                        <a href="../about.html#team">
+                            Team
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                    >
+
+                        <span>
+                            Research &amp; Publications
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="../research/index.html">
+                            Research
+                        </a>
+
+                        <a href="../publications/index.html">
+                            Publications
+                        </a>
+
+                        <a href="../research/journal.html">
+                            Journal
+                        </a>
+
+                        <a href="../research/call-for-papers.html">
+                            Call for Papers
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../library/index.html"
+                    class="nav-link"
+                >
+                    Library
+                </a>
+
+
+                <a
+                    href="../education/index.html"
+                    class="nav-link"
+                >
+                    Education
+                </a>
+
+
+                <!-- GET INVOLVED -->
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle active"
+                        type="button"
+                    >
+
+                        <span>
+                            Get Involved
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="index.html">
+                            Overview
+                        </a>
+
+                        <a href="become-a-member.html">
+                            Become a Member
+                        </a>
+
+                        <a href="research-fellow.html">
+                            Research Fellow
+                        </a>
+
+                        <a
+                            href="volunteer-programme.html"
+                            class="active"
+                        >
+                            Volunteer Programme
+                        </a>
+
+                        <a href="internship-programme.html">
+                            Internship Programme
+                        </a>
+
+                        <a href="partner-with-us.html">
+                            Partner With Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../contact.html"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="volunteer-hero">
+
+            <div class="volunteer-hero-inner">
+
+
+                <div>
+
+                    <div class="volunteer-label">
+
+                        <span></span>
+
+                        BCRLS Volunteer Programme
+
+                    </div>
+
+
+                    <h1>
+
+                        Give Your Time,
+                        <span>Make an Impact</span>
+
+                    </h1>
+
+
+                    <p class="volunteer-hero-text">
+
+                        The BCRLS Volunteer Programme welcomes
+                        individuals who want to contribute their
+                        time, skills and ideas to research,
+                        education, events and knowledge-sharing
+                        activities related to refugee law,
+                        displacement and human rights.
+
+                    </p>
+
+                </div>
+
+
+                <div class="volunteer-visual">
+
+                    <div class="volunteer-visual-card">
+
+                        <div class="volunteer-icon">
+
+                            <i
+                                class="fa-solid fa-hand-holding-heart"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+
+                            Your Time.
+                            Your Skills.
+                            Your Contribution.
+
+                        </h3>
+
+
+                        <p>
+
+                            Volunteer with BCRLS and become part
+                            of a community working to support
+                            meaningful research, learning and
+                            public engagement.
+
+                        </p>
+
+
+                        <div class="volunteer-points">
+
+                            <div class="volunteer-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Support research
+
+                            </div>
+
+
+                            <div class="volunteer-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Help organize activities
+
+                            </div>
+
+
+                            <div class="volunteer-point">
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Share your skills
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================= -->
+
+        <section class="volunteer-content">
+
+            <div class="volunteer-layout">
+
+
+                <!-- =================================================
+                     INFORMATION
+                ================================================= -->
+
+                <div class="volunteer-info">
+
+                    <span class="volunteer-info-label">
+                        Volunteer With BCRLS
+                    </span>
+
+
+                    <h2>
+
+                        Contribute in a way
+                        that matters to you.
+
+                    </h2>
+
+
+                    <p>
+
+                        Volunteers can support different
+                        aspects of BCRLS activities depending
+                        on their interests, skills and
+                        availability.
+
+                    </p>
+
+
+                    <div class="volunteer-list">
+
+
+                        <div class="volunteer-item">
+
+                            <div class="volunteer-item-icon">
+
+                                <i
+                                    class="fa-solid fa-magnifying-glass"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Research Support
+                                </h3>
+
+                                <p>
+
+                                    Assist with research,
+                                    literature review,
+                                    documentation and
+                                    knowledge resources.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="volunteer-item">
+
+                            <div class="volunteer-item-icon">
+
+                                <i
+                                    class="fa-solid fa-calendar-days"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Events &amp; Activities
+                                </h3>
+
+                                <p>
+
+                                    Support seminars, workshops,
+                                    lectures and other
+                                    BCRLS activities.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="volunteer-item">
+
+                            <div class="volunteer-item-icon">
+
+                                <i
+                                    class="fa-solid fa-pen-nib"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Content &amp; Communication
+                                </h3>
+
+                                <p>
+
+                                    Help with writing,
+                                    documentation, digital
+                                    content and communication.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="volunteer-item">
+
+                            <div class="volunteer-item-icon">
+
+                                <i
+                                    class="fa-solid fa-people-group"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Community Engagement
+                                </h3>
+
+                                <p>
+
+                                    Contribute to outreach,
+                                    networking and knowledge
+                                    exchange activities.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="volunteer-item">
+
+                            <div class="volunteer-item-icon">
+
+                                <i
+                                    class="fa-solid fa-lightbulb"
+                                ></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Skills &amp; Ideas
+                                </h3>
+
+                                <p>
+
+                                    Bring your own skills,
+                                    ideas and perspective to
+                                    support BCRLS initiatives.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM
+                ================================================= -->
+
+                <div class="volunteer-application">
+
+
+                    <div class="volunteer-form-header">
+
+                        <span class="volunteer-form-label">
+                            Volunteer Application
+                        </span>
+
+
+                        <h2>
+                            Join as a Volunteer
+                        </h2>
+
+
+                        <p>
+
+                            Tell us about yourself, your skills
+                            and the areas where you would like
+                            to contribute.
+
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="volunteer-form"
+                        id="volunteerForm"
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerName">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="volunteerName"
+                                name="name"
+                                placeholder="Your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerEmail">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="volunteerEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="volunteerPhone"
+                                name="phone"
+                                placeholder="+880 1XXX-XXXXXX"
+                            >
+
+                        </div>
+
+
+                        <!-- INSTITUTION -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerInstitution">
+                                University / Institution
+                            </label>
+
+                            <input
+                                type="text"
+                                id="volunteerInstitution"
+                                name="institution"
+                                placeholder="University / Institution"
+                            >
+
+                        </div>
+
+
+                        <!-- ROLE -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerRole">
+                                Current Role *
+                            </label>
+
+                            <select
+                                id="volunteerRole"
+                                name="role"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your role
+                                </option>
+
+                                <option value="Student">
+                                    Student
+                                </option>
+
+                                <option value="Researcher">
+                                    Researcher
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Professional">
+                                    Professional
+                                </option>
+
+                                <option value="Practitioner">
+                                    Practitioner
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- EXPERIENCE -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerExperience">
+                                Experience Level
+                            </label>
+
+                            <select
+                                id="volunteerExperience"
+                                name="experience"
+                            >
+
+                                <option value="">
+                                    Select experience
+                                </option>
+
+                                <option value="Beginner">
+                                    Beginner
+                                </option>
+
+                                <option value="Some Experience">
+                                    Some Experience
+                                </option>
+
+                                <option value="Experienced">
+                                    Experienced
+                                </option>
+
+                                <option value="Professional">
+                                    Professional
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- INTEREST -->
+
+                        <div class="volunteer-form-group full">
+
+                            <div class="volunteer-interest-title">
+
+                                How would you like to contribute?
+
+                            </div>
+
+
+                            <div class="volunteer-interest-options">
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Research"
+                                    >
+
+                                    Research Support
+
+                                </label>
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Events"
+                                    >
+
+                                    Events &amp; Activities
+
+                                </label>
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Writing"
+                                    >
+
+                                    Writing &amp; Content
+
+                                </label>
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Communication"
+                                    >
+
+                                    Communication
+
+                                </label>
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Digital"
+                                    >
+
+                                    Digital / Technology
+
+                                </label>
+
+
+                                <label
+                                    class="volunteer-interest-option"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        name="interest"
+                                        value="Outreach"
+                                    >
+
+                                    Outreach &amp; Engagement
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AVAILABILITY -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerAvailability">
+                                Availability *
+                            </label>
+
+                            <select
+                                id="volunteerAvailability"
+                                name="availability"
+                                required
+                            >
+
+                                <option value="">
+                                    Select availability
+                                </option>
+
+                                <option value="A Few Hours Weekly">
+                                    A few hours weekly
+                                </option>
+
+                                <option value="Several Hours Weekly">
+                                    Several hours weekly
+                                </option>
+
+                                <option value="Event Based">
+                                    Event based
+                                </option>
+
+                                <option value="Flexible">
+                                    Flexible
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MODE -->
+
+                        <div class="volunteer-form-group">
+
+                            <label for="volunteerMode">
+                                Preferred Mode
+                            </label>
+
+                            <select
+                                id="volunteerMode"
+                                name="mode"
+                            >
+
+                                <option value="">
+                                    Select mode
+                                </option>
+
+                                <option value="On-site">
+                                    On-site
+                                </option>
+
+                                <option value="Remote">
+                                    Remote
+                                </option>
+
+                                <option value="Hybrid">
+                                    Hybrid
+                                </option>
+
+                                <option value="Flexible">
+                                    Flexible
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MOTIVATION -->
+
+                        <div class="volunteer-form-group full">
+
+                            <label for="volunteerMotivation">
+                                Why would you like to volunteer? *
+                            </label>
+
+                            <textarea
+                                id="volunteerMotivation"
+                                name="motivation"
+                                placeholder="Tell us briefly about your interests, skills and why you would like to contribute to BCRLS..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            class="volunteer-message"
+                            id="volunteerMessage"
+                        ></div>
+
+
+                        <!-- ACTION -->
+
+                        <div class="volunteer-form-actions">
+
+                            <span class="volunteer-required">
+                                * Required fields
+                            </span>
+
+
+                            <button
+                                type="submit"
+                                class="volunteer-submit"
+                            >
+
+                                Submit Volunteer Application
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="involved-footer">
+
+        ©
+        <span id="currentYear"></span>
+        BCRLS. All rights reserved.
+
+    </footer>
+
+
+    <!-- =====================================================
+         EXISTING JS
+    ===================================================== -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/get-involved.js"
+    ></script>
+
+
+    <!-- =====================================================
+         VOLUNTEER PAGE JS
+    ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "volunteerForm"
+                    );
+
+                const message =
+                    document.getElementById(
+                        "volunteerMessage"
+                    );
+
+
+                if (form) {
+
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+
+                            event.preventDefault();
+
+
+                            if (
+                                !form.checkValidity()
+                            ) {
+
+                                form.reportValidity();
+
+                                return;
+
+                            }
+
+
+                            const formData =
+                                new FormData(form);
+
+
+                            console.log(
+                                "BCRLS Volunteer Application:",
+                                Object.fromEntries(
+                                    formData.entries()
+                                )
+                            );
+
+
+                            message.textContent =
+                                "Thank you for your interest in volunteering with BCRLS. Your application has been received.";
+
+                            message.classList.add(
+                                "show"
+                            );
+
+
+                            message.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+                        }
+                    );
+
+                }
+
+
+                const year =
+                    document.getElementById(
+                        "currentYear"
+                    );
+
+
+                if (year) {
+
+                    year.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
