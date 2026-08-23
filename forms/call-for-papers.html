@@ -2,15 +2,19 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Call for Papers | BCRLS</title>
 
     <meta
         name="description"
-        content="Current call for papers and research submission opportunities from BCRLS."
+        content="Call for Papers for the inaugural issue of the Bangladesh Journal of Refugee Law and Displacement Studies."
     >
 
     <link
@@ -19,1287 +23,330 @@
         href="../assets/logo.png"
     >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
+    <!-- Icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+    <!-- Call For Papers CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/callpaper.css"
+    >
+
+    <!-- Page Typography Upgrade -->
     <style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .cfp-page {
+            font-size: 16px;
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* HERO */
+
+        .cfp-hero h1 {
+            font-size: clamp(64px, 8vw, 108px);
+            letter-spacing: -0.055em;
         }
 
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: #f7faf8;
-            color: #294b3f;
-            overflow-x: hidden;
+        .cfp-hero-description {
+            max-width: 850px;
+            font-size: 17px;
+            line-height: 1.9;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        button,
-        input,
-        textarea {
-            font-family: inherit;
+        .cfp-eyebrow {
+            font-size: 11px;
         }
 
 
-        /* ================================
-           HEADER
-        ================================= */
+        /* JOURNAL */
 
-        .cfp-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 82px;
-            z-index: 9999;
-
-            background: rgba(255,255,255,.97);
-
-            border-bottom: 1px solid #e4eee9;
-
-            backdrop-filter: blur(14px);
+        .cfp-journal-content h2 {
+            font-size: clamp(32px, 4vw, 48px);
         }
 
-        .cfp-header-inner {
-            width: min(1280px, calc(100% - 60px));
-            height: 100%;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 30px;
+        .cfp-journal-content p {
+            font-size: 14px;
+            line-height: 1.9;
         }
 
 
-        /* ================================
-           LOGO
-        ================================= */
+        /* SECTION HEADINGS */
 
-        .cfp-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            color: #17382d;
-
-            flex-shrink: 0;
+        .cfp-section-heading h2 {
+            font-size: clamp(38px, 4.5vw, 54px);
+            letter-spacing: -0.025em;
         }
 
-        .cfp-logo img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
+        .cfp-section-heading small {
+            font-size: 10px;
         }
 
-        .cfp-logo-text {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .cfp-logo-text strong {
-            font-family: "Playfair Display", Georgia, serif;
-
-            font-size: 24px;
-            line-height: 1;
-
-            color: #17382d;
-        }
-
-        .cfp-logo-text small {
-            max-width: 245px;
-
-            color: #75877f;
-
-            font-size: 8px;
-            font-weight: 700;
-
-            letter-spacing: .07em;
-            line-height: 1.4;
-        }
-
-
-        /* ================================
-           NAVIGATION
-        ================================= */
-
-        .cfp-nav {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .cfp-nav > a,
-        .cfp-dropdown-toggle {
-            height: 44px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 0 14px;
-
-            border: 0;
-            border-radius: 9px;
-
-            background: transparent;
-
-            color: #526b61;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .cfp-nav > a:hover,
-        .cfp-nav > a.active,
-        .cfp-dropdown-toggle:hover {
-            background: #edf7f2;
-            color: #197052;
-        }
-
-
-        /* ================================
-           DROPDOWN
-        ================================= */
-
-        .cfp-dropdown {
-            position: relative;
-        }
-
-        .cfp-dropdown-toggle {
-            gap: 8px;
-        }
-
-        .cfp-dropdown-toggle i {
-            font-size: 9px;
-            transition: .2s ease;
-        }
-
-        .cfp-dropdown-menu {
-            position: absolute;
-
-            top: calc(100% + 8px);
-            left: 0;
-
-            width: 245px;
-
-            padding: 8px;
-
-            background: #fff;
-
-            border: 1px solid #e2ebe6;
-            border-radius: 14px;
-
-            box-shadow: 0 20px 50px rgba(27,67,51,.12);
-
-            opacity: 0;
-            visibility: hidden;
-
-            transform: translateY(8px);
-
-            transition: .2s ease;
-        }
-
-        .cfp-dropdown:hover .cfp-dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .cfp-dropdown:hover .cfp-dropdown-toggle i {
-            transform: rotate(180deg);
-        }
-
-        .cfp-dropdown-menu a {
-            display: block;
-
-            padding: 12px 14px;
-
-            border-radius: 9px;
-
-            color: #536b62;
-
+        .cfp-section-heading > span {
+            width: 54px;
+            height: 54px;
             font-size: 12px;
         }
 
-        .cfp-dropdown-menu a:hover,
-        .cfp-dropdown-menu a.active {
-            background: #edf7f2;
-            color: #197052;
+
+        /* INTRO */
+
+        .cfp-introduction {
+            max-width: 1050px;
+        }
+
+        .cfp-introduction p {
+            font-size: 15px;
+            line-height: 2;
         }
 
 
-        /* ================================
-           MOBILE MENU
-        ================================= */
+        /* THEMES */
 
-        .cfp-menu-button {
-            display: none;
-
-            width: 44px;
-            height: 44px;
-
-            border: 1px solid #dce9e3;
-            border-radius: 10px;
-
-            background: #fff;
-
-            cursor: pointer;
+        .cfp-theme-item {
+            grid-template-columns: 42px 1fr;
+            min-height: 66px;
+            padding: 17px 0;
         }
 
-        .cfp-menu-button span {
-            display: block;
-
-            width: 20px;
-            height: 2px;
-
-            margin: 4px auto;
-
-            border-radius: 4px;
-
-            background: #197052;
-
-            transition: .25s ease;
-        }
-
-        .cfp-menu-button.open span:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .cfp-menu-button.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .cfp-menu-button.open span:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
-        }
-
-
-        /* ================================
-           HERO
-        ================================= */
-
-        .cfp-hero {
-            padding: 165px 30px 75px;
-
-            background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(100,180,145,.16),
-                    transparent 35%
-                );
-        }
-
-        .cfp-hero-inner {
-            width: min(1280px, 100%);
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns: 1fr auto;
-
-            gap: 70px;
-
-            align-items: end;
-        }
-
-        .cfp-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 9px 15px;
-            margin-bottom: 20px;
-
-            border: 1px solid rgba(24,105,77,.12);
-            border-radius: 999px;
-
-            background: #fff;
-
-            color: #197052;
-
+        .cfp-theme-item span {
             font-size: 10px;
             font-weight: 700;
-
-            letter-spacing: .1em;
-            text-transform: uppercase;
         }
 
-        .cfp-label span {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #4f9d7b;
+        .cfp-theme-item p {
+            font-size: 14px;
+            line-height: 1.65;
         }
 
-        .cfp-hero h1 {
-            margin-bottom: 18px;
-
-            font-family: "Playfair Display", Georgia, serif;
-
-            color: #17382d;
-
-            font-size: clamp(60px, 6vw, 78px);
-
-            line-height: 1.02;
-
-            letter-spacing: -.04em;
-        }
-
-        .cfp-hero h1 span {
-            color: #217a59;
-        }
-
-        .cfp-hero p {
-            max-width: 760px;
-
-            color: #6c8179;
-
-            font-size: 16px;
-            line-height: 1.85;
+        .cfp-theme-item:hover {
+            transform: scale(1.025) translateX(6px);
+            padding-left: 8px;
         }
 
 
-        /* ================================
-           MAIN
-        ================================= */
+        /* WHO MAY SUBMIT */
 
-        .cfp-main {
-            width: min(1280px, calc(100% - 60px));
+        .cfp-eligibility {
+            padding: 36px;
+        }
 
-            margin: auto;
+        .cfp-eligibility h3 {
+            font-size: 34px;
+        }
 
-            padding-bottom: 100px;
+        .cfp-eligibility > p {
+            font-size: 13px;
+        }
+
+        .cfp-eligibility li {
+            font-size: 13px;
+            padding: 13px 0 13px 19px;
+            line-height: 1.6;
         }
 
 
-        /* ================================
-           FEATURED CFP
-        ================================= */
+        /* GUIDELINES */
 
-        .cfp-featured {
-            overflow: hidden;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1.35fr;
-
-            min-height: 430px;
-
-            background: #fff;
-
-            border: 1px solid #e2ebe6;
-
-            border-radius: 26px;
-
-            box-shadow: 0 18px 55px rgba(34,91,70,.07);
+        .cfp-guideline {
+            padding: 23px 0;
+            grid-template-columns: 45px 1fr;
         }
 
-        .cfp-featured-image {
-            min-height: 430px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #dfeee8,
-                    #eef7f2
-                );
-
-            color: #197052;
-
-            font-size: 65px;
+        .cfp-guideline strong {
+            font-size: 15px;
         }
 
-        .cfp-featured-content {
+        .cfp-guideline p {
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+
+        /* IMPORTANT DATES */
+
+        .cfp-date {
+            padding: 30px;
+        }
+
+        .cfp-date-marker {
+            width: 66px;
+            height: 66px;
+            font-size: 21px;
+        }
+
+        .cfp-date-content span {
+            font-size: 10px;
+        }
+
+        .cfp-date-content strong {
+            font-size: 28px;
+        }
+
+        .cfp-date-content small {
+            font-size: 11px;
+        }
+
+
+        /* PEER REVIEW */
+
+        .cfp-review-section {
             padding: 48px;
         }
 
-        .cfp-meta {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            margin-bottom: 17px;
+        .cfp-review-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 27px;
         }
 
-        .cfp-tag {
-            padding: 7px 12px;
-
-            border-radius: 999px;
-
-            background: #e8f4ee;
-
-            color: #197052;
-
+        .cfp-review-content > span {
             font-size: 10px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-            letter-spacing: .06em;
         }
 
-        .cfp-date {
-            color: #8a9a94;
-            font-size: 11px;
+        .cfp-review-content h2 {
+            font-size: 35px;
         }
 
-        .cfp-featured-content h2 {
-            max-width: 720px;
-
-            margin-bottom: 15px;
-
-            font-family: "Playfair Display", Georgia, serif;
-
-            color: #17382d;
-
-            font-size: 42px;
-            line-height: 1.15;
-        }
-
-        .cfp-description {
-            max-width: 720px;
-
-            margin-bottom: 28px;
-
-            color: #6c8179;
-
+        .cfp-review-content p {
             font-size: 14px;
-            line-height: 1.85;
+            line-height: 1.9;
         }
 
 
-        /* ================================
-           DEADLINE HIGHLIGHT
-        ================================= */
+        /* SUBMISSION */
 
-        .cfp-deadline-highlight {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-
-            width: 100%;
-            max-width: 540px;
-
-            margin-bottom: 25px;
-
-            padding: 18px 20px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #edf8f2,
-                    #e4f3eb
-                );
-
-            border: 1px solid #c9e4d6;
-
-            border-radius: 15px;
+        .cfp-submission-section {
+            padding: 60px 55px;
         }
 
-        .cfp-deadline-icon {
-            width: 47px;
-            height: 47px;
-
-            flex: 0 0 47px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 12px;
-
-            background: #197052;
-
-            color: #fff;
-
-            font-size: 17px;
+        .cfp-submission-heading {
+            margin-bottom: 45px;
         }
 
-        .cfp-deadline-text small {
-            display: block;
-
-            margin-bottom: 4px;
-
-            color: #56806e;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: .1em;
-            text-transform: uppercase;
+        .cfp-submission-heading h2 {
+            font-size: clamp(46px, 5vw, 64px);
+            letter-spacing: -0.035em;
         }
 
-        .cfp-deadline-text strong {
-            display: block;
-
-            color: #155b42;
-
-            font-size: 20px;
-            line-height: 1.2;
-        }
-
-
-        /* ================================
-           BUTTONS
-        ================================= */
-
-        .cfp-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .cfp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 13px 20px;
-
-            border-radius: 999px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            transition: .2s ease;
-        }
-
-        .cfp-btn.primary {
-            background: #197052;
-            color: #fff;
-        }
-
-        .cfp-btn.secondary {
-            background: #edf7f2;
-            color: #197052;
-        }
-
-        .cfp-btn:hover {
-            transform: translateY(-2px);
-        }
-
-
-        /* ================================
-           TIMELINE
-        ================================= */
-
-        .cfp-section {
-            margin-top: 70px;
-        }
-
-        .cfp-section-title {
-            margin-bottom: 25px;
-        }
-
-        .cfp-section-title small {
-            display: block;
-
-            margin-bottom: 6px;
-
-            color: #217a59;
-
+        .cfp-submission-heading small {
             font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: .12em;
-            text-transform: uppercase;
         }
 
-        .cfp-section-title h2 {
-            font-family: "Playfair Display", Georgia, serif;
-
-            color: #17382d;
-
-            font-size: 38px;
+        .cfp-submission-heading > span {
+            width: 56px;
+            height: 56px;
+            font-size: 12px;
         }
 
-
-        .cfp-timeline {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 14px;
+        .cfp-submission-text h3 {
+            font-size: 34px;
         }
 
-        .cfp-time-card {
-            position: relative;
-
-            padding: 25px 22px;
-
-            background: #fff;
-
-            border: 1px solid #e0ebe5;
-
-            border-radius: 17px;
-        }
-
-        .cfp-time-card.highlight {
-            background:
-                linear-gradient(
-                    145deg,
-                    #eaf7f0,
-                    #f7fbf9
-                );
-
-            border-color: #bcdccc;
-        }
-
-        .cfp-time-card .icon {
-            width: 40px;
-            height: 40px;
-
-            margin-bottom: 15px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 10px;
-
-            background: #edf7f2;
-
-            color: #197052;
-        }
-
-        .cfp-time-card.highlight .icon {
-            background: #197052;
-            color: #fff;
-        }
-
-        .cfp-time-card small {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #879891;
-
-            font-size: 9px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-            letter-spacing: .08em;
-        }
-
-        .cfp-time-card strong {
-            display: block;
-
-            color: #294b3f;
-
-            font-size: 16px;
-        }
-
-
-        /* ================================
-           CONTENT
-        ================================= */
-
-        .cfp-content-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.15fr .85fr;
-
-            gap: 24px;
-        }
-
-        .cfp-box {
-            padding: 32px;
-
-            background: #fff;
-
-            border: 1px solid #e0ebe5;
-
-            border-radius: 20px;
-        }
-
-        .cfp-box h3 {
-            margin-bottom: 14px;
-
-            color: #294b3f;
-
-            font-size: 19px;
-        }
-
-        .cfp-box p {
-            margin-bottom: 15px;
-
-            color: #6d8179;
-
+        .cfp-submission-text p {
             font-size: 14px;
-
-            line-height: 1.85;
+            line-height: 1.9;
         }
 
-        .cfp-list {
-            display: grid;
-            gap: 12px;
-
-            list-style: none;
-        }
-
-        .cfp-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-
-            color: #657a72;
-
-            font-size: 13px;
-
-            line-height: 1.7;
-        }
-
-        .cfp-list i {
-            margin-top: 6px;
-
-            color: #197052;
-
-            font-size: 8px;
-        }
-
-
-        /* ================================
-           RESOURCE LINKS
-        ================================= */
-
-        .cfp-resources {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 15px;
-        }
-
-        .cfp-resource {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-
-            padding: 20px;
-
-            background: #fff;
-
-            border: 1px solid #e0ebe5;
-
-            border-radius: 15px;
-
-            color: #294b3f;
-
-            transition: .2s ease;
-        }
-
-        .cfp-resource:hover {
-            border-color: #b8d8c8;
-
-            transform: translateY(-2px);
-        }
-
-        .cfp-resource-icon {
-            width: 43px;
-            height: 43px;
-
-            flex: 0 0 43px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 10px;
-
-            background: #edf7f2;
-
-            color: #197052;
-        }
-
-        .cfp-resource strong {
-            display: block;
-
-            margin-bottom: 3px;
-
-            font-size: 13px;
-        }
-
-        .cfp-resource span {
-            color: #8a9a94;
-
-            font-size: 10px;
-        }
-
-
-        /* ================================
-           SUBMISSION
-        ================================= */
-
-        .cfp-submission {
-            padding: 40px;
-
-            background: #fff;
-
-            border: 1px solid #e0ebe5;
-
-            border-radius: 23px;
-
-            box-shadow: 0 15px 45px rgba(34,91,70,.05);
-        }
-
-        .cfp-form-intro {
-            margin-bottom: 30px;
-        }
-
-        .cfp-form-intro h3 {
-            margin-bottom: 7px;
-
-            font-family: "Playfair Display", Georgia, serif;
-
-            color: #17382d;
-
-            font-size: 29px;
-        }
-
-        .cfp-form-intro p {
-            color: #71857e;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-        .cfp-form {
-            display: grid;
-            gap: 20px;
-        }
-
-        .cfp-form-row {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 20px;
-        }
-
-        .cfp-field label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: #36574b;
-
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .cfp-field input,
-        .cfp-field textarea {
-            width: 100%;
-
-            padding: 14px 15px;
-
-            border: 1px solid #dbe8e2;
-
-            border-radius: 10px;
-
-            outline: none;
-
-            background: #f9fcfa;
-
-            color: #294b3f;
-
-            font-size: 13px;
-
-            transition: .2s ease;
-        }
-
-        .cfp-field textarea {
-            min-height: 160px;
-
-            resize: vertical;
-        }
-
-        .cfp-field input:focus,
-        .cfp-field textarea:focus {
-            border-color: #4d9a78;
-
-            background: #fff;
-
-            box-shadow:
-                0 0 0 3px rgba(77,154,120,.08);
-        }
-
-        .cfp-file {
-            padding: 12px;
-
-            border: 1px dashed #bfd8cb;
-
-            border-radius: 10px;
-
-            background: #f9fcfa;
-        }
-
-        .cfp-declaration {
-            padding: 16px;
-
-            border-radius: 11px;
-
-            background: #f5faf7;
-        }
-
-        .cfp-declaration label {
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 10px;
-
-            cursor: pointer;
-        }
-
-        .cfp-declaration input {
-            margin-top: 3px;
-        }
-
-        .cfp-declaration span {
-            color: #6e827a;
-
-            font-size: 11px;
-
-            line-height: 1.7;
-        }
-
-        .cfp-submit-row {
-            display: flex;
-
-            justify-content: flex-end;
-        }
-
-        .cfp-submit {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 14px 25px;
-
-            border: 0;
-            border-radius: 999px;
-
-            background: #197052;
-
-            color: #fff;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: .2s ease;
-        }
-
-        .cfp-submit:hover {
-            transform: translateY(-2px);
-        }
-
-        .cfp-submit:disabled {
-            opacity: .6;
-            cursor: not-allowed;
-        }
-
-        .cfp-message {
-            display: none;
-
-            padding: 12px 14px;
-
-            border-radius: 9px;
-
-            font-size: 12px;
-        }
-
-        .cfp-message.success {
-            display: block;
-
-            background: #eaf6ef;
-            color: #197052;
-        }
-
-        .cfp-message.error {
-            display: block;
-
-            background: #fbeeee;
-            color: #9a4f4f;
-        }
-
-
-        /* ================================
-           FOOTER
-        ================================= */
-
-        .cfp-footer {
+        .cfp-submission-contact {
             padding: 30px;
+        }
 
-            border-top: 1px solid #e3ece7;
+        .cfp-submission-contact > span {
+            font-size: 10px;
+        }
 
-            background: #fff;
+        .cfp-submission-contact > a {
+            font-size: 22px;
+        }
 
-            text-align: center;
-
-            color: #84958f;
-
+        .cfp-subject {
             font-size: 11px;
         }
 
 
-        /* ================================
-           TABLET
-        ================================= */
+        /* CONTACT */
 
-        @media (max-width: 1100px) {
+        .cfp-contact-row span {
+            font-size: 11px;
+        }
 
-            .cfp-nav {
-                position: fixed;
 
-                top: 82px;
-                right: -100%;
+        /* MOBILE */
 
-                width: min(340px, 88vw);
+        @media (max-width: 650px) {
 
-                height: calc(100vh - 82px);
-
-                padding: 22px 18px;
-
-                flex-direction: column;
-                align-items: stretch;
-
-                background: #fff;
-
-                box-shadow:
-                    -15px 0 40px
-                    rgba(20,60,45,.12);
-
-                overflow-y: auto;
-
-                transition: right .3s ease;
+            .cfp-hero h1 {
+                font-size: 58px;
             }
 
-            .cfp-nav.open {
-                right: 0;
-            }
-
-            .cfp-nav > a,
-            .cfp-dropdown-toggle {
-                width: 100%;
-                height: auto;
-
-                justify-content: space-between;
-
-                padding: 14px;
-
+            .cfp-hero-description {
                 font-size: 14px;
             }
 
-            .cfp-menu-button {
-                display: block;
+            .cfp-journal-content h2 {
+                font-size: 29px;
             }
 
-            .cfp-dropdown-menu {
-                position: static;
-
-                display: none;
-
-                width: 100%;
-
-                margin-top: 3px;
-
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-
-                box-shadow: none;
-
-                background: #f5faf7;
+            .cfp-section-heading h2 {
+                font-size: 34px;
             }
 
-            .cfp-dropdown.open .cfp-dropdown-menu {
-                display: block;
-            }
-
-            .cfp-dropdown.open .cfp-dropdown-toggle i {
-                transform: rotate(180deg);
-            }
-
-            .cfp-hero-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .cfp-status {
-                justify-self: start;
-            }
-
-            .cfp-featured {
-                grid-template-columns: 1fr;
-            }
-
-            .cfp-featured-image {
-                min-height: 280px;
-            }
-
-            .cfp-timeline {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .cfp-content-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media (max-width: 700px) {
-
-            .cfp-header {
-                height: 70px;
-            }
-
-            .cfp-header-inner {
-                width: calc(100% - 30px);
-                height: 70px;
-            }
-
-            .cfp-logo img {
-                width: 43px;
-                height: 43px;
-            }
-
-            .cfp-logo-text strong {
-                font-size: 20px;
-            }
-
-            .cfp-logo-text small {
-                max-width: 160px;
-                font-size: 6px;
-            }
-
-            .cfp-nav {
-                top: 70px;
-                height: calc(100vh - 70px);
-            }
-
-            .cfp-hero {
-                padding: 110px 16px 55px;
-            }
-
-            .cfp-hero h1 {
-                font-size: 45px;
-            }
-
-            .cfp-hero p {
+            .cfp-theme-item p {
                 font-size: 13px;
             }
 
-            .cfp-main {
-                width: calc(100% - 32px);
-            }
-
-            .cfp-featured-image {
-                min-height: 190px;
-                font-size: 45px;
-            }
-
-            .cfp-featured-content {
-                padding: 27px 20px;
-            }
-
-            .cfp-featured-content h2 {
+            .cfp-eligibility h3 {
                 font-size: 29px;
             }
 
-            .cfp-description {
-                font-size: 12px;
-            }
-
-            .cfp-deadline-highlight {
-                padding: 15px;
-            }
-
-            .cfp-deadline-text strong {
-                font-size: 17px;
-            }
-
-            .cfp-timeline {
-                grid-template-columns: 1fr;
-            }
-
-            .cfp-section-title h2 {
-                font-size: 29px;
-            }
-
-            .cfp-box {
-                padding: 24px 20px;
-            }
-
-            .cfp-resources {
-                grid-template-columns: 1fr;
-            }
-
-            .cfp-submission {
-                padding: 25px 18px;
-            }
-
-            .cfp-form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .cfp-form-intro h3 {
+            .cfp-date-content strong {
                 font-size: 23px;
             }
 
-            .cfp-submit {
-                width: 100%;
+            .cfp-review-content h2 {
+                font-size: 29px;
             }
 
-            .cfp-submit-row {
-                justify-content: stretch;
+            .cfp-submission-section {
+                padding: 35px 23px;
+            }
+
+            .cfp-submission-heading h2 {
+                font-size: 37px;
+            }
+
+            .cfp-submission-text h3 {
+                font-size: 28px;
             }
 
         }
@@ -1309,16 +356,21 @@
 </head>
 
 
-<body>
+<body class="cfp-page">
 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header class="cfp-header">
 
     <div class="cfp-header-inner">
 
+
         <a
             href="../index.html"
-            class="cfp-logo"
+            class="cfp-brand"
         >
 
             <img
@@ -1326,13 +378,13 @@
                 alt="BCRLS Logo"
             >
 
-            <div class="cfp-logo-text">
+            <div class="cfp-brand-text">
 
                 <strong>BCRLS</strong>
 
-                <small>
+                <span>
                     BANGLADESH CENTRE FOR REFUGEE LAW STUDIES
-                </small>
+                </span>
 
             </div>
 
@@ -1340,20 +392,23 @@
 
 
         <nav
-            class="cfp-nav"
-            id="cfpNav"
+            class="cfp-navigation"
+            id="cfpNavigation"
         >
 
-            <a href="../index.html">
+            <a
+                href="../index.html"
+                class="cfp-nav-link"
+            >
                 Home
             </a>
 
 
-            <div class="cfp-dropdown">
+            <div class="cfp-nav-dropdown">
 
                 <button
                     type="button"
-                    class="cfp-dropdown-toggle"
+                    class="cfp-nav-dropdown-button"
                 >
 
                     About
@@ -1362,21 +417,30 @@
 
                 </button>
 
+
                 <div class="cfp-dropdown-menu">
 
-                    <a href="../about.html">
+                    <a href="../pages/pages.html">
                         Who We Are
                     </a>
 
-                    <a href="../about.html#mission">
+                    <a href="../pages/mission.html">
                         Mission
                     </a>
 
-                    <a href="../about.html#vision">
+                    <a href="../pages/vision.html">
                         Vision
                     </a>
 
-                    <a href="../about.html#team">
+                    <a href="../pages/Strategic-Objectives.html">
+                        Strategic Objectives
+                    </a>
+
+                    <a href="../pages/Founder.html">
+                        Founder’s Message
+                    </a>
+
+                    <a href="../pages/team.html">
                         Team
                     </a>
 
@@ -1385,11 +449,11 @@
             </div>
 
 
-            <div class="cfp-dropdown">
+            <div class="cfp-nav-dropdown">
 
                 <button
                     type="button"
-                    class="cfp-dropdown-toggle"
+                    class="cfp-nav-dropdown-button active"
                 >
 
                     Research &amp; Publications
@@ -1398,9 +462,10 @@
 
                 </button>
 
+
                 <div class="cfp-dropdown-menu">
 
-                    <a href="index.html">
+                    <a href="../research/index.html">
                         Research
                     </a>
 
@@ -1408,7 +473,7 @@
                         Publications
                     </a>
 
-                    <a href="journal.html">
+                    <a href="../publications/journal.html">
                         Journal
                     </a>
 
@@ -1424,20 +489,27 @@
             </div>
 
 
-            <a href="../library/index.html">
+            <a
+                href="../library/index.html"
+                class="cfp-nav-link"
+            >
                 Library
             </a>
 
-            <a href="../education/index.html">
+
+            <a
+                href="../education/index.html"
+                class="cfp-nav-link"
+            >
                 Education
             </a>
 
 
-            <div class="cfp-dropdown">
+            <div class="cfp-nav-dropdown">
 
                 <button
                     type="button"
-                    class="cfp-dropdown-toggle"
+                    class="cfp-nav-dropdown-button"
                 >
 
                     Get Involved
@@ -1445,6 +517,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
 
                 </button>
+
 
                 <div class="cfp-dropdown-menu">
 
@@ -1477,7 +550,10 @@
             </div>
 
 
-            <a href="../contact.html">
+            <a
+                href="../contact.html"
+                class="cfp-nav-link"
+            >
                 Contact
             </a>
 
@@ -1485,9 +561,9 @@
 
 
         <button
-            class="cfp-menu-button"
-            id="cfpMenuButton"
             type="button"
+            class="cfp-mobile-button"
+            id="cfpMobileButton"
             aria-label="Open menu"
         >
 
@@ -1502,136 +578,651 @@
 </header>
 
 
-<main>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="cfp-hero">
+
+    <div class="cfp-hero-decoration"></div>
+
+    <div class="cfp-container">
+
+        <div class="cfp-eyebrow">
+
+            <span></span>
+
+            Bangladesh Centre for Refugee Law Studies
+
+        </div>
 
 
-    <!-- ============================
-         HERO
-    ============================= -->
+        <h1>
 
-    <section class="cfp-hero">
+            Call for
+            <em>Papers</em>
 
-        <div class="cfp-hero-inner">
+        </h1>
+
+
+        <p class="cfp-hero-description">
+
+            BCRLS invites original and unpublished scholarly
+            manuscripts for the inaugural issue of the
+            Bangladesh Journal of Refugee Law and Displacement
+            Studies.
+
+        </p>
+
+
+        <div class="cfp-hero-meta">
 
             <div>
 
-                <div class="cfp-label">
-                    <span></span>
-                    Research &amp; Publications
-                </div>
+                <i class="fa-regular fa-file-lines"></i>
 
-                <h1>
-                    Call for
-                    <span>Papers</span>
-                </h1>
+                Inaugural Issue
 
-                <p id="heroDescription">
-                    BCRLS invites original scholarly
-                    contributions addressing refugee law,
-                    forced displacement, migration and
-                    human rights.
-                </p>
+            </div>
+
+
+            <div>
+
+                <i class="fa-regular fa-calendar"></i>
+
+                Submission Deadline:
+                31 October 2026
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <div class="cfp-main">
+
+<!-- =========================================================
+     JOURNAL
+========================================================= -->
+
+<main class="cfp-main">
+
+    <div class="cfp-container">
 
 
-        <!-- ============================
-             CURRENT CALL
-        ============================= -->
+        <section class="cfp-journal-intro">
 
-        <section class="cfp-featured">
+            <div class="cfp-journal-mark">
 
-            <div class="cfp-featured-image">
-
-                <i class="fa-solid fa-file-pen"></i>
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
 
             </div>
 
 
-            <div class="cfp-featured-content">
+            <div class="cfp-journal-content">
 
-                <div class="cfp-meta">
+                <span class="cfp-section-kicker">
+                    Inaugural Issue
+                </span>
 
-                    <span class="cfp-tag">
-                        Call for Papers
+
+                <h2>
+
+                    Bangladesh Journal of Refugee Law
+                    and Displacement Studies
+
+                    <span>
+                        (BJRLDS)
                     </span>
 
-                    <span
-                        class="cfp-date"
-                        id="publishedDate"
-                    >
-                        Current Call
-                    </span>
-
-                </div>
-
-
-                <h2 id="cfpTitle">
-                    Research Contributions on Refugee Law,
-                    Displacement &amp; Human Rights
                 </h2>
 
 
-                <p
-                    class="cfp-description"
-                    id="cfpDescription"
-                >
-                    BCRLS welcomes original research
-                    contributions that advance understanding
-                    of refugee protection, forced displacement,
-                    migration and human rights.
+                <p>
+
+                    A double-blind peer-reviewed academic platform
+                    dedicated to advancing research, legal scholarship,
+                    and policy discourse on refugee law, statelessness,
+                    forced displacement, and humanitarian protection.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             01 CALL FOR PAPERS
+        ====================================================== -->
+
+        <section class="cfp-section">
+
+            <div class="cfp-section-heading">
+
+                <span>01</span>
+
+                <div>
+
+                    <small>
+                        Call for Papers
+                    </small>
+
+                    <h2>
+                        Advancing Refugee Law Scholarship
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="cfp-introduction">
+
+                <p>
+
+                    BCRLS invites original and unpublished scholarly
+                    manuscripts for publication in the inaugural issue
+                    of the Bangladesh Journal of Refugee Law and
+                    Displacement Studies, a double-blind peer-reviewed
+                    academic platform dedicated to advancing research,
+                    legal scholarship, and policy discourse on refugee
+                    law, statelessness, forced displacement, and
+                    humanitarian protection.
+
                 </p>
 
 
-                <!-- DEADLINE -->
+                <p>
 
-                <div class="cfp-deadline-highlight">
+                    As forced displacement continues to present
+                    unprecedented challenges to international and
+                    domestic legal systems, refugee law continues to
+                    confront complex legal, institutional, and policy
+                    challenges. BCRLS seeks to promote high-quality
+                    scholarship that critically examines existing
+                    legal frameworks and contributes to the development
+                    of more effective, rights-based, and future-oriented
+                    refugee protection mechanisms.
 
-                    <div class="cfp-deadline-icon">
+                </p>
 
-                        <i class="fa-regular fa-calendar"></i>
+
+                <p>
+
+                    We particularly welcome submissions that engage
+                    with gaps, inconsistencies, and implementation
+                    challenges in international and domestic refugee
+                    law, while proposing practical legal reforms,
+                    institutional innovations, and policy solutions
+                    grounded in sound legal research.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             02 THEMES
+        ====================================================== -->
+
+        <section class="cfp-section">
+
+            <div class="cfp-section-heading">
+
+                <span>02</span>
+
+                <div>
+
+                    <small>
+                        Research Scope
+                    </small>
+
+                    <h2>
+                        Themes of Interest
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="cfp-themes-layout">
+
+
+                <div class="cfp-theme-list">
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>01</span>
+
+                        <p>
+                            International refugee law and
+                            protection frameworks
+                        </p>
 
                     </div>
 
-                    <div class="cfp-deadline-text">
 
-                        <small>
-                            Submission Deadline
-                        </small>
+                    <div class="cfp-theme-item">
 
-                        <strong id="submissionDeadline">
-                            15 December 2026
-                        </strong>
+                        <span>02</span>
+
+                        <p>
+                            The 1951 Refugee Convention and
+                            the 1967 Protocol
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>03</span>
+
+                        <p>
+                            Statelessness and nationality law
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>04</span>
+
+                        <p>
+                            Climate change, environmental
+                            displacement, and legal protection
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>05</span>
+
+                        <p>
+                            Non-refoulement and state
+                            responsibility
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>06</span>
+
+                        <p>
+                            Refugee protection in South Asia
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>07</span>
+
+                        <p>
+                            Rohingya refugee governance and
+                            legal accountability
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>08</span>
+
+                        <p>
+                            Refugee status determination procedures
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>09</span>
+
+                        <p>
+                            Human rights and refugee protection
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>10</span>
+
+                        <p>
+                            Gender, children, disability, and
+                            intersectional vulnerabilities
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>11</span>
+
+                        <p>
+                            Refugee access to justice and
+                            legal remedies
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>12</span>
+
+                        <p>
+                            Comparative refugee law
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>13</span>
+
+                        <p>
+                            Regional and international
+                            protection mechanisms
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>14</span>
+
+                        <p>
+                            Digital technologies, identity systems,
+                            and refugee rights
+                        </p>
+
+                    </div>
+
+
+                    <div class="cfp-theme-item">
+
+                        <span>15</span>
+
+                        <p>
+                            Emerging legal and policy reforms
+                            in displacement governance
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="cfp-actions">
 
-                    <a
-                        href="#details"
-                        class="cfp-btn primary"
-                    >
-                        Read Full Call
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </a>
+                <!-- WHO MAY SUBMIT -->
 
-                    <a
-                        href="#submission"
-                        class="cfp-btn secondary"
-                    >
-                        Submit Paper
-                        <i class="fa-solid fa-file-arrow-up"></i>
-                    </a>
+                <aside class="cfp-eligibility">
+
+                    <span class="cfp-side-kicker">
+                        Eligibility
+                    </span>
+
+
+                    <h3>
+                        Who May Submit?
+                    </h3>
+
+
+                    <p>
+                        BCRLS encourages submissions from:
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            Academics and university faculty members
+                        </li>
+
+                        <li>
+                            Researchers and scholars
+                        </li>
+
+                        <li>
+                            Graduate and postgraduate students
+                        </li>
+
+                        <li>
+                            Legal practitioners and advocates
+                        </li>
+
+                        <li>
+                            Policy analysts
+                        </li>
+
+                        <li>
+                            Members of international organizations
+                            and civil society
+                        </li>
+
+                        <li>
+                            Independent researchers working on
+                            refugee and displacement issues
+                        </li>
+
+                    </ul>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             03 GUIDELINES
+        ====================================================== -->
+
+        <section class="cfp-section">
+
+            <div class="cfp-section-heading">
+
+                <span>03</span>
+
+                <div>
+
+                    <small>
+                        Author Instructions
+                    </small>
+
+                    <h2>
+                        Submission Guidelines
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="cfp-guidelines">
+
+
+                <div class="cfp-guideline">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <strong>
+                            Word Count
+                        </strong>
+
+                        <p>
+                            8,000–10,000 words, excluding bibliography.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <strong>
+                            Language
+                        </strong>
+
+                        <p>
+                            English.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <strong>
+                            Originality
+                        </strong>
+
+                        <p>
+                            Manuscripts must be original,
+                            unpublished, and not under consideration
+                            for publication elsewhere.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <strong>
+                            Abstract
+                        </strong>
+
+                        <p>
+                            200–300 words.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>05</span>
+
+                    <div>
+
+                        <strong>
+                            Keywords
+                        </strong>
+
+                        <p>
+                            4–6 keywords.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>06</span>
+
+                    <div>
+
+                        <strong>
+                            Citation Style
+                        </strong>
+
+                        <p>
+                            OSCOLA (5th Edition).
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>07</span>
+
+                    <div>
+
+                        <strong>
+                            Bibliography
+                        </strong>
+
+                        <p>
+                            A complete bibliography with all
+                            references used in the manuscript
+                            must be provided at the end.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cfp-guideline">
+
+                    <span>08</span>
+
+                    <div>
+
+                        <strong>
+                            Formatting
+                        </strong>
+
+                        <p>
+                            Manuscripts should be submitted in
+                            Microsoft Word (.docx) format.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -1640,521 +1231,239 @@
         </section>
 
 
-        <!-- ============================
-             IMPORTANT DATES
-        ============================= -->
+
+        <!-- =====================================================
+             04 TIMELINE
+        ====================================================== -->
 
         <section class="cfp-section">
 
-            <div class="cfp-section-title">
+            <div class="cfp-section-heading">
 
-                <small>
-                    Important Dates
-                </small>
+                <span>04</span>
 
-                <h2>
-                    Submission Timeline
-                </h2>
+                <div>
+
+                    <small>
+                        Important Dates
+                    </small>
+
+                    <h2>
+                        Submission Timeline
+                    </h2>
+
+                </div>
 
             </div>
 
 
             <div class="cfp-timeline">
 
+                <div class="cfp-timeline-line"></div>
 
-                <div class="cfp-time-card">
 
-                    <div class="icon">
+                <div class="cfp-date">
+
+                    <div class="cfp-date-marker">
+
                         <i class="fa-regular fa-calendar"></i>
+
                     </div>
 
-                    <small>
-                        Call Opens
-                    </small>
 
-                    <strong id="callOpenDate">
-                        20 August 2026
-                    </strong>
+                    <div class="cfp-date-content">
+
+                        <span>
+                            Submission Deadline
+                        </span>
+
+                        <strong>
+                            31 October 2026
+                        </strong>
+
+                        <small>
+                            11:59 PM (GMT +6)
+                        </small>
+
+                    </div>
 
                 </div>
 
 
-                <div class="cfp-time-card">
+                <div class="cfp-date">
 
-                    <div class="icon">
-                        <i class="fa-regular fa-file-lines"></i>
-                    </div>
+                    <div class="cfp-date-marker">
 
-                    <small>
-                        Abstract Deadline
-                    </small>
-
-                    <strong id="abstractDeadline">
-                        30 November 2026
-                    </strong>
-
-                </div>
-
-
-                <div class="cfp-time-card highlight">
-
-                    <div class="icon">
-                        <i class="fa-solid fa-hourglass-end"></i>
-                    </div>
-
-                    <small>
-                        Full Paper Deadline
-                    </small>
-
-                    <strong id="fullPaperDeadline">
-                        15 December 2026
-                    </strong>
-
-                </div>
-
-
-                <div class="cfp-time-card">
-
-                    <div class="icon">
                         <i class="fa-solid fa-bell"></i>
+
                     </div>
+
+
+                    <div class="cfp-date-content">
+
+                        <span>
+                            Notification of Acceptance
+                        </span>
+
+                        <strong>
+                            7 December 2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PEER REVIEW
+        ====================================================== -->
+
+        <section class="cfp-review-section">
+
+            <div class="cfp-review-icon">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+            </div>
+
+
+            <div class="cfp-review-content">
+
+                <span>
+                    Peer-Review Process
+                </span>
+
+
+                <h2>
+                    Rigorous. Independent. Academic.
+                </h2>
+
+
+                <p>
+
+                    All submissions will undergo a double-blind
+                    peer-review process. Manuscripts will be evaluated
+                    on the basis of originality, analytical rigor,
+                    methodological quality, contribution to refugee
+                    law scholarship, and relevance to contemporary
+                    legal and policy debates.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             05 SUBMISSION PROCEDURE
+        ====================================================== -->
+
+        <section class="cfp-submission-section">
+
+
+            <div class="cfp-submission-heading">
+
+                <span>
+                    05
+                </span>
+
+
+                <div>
 
                     <small>
-                        Notification
+                        How to Submit
                     </small>
 
-                    <strong id="notificationDate">
-                        January 2027
-                    </strong>
+                    <h2>
+                        Submission Procedure
+                    </h2>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <div class="cfp-submission-body">
 
 
-        <!-- ============================
-             DETAILS
-        ============================= -->
-
-        <section
-            class="cfp-section"
-            id="details"
-        >
-
-            <div class="cfp-section-title">
-
-                <small>
-                    About The Call
-                </small>
-
-                <h2>
-                    Submission Information
-                </h2>
-
-            </div>
-
-
-            <div class="cfp-content-grid">
-
-
-                <div class="cfp-box">
+                <div class="cfp-submission-text">
 
                     <h3>
-                        About the Call
+                        Submit Your Manuscript
                     </h3>
 
-                    <p id="aboutCall">
-                        BCRLS welcomes original and unpublished
-                        research related to refugee law,
-                        forced displacement, migration and
-                        human rights.
-                    </p>
-
-
-                    <h3 style="margin-top:28px;">
-                        Research Areas
-                    </h3>
-
-                    <ul
-                        class="cfp-list"
-                        id="researchAreas"
-                    >
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Refugee Law and International Protection
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Forced Displacement and Migration
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Human Rights and Refugee Protection
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Statelessness and Citizenship
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Climate Change and Human Mobility
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="cfp-box">
-
-                    <h3>
-                        Submission Requirements
-                    </h3>
-
-                    <ul class="cfp-list">
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Original and unpublished research.
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Clear research question and argument.
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Proper academic citations and references.
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Manuscript submitted in PDF or DOC/DOCX.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ============================
-             RESOURCES
-        ============================= -->
-
-        <section class="cfp-section">
-
-            <div class="cfp-section-title">
-
-                <small>
-                    Resources
-                </small>
-
-                <h2>
-                    Documents &amp; Guidelines
-                </h2>
-
-            </div>
-
-
-            <div class="cfp-resources">
-
-
-                <a
-                    href="#"
-                    id="guidelinesLink"
-                    class="cfp-resource"
-                >
-
-                    <div class="cfp-resource-icon">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Submission Guidelines
-                        </strong>
-
-                        <span>
-                            Author instructions
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-                <a
-                    href="#"
-                    id="proceedingsLink"
-                    class="cfp-resource"
-                >
-
-                    <div class="cfp-resource-icon">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Proceedings
-                        </strong>
-
-                        <span>
-                            Publication information
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-                <a
-                    href="#"
-                    id="rulesLink"
-                    class="cfp-resource"
-                >
-
-                    <div class="cfp-resource-icon">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Rules &amp; Regulations
-                        </strong>
-
-                        <span>
-                            Submission policies
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ============================
-             SUBMISSION FORM
-        ============================= -->
-
-        <section
-            class="cfp-section"
-            id="submission"
-        >
-
-            <div class="cfp-section-title">
-
-                <small>
-                    Paper Submission
-                </small>
-
-                <h2>
-                    Submit Your Paper
-                </h2>
-
-            </div>
-
-
-            <div class="cfp-submission">
-
-
-                <div class="cfp-form-intro">
-
-                    <h3>
-                        Research Paper Submission
-                    </h3>
 
                     <p>
-                        Please provide the required
-                        information and upload your
-                        manuscript.
+
+                        Please submit your manuscript together
+                        with a separate author information sheet
+                        containing your name, institutional
+                        affiliation, designation, email address,
+                        and a short biography (80–100 words).
+
                     </p>
 
                 </div>
 
 
-                <form
-                    class="cfp-form"
-                    id="paperSubmissionForm"
-                    enctype="multipart/form-data"
-                >
+                <div class="cfp-submission-contact">
+
+                    <span>
+                        Submission Email
+                    </span>
 
 
-                    <div class="cfp-form-row">
+                    <a href="mailto:bdcenterls2025@gmail.com">
+
+                        bdcenterls2025@gmail.com
+
+                    </a>
 
 
-                        <div class="cfp-field">
+                    <div class="cfp-subject">
 
-                            <label for="name">
-                                Full Name *
-                            </label>
+                        <strong>
+                            Subject line:
+                        </strong>
 
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                placeholder="Your full name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="cfp-field">
-
-                            <label for="email">
-                                Email *
-                            </label>
-
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="Your email address"
-                                required
-                            >
-
-                        </div>
+                        Journal Submission – Inaugural Issue -
+                        BCRLS – [Author Name]
 
                     </div>
 
+                </div>
 
-                    <div class="cfp-form-row">
-
-
-                        <div class="cfp-field">
-
-                            <label for="affiliation">
-                                Affiliation *
-                            </label>
-
-                            <input
-                                id="affiliation"
-                                name="affiliation"
-                                type="text"
-                                placeholder="University / Organization"
-                                required
-                            >
-
-                        </div>
+            </div>
 
 
-                        <div class="cfp-field">
+            <div class="cfp-contact-row">
+                <div>
 
-                            <label for="paperTitle">
-                                Paper Title *
-                            </label>
+                    <i class="fa-solid fa-envelope"></i>
 
-                            <input
-                                id="paperTitle"
-                                name="paperTitle"
-                                type="text"
-                                placeholder="Title of your paper"
-                                required
-                            >
+                    <span>
+                        bdcenterls2025@gmail.com
+                    </span>
 
-                        </div>
-
-                    </div>
+                </div>
 
 
-                    <div class="cfp-field">
+                <div>
 
-                        <label for="abstract">
-                            Abstract *
-                        </label>
+                    <i class="fa-solid fa-phone"></i>
 
-                        <textarea
-                            id="abstract"
-                            name="abstract"
-                            placeholder="Enter your abstract"
-                            required
-                        ></textarea>
+                    <span>
+                        +8801811-414645
+                    </span>
 
-                    </div>
-
-
-                    <div class="cfp-field">
-
-                        <label for="manuscript">
-                            Manuscript *
-                        </label>
-
-                        <div class="cfp-file">
-
-                            <input
-                                id="manuscript"
-                                name="manuscript"
-                                type="file"
-                                accept=".pdf,.doc,.docx"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="cfp-declaration">
-
-                        <label>
-
-                            <input
-                                type="checkbox"
-                                required
-                            >
-
-                            <span>
-                                I confirm that this submission
-                                is original and that the
-                                information provided is accurate.
-                            </span>
-
-                        </label>
-
-                    </div>
-
-
-                    <div
-                        id="formMessage"
-                        class="cfp-message"
-                    ></div>
-
-
-                    <div class="cfp-submit-row">
-
-                        <button
-                            type="submit"
-                            class="cfp-submit"
-                            id="submitButton"
-                        >
-
-                            Submit Paper
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </form>
+                </div>
 
             </div>
 
@@ -2165,617 +1474,141 @@
 </main>
 
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer class="cfp-footer">
 
-    ©
-    <span id="year"></span>
-    BCRLS. All rights reserved.
+    <div class="cfp-container">
+
+        <p>
+            © <span id="cfpYear"></span>
+            Bangladesh Centre for Refugee Law Studies (BCRLS).
+            All rights reserved.
+        </p>
+
+    </div>
 
 </footer>
 
 
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+document.addEventListener("DOMContentLoaded", function () {
+
+    const mobileButton =
+        document.getElementById("cfpMobileButton");
+
+    const navigation =
+        document.getElementById("cfpNavigation");
 
 
-        /* =========================================
-           CONFIGURATION
-        ========================================= */
+    /* MOBILE MENU */
 
-        /*
-         * PUT YOUR EXISTING BACKEND URL HERE.
-         *
-         * Example:
-         *
-         * const API_BASE_URL =
-         * "http://localhost:5000/api";
-         *
-         * Production:
-         *
-         * const API_BASE_URL =
-         * "https://your-domain.com/api";
-         */
+    if (mobileButton && navigation) {
 
-        const API_BASE_URL = "";
-
-
-        /* =========================================
-           ELEMENTS
-        ========================================= */
-
-        const menuButton =
-            document.getElementById(
-                "cfpMenuButton"
-            );
-
-        const nav =
-            document.getElementById(
-                "cfpNav"
-            );
-
-
-        const form =
-            document.getElementById(
-                "paperSubmissionForm"
-            );
-
-        const submitButton =
-            document.getElementById(
-                "submitButton"
-            );
-
-        const formMessage =
-            document.getElementById(
-                "formMessage"
-            );
-
-
-        /* =========================================
-           YEAR
-        ========================================= */
-
-        document.getElementById(
-            "year"
-        ).textContent =
-            new Date().getFullYear();
-
-
-        /* =========================================
-           MOBILE MENU
-        ========================================= */
-
-        menuButton.addEventListener(
+        mobileButton.addEventListener(
             "click",
-            () => {
+            function () {
 
-                const isOpen =
-                    nav.classList.toggle(
-                        "open"
-                    );
+                navigation.classList.toggle("open");
 
-                menuButton.classList.toggle(
-                    "open",
-                    isOpen
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    isOpen
-                );
+                mobileButton.classList.toggle("open");
 
             }
         );
-
-
-        /* =========================================
-           MOBILE DROPDOWNS
-        ========================================= */
-
-        document
-            .querySelectorAll(
-                ".cfp-dropdown-toggle"
-            )
-            .forEach(
-                button => {
-
-                    button.addEventListener(
-                        "click",
-                        event => {
-
-                            if (
-                                window.innerWidth <= 1100
-                            ) {
-
-                                event.preventDefault();
-
-                                button
-                                    .parentElement
-                                    .classList
-                                    .toggle(
-                                        "open"
-                                    );
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* =========================================
-           CLOSE MENU
-        ========================================= */
-
-        document
-            .querySelectorAll(
-                ".cfp-nav a"
-            )
-            .forEach(
-                link => {
-
-                    link.addEventListener(
-                        "click",
-                        () => {
-
-                            if (
-                                window.innerWidth <= 1100
-                            ) {
-
-                                nav.classList.remove(
-                                    "open"
-                                );
-
-                                menuButton.classList.remove(
-                                    "open"
-                                );
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* =========================================
-           BACKEND DATA
-        ========================================= */
-
-        async function loadCallForPapers() {
-
-            if (!API_BASE_URL) {
-
-                console.log(
-                    "CFP backend is not connected yet."
-                );
-
-                return;
-
-            }
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        `${API_BASE_URL}/call-for-papers/current`
-                    );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Could not load CFP"
-                    );
-
-                }
-
-
-                const data =
-                    await response.json();
-
-
-                /*
-                 * Expected backend response:
-                 *
-                 * {
-                 *   title: "...",
-                 *   description: "...",
-                 *   about: "...",
-                 *   callOpenDate: "...",
-                 *   abstractDeadline: "...",
-                 *   fullPaperDeadline: "...",
-                 *   notificationDate: "...",
-                 *   guidelinesUrl: "...",
-                 *   proceedingsUrl: "...",
-                 *   rulesUrl: "..."
-                 * }
-                 */
-
-
-                setText(
-                    "cfpTitle",
-                    data.title
-                );
-
-                setText(
-                    "cfpDescription",
-                    data.description
-                );
-
-                setText(
-                    "heroDescription",
-                    data.description
-                );
-
-                setText(
-                    "aboutCall",
-                    data.about
-                );
-
-
-                setDate(
-                    "callOpenDate",
-                    data.callOpenDate
-                );
-
-                setDate(
-                    "abstractDeadline",
-                    data.abstractDeadline
-                );
-
-                setDate(
-                    "fullPaperDeadline",
-                    data.fullPaperDeadline
-                );
-
-                setDate(
-                    "notificationDate",
-                    data.notificationDate
-                );
-
-                setDate(
-                    "submissionDeadline",
-                    data.fullPaperDeadline
-                );
-
-
-                setLink(
-                    "guidelinesLink",
-                    data.guidelinesUrl
-                );
-
-                setLink(
-                    "proceedingsLink",
-                    data.proceedingsUrl
-                );
-
-                setLink(
-                    "rulesLink",
-                    data.rulesUrl
-                );
-
-
-                /*
-                 * If backend sends researchAreas:
-                 *
-                 * researchAreas: [
-                 *   "Refugee Law",
-                 *   "Migration"
-                 * ]
-                 */
-
-                if (
-                    Array.isArray(
-                        data.researchAreas
-                    )
-                ) {
-
-                    const areaList =
-                        document.getElementById(
-                            "researchAreas"
-                        );
-
-                    areaList.innerHTML = "";
-
-                    data.researchAreas
-                        .forEach(
-                            area => {
-
-                                const li =
-                                    document.createElement(
-                                        "li"
-                                    );
-
-                                li.innerHTML = `
-                                    <i class="fa-solid fa-check"></i>
-                                    ${escapeHtml(area)}
-                                `;
-
-                                areaList.appendChild(
-                                    li
-                                );
-
-                            }
-                        );
-
-                }
-
-
-            } catch (error) {
-
-                console.error(
-                    "CFP loading error:",
-                    error
-                );
-
-            }
-
-        }
-
-
-        /* =========================================
-           FORM SUBMISSION
-        ========================================= */
-
-        form.addEventListener(
-            "submit",
-            async event => {
-
-                event.preventDefault();
-
-
-                if (
-                    !form.checkValidity()
-                ) {
-
-                    form.reportValidity();
-
-                    return;
-
-                }
-
-
-                if (!API_BASE_URL) {
-
-                    showMessage(
-                        "The submission system is ready, but the backend API has not been connected yet.",
-                        "error"
-                    );
-
-                    return;
-
-                }
-
-
-                submitButton.disabled =
-                    true;
-
-                submitButton.innerHTML =
-                    `
-                    Submitting...
-                    <i class="fa-solid fa-spinner fa-spin"></i>
-                    `;
-
-
-                const formData =
-                    new FormData(
-                        form
-                    );
-
-
-                try {
-
-                    const response =
-                        await fetch(
-                            `${API_BASE_URL}/call-for-papers/submissions`,
-                            {
-                                method: "POST",
-                                body: formData
-                            }
-                        );
-
-
-                    const result =
-                        await response.json();
-
-
-                    if (
-                        !response.ok
-                    ) {
-
-                        throw new Error(
-                            result.message ||
-                            "Submission failed."
-                        );
-
-                    }
-
-
-                    showMessage(
-                        result.message ||
-                        "Your paper has been submitted successfully.",
-                        "success"
-                    );
-
-
-                    form.reset();
-
-
-                } catch (error) {
-
-                    showMessage(
-                        error.message ||
-                        "Unable to submit your paper.",
-                        "error"
-                    );
-
-                }
-
-
-                submitButton.disabled =
-                    false;
-
-                submitButton.innerHTML =
-                    `
-                    Submit Paper
-                    <i class="fa-solid fa-arrow-right"></i>
-                    `;
-
-            }
-        );
-
-
-        /* =========================================
-           HELPERS
-        ========================================= */
-
-        function setText(
-            id,
-            value
-        ) {
-
-            if (
-                value === undefined ||
-                value === null
-            ) return;
-
-            const element =
-                document.getElementById(
-                    id
-                );
-
-            if (element) {
-
-                element.textContent =
-                    value;
-
-            }
-
-        }
-
-
-        function setDate(
-            id,
-            value
-        ) {
-
-            if (!value) return;
-
-            const element =
-                document.getElementById(
-                    id
-                );
-
-            if (!element) return;
-
-
-            const date =
-                new Date(value);
-
-
-            if (
-                Number.isNaN(
-                    date.getTime()
-                )
-            ) {
-
-                element.textContent =
-                    value;
-
-                return;
-
-            }
-
-
-            element.textContent =
-                date.toLocaleDateString(
-                    "en-GB",
-                    {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric"
-                    }
-                );
-
-        }
-
-
-        function setLink(
-            id,
-            url
-        ) {
-
-            const element =
-                document.getElementById(
-                    id
-                );
-
-            if (
-                !element ||
-                !url
-            ) return;
-
-            element.href =
-                url;
-
-            element.target =
-                "_blank";
-
-            element.rel =
-                "noopener noreferrer";
-
-        }
-
-
-        function showMessage(
-            text,
-            type
-        ) {
-
-            formMessage.textContent =
-                text;
-
-            formMessage.className =
-                `cfp-message ${type}`;
-
-        }
-
-
-        function escapeHtml(
-            value
-        ) {
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-            div.textContent =
-                value;
-
-            return div.innerHTML;
-
-        }
-
-
-        /* =========================================
-           LOAD BACKEND CONTENT
-        ========================================= */
-
-        loadCallForPapers();
 
     }
 
-);
+
+    /* DROPDOWNS */
+
+    const dropdownButtons =
+        document.querySelectorAll(
+            ".cfp-nav-dropdown-button"
+        );
+
+
+    dropdownButtons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function (event) {
+
+                if (window.innerWidth <= 1000) {
+
+                    event.preventDefault();
+
+                    const dropdown =
+                        button.closest(
+                            ".cfp-nav-dropdown"
+                        );
+
+                    dropdown.classList.toggle("open");
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* CLOSE MENU */
+
+    const links =
+        document.querySelectorAll(
+            ".cfp-navigation a"
+        );
+
+
+    links.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                if (window.innerWidth <= 1000) {
+
+                    navigation.classList.remove(
+                        "open"
+                    );
+
+                    mobileButton.classList.remove(
+                        "open"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* YEAR */
+
+    const year =
+        document.getElementById("cfpYear");
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+
+    }
+
+});
 
 </script>
+
 
 </body>
 

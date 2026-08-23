@@ -1,0 +1,1105 @@
+/* =========================================================
+   BCRLS ABOUT PAGES
+   about.css
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.about-page,
+.about-page * {
+    box-sizing: border-box;
+}
+
+.about-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+
+    background: #f7faf8;
+
+    color: #294b3f;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+}
+
+.about-page img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-header {
+    position: relative;
+
+    width: 100%;
+    height: 88px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid
+        #edf1ef;
+
+    z-index: 1000;
+}
+
+
+.about-header-inner {
+    width: 100%;
+    height: 100%;
+
+    padding:
+        0 28px 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.about-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    color: #17382d;
+
+    text-decoration: none;
+}
+
+
+.about-brand-logo {
+    width: 48px !important;
+    height: 48px !important;
+
+    min-width: 48px !important;
+    min-height: 48px !important;
+
+    max-width: 48px !important;
+    max-height: 48px !important;
+
+    display: block;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    object-fit: contain !important;
+}
+
+
+.about-brand-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.about-brand-name {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #14744d;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.about-brand-title {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #71827c;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: .025em;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.about-nav {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+.about-nav-link,
+.about-nav-button {
+    position: relative;
+
+    height: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #536b63;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease;
+}
+
+
+.about-nav-link:hover,
+.about-nav-button:hover {
+    color: #197052;
+}
+
+
+.about-nav-link.active,
+.about-nav-button.active {
+    color: #197052;
+}
+
+
+.about-nav-button i {
+    font-size: 8px;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.about-nav-dropdown {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.about-nav-dropdown:hover
+.about-nav-button i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   NAV DROPDOWN
+========================================================= */
+
+.about-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% - 1px);
+
+    right: -15px;
+
+    width: 225px;
+
+    padding: 9px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #e2ebe7;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(28,78,59,.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+}
+
+
+.about-nav-dropdown:hover
+.about-dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+}
+
+
+.about-dropdown-menu a {
+    display: block;
+
+    width: 100%;
+
+    padding:
+        12px 14px;
+
+    margin: 0;
+
+    border-radius: 8px;
+
+    color: #566e65;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.about-dropdown-menu a:hover,
+.about-dropdown-menu a.active {
+    background: #edf7f2;
+
+    color: #197052;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.about-mobile-button {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #edf7f2;
+
+    color: #197052;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FOUNDER HERO
+========================================================= */
+
+.about-founder-hero {
+    width: 100%;
+
+    padding:
+        100px 24px 75px;
+
+    background:
+        radial-gradient(
+            circle at 84% 15%,
+            rgba(91,165,132,.18),
+            transparent 35%
+        );
+}
+
+
+.about-container {
+    width: min(1180px,100%);
+
+    margin:
+        0 auto;
+}
+
+
+.about-page-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 14px;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        #dcebe4;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #197052;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .11em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.about-page-label-dot {
+    width: 7px;
+    height: 7px;
+
+    flex:
+        0 0 7px;
+
+    border-radius: 50%;
+
+    background: #63a98a;
+}
+
+
+.about-founder-hero h1 {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin:
+        0 0 18px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(44px,6vw,70px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: -.035em;
+}
+
+
+.about-founder-hero h1 span {
+    color: #217a59;
+}
+
+
+.about-founder-intro {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #71857d;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   FOUNDER CONTENT
+========================================================= */
+
+.about-founder-section {
+    width: 100%;
+
+    padding:
+        20px 24px 100px;
+}
+
+
+.about-founder-card {
+    width: min(1180px,100%);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        270px minmax(0,1fr);
+
+    gap: 55px;
+
+    padding: 52px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #dfeae5;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(34,91,70,.07);
+}
+
+
+/* =========================================================
+   FOUNDER PROFILE
+========================================================= */
+
+.about-founder-profile {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.about-founder-photo {
+    width: 190px;
+    height: 230px;
+
+    margin:
+        0 auto 22px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #dcebe4;
+
+    border-radius: 22px;
+
+    background: #edf7f2;
+}
+
+
+.about-founder-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+}
+
+
+.about-founder-profile h2 {
+    margin:
+        0 0 7px;
+
+    padding: 0;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.about-founder-profile p {
+    margin: 0;
+
+    padding: 0;
+
+    color: #789088;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+.about-founder-divider {
+    width: 50px;
+    height: 2px;
+
+    margin:
+        18px auto;
+
+    background: #66a98b;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.about-founder-message {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.about-message-label {
+    display: block;
+
+    margin:
+        0 0 10px;
+
+    color: #217a59;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.about-founder-message h2 {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin:
+        0 0 28px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px,4vw,45px);
+
+    font-weight: 600;
+
+    line-height: 1.15;
+}
+
+
+.about-founder-message p {
+    width: 100%;
+
+    margin:
+        0 0 20px;
+
+    padding: 0;
+
+    color: #5f756c;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.about-founder-quote {
+    width: 100%;
+
+    margin:
+        35px 0;
+
+    padding:
+        27px 30px;
+
+    border-left:
+        3px solid
+        #217a59;
+
+    border-radius:
+        0 16px 16px 0;
+
+    background: #edf7f2;
+}
+
+
+.about-founder-quote i {
+    display: block;
+
+    margin:
+        0 0 10px;
+
+    color: #217a59;
+
+    font-size: 20px;
+}
+
+
+.about-founder-quote p {
+    margin: 0;
+
+    color: #36584c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.about-founder-signature {
+    margin-top: 42px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid
+        #e4ede8;
+}
+
+
+.about-founder-signature strong {
+    display: block;
+
+    margin:
+        0 0 5px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.about-founder-signature span {
+    color: #758980;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.about-back-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 30px;
+
+    color: #197052;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease;
+}
+
+
+.about-back-link:hover {
+    color: #12563f;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .about-nav {
+        gap: 19px;
+    }
+
+
+    .about-brand-title {
+        font-size: 7.5px;
+    }
+
+
+    .about-founder-card {
+        gap: 40px;
+
+        padding: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-founder-hero {
+        padding:
+            90px 20px 60px;
+    }
+
+
+    .about-founder-section {
+        padding:
+            15px 20px 70px;
+    }
+
+
+    .about-founder-card {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+        padding: 38px;
+    }
+
+
+    .about-founder-profile {
+        text-align: center;
+    }
+
+
+    .about-founder-photo {
+        width: 180px;
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .about-nav {
+        display: none;
+    }
+
+
+    .about-mobile-button {
+        display: flex;
+    }
+
+
+    .about-brand-title {
+        display: inline;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-header {
+        height: 78px;
+    }
+
+
+    .about-header-inner {
+        padding:
+            0 16px;
+    }
+
+
+    .about-brand {
+        gap: 9px;
+    }
+
+
+    .about-brand-logo {
+        width: 43px !important;
+        height: 43px !important;
+
+        min-width: 43px !important;
+        min-height: 43px !important;
+
+        max-width: 43px !important;
+        max-height: 43px !important;
+    }
+
+
+    .about-brand-name {
+        font-size: 16px;
+    }
+
+
+    .about-brand-title {
+        display: block;
+
+        width: 210px;
+
+        max-width: 210px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        font-size: 7px;
+    }
+
+
+    .about-founder-hero {
+        padding:
+            75px 17px 50px;
+    }
+
+
+    .about-founder-section {
+        padding:
+            10px 16px 60px;
+    }
+
+
+    .about-founder-card {
+        padding:
+            27px 20px;
+
+        border-radius: 21px;
+    }
+
+
+    .about-founder-hero h1 {
+        font-size: 41px;
+    }
+
+
+    .about-founder-intro {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .about-founder-message h2 {
+        font-size: 30px;
+    }
+
+
+    .about-founder-message p {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .about-founder-quote {
+        padding:
+            22px 20px;
+    }
+
+
+    .about-founder-quote p {
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-brand-title {
+        width: 170px;
+
+        max-width: 170px;
+
+        font-size: 6.5px;
+    }
+
+
+    .about-brand-name {
+        font-size: 15px;
+    }
+
+
+    .about-founder-card {
+        padding:
+            23px 17px;
+    }
+
+
+    .about-founder-hero h1 {
+        font-size: 36px;
+    }
+
+}

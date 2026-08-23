@@ -1,0 +1,2086 @@
+/* =========================================================
+   BCRLS — CALL FOR PAPERS
+   Premium Academic Journal Design
+========================================================= */
+
+:root {
+    --cfp-green: #08745a;
+    --cfp-green-dark: #064c3c;
+    --cfp-green-deep: #04382e;
+
+    --cfp-red: #a43a3f;
+
+    --cfp-bg: #f7faf8;
+    --cfp-white: #ffffff;
+
+    --cfp-text: #405d55;
+    --cfp-muted: #71857e;
+
+    --cfp-border: #d9e7e2;
+    --cfp-soft: #eaf5f0;
+
+    --cfp-shadow:
+        0 20px 60px rgba(5, 70, 52, 0.08);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.cfp-page {
+    margin: 0;
+    padding: 0;
+
+    background: var(--cfp-bg);
+
+    color: var(--cfp-text);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+.cfp-page *,
+.cfp-page *::before,
+.cfp-page *::after {
+    box-sizing: border-box;
+}
+
+.cfp-page a {
+    text-decoration: none;
+}
+
+.cfp-page button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cfp-container {
+    width: min(1200px, calc(100% - 48px));
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cfp-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--cfp-border);
+
+    backdrop-filter: blur(15px);
+}
+
+.cfp-header-inner {
+    width: min(1260px, calc(100% - 42px));
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.cfp-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+.cfp-brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+.cfp-brand-text {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.cfp-brand-text strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    color: var(--cfp-green-dark);
+}
+
+.cfp-brand-text span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #778983;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: .06em;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.cfp-navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+.cfp-nav-link,
+.cfp-nav-dropdown-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 12px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #526a61;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.cfp-nav-link:hover,
+.cfp-nav-link.active,
+.cfp-nav-dropdown-button:hover,
+.cfp-nav-dropdown-button.active {
+    color: var(--cfp-green);
+
+    background: var(--cfp-soft);
+}
+
+.cfp-nav-dropdown-button i {
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.cfp-nav-dropdown {
+    position: relative;
+}
+
+.cfp-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 9px);
+
+    left: 0;
+
+    width: 240px;
+
+    padding: 8px;
+
+    background: white;
+
+    border: 1px solid var(--cfp-border);
+
+    box-shadow:
+        0 20px 50px rgba(8, 65, 49, .13);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease;
+
+    z-index: 100;
+}
+
+.cfp-nav-dropdown:hover .cfp-dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.cfp-dropdown-menu a {
+    display: block;
+
+    padding: 10px 13px;
+
+    border-radius: 6px;
+
+    color: #587068;
+
+    font-size: 12px;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.cfp-dropdown-menu a:hover,
+.cfp-dropdown-menu a.active {
+    color: var(--cfp-green);
+
+    background: var(--cfp-soft);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.cfp-mobile-button {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--cfp-border);
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.cfp-mobile-button span {
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    margin: 4px auto;
+
+    background: var(--cfp-green);
+
+    transition: .25s ease;
+}
+
+.cfp-mobile-button.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.cfp-mobile-button.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.cfp-mobile-button.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cfp-hero {
+    position: relative;
+
+    min-height: 590px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-top: 78px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbfdfc 0%,
+            #eef8f4 58%,
+            #e5f2ed 100%
+        );
+
+    border-bottom: 1px solid var(--cfp-border);
+
+    overflow: hidden;
+}
+
+.cfp-hero-decoration {
+    position: absolute;
+
+    width: 680px;
+    height: 680px;
+
+    right: -260px;
+    top: -280px;
+
+    border: 1px solid rgba(8, 116, 90, .1);
+
+    border-radius: 50%;
+}
+
+.cfp-hero-decoration::before {
+    content: "";
+
+    position: absolute;
+
+    width: 490px;
+    height: 490px;
+
+    top: 95px;
+    right: 95px;
+
+    border: 1px solid rgba(8, 116, 90, .08);
+
+    border-radius: 50%;
+}
+
+.cfp-hero-decoration::after {
+    content: "";
+
+    position: absolute;
+
+    width: 290px;
+    height: 290px;
+
+    top: 195px;
+    right: 195px;
+
+    background: rgba(8, 116, 90, .035);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.cfp-hero .cfp-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+.cfp-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--cfp-green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    animation:
+        cfpReveal .7s ease both;
+}
+
+.cfp-eyebrow span {
+    width: 8px;
+    height: 8px;
+
+    background: var(--cfp-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 5px rgba(8,116,90,.08);
+}
+
+.cfp-hero h1 {
+    max-width: 950px;
+
+    margin: 24px 0 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(64px, 8vw, 108px);
+
+    line-height: .91;
+
+    letter-spacing: -.06em;
+
+    color: var(--cfp-green-deep);
+
+    animation:
+        cfpReveal .8s .08s ease both;
+}
+
+.cfp-hero h1 em {
+    color: var(--cfp-red);
+
+    font-style: normal;
+}
+
+.cfp-hero-description {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--cfp-text);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    animation:
+        cfpReveal .8s .16s ease both;
+}
+
+
+/* =========================================================
+   HERO META
+========================================================= */
+
+.cfp-hero-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    margin-top: 30px;
+
+    animation:
+        cfpReveal .8s .24s ease both;
+}
+
+.cfp-hero-meta div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--cfp-green-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.cfp-hero-meta i {
+    color: var(--cfp-green);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.cfp-main {
+    padding: 85px 0 110px;
+}
+
+
+/* =========================================================
+   JOURNAL INTRO
+========================================================= */
+
+.cfp-journal-intro {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 32px;
+
+    align-items: center;
+
+    margin-top: -55px;
+
+    padding: 38px 45px;
+
+    background: white;
+
+    border: 1px solid var(--cfp-border);
+
+    box-shadow: var(--cfp-shadow);
+
+    position: relative;
+
+    z-index: 5;
+
+    animation:
+        cfpReveal .8s .15s ease both;
+}
+
+.cfp-journal-mark {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right: 1px solid var(--cfp-border);
+}
+
+.cfp-journal-mark img {
+    width: 82px;
+    height: 82px;
+
+    object-fit: contain;
+}
+
+.cfp-section-kicker {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--cfp-red);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+.cfp-journal-content h2 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.15;
+
+    letter-spacing: -.025em;
+
+    color: var(--cfp-green-dark);
+}
+
+.cfp-journal-content h2 span {
+    color: var(--cfp-green);
+}
+
+.cfp-journal-content p {
+    max-width: 900px;
+
+    margin: 14px 0 0;
+
+    color: var(--cfp-muted);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.cfp-section {
+    margin-top: 105px;
+
+    animation:
+        cfpReveal .7s ease both;
+}
+
+.cfp-section:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.cfp-section-heading {
+    display: grid;
+
+    grid-template-columns: 58px 1fr;
+
+    gap: 20px;
+
+    align-items: start;
+
+    margin-bottom: 40px;
+}
+
+.cfp-section-heading > span {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--cfp-border);
+
+    background: white;
+
+    color: var(--cfp-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .05em;
+}
+
+.cfp-section-heading small {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--cfp-green);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+.cfp-section-heading h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4.5vw, 54px);
+
+    line-height: 1.08;
+
+    letter-spacing: -.03em;
+
+    color: var(--cfp-green-dark);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.cfp-introduction {
+    max-width: 1050px;
+
+    padding-left: 30px;
+
+    border-left: 3px solid var(--cfp-green);
+}
+
+.cfp-introduction p {
+    margin: 0 0 21px;
+
+    color: var(--cfp-text);
+
+    font-size: 15px;
+
+    line-height: 2;
+}
+
+.cfp-introduction p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   THEMES
+========================================================= */
+
+.cfp-themes-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 320px;
+
+    gap: 58px;
+
+    align-items: start;
+}
+
+.cfp-theme-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 40px;
+}
+
+.cfp-theme-item {
+    display: grid;
+
+    grid-template-columns: 42px 1fr;
+
+    gap: 10px;
+
+    align-items: start;
+
+    min-height: 66px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--cfp-border);
+
+    transform-origin: left center;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        padding-left .25s ease,
+        box-shadow .25s ease;
+}
+
+.cfp-theme-item:hover {
+    transform:
+        scale(1.025)
+        translateX(6px);
+
+    padding-left: 9px;
+
+    background: rgba(8, 116, 90, .035);
+
+    box-shadow:
+        0 7px 20px rgba(8, 116, 90, .06);
+}
+
+.cfp-theme-item span {
+    color: var(--cfp-green);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    padding-top: 3px;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.cfp-theme-item:hover span {
+    color: var(--cfp-red);
+
+    transform: scale(1.1);
+}
+
+.cfp-theme-item p {
+    margin: 0;
+
+    color: var(--cfp-text);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    transition:
+        color .25s ease,
+        font-weight .25s ease;
+}
+
+.cfp-theme-item:hover p {
+    color: var(--cfp-green-dark);
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   WHO MAY SUBMIT
+========================================================= */
+
+.cfp-eligibility {
+    padding: 36px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #064c3c,
+            #08745a
+        );
+
+    color: white;
+
+    box-shadow:
+        0 25px 55px rgba(5, 65, 48, .15);
+}
+
+.cfp-side-kicker {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #a9dfcb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .17em;
+
+    text-transform: uppercase;
+}
+
+.cfp-eligibility h3 {
+    margin: 0 0 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    color: white;
+}
+
+.cfp-eligibility > p {
+    margin: 0 0 20px;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 13px;
+}
+
+.cfp-eligibility ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.cfp-eligibility li {
+    position: relative;
+
+    padding: 13px 0 13px 19px;
+
+    border-bottom: 1px solid rgba(255,255,255,.13);
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.cfp-eligibility li:last-child {
+    border-bottom: 0;
+}
+
+.cfp-eligibility li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 20px;
+
+    width: 5px;
+    height: 5px;
+
+    background: #a9dfcb;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   GUIDELINES
+========================================================= */
+
+.cfp-guidelines {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 75px;
+
+    border-top: 1px solid var(--cfp-border);
+}
+
+.cfp-guideline {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 13px;
+
+    padding: 23px 0;
+
+    border-bottom: 1px solid var(--cfp-border);
+}
+
+.cfp-guideline > span {
+    color: var(--cfp-green);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    padding-top: 3px;
+}
+
+.cfp-guideline strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--cfp-green-dark);
+
+    font-size: 15px;
+}
+
+.cfp-guideline p {
+    margin: 0;
+
+    color: var(--cfp-text);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.cfp-timeline {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    padding: 20px 0;
+}
+
+.cfp-timeline-line {
+    position: absolute;
+
+    left: 25%;
+
+    right: 25%;
+
+    top: 54px;
+
+    height: 1px;
+
+    background: var(--cfp-border);
+}
+
+.cfp-date {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid var(--cfp-border);
+
+    z-index: 2;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.cfp-date:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--cfp-shadow);
+}
+
+.cfp-date-marker {
+    flex: 0 0 auto;
+
+    width: 66px;
+    height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--cfp-soft);
+
+    border: 1px solid var(--cfp-border);
+
+    color: var(--cfp-green);
+
+    font-size: 21px;
+}
+
+.cfp-date-content span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--cfp-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+}
+
+.cfp-date-content strong {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    color: var(--cfp-green-dark);
+
+    font-size: 28px;
+
+    line-height: 1.2;
+}
+
+.cfp-date-content small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--cfp-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PEER REVIEW
+========================================================= */
+
+.cfp-review-section {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 27px;
+
+    align-items: center;
+
+    margin-top: 105px;
+
+    padding: 48px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f3,
+            #f9fbfa
+        );
+
+    border-top: 1px solid var(--cfp-border);
+
+    border-bottom: 1px solid var(--cfp-border);
+}
+
+.cfp-review-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 1px solid var(--cfp-border);
+
+    color: var(--cfp-green);
+
+    font-size: 27px;
+}
+
+.cfp-review-content > span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--cfp-green);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .17em;
+
+    text-transform: uppercase;
+}
+
+.cfp-review-content h2 {
+    margin: 0 0 9px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+
+    line-height: 1.2;
+
+    color: var(--cfp-green-dark);
+}
+
+.cfp-review-content p {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: var(--cfp-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SUBMISSION PROCEDURE
+   FINAL UPDATED VERSION
+========================================================= */
+
+.cfp-submission-section {
+    position: relative;
+
+    margin-top: 105px;
+
+    padding: 60px 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #075f4c 0%,
+            #0b8065 100%
+        );
+
+    color: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(4, 60, 45, .14);
+}
+
+
+/* Decorative circles */
+
+.cfp-submission-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -250px;
+    top: -270px;
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 50%;
+}
+
+.cfp-submission-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: -150px;
+    top: -170px;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   SUBMISSION HEADING
+========================================================= */
+
+.cfp-submission-heading {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 58px 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+.cfp-submission-heading > span {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    color: #a9dfcb;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.cfp-submission-heading small {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a9dfcb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+.cfp-submission-heading h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(46px, 5vw, 64px);
+
+    line-height: 1.02;
+
+    letter-spacing: -.035em;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SUBMISSION BODY
+========================================================= */
+
+.cfp-submission-body {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: stretch;
+}
+
+
+/* LEFT */
+
+.cfp-submission-text {
+    padding-top: 5px;
+}
+
+.cfp-submission-text h3 {
+    margin: 0 0 16px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    color: #ffffff;
+}
+
+.cfp-submission-text p {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,.84);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   EMAIL BOX
+========================================================= */
+
+.cfp-submission-contact {
+    position: relative;
+
+    z-index: 3;
+
+    min-width: 0;
+
+    padding: 30px;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.24);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.06);
+}
+
+.cfp-submission-contact > span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #b9e9da;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.cfp-submission-contact > a {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: clamp(20px, 2vw, 26px);
+
+    font-weight: 800;
+
+    letter-spacing: -.02em;
+
+    line-height: 1.35;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.cfp-submission-contact > a:hover {
+    color: #d2f5e9;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SUBJECT LINE
+========================================================= */
+
+.cfp-subject {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px 17px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    color: rgba(255,255,255,.92);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.cfp-subject strong {
+    color: #ffffff;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CONTACT ROW
+   WEBSITE REMOVED
+========================================================= */
+
+.cfp-contact-row {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.cfp-contact-row div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    padding: 16px 18px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.16);
+}
+
+.cfp-contact-row i {
+    flex-shrink: 0;
+
+    color: #b9e9da;
+
+    font-size: 14px;
+}
+
+.cfp-contact-row span {
+    color: rgba(255,255,255,.88);
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cfp-footer {
+    padding: 30px 0;
+
+    background: white;
+
+    border-top: 1px solid var(--cfp-border);
+
+    text-align: center;
+}
+
+.cfp-footer p {
+    margin: 0;
+
+    color: var(--cfp-muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes cfpReveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .cfp-navigation {
+        gap: 0;
+    }
+
+    .cfp-nav-link,
+    .cfp-nav-dropdown-button {
+        padding-left: 9px;
+        padding-right: 9px;
+
+        font-size: 11px;
+    }
+
+    .cfp-themes-layout {
+        grid-template-columns: 1fr 290px;
+
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cfp-mobile-button {
+        display: block;
+    }
+
+    .cfp-navigation {
+        position: fixed;
+
+        top: 78px;
+
+        right: -100%;
+
+        width: min(340px, 88vw);
+
+        height: calc(100vh - 78px);
+
+        padding: 20px;
+
+        background: white;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 3px;
+
+        box-shadow:
+            -15px 0 40px rgba(10,55,42,.12);
+
+        overflow-y: auto;
+
+        transition: right .3s ease;
+    }
+
+    .cfp-navigation.open {
+        right: 0;
+    }
+
+    .cfp-nav-link,
+    .cfp-nav-dropdown-button {
+        width: 100%;
+
+        justify-content: space-between;
+
+        padding: 13px;
+    }
+
+    .cfp-nav-dropdown {
+        width: 100%;
+    }
+
+    .cfp-dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        display: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+        box-shadow: none;
+
+        background: #f5faf8;
+
+        margin-top: 3px;
+    }
+
+    .cfp-nav-dropdown.open .cfp-dropdown-menu {
+        display: block;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .cfp-themes-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cfp-eligibility {
+        max-width: 600px;
+    }
+
+    .cfp-timeline {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .cfp-timeline-line {
+        display: none;
+    }
+
+    .cfp-submission-body {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .cfp-container {
+        width: calc(100% - 30px);
+    }
+
+    .cfp-header {
+        height: 70px;
+    }
+
+    .cfp-header-inner {
+        width: calc(100% - 28px);
+    }
+
+    .cfp-brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .cfp-brand-text strong {
+        font-size: 19px;
+    }
+
+    .cfp-brand-text span {
+        max-width: 160px;
+
+        font-size: 6px;
+    }
+
+    .cfp-navigation {
+        top: 70px;
+
+        height: calc(100vh - 70px);
+    }
+
+
+    /* HERO */
+
+    .cfp-hero {
+        min-height: auto;
+
+        padding:
+            125px
+            0
+            90px;
+    }
+
+    .cfp-hero h1 {
+        font-size: 58px;
+    }
+
+    .cfp-hero-description {
+        font-size: 14px;
+    }
+
+    .cfp-hero-meta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    /* JOURNAL */
+
+    .cfp-journal-intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin-top: -38px;
+
+        padding: 28px 22px;
+
+        text-align: center;
+    }
+
+    .cfp-journal-mark {
+        width: 100%;
+
+        height: auto;
+
+        padding-bottom: 18px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid var(--cfp-border);
+    }
+
+    .cfp-journal-mark img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cfp-journal-content h2 {
+        font-size: 29px;
+    }
+
+    .cfp-journal-content p {
+        font-size: 13px;
+    }
+
+
+    /* MAIN */
+
+    .cfp-main {
+        padding-top: 60px;
+
+        padding-bottom: 70px;
+    }
+
+    .cfp-section {
+        margin-top: 70px;
+    }
+
+
+    /* SECTION HEADING */
+
+    .cfp-section-heading {
+        grid-template-columns: 45px 1fr;
+
+        gap: 13px;
+
+        margin-bottom: 30px;
+    }
+
+    .cfp-section-heading > span {
+        width: 41px;
+        height: 41px;
+
+        font-size: 10px;
+    }
+
+    .cfp-section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    /* INTRO */
+
+    .cfp-introduction {
+        padding-left: 18px;
+    }
+
+    .cfp-introduction p {
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+
+    /* THEMES */
+
+    .cfp-theme-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cfp-theme-item {
+        min-height: auto;
+
+        padding: 15px 0;
+    }
+
+    .cfp-theme-item p {
+        font-size: 13px;
+    }
+
+
+    /* ELIGIBILITY */
+
+    .cfp-eligibility {
+        padding: 30px 25px;
+    }
+
+    .cfp-eligibility h3 {
+        font-size: 29px;
+    }
+
+
+    /* GUIDELINES */
+
+    .cfp-guidelines {
+        grid-template-columns: 1fr;
+    }
+
+    .cfp-guideline strong {
+        font-size: 14px;
+    }
+
+    .cfp-guideline p {
+        font-size: 12px;
+    }
+
+
+    /* DATES */
+
+    .cfp-date {
+        padding: 21px;
+    }
+
+    .cfp-date-marker {
+        width: 58px;
+        height: 58px;
+
+        font-size: 18px;
+    }
+
+    .cfp-date-content strong {
+        font-size: 23px;
+    }
+
+
+    /* REVIEW */
+
+    .cfp-review-section {
+        grid-template-columns: 1fr;
+
+        padding: 32px 23px;
+
+        text-align: center;
+    }
+
+    .cfp-review-icon {
+        margin: auto;
+    }
+
+    .cfp-review-content h2 {
+        font-size: 29px;
+    }
+
+    .cfp-review-content p {
+        font-size: 13px;
+    }
+
+
+    /* SUBMISSION */
+
+    .cfp-submission-section {
+        margin-top: 70px;
+
+        padding: 38px 23px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #075f4c 0%,
+                #0b8065 100%
+            );
+    }
+
+    .cfp-submission-heading {
+        grid-template-columns: 45px 1fr;
+
+        gap: 13px;
+
+        margin-bottom: 35px;
+    }
+
+    .cfp-submission-heading > span {
+        width: 41px;
+        height: 41px;
+    }
+
+    .cfp-submission-heading h2 {
+        font-size: 38px;
+    }
+
+    .cfp-submission-text h3 {
+        font-size: 28px;
+    }
+
+    .cfp-submission-text p {
+        font-size: 13px;
+    }
+
+    .cfp-submission-contact {
+        padding: 23px;
+
+        background: rgba(255,255,255,.12);
+
+        border-color: rgba(255,255,255,.24);
+    }
+
+    .cfp-submission-contact > a {
+        font-size: 20px;
+
+        font-weight: 800;
+    }
+
+    .cfp-subject {
+        font-size: 11px;
+
+        padding: 13px;
+
+        background: rgba(255,255,255,.10);
+    }
+
+    .cfp-contact-row {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .cfp-hero h1 {
+        font-size: 48px;
+    }
+
+    .cfp-journal-content h2 {
+        font-size: 25px;
+    }
+
+    .cfp-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .cfp-submission-heading h2 {
+        font-size: 34px;
+    }
+
+    .cfp-submission-contact > a {
+        font-size: 18px;
+    }
+}
