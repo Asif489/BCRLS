@@ -2147,3 +2147,173 @@ function escapeHTML(
         );
 
 }
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+    if (!menuToggle || !mainNav) {
+        return;
+    }
+
+
+    /* =========================
+       TOGGLE MENU
+    ========================= */
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            mainNav.classList.contains("mobile-open");
+
+        if (isOpen) {
+
+            closeMobileMenu();
+
+        } else {
+
+            openMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================
+       OPEN
+    ========================= */
+
+    function openMobileMenu() {
+
+        mainNav.classList.add("mobile-open");
+
+        menuToggle.classList.add("active");
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+    }
+
+
+    /* =========================
+       CLOSE
+    ========================= */
+
+    function closeMobileMenu() {
+
+        mainNav.classList.remove("mobile-open");
+
+        menuToggle.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document
+            .querySelectorAll(".nav-dropdown.mobile-open")
+            .forEach(dropdown => {
+
+                dropdown.classList.remove(
+                    "mobile-open"
+                );
+
+            });
+    }
+
+
+    /* =========================
+       MOBILE DROPDOWNS
+    ========================= */
+
+    document
+        .querySelectorAll(".nav-dropdown-toggle")
+        .forEach(toggle => {
+
+            toggle.addEventListener(
+                "click",
+                event => {
+
+                    if (window.innerWidth <= 1200) {
+
+                        event.preventDefault();
+
+                        const dropdown =
+                            toggle.closest(
+                                ".nav-dropdown"
+                            );
+
+                        if (!dropdown) {
+                            return;
+                        }
+
+                        dropdown.classList.toggle(
+                            "mobile-open"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       CLOSE AFTER LINK CLICK
+    ========================= */
+
+    mainNav
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        window.innerWidth <= 1200
+                    ) {
+
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       RESIZE
+    ========================= */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 1200
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+});
