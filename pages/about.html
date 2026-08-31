@@ -125,6 +125,8 @@
         <nav class="about-nav">
 
 
+            <!-- HOME -->
+
             <a
                 href="../index.html"
                 class="about-nav-link"
@@ -134,13 +136,16 @@
 
 
 
-            <!-- ABOUT -->
+            <!-- =================================================
+                 ABOUT DROPDOWN
+            ================================================= -->
 
             <div class="about-nav-dropdown">
 
                 <button
                     type="button"
                     class="about-nav-button active"
+                    aria-expanded="false"
                 >
 
                     About
@@ -185,14 +190,57 @@
 
 
 
-            <!-- RESEARCH -->
+            <!-- =================================================
+                 RESEARCH & PUBLICATIONS DROPDOWN
+            ================================================= -->
 
-            <a
-                href="../research/index.html"
-                class="about-nav-link"
+            <div
+                class="about-nav-dropdown research-dropdown"
             >
-                Research & Publications
-            </a>
+
+                <button
+                    type="button"
+                    class="about-nav-button"
+                    id="researchMenuButton"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                >
+
+                    Research & Publications
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div
+                    class="about-dropdown-menu research-menu"
+                    id="researchMenu"
+                >
+
+                    <a
+                        href="../research/conference-proceedings.html"
+                    >
+                        Conference Proceedings
+                    </a>
+
+
+                    <a
+                        href="../research/journal.html"
+                    >
+                        Journal
+                    </a>
+
+
+                    <!-- Blog page not available yet -->
+
+                    <a href="#">
+                        Blog
+                    </a>
+
+                </div>
+
+            </div>
 
 
 
@@ -227,7 +275,26 @@
                 Contact
             </a>
 
+
         </nav>
+
+
+
+        <!-- =================================================
+             MOBILE MENU BUTTON
+        ================================================= -->
+
+        <button
+            type="button"
+            class="about-mobile-button"
+            id="aboutMobileButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
 
 
     </div>
@@ -255,7 +322,10 @@
             <h1>
 
                 Who
-                <em>We Are.</em>
+
+                <em>
+                    We Are.
+                </em>
 
             </h1>
 
@@ -307,9 +377,15 @@
                 WHO WE ARE
             </span>
 
+
             <h2>
+
                 Building knowledge.
-                <em>Advancing justice.</em>
+
+                <em>
+                    Advancing justice.
+                </em>
+
             </h2>
 
         </div>
@@ -322,6 +398,7 @@
             <!-- MAIN TEXT -->
 
             <div class="about-who-text">
+
 
                 <p class="about-lead">
 
@@ -364,6 +441,7 @@
 
                 </p>
 
+
             </div>
 
 
@@ -373,11 +451,14 @@
             <div class="about-focus">
 
 
+                <!-- CARD 01 -->
+
                 <article class="about-focus-card">
 
                     <span class="about-focus-number">
                         01
                     </span>
+
 
                     <div>
 
@@ -385,14 +466,18 @@
                             RESEARCH
                         </span>
 
+
                         <h3>
                             Knowledge & Evidence
                         </h3>
 
+
                         <p>
+
                             Research on refugee law,
                             forced displacement,
                             rights and policy.
+
                         </p>
 
                     </div>
@@ -400,6 +485,8 @@
                 </article>
 
 
+
+                <!-- CARD 02 -->
 
                 <article class="about-focus-card">
 
@@ -407,20 +494,25 @@
                         02
                     </span>
 
+
                     <div>
 
                         <span class="about-focus-label">
                             EDUCATION
                         </span>
 
+
                         <h3>
                             Learning & Dialogue
                         </h3>
 
+
                         <p>
+
                             Creating opportunities for
                             academic learning and meaningful
                             dialogue.
+
                         </p>
 
                     </div>
@@ -429,11 +521,14 @@
 
 
 
+                <!-- CARD 03 -->
+
                 <article class="about-focus-card">
 
                     <span class="about-focus-number">
                         03
                     </span>
+
 
                     <div>
 
@@ -441,13 +536,17 @@
                             JUSTICE
                         </span>
 
+
                         <h3>
                             Rights & Dignity
                         </h3>
 
+
                         <p>
+
                             Connecting knowledge with action
                             to promote rights and human dignity.
+
                         </p>
 
                     </div>
@@ -482,10 +581,17 @@
                 OUR APPROACH
             </span>
 
+
             <h2>
+
                 Evidence,
-                <em>engagement</em>
+
+                <em>
+                    engagement
+                </em>
+
                 and impact.
+
             </h2>
 
         </div>
@@ -495,6 +601,8 @@
         <div class="about-approach-grid">
 
 
+            <!-- RESEARCH -->
+
             <article class="about-approach-card">
 
                 <div class="about-approach-icon">
@@ -503,13 +611,16 @@
 
                 </div>
 
+
                 <span>
                     01
                 </span>
 
+
                 <h3>
                     Research
                 </h3>
+
 
                 <p>
 
@@ -523,6 +634,8 @@
 
 
 
+            <!-- DIALOGUE -->
+
             <article class="about-approach-card">
 
                 <div class="about-approach-icon">
@@ -531,13 +644,16 @@
 
                 </div>
 
+
                 <span>
                     02
                 </span>
 
+
                 <h3>
                     Dialogue
                 </h3>
+
 
                 <p>
 
@@ -551,6 +667,8 @@
 
 
 
+            <!-- JUSTICE -->
+
             <article class="about-approach-card">
 
                 <div class="about-approach-icon">
@@ -559,13 +677,16 @@
 
                 </div>
 
+
                 <span>
                     03
                 </span>
 
+
                 <h3>
                     Justice
                 </h3>
+
 
                 <p>
 
@@ -578,6 +699,8 @@
 
 
 
+            <!-- EDUCATION -->
+
             <article class="about-approach-card">
 
                 <div class="about-approach-icon">
@@ -586,13 +709,16 @@
 
                 </div>
 
+
                 <span>
                     04
                 </span>
 
+
                 <h3>
                     Education
                 </h3>
+
 
                 <p>
 
@@ -613,7 +739,7 @@
 
 
 <!-- =====================================================
-     WHAT WE FOCUS ON
+     AREAS OF FOCUS
 ===================================================== -->
 
 <section
@@ -626,16 +752,25 @@
         <div class="about-focus-layout">
 
 
+            <!-- LEFT -->
+
             <div class="about-focus-heading">
 
                 <span class="about-eyebrow">
                     AREAS OF FOCUS
                 </span>
 
+
                 <h2>
+
                     Understanding
-                    <em>displacement.</em>
+
+                    <em>
+                        displacement.
+                    </em>
+
                 </h2>
+
 
                 <p>
 
@@ -649,6 +784,8 @@
 
 
 
+            <!-- RIGHT -->
+
             <div class="about-focus-list">
 
 
@@ -658,13 +795,18 @@
                         01
                     </span>
 
+
                     <strong>
                         Refugee Law
                     </strong>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </div>
+
 
 
                 <div class="about-focus-row">
@@ -673,13 +815,18 @@
                         02
                     </span>
 
+
                     <strong>
                         Forced Displacement
                     </strong>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </div>
+
 
 
                 <div class="about-focus-row">
@@ -688,13 +835,18 @@
                         03
                     </span>
 
+
                     <strong>
                         Statelessness
                     </strong>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </div>
+
 
 
                 <div class="about-focus-row">
@@ -703,13 +855,18 @@
                         04
                     </span>
 
+
                     <strong>
                         Human Rights
                     </strong>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </div>
+
 
 
                 <div class="about-focus-row">
@@ -718,17 +875,20 @@
                         05
                     </span>
 
+
                     <strong>
                         Migration & Policy
                     </strong>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </div>
 
 
             </div>
-
 
         </div>
 
@@ -752,20 +912,32 @@
         <div class="about-network-card">
 
 
+            <!-- LEFT -->
+
             <div>
 
                 <span class="about-eyebrow">
                     COLLABORATION
                 </span>
 
+
                 <h2>
+
                     Connecting
-                    <em>knowledge</em>
+
+                    <em>
+                        knowledge
+                    </em>
+
                     and people.
+
                 </h2>
 
             </div>
 
+
+
+            <!-- RIGHT -->
 
             <div>
 
@@ -787,7 +959,9 @@
 
                     Connect With BCRLS
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
 
                 </a>
 
@@ -810,8 +984,11 @@
 
     <div class="about-container">
 
+
         <div class="about-footer-grid">
 
+
+            <!-- FOOTER BRAND -->
 
             <div class="about-footer-brand">
 
@@ -820,9 +997,11 @@
                     alt="BCRLS Logo"
                 >
 
+
                 <h3>
                     BCRLS
                 </h3>
+
 
                 <p>
                     Bangladesh Centre for Refugee Law Studies
@@ -832,23 +1011,29 @@
 
 
 
+            <!-- EXPLORE -->
+
             <div>
 
                 <span class="about-footer-title">
                     EXPLORE
                 </span>
 
+
                 <a href="../index.html">
                     Home
                 </a>
+
 
                 <a href="about.html">
                     Who We Are
                 </a>
 
-                <a href="../research/index.html">
+
+                <a href="../research/journal.html">
                     Research & Publications
                 </a>
+
 
                 <a href="../events/index.html">
                     Events
@@ -858,23 +1043,29 @@
 
 
 
+            <!-- ABOUT -->
+
             <div>
 
                 <span class="about-footer-title">
                     ABOUT
                 </span>
 
+
                 <a href="mission.html">
                     Mission
                 </a>
+
 
                 <a href="vision.html">
                     Vision
                 </a>
 
+
                 <a href="Founder.html">
                     Founder’s Message
                 </a>
+
 
                 <a href="team.html">
                     Team
@@ -886,17 +1077,22 @@
         </div>
 
 
+
+        <!-- FOOTER BOTTOM -->
+
         <div class="about-footer-bottom">
 
             <span>
                 © BCRLS — Bangladesh Centre for Refugee Law Studies
             </span>
 
+
             <span>
                 Research • Education • Justice
             </span>
 
         </div>
+
 
     </div>
 
@@ -915,7 +1111,7 @@ document.addEventListener(
     function () {
 
 
-        /* ================================================
+        /* =================================================
            SCROLL REVEAL
         ================================================= */
 
@@ -967,39 +1163,209 @@ document.addEventListener(
 
 
 
-        /* ================================================
-           MOBILE ABOUT DROPDOWN
+        /* =================================================
+           ABOUT DROPDOWN
         ================================================= */
 
+        const aboutDropdownWrapper =
+            document.querySelector(
+                ".about-nav-dropdown:not(.research-dropdown)"
+            );
+
+
         const aboutButton =
-            document.querySelector(
-                ".about-nav-button"
-            );
-
-
-        const aboutDropdown =
-            document.querySelector(
-                ".about-nav-dropdown"
-            );
+            aboutDropdownWrapper
+                ? aboutDropdownWrapper.querySelector(
+                    ".about-nav-button"
+                )
+                : null;
 
 
         if (
             aboutButton &&
-            aboutDropdown
+            aboutDropdownWrapper
         ) {
 
             aboutButton.addEventListener(
                 "click",
-                function () {
+                function (event) {
 
-                    aboutDropdown.classList.toggle(
-                        "open"
+                    event.stopPropagation();
+
+
+                    const isOpen =
+                        aboutDropdownWrapper.classList.toggle(
+                            "open"
+                        );
+
+
+                    aboutButton.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
                     );
 
                 }
             );
 
         }
+
+
+
+        /* =================================================
+           RESEARCH & PUBLICATIONS DROPDOWN
+        ================================================= */
+
+        const researchDropdown =
+            document.querySelector(
+                ".research-dropdown"
+            );
+
+
+        const researchButton =
+            document.getElementById(
+                "researchMenuButton"
+            );
+
+
+        if (
+            researchButton &&
+            researchDropdown
+        ) {
+
+            researchButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+
+                    const isOpen =
+                        researchDropdown.classList.toggle(
+                            "open"
+                        );
+
+
+                    researchButton.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        const mobileButton =
+            document.getElementById(
+                "aboutMobileButton"
+            );
+
+
+        const aboutNav =
+            document.querySelector(
+                ".about-nav"
+            );
+
+
+        if (
+            mobileButton &&
+            aboutNav
+        ) {
+
+            mobileButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+
+                    const isOpen =
+                        aboutNav.classList.toggle(
+                            "mobile-open"
+                        );
+
+
+                    mobileButton.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
+        ================================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+
+                /* ABOUT */
+
+                if (
+                    aboutDropdownWrapper &&
+                    !aboutDropdownWrapper.contains(
+                        event.target
+                    )
+                ) {
+
+                    aboutDropdownWrapper.classList.remove(
+                        "open"
+                    );
+
+
+                    if (aboutButton) {
+
+                        aboutButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
+
+
+                /* RESEARCH */
+
+                if (
+                    researchDropdown &&
+                    !researchDropdown.contains(
+                        event.target
+                    )
+                ) {
+
+                    researchDropdown.classList.remove(
+                        "open"
+                    );
+
+
+                    if (researchButton) {
+
+                        researchButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
 
 
     }

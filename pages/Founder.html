@@ -21,12 +21,23 @@
 
 
     <!-- =====================================================
-         FAVICON
+         FAVICON / BCRLS LOGO
     ====================================================== -->
 
     <link
         rel="icon"
         type="image/png"
+        href="../assets/logo.png"
+    >
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="../assets/logo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
         href="../assets/logo.png"
     >
 
@@ -42,12 +53,12 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.googleapis.com"
+        href="https://fonts.gstatic.com"
         crossorigin
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -133,7 +144,7 @@
 
 
             <!-- =================================================
-                 NAVIGATION
+                 DESKTOP NAVIGATION
             ================================================== -->
 
             <nav
@@ -162,20 +173,19 @@
                         type="button"
                         class="about-nav-button active"
                         aria-haspopup="true"
+                        aria-expanded="false"
                     >
 
                         About
 
-                        <i
-                            class="fa-solid fa-chevron-down"
-                        ></i>
+                        <i class="fa-solid fa-chevron-down"></i>
 
                     </button>
 
 
                     <div class="about-dropdown-menu">
 
-                        <a href="pages.html">
+                        <a href="about.html">
                             Who We Are
                         </a>
 
@@ -208,26 +218,60 @@
 
 
                 <!-- =================================================
-                     RESEARCH & PUBLICATIONS
+                     RESEARCH & PUBLICATIONS DROPDOWN
                 ================================================== -->
 
-                <a
-                    href="../research/index.html"
-                    class="about-nav-link"
+                <div
+                    class="about-nav-dropdown research-dropdown"
                 >
 
-                    Research &amp; Publications
+                    <button
+                        type="button"
+                        class="about-nav-button"
+                        id="researchMenuButton"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
 
-                    <i
-                        class="fa-solid fa-chevron-down"
-                        style="font-size:8px;"
-                    ></i>
+                        Research &amp; Publications
 
-                </a>
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        class="about-dropdown-menu research-menu"
+                        id="researchMenu"
+                    >
+
+                        <a
+                            href="../research/conference-proceedings.html"
+                        >
+                            Conference Proceedings
+                        </a>
+
+
+                        <a
+                            href="../research/journal.html"
+                        >
+                            Journal
+                        </a>
+
+
+                        <!-- Blog page is not available yet -->
+
+                        <a href="#">
+                            Blog
+                        </a>
+
+                    </div>
+
+                </div>
 
 
                 <!-- =================================================
-                     GET INVOLVED
+                     GET INVOLVED DROPDOWN
                 ================================================== -->
 
                 <div class="about-nav-dropdown">
@@ -236,13 +280,12 @@
                         type="button"
                         class="about-nav-button"
                         aria-haspopup="true"
+                        aria-expanded="false"
                     >
 
                         Get Involved
 
-                        <i
-                            class="fa-solid fa-chevron-down"
-                        ></i>
+                        <i class="fa-solid fa-chevron-down"></i>
 
                     </button>
 
@@ -255,11 +298,13 @@
                             Overview
                         </a>
 
+
                         <a
                             href="../get-involved/become-a-member.html"
                         >
                             Become a Member
                         </a>
+
 
                         <a
                             href="../get-involved/campus-fellow.html"
@@ -267,17 +312,20 @@
                             Campus Fellow
                         </a>
 
+
                         <a
                             href="../get-involved/volunteer-programme.html"
                         >
                             Volunteer Programme
                         </a>
 
+
                         <a
                             href="../get-involved/internship-programme.html"
                         >
                             Internship Programme
                         </a>
+
 
                         <a
                             href="../get-involved/partner-with-us.html"
@@ -309,12 +357,12 @@
             <button
                 type="button"
                 class="about-mobile-button"
+                id="aboutMobileButton"
                 aria-label="Open navigation menu"
+                aria-expanded="false"
             >
 
-                <i
-                    class="fa-solid fa-bars"
-                ></i>
+                <i class="fa-solid fa-bars"></i>
 
             </button>
 
@@ -347,7 +395,10 @@
             <h1>
 
                 A Message from the
-                <span>Founder</span>
+
+                <span>
+                    Founder
+                </span>
 
             </h1>
 
@@ -402,6 +453,10 @@
                     <h2>
                         Sakhawat Sajjat Sejan
                     </h2>
+
+
+                    <div class="about-founder-divider"></div>
+
                 </aside>
 
 
@@ -512,9 +567,10 @@
                         class="about-founder-signature"
                     >
 
-                        <strong><b> Founder</b>
-                           
+                        <strong>
+                            Founder
                         </strong>
+
 
                         <span>
 
@@ -560,9 +616,210 @@
          JAVASCRIPT
     ====================================================== -->
 
-    <script
-        src="../js/app.js"
-    ></script>
+    <script src="../js/app.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   ABOUT DROPDOWNS
+                ================================================= */
+
+                const dropdowns =
+                    document.querySelectorAll(
+                        ".about-nav-dropdown"
+                    );
+
+
+                dropdowns.forEach(
+                    function (dropdown) {
+
+                        const button =
+                            dropdown.querySelector(
+                                ".about-nav-button"
+                            );
+
+
+                        if (!button) {
+                            return;
+                        }
+
+
+                        button.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.stopPropagation();
+
+
+                                const isOpen =
+                                    dropdown.classList.toggle(
+                                        "open"
+                                    );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    String(isOpen)
+                                );
+
+
+                                dropdowns.forEach(
+                                    function (otherDropdown) {
+
+                                        if (
+                                            otherDropdown !==
+                                            dropdown
+                                        ) {
+
+                                            otherDropdown.classList.remove(
+                                                "open"
+                                            );
+
+
+                                            const otherButton =
+                                                otherDropdown.querySelector(
+                                                    ".about-nav-button"
+                                                );
+
+
+                                            if (
+                                                otherButton
+                                            ) {
+
+                                                otherButton.setAttribute(
+                                                    "aria-expanded",
+                                                    "false"
+                                                );
+
+                                            }
+
+                                        }
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   MOBILE MENU
+                ================================================= */
+
+                const mobileButton =
+                    document.getElementById(
+                        "aboutMobileButton"
+                    );
+
+
+                const aboutNav =
+                    document.querySelector(
+                        ".about-nav"
+                    );
+
+
+                if (
+                    mobileButton &&
+                    aboutNav
+                ) {
+
+                    mobileButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+
+                            const isOpen =
+                                aboutNav.classList.toggle(
+                                    "mobile-open"
+                                );
+
+
+                            mobileButton.setAttribute(
+                                "aria-expanded",
+                                String(isOpen)
+                            );
+
+
+                            if (isOpen) {
+
+                                mobileButton.innerHTML =
+                                    '<i class="fa-solid fa-xmark"></i>';
+
+                            } else {
+
+                                mobileButton.innerHTML =
+                                    '<i class="fa-solid fa-bars"></i>';
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
+                ================================================= */
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        dropdowns.forEach(
+                            function (dropdown) {
+
+                                if (
+                                    !dropdown.contains(
+                                        event.target
+                                    )
+                                ) {
+
+                                    dropdown.classList.remove(
+                                        "open"
+                                    );
+
+
+                                    const button =
+                                        dropdown.querySelector(
+                                            ".about-nav-button"
+                                        );
+
+
+                                    if (button) {
+
+                                        button.setAttribute(
+                                            "aria-expanded",
+                                            "false"
+                                        );
+
+                                    }
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
 
 
 </body>
