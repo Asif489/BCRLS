@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Team | BCRLS</title>
+    <meta
+        name="description"
+        content="BCRLS Team — Board of Advisors, Board of Directors and Operational Team."
+    >
+
+    <title>Team | BCRLS</title>
 
     <link rel="icon" type="image/png" href="../assets/logo.png">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Team Page CSS -->
-    <link rel="stylesheet" href="../css/team.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- Team CSS -->
+    <link rel="stylesheet" href="../css/team.css">
 </head>
 
+
 <body class="team-page">
+
 
 <!-- =====================================================
      HEADER
@@ -30,16 +50,379 @@
 
 <header class="site-header">
 
-    <div class="header-container">
+    <div class="header-inner">
 
-        <a href="../index.html" class="site-logo">
-            <img src="../assets/logo.png" alt="BCRLS Logo">
+        <!-- BRAND -->
+
+        <a class="brand" href="../index.html">
+
+            <div class="brand-logo">
+                <img
+                    src="../assets/logo.png"
+                    alt="BCRLS Logo"
+                >
+            </div>
+
+            <div class="brand-text">
+
+                <strong>BCRLS</strong>
+
+                <span>
+                    Bangladesh Center for Refugee Law Studies
+                </span>
+
+            </div>
+
         </a>
 
+
+        <!-- NAVIGATION -->
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main Navigation"
+        >
+
+            <!-- HOME -->
+
+            <a
+                class="nav-link"
+                href="../index.html"
+            >
+                Home
+            </a>
+
+
+            <!-- ABOUT -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    About
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="about.html">
+                        Who We Are
+                    </a>
+
+                    <a href="mission.html">
+                        Mission
+                    </a>
+
+                    <a href="vision.html">
+                        Vision
+                    </a>
+
+                    <a href="Strategic-Objectives.html">
+                        Strategic Objectives
+                    </a>
+
+                    <a href="Founder.html">
+                        Founder's Message
+                    </a>
+
+                    <a
+                        href="team.html"
+                        class="active"
+                    >
+                        Team
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESEARCH -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Research &amp; Publications
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../research/conference-proceedings.html">
+                        Conference Proceedings
+                    </a>
+
+                    <a href="../research/journal.html">
+                        Journal
+                    </a>
+
+                    <a href="../research/blog.html">
+                        Blog
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIBRARY -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Library
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../library/index.html#academic-journals">
+                        Academic Journals
+                    </a>
+
+                    <a href="../library/index.html#reports">
+                        Reports &amp; Policy Documents
+                    </a>
+
+                    <a href="../library/index.html#books">
+                        Books &amp; E-Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATION -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Education
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../education/index.html">
+                        Education Hub
+                    </a>
+
+                    <a href="../education/index.html#masters">
+                        Master's Programmes
+                    </a>
+
+                    <a href="../education/index.html#postgraduate">
+                        Postgraduate Programmes
+                    </a>
+
+                    <a href="../education/index.html#training">
+                        Professional Training / Short Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA HUB -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Data Hub
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../data/index.html#refugee-statistics">
+                        Refugee Statistics
+                    </a>
+
+                    <a href="../data/index.html#rohingya">
+                        Rohingya Data Portal
+                    </a>
+
+                    <a href="../data/index.html#south-asia">
+                        South Asia Database
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EVENTS -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Events
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../events/index.html">
+                        Upcoming Events
+                    </a>
+
+                    <a href="../events/conferences.html">
+                        Conferences
+                    </a>
+
+                    <a href="../events/workshops.html">
+                        Workshops
+                    </a>
+
+                    <a href="../events/webinars.html">
+                        Lectures/Webinars
+                    </a>
+
+                    <a href="../events/archive.html">
+                        Event Archive
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- INSIGHTS -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Insights
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../insights/index.html#expert-interviews">
+                        Expert Interviews
+                    </a>
+
+                    <a href="../insights/index.html#refugee-voices">
+                        Refugee Voices
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDIA -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Media
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../media/promo-video.html">
+                        BCRLS Promo Video
+                    </a>
+
+                    <a href="../media/newsroom.html">
+                        Newsroom
+                    </a>
+
+                    <a href="../media/gallery.html">
+                        Photo Gallery
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- GET INVOLVED -->
+
+            <div class="nav-dropdown">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                >
+                    Get Involved
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="../get-involved/index.html">
+                        Overview
+                    </a>
+
+                    <a href="../get-involved/become-a-member.html">
+                        Become a Member
+                    </a>
+
+                    <a href="../get-involved/campus-fellow.html">
+                        Campus Fellow
+                    </a>
+
+                    <a href="../get-involved/internship-programme.html">
+                        Internship Programme
+                    </a>
+
+                    <a href="../get-involved/partner-with-us.html">
+                        Partner With Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <a
+                class="nav-link"
+                href="../contact.html"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU -->
+
         <button
-            class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            aria-label="Open navigation"
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
             aria-expanded="false"
         >
             <span></span>
@@ -47,179 +430,48 @@
             <span></span>
         </button>
 
-        <nav class="main-nav" id="mainNav">
-
-            <ul class="nav-list">
-
-                <!-- ABOUT -->
-
-                <li class="nav-dropdown">
-
-                    <button class="nav-dropdown-btn" type="button">
-                        About
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="about.html">Who We Are</a>
-                        </li>
-
-                        <li>
-                            <a href="mission.html">Mission</a>
-                        </li>
-
-                        <li>
-                            <a href="vision.html">Vision</a>
-                        </li>
-
-                        <li>
-                            <a href="Strategic-Objectives.html">
-                                Strategic Objectives
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="Founder.html">
-                                Founder’s Message
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="team.html">
-                                Team
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <!-- RESEARCH -->
-
-                <li class="nav-dropdown">
-
-                    <button class="nav-dropdown-btn" type="button">
-                        Research &amp; Publications
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="../research/conference-proceedings.html">
-                                Conference Proceedings
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../research/journal.html">
-                                Journal
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../research/blog.html">
-                                Blog
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <!-- GET INVOLVED -->
-
-                <li class="nav-dropdown">
-
-                    <button class="nav-dropdown-btn" type="button">
-                        Get Involved
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="../get-involved/index.html">
-                                Overview
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../get-involved/become-a-member.html">
-                                Become a Member
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../get-involved/campus-fellow.html">
-                                Campus Fellow
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../get-involved/volunteer.html">
-                                Volunteer Programme
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../get-involved/internship.html">
-                                Internship Programme
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="../get-involved/partner.html">
-                                Partner With Us
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <li>
-                    <a href="../contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
     </div>
 
 </header>
 
 
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+></div>
+
+
 <!-- =====================================================
-     HERO
+     MAIN
 ===================================================== -->
 
-<section class="team-hero">
+<main>
 
-    <div class="team-container">
 
-        <div class="section-label">
+<!-- =====================================================
+     TEAM HERO
+===================================================== -->
 
-            <span></span>
+<section class="team-hero-new">
 
-            <p>OUR PEOPLE</p>
+    <div class="container team-hero-content">
 
-        </div>
+        <span class="section-label">
+            BCRLS LEADERSHIP
+        </span>
 
-        <h1>Our Team</h1>
+        <h1>
+            Our <span>Team</span>
+        </h1>
 
-        <p class="team-hero-text">
-            BCRLS brings together academics, researchers, legal professionals,
-            and practitioners committed to advancing refugee law and protection.
+        <p>
+            Meet the academics, legal professionals, researchers
+            and leaders who guide BCRLS in advancing refugee law
+            through research, education, dialogue and institutional
+            engagement.
         </p>
+
+        <div class="team-hero-line"></div>
 
     </div>
 
@@ -227,39 +479,41 @@
 
 
 <!-- =====================================================
-     TEAM NAVIGATION
+     TEAM SELECTOR
 ===================================================== -->
 
-<section class="team-navigation">
+<section class="team-selector-section">
 
-    <div class="team-container">
+    <div class="container">
 
         <div class="team-selector">
 
             <button
-                class="team-selector-btn active"
-                data-target="advisory"
                 type="button"
+                class="team-selector-btn active"
+                data-team="advisory"
             >
                 <i class="fa-solid fa-scale-balanced"></i>
-                <span>Advisory</span>
+                <span>Board of Advisors</span>
             </button>
 
+
             <button
-                class="team-selector-btn"
-                data-target="directors"
                 type="button"
+                class="team-selector-btn"
+                data-team="directors"
             >
-                <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-user-tie"></i>
                 <span>Board of Directors</span>
             </button>
 
+
             <button
-                class="team-selector-btn"
-                data-target="operational"
                 type="button"
+                class="team-selector-btn"
+                data-team="operational"
             >
-                <i class="fa-solid fa-briefcase"></i>
+                <i class="fa-solid fa-people-group"></i>
                 <span>Operational Team</span>
             </button>
 
@@ -271,16 +525,16 @@
 
 
 <!-- =====================================================
-     MAIN TEAM CONTENT
+     TEAM SHOWCASE
 ===================================================== -->
 
-<main class="team-main">
+<section class="team-showcase">
 
-    <div class="team-container">
+    <div class="container">
 
 
         <!-- =================================================
-             ADVISORY
+             BOARD OF ADVISORS
         ================================================== -->
 
         <section
@@ -288,550 +542,38 @@
             id="advisory"
         >
 
-            <div class="team-section-heading">
+            <div class="panel-header">
 
-                <div class="section-label">
+                <span class="section-label">
+                    ACADEMIC &amp; STRATEGIC GUIDANCE
+                </span>
 
-                    <span></span>
-
-                    <p>ADVISORY</p>
-
-                </div>
-
-                <h2>Advisory</h2>
+                <h2>
+                    Board of Advisors
+                </h2>
 
                 <p>
-                    Distinguished academics and legal scholars supporting
-                    the academic and institutional development of BCRLS.
+                    The Board of Advisors of BCRLS comprises distinguished
+                    academics, legal professionals, and subject-matter experts
+                    who provide strategic guidance and intellectual support to
+                    the organization. Their experience and insights play a vital
+                    role in shaping our vision, strengthening our initiatives,
+                    and ensuring the quality and impact of our research and
+                    programs. They serve as mentors and thought leaders,
+                    offering valuable advice on policy direction, research
+                    priorities, and institutional development. Through their
+                    continuous engagement, the Board of Advisors helps BCRLS
+                    uphold excellence, integrity, and innovation in all its
+                    activities.
                 </p>
 
             </div>
 
 
-            <div class="team-grid">
-
-
-                <!-- NAKIB -->
-
-                <article
-                    class="member-card"
-                    data-name="Dr. Nakib Muhammad Nasrullah"
-                    data-role="Former Vice-Chancellor, Islamic University, Bangladesh"
-                >
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Nakib.png"
-                            alt="Dr. Nakib Muhammad Nasrullah"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Dr. Nakib Muhammad Nasrullah
-                            </h3>
-
-                            <p>
-                                Former Vice-Chancellor, Islamic University, Bangladesh
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Former Vice-Chancellor, Islamic University, Bangladesh
-                                </p>
-
-                                <p>
-                                    Professor, Department of Law, University of Dhaka
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Dr. Nakib Muhammad Nasrullah
-                        </h3>
-
-                        <p>
-                            Former Vice-Chancellor, Islamic University, Bangladesh
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ABDULLAH -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Al Faruque.png"
-                            alt="Professor Dr. Abdullah Al Faruque"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Professor Dr. Abdullah Al Faruque
-                            </h3>
-
-                            <p>
-                                Professor, Former Dean Faculty of Law,
-                                University of Chittagong
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Professor, Former Dean Faculty of Law,
-                                    University of Chittagong
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Professor Dr. Abdullah Al Faruque
-                        </h3>
-
-                        <p>
-                            Professor, Former Dean Faculty of Law,
-                            University of Chittagong
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- EKRAMUL -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Ekramul Haque.png"
-                            alt="Professor Dr. Muhammad Ekramul Haque"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Professor Dr. Muhammad Ekramul Haque
-                            </h3>
-
-                            <p>
-                                Professor, Department of Law, Dean (Acting),
-                                Faculty of Law, University of Dhaka
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Professor, Department of Law, Dean (Acting),
-                                    Faculty of Law, University of Dhaka
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Professor Dr. Muhammad Ekramul Haque
-                        </h3>
-
-                        <p>
-                            Professor, Department of Law, Dean (Acting),
-                            Faculty of Law, University of Dhaka
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- RAKIBA -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Nabi.png"
-                            alt="Professor Dr. Rakiba Nabi"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Professor Dr. Rakiba Nabi
-                            </h3>
-
-                            <p>
-                                Chairman, Department of Law,
-                                University of Chittagong
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Chairman, Department of Law,
-                                    University of Chittagong
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Professor Dr. Rakiba Nabi
-                        </h3>
-
-                        <p>
-                            Chairman, Department of Law,
-                            University of Chittagong
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CHRISTINE -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Christine.png"
-                            alt="Professor Christine Richardson"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Professor Christine Richardson
-                            </h3>
-
-                            <p>
-                                Professor, Department of Law and Land Administration,
-                                Jagannath University
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Professor,
-                                    Department of Law and Land Administration,
-                                    Jagannath University
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Professor Christine Richardson
-                        </h3>
-
-                        <p>
-                            Professor, Department of Law and Land Administration,
-                            Jagannath University
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- RIZWANUL -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Rizwanul Islam.jpg"
-                            alt="Professor Dr. Md. Rizwanul Islam"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Professor Dr. Md. Rizwanul Islam
-                            </h3>
-
-                            <p>
-                                Dean, SHSS, North South University
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Dean, SHSS, North South University
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Professor Dr. Md. Rizwanul Islam
-                        </h3>
-
-                        <p>
-                            Dean, SHSS, North South University
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- AL IMRAN -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Al Imran.png"
-                            alt="Dr. Hassan Faruk Al Imran"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Dr. Hassan Faruk Al Imran
-                            </h3>
-
-                            <p>
-                                Associate Professor (Law),
-                                Independent University Bangladesh
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Associate Professor (Law),
-                                    Independent University Bangladesh
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Dr. Hassan Faruk Al Imran
-                        </h3>
-
-                        <p>
-                            Associate Professor (Law),
-                            Independent University Bangladesh
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- JOBAIR -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/Jobair.png"
-                            alt="Dr. Jobair Alam"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Dr. Jobair Alam
-                            </h3>
-
-                            <p>
-                                Lecturer in Law, University of Staffordshire
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Lecturer in Law,
-                                    University of Staffordshire
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Dr. Jobair Alam
-                        </h3>
-
-                        <p>
-                            Lecturer in Law, University of Staffordshire
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- IMDAD -->
-
-                <article class="member-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Advisors/imdad.png"
-                            alt="A.B.M. Imdadul Haque Khan"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                A.B.M. Imdadul Haque Khan
-                            </h3>
-
-                            <p>
-                                Dean, Faculty of Law, Eastern University
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Dean, Faculty of Law,
-                                    Eastern University
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            A.B.M. Imdadul Haque Khan
-                        </h3>
-
-                        <p>
-                            Dean, Faculty of Law, Eastern University
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <div
+                class="team-grid-wrapper"
+                id="advisoryGrid"
+            ></div>
 
         </section>
 
@@ -845,700 +587,40 @@
             id="directors"
         >
 
-            <div class="team-section-heading">
+            <div class="panel-header">
 
-                <div class="section-label">
+                <span class="section-label">
+                    LEADERSHIP &amp; GOVERNANCE
+                </span>
 
-                    <span></span>
+                <h2>
+                    Board of Directors
+                </h2>
 
-                    <p>BOARD OF DIRECTORS</p>
-
-                </div>
-
-                <h2>Board of Directors</h2>
+                <p>
+                    The Board of Directors of BCRLS serves as the core
+                    decision-making body of the organization, responsible
+                    for setting strategic direction, overseeing operations,
+                    and ensuring effective governance. Comprising dedicated
+                    individuals with strong leadership, academic, and
+                    organizational experience, the Board plays a pivotal role
+                    in driving the mission and long-term vision of BCRLS.
+                    They are actively involved in planning and implementing
+                    programs, managing institutional affairs, and maintaining
+                    accountability and transparency in all activities. Through
+                    their commitment and collaborative efforts, the Board of
+                    Directors ensures that BCRLS continues to grow as a
+                    dynamic platform for legal research, advocacy, and
+                    academic excellence.
+                </p>
 
             </div>
 
 
-            <div class="team-grid">
-
-
-                <!-- SEJAN -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Sejan.jpg"
-                            alt="Sakhawat Sajjat Sejan"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Sakhawat Sajjat Sejan
-                            </h3>
-
-                            <p>
-                                Founder
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Sakhawat Sajjat Sejan is the Founder of BCRLS.
-                                    He completed his LL.B. (Hons.) and LL.M. from
-                                    the University of Chittagong.
-                                </p>
-
-                                <p>
-                                    He is currently serving as an Assistant Professor
-                                    in the Department of Law at University of
-                                    Information Technology and Sciences.
-                                </p>
-
-                                <p>
-                                    Previously, he worked as an Assistant Professor
-                                    of Law at the Bangladesh University of Bangladesh
-                                    and Feni University, where he also served as Head
-                                    of the Department.
-                                </p>
-
-                                <p>
-                                    He is an active researcher and writer on refugee
-                                    law and protection.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Sakhawat Sajjat Sejan
-                        </h3>
-
-                        <p>
-                            Founder
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- RASHPI -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Rashpi.jpg"
-                            alt="Raspiatur Rashpi"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Raspiatur Rashpi
-                            </h3>
-
-                            <p>
-                                Director, Head of Resource Management,
-                                Training &amp; Development
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Raspiatur Rashpi is currently working as a lecturer,
-                                    Department of Law, University of Chittagong.
-                                </p>
-
-                                <p>
-                                    She was also the former lecturer in Law,
-                                    Bangladesh Army International University of
-                                    Science and Technology.
-                                </p>
-
-                                <p>
-                                    She completed her LLB (Honours) and LLM from
-                                    Department of Law, University of Chittagong.
-                                </p>
-
-                                <p>
-                                    Her research area of interest includes Climate
-                                    Change and Environmental laws, Human Rights law,
-                                    Constitutional law, Refugee law etc.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Raspiatur Rashpi
-                        </h3>
-
-                        <p>
-                            Director, Head of Resource Management,
-                            Training &amp; Development
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- NIAZ -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Niaz.jpg"
-                            alt="Niaz Mohammad"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Niaz Mohammad
-                            </h3>
-
-                            <p>
-                                Director, Head of Research
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Niaz Mohammad is currently working as an
-                                    Associate Legal Counsel at BRAC and serves as
-                                    the Director of Research at BCRLS.
-                                </p>
-
-                                <p>
-                                    He previously worked as a Legal Research Assistant
-                                    at the Centre for Peace and Justice, where he
-                                    focused on refugee law, including access to
-                                    justice for Rohingyas in Bangladesh.
-                                </p>
-
-                                <p>
-                                    He completed his LL.B. with distinction from
-                                    BRAC University and holds a Diploma in Economic,
-                                    Social and Development Rights from Kathmandu
-                                    School of Law.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Niaz Mohammad
-                        </h3>
-
-                        <p>
-                            Director, Head of Research
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- JOY -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Joy.jpg"
-                            alt="Md. Rahul Hasan Joy"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Md. Rahul Hasan Joy
-                            </h3>
-
-                            <p>
-                                Director, Head of Legal Affairs
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Md. Rahul Hasan Joy completed his BA.LL.B.
-                                    (Hons.) from Aligarh Muslim University, India,
-                                    and his LL.M. in International Law from the
-                                    University of Rajshahi.
-                                </p>
-
-                                <p>
-                                    He is currently a Lecturer in the Department of
-                                    Law at the University of Information Technology
-                                    and Sciences (UITS).
-                                </p>
-
-                                <p>
-                                    Previously, he served as a Lecturer of Law at
-                                    Feni University.
-                                </p>
-
-                                <p>
-                                    He is also an enrolled Advocate with the
-                                    Bangladesh Bar Council.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Md. Rahul Hasan Joy
-                        </h3>
-
-                        <p>
-                            Director, Head of Legal Affairs
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- TAWHID -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Tawhidul Islam.jpg"
-                            alt="Mohammad Tawhidul Islam Hridoy"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Mohammad Tawhidul Islam Hridoy
-                            </h3>
-
-                            <p>
-                                Director, Head of IT
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Mohammad Tawhidul Islam is a Lecturer in the
-                                    Department of Law at the State University of
-                                    Bangladesh and currently serves as Director
-                                    of IT at BCRLS.
-                                </p>
-
-                                <p>
-                                    He previously taught at Feni University and
-                                    worked at US-Bangla Airlines in Company
-                                    Secretary and Legal Affairs.
-                                </p>
-
-                                <p>
-                                    He completed his LL.B. and LL.M. from
-                                    Jahangirnagar University and obtained another
-                                    LL.M. from South Asian University, New Delhi.
-                                </p>
-
-                                <p>
-                                    His interests include teaching, research,
-                                    and academic engagement activities.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Mohammad Tawhidul Islam Hridoy
-                        </h3>
-
-                        <p>
-                            Director, Head of IT
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SUMAIYA -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Sumaiya Islam.jpg"
-                            alt="Sumaiya Islam"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Sumaiya Islam
-                            </h3>
-
-                            <p>
-                                Director, Head of Public Relations
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Sumaiya Islam completed her LL.B. (Hons.) and
-                                    LL.M. from Southern University Bangladesh and
-                                    an additional LL.M. from South Asian University.
-                                </p>
-
-                                <p>
-                                    She is currently a Lecturer in the Department
-                                    of Law at Manarat International University.
-                                </p>
-
-                                <p>
-                                    She contributes to public engagement,
-                                    awareness-building, and institutional networking
-                                    at BCRLS.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Sumaiya Islam
-                        </h3>
-
-                        <p>
-                            Director, Head of Public Relations
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- OMAR -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Omar Farque.jpg"
-                            alt="Md. Omar Farque"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Md. Omar Farque
-                            </h3>
-
-                            <p>
-                                Executive Director
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Md. Omar Farque completed both his LL.B. (Hons.)
-                                    and LL.M. from Eastern University, where he
-                                    achieved outstanding academic results, including
-                                    a Gold Medal in his LL.M.
-                                </p>
-
-                                <p>
-                                    He is currently a Lecturer in Law at Eastern
-                                    University.
-                                </p>
-
-                                <p>
-                                    Previously, he served as a Lecturer in Law at
-                                    the European University of Bangladesh.
-                                </p>
-
-                                <p>
-                                    He also works as a Senior Research Associate at
-                                    I. H. Khan &amp; Associates and as an Assistant
-                                    Editor at Revival Press.
-                                </p>
-
-                                <p>
-                                    His research interests include Public
-                                    International Law, Refugee Law, Climate Law,
-                                    and Islamic Law.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Md. Omar Farque
-                        </h3>
-
-                        <p>
-                            Executive Director
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- NABILA -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Nabila.jpg"
-                            alt="Nabila Farhin"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Nabila Farhin
-                            </h3>
-
-                            <p>
-                                Director, Head of Programs
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Nabila Farhin completed her LL.B. (Hons.) and
-                                    LL.M. (Thesis) from the University of Chittagong,
-                                    where she ranked among the top students of
-                                    her class.
-                                </p>
-
-                                <p>
-                                    She also earned an MSS in Industrial Relations
-                                    and Labour Studies from the University of Dhaka
-                                    and a Diploma in Economic, Social and Development
-                                    Rights from Kathmandu School of Law, Nepal.
-                                </p>
-
-                                <p>
-                                    She is currently a Senior Lecturer at East West
-                                    University and an Advocate of the Supreme Court
-                                    of Bangladesh.
-                                </p>
-
-                                <p>
-                                    Previously, she served as Staff Captain in the
-                                    Judge Advocate General’s Office of the Bangladesh
-                                    Army and worked as a consultant with TIB, ILO,
-                                    and BLAST.
-                                </p>
-
-                                <p>
-                                    Her research focuses on labour rights, gender
-                                    justice, and climate justice.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Nabila Farhin
-                        </h3>
-
-                        <p>
-                            Director, Head of Programs
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- RIAD -->
-
-                <article class="member-card director-card">
-
-                    <div class="member-image-wrap">
-
-                        <img
-                            src="../assets/Directors/Riad.jpg"
-                            alt="Md. Riad Mahmud"
-                            class="member-photo"
-                        >
-
-                        <div class="member-hover">
-
-                            <span class="hover-label">
-                                BCRLS
-                            </span>
-
-                            <h3>
-                                Md. Riad Mahmud
-                            </h3>
-
-                            <p>
-                                Director of Administration and Finance
-                            </p>
-
-                            <div class="hover-line"></div>
-
-                            <div class="hover-details">
-
-                                <p>
-                                    Md. Riad Mahmud is currently serving as a
-                                    Senior Lecturer in the Department of Law at
-                                    East West University.
-                                </p>
-
-                                <p>
-                                    He is also an Erasmus Mundus Scholar and serves
-                                    as an Advisor to Jessup Bangladesh.
-                                </p>
-
-                                <p>
-                                    With experience in legal education, research,
-                                    and international academic collaboration, he
-                                    brings strong leadership to BCRLS.
-                                </p>
-
-                                <p>
-                                    As Director of Administration and Finance,
-                                    he contributes to strengthening the organization’s
-                                    administrative structure, financial governance,
-                                    and institutional development.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="member-info">
-
-                        <h3>
-                            Md. Riad Mahmud
-                        </h3>
-
-                        <p>
-                            Director of Administration and Finance
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <div
+                class="team-grid-wrapper"
+                id="directorsGrid"
+            ></div>
 
         </section>
 
@@ -1552,40 +634,102 @@
             id="operational"
         >
 
-            <div class="team-section-heading">
+            <div class="panel-header">
 
-                <div class="section-label">
+                <span class="section-label">
+                    OPERATIONS &amp; IMPLEMENTATION
+                </span>
 
-                    <span></span>
-
-                    <p>OPERATIONAL TEAM</p>
-
-                </div>
-
-                <h2>Operational Team</h2>
-
-            </div>
-
-            <div class="operational-placeholder">
-
-                <div class="placeholder-icon">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-
-                <h3>
+                <h2>
                     Operational Team
-                </h3>
+                </h2>
 
                 <p>
-                    Team information will be added soon.
+                    The Operational Team supports the day-to-day activities,
+                    research coordination, programs, communication and
+                    institutional operations of BCRLS.
                 </p>
 
             </div>
 
+
+            <div
+                id="operationalGrid"
+                class="operational-grid"
+            ></div>
+
         </section>
 
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFILE MODAL
+===================================================== -->
+
+<div
+    class="member-modal"
+    id="memberModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="member-modal-overlay"
+        id="modalOverlay"
+    ></div>
+
+
+    <div
+        class="member-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalMemberName"
+    >
+
+        <button
+            type="button"
+            class="member-modal-close"
+            id="modalClose"
+            aria-label="Close profile"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="member-modal-image-wrap">
+
+            <img
+                id="modalMemberImage"
+                class="member-modal-image"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="member-modal-info">
+
+            <span class="member-modal-kicker">
+                BCRLS TEAM
+            </span>
+
+            <h2 id="modalMemberName"></h2>
+
+            <p id="modalMemberRole"></p>
+
+            <div class="member-modal-divider"></div>
+
+            <p id="modalMemberDetails"></p>
+
+        </div>
 
     </div>
+
+</div>
+
 
 </main>
 
@@ -1596,20 +740,181 @@
 
 <footer class="site-footer">
 
-    <div class="team-container">
+    <div class="container">
 
-        <div class="footer-content">
+        <div class="footer-grid">
+
+
+            <!-- BRAND -->
 
             <div class="footer-brand">
 
-                <img
-                    src="../assets/logo.png"
-                    alt="BCRLS Logo"
+                <a
+                    class="brand"
+                    href="../index.html"
                 >
 
+                    <div class="brand-logo">
+
+                        <img
+                            src="../assets/logo.png"
+                            alt="BCRLS Logo"
+                        >
+
+                    </div>
+
+                    <div class="brand-text">
+
+                        <strong>BCRLS</strong>
+
+                        <span>
+                            Bangladesh Center for Refugee Law Studies
+                        </span>
+
+                    </div>
+
+                </a>
+
+
                 <p>
-                    Bangladesh Centre for Refugee Law Studies
+                    A research, education and knowledge platform dedicated
+                    to refugee law, displacement, human rights and related
+                    issues.
                 </p>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="Founder.html">
+                    Founder
+                </a>
+
+                <a href="team.html">
+                    Team
+                </a>
+
+                <a href="../research/journal.html">
+                    Journal
+                </a>
+
+                <a href="../events/index.html">
+                    Events
+                </a>
+
+            </div>
+
+
+            <!-- RESOURCES -->
+
+            <div class="footer-column">
+
+                <h3>Resources</h3>
+
+                <a href="../research/conference-proceedings.html">
+                    Conference Proceedings
+                </a>
+
+                <a href="../research/blog.html">
+                    Blog
+                </a>
+
+                <a href="../library/index.html">
+                    Library
+                </a>
+
+                <a href="../data/index.html">
+                    Data Hub
+                </a>
+
+                <a href="../media/gallery.html">
+                    Gallery
+                </a>
+
+            </div>
+
+
+            <!-- CONNECT -->
+
+            <div class="footer-column">
+
+                <h3>Connect</h3>
+
+                <a href="../index.html#connect">
+                    Connect With BCRLS
+                </a>
+
+                <a href="team.html">
+                    Team
+                </a>
+
+                <a href="../get-involved/index.html">
+                    Get Involved
+                </a>
+
+                <a href="../contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                ©
+                <span id="currentYear">2026</span>
+                BCRLS. All rights reserved.
+            </p>
+
+            <div>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Use
+                </a>
 
             </div>
 
@@ -1624,7 +929,16 @@
      JAVASCRIPT
 ===================================================== -->
 
-<script src="../js/team.js"></script>
+<script
+    src="../js/app.js"
+    defer
+></script>
+
+<script
+    src="../js/team.js"
+    defer
+></script>
+
 
 </body>
 </html>
