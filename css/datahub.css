@@ -1,0 +1,1957 @@
+/* =========================================================
+   BCRLS DATA HUB
+   datahub.css
+
+   Used for:
+   - datahub.html
+   - statistics.html
+   - dataportal.html
+   - database.html
+
+   Existing CSS:
+   - style.css
+   - responsive.css
+   - responsible.css
+========================================================= */
+
+
+/* =========================================================
+   DATA HUB PAGE BASE
+========================================================= */
+
+body.datahub-page {
+    margin: 0;
+    padding: 0;
+    background: #f6f8f7;
+    color: #26352f;
+}
+
+body.datahub-page *,
+body.datahub-page *::before,
+body.datahub-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   LOGO CONFLICT FIX
+========================================================= */
+
+body.datahub-page .site-header {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    overflow: visible;
+}
+
+body.datahub-page .site-header .header-inner {
+    position: relative;
+    width: 100%;
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+body.datahub-page .site-header .brand {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    width: auto;
+    max-width: 390px;
+
+    height: 72px;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   LOGO CONTAINER
+========================================================= */
+
+body.datahub-page .site-header .brand-logo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 52px;
+
+    width: 52px !important;
+    min-width: 52px !important;
+    max-width: 52px !important;
+
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+
+    margin: 0 11px 0 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+   Prevents giant logo issue
+========================================================= */
+
+body.datahub-page .site-header .brand-logo img {
+    position: static !important;
+
+    display: block !important;
+
+    width: 52px !important;
+    min-width: 52px !important;
+    max-width: 52px !important;
+
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+body.datahub-page .site-header .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    max-width: 300px;
+
+    overflow: hidden;
+}
+
+body.datahub-page .site-header .brand-text strong {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #174a3b;
+
+    font-size: 18px;
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+body.datahub-page .site-header .brand-text span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #68766f;
+
+    font-size: 8px;
+    line-height: 1.25;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+body.datahub-page .site-header .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    margin-left: auto;
+
+    min-width: 0;
+    height: 72px;
+}
+
+body.datahub-page .site-header .main-nav > a,
+body.datahub-page .site-header .main-nav .nav-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 8px 10px;
+
+    color: #41534c;
+
+    font-size: 14px;
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+body.datahub-page .site-header .main-nav > a:hover,
+body.datahub-page .site-header .main-nav .nav-link:hover {
+    color: #174a3b;
+}
+
+body.datahub-page .site-header .main-nav .active {
+    color: #174a3b;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NAV DROPDOWN
+========================================================= */
+
+body.datahub-page .site-header .nav-dropdown {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 72px;
+}
+
+body.datahub-page .site-header .nav-dropdown-toggle {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 40px;
+
+    padding: 8px 10px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #41534c;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+body.datahub-page .site-header .nav-dropdown-toggle:hover {
+    color: #174a3b;
+}
+
+body.datahub-page .site-header .dropdown-arrow {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+body.datahub-page .site-header .dropdown-menu {
+    position: absolute;
+
+    top: calc(100% - 1px);
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1200;
+
+    width: 250px;
+
+    padding: 8px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 8px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+body.datahub-page .site-header .nav-dropdown:hover .dropdown-menu,
+body.datahub-page .site-header .nav-dropdown.active .dropdown-menu,
+body.datahub-page .site-header .nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+body.datahub-page .site-header .dropdown-menu a {
+    display: block;
+
+    padding: 10px 12px;
+
+    color: #41534c;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+body.datahub-page .site-header .dropdown-menu a:hover {
+    background: #eaf3ef;
+    color: #174a3b;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+body.datahub-page .site-header .menu-toggle {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+body.datahub-page .site-header .menu-overlay {
+    display: none;
+}
+
+
+/* =========================================================
+   DATA HUB HERO
+========================================================= */
+
+.datahub-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 95px 20px 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10382d 0%,
+            #174a3b 55%,
+            #1e5a47 100%
+        );
+
+    color: #ffffff;
+}
+
+.datahub-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    top: -300px;
+    right: -130px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 50%;
+}
+
+.datahub-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    bottom: -250px;
+    left: -140px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 50%;
+}
+
+.datahub-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.datahub-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.datahub-hero h1 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+}
+
+.datahub-hero p {
+    max-width: 730px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.datahub-intro {
+    padding: 75px 20px 50px;
+
+    background: #f6f8f7;
+}
+
+.datahub-intro-content {
+    max-width: 820px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.datahub-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #2f6f5d;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.datahub-intro h2 {
+    margin: 0 0 15px;
+
+    color: #174a3b;
+
+    font-size: clamp(29px, 4vw, 41px);
+
+    line-height: 1.2;
+}
+
+.datahub-intro p {
+    margin: 0;
+
+    color: #66736e;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MAIN DATA HUB SECTION
+========================================================= */
+
+.datahub-section {
+    padding: 30px 20px 85px;
+
+    background: #f6f8f7;
+}
+
+.datahub-container {
+    width: min(100% - 40px, 1180px);
+
+    margin: auto;
+}
+
+.datahub-section-heading {
+    max-width: 760px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.datahub-section-heading h2 {
+    margin: 0 0 13px;
+
+    color: #174a3b;
+
+    font-size: clamp(28px, 4vw, 39px);
+
+    line-height: 1.2;
+}
+
+.datahub-section-heading p {
+    margin: 0;
+
+    color: #66736e;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   DATA HUB GRID
+========================================================= */
+
+.datahub-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   DATA HUB CARD
+========================================================= */
+
+.datahub-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 390px;
+
+    padding: 31px 27px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 28px rgba(23, 74, 59, 0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.datahub-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #174a3b;
+}
+
+.datahub-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 17px 40px rgba(23, 74, 59, 0.14);
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.datahub-card-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 20px;
+
+    border-radius: 11px;
+
+    background: #eaf3ef;
+
+    color: #174a3b;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.datahub-card h3 {
+    margin: 0 0 12px;
+
+    color: #174a3b;
+
+    font-size: 23px;
+
+    line-height: 1.3;
+}
+
+.datahub-card p {
+    margin: 0 0 20px;
+
+    color: #66736e;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CARD LIST
+========================================================= */
+
+.datahub-card-list {
+    margin: 0 0 25px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.datahub-card-list li {
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 9px;
+
+    color: #34443d;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.datahub-card-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #2f6f5d;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD BUTTON
+========================================================= */
+
+.datahub-card-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 12px 18px;
+
+    border: 1px solid #174a3b;
+
+    border-radius: 7px;
+
+    background: #174a3b;
+
+    color: #ffffff !important;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.datahub-card-button:hover {
+    background: #10382d;
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+}
+
+.datahub-card-button .arrow {
+    transition: transform 0.2s ease;
+}
+
+.datahub-card-button:hover .arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FEATURED CARD
+========================================================= */
+
+.datahub-card.featured {
+    border-color: #c8dcd4;
+
+    box-shadow:
+        0 10px 32px rgba(23, 74, 59, 0.12);
+}
+
+.datahub-card.featured::before {
+    height: 5px;
+}
+
+
+/* =========================================================
+   EXTERNAL RESOURCES
+========================================================= */
+
+.datahub-resources {
+    padding: 80px 20px;
+
+    background: #ffffff;
+}
+
+.datahub-resource-grid {
+    width: min(100% - 40px, 1180px);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.datahub-resource-card {
+    padding: 25px;
+
+    background: #f6f8f7;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.datahub-resource-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 9px 26px rgba(23, 74, 59, 0.09);
+}
+
+.datahub-resource-card .resource-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 15px;
+
+    border-radius: 9px;
+
+    background: #eaf3ef;
+
+    color: #174a3b;
+
+    font-size: 18px;
+}
+
+.datahub-resource-card h3 {
+    margin: 0 0 8px;
+
+    color: #174a3b;
+
+    font-size: 17px;
+
+    line-height: 1.35;
+}
+
+.datahub-resource-card p {
+    margin: 0 0 13px;
+
+    color: #66736e;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+.datahub-resource-card a {
+    color: #174a3b;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.datahub-resource-card a:hover {
+    color: #2f6f5d;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DATA SOURCE
+========================================================= */
+
+.datahub-source {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    margin-top: 10px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #eaf3ef;
+
+    color: #2f6f5d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.datahub-cta {
+    padding: 82px 20px;
+
+    background: #174a3b;
+
+    color: #ffffff;
+}
+
+.datahub-cta-content {
+    max-width: 820px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.datahub-cta h2 {
+    margin: 0 0 15px;
+
+    color: #ffffff;
+
+    font-size: clamp(29px, 4vw, 43px);
+
+    line-height: 1.2;
+}
+
+.datahub-cta p {
+    max-width: 700px;
+
+    margin: 0 auto 28px;
+
+    color: rgba(255, 255, 255, 0.83);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.datahub-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 24px;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #174a3b;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.datahub-cta-button:hover {
+    color: #174a3b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   DATABASE / PORTAL ITEM
+========================================================= */
+
+.datahub-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 9px;
+}
+
+.datahub-item-icon {
+    flex: 0 0 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 8px;
+
+    background: #eaf3ef;
+
+    color: #174a3b;
+
+    font-weight: 700;
+}
+
+.datahub-item-content {
+    flex: 1;
+}
+
+.datahub-item-content h4 {
+    margin: 0 0 5px;
+
+    color: #174a3b;
+
+    font-size: 16px;
+}
+
+.datahub-item-content p {
+    margin: 0;
+
+    color: #66736e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   STATISTICS PAGE
+========================================================= */
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.statistics-card {
+    padding: 27px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow:
+        0 7px 24px rgba(23, 74, 59, 0.06);
+}
+
+.statistics-card h3 {
+    margin: 0 0 8px;
+
+    color: #174a3b;
+
+    font-size: 32px;
+
+    line-height: 1.1;
+}
+
+.statistics-card p {
+    margin: 0;
+
+    color: #66736e;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DATA PORTAL
+========================================================= */
+
+.portal-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.portal-card {
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 7px 24px rgba(23, 74, 59, 0.06);
+}
+
+.portal-card h3 {
+    margin: 0 0 10px;
+
+    color: #174a3b;
+
+    font-size: 21px;
+}
+
+.portal-card p {
+    margin: 0 0 18px;
+
+    color: #66736e;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.portal-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #174a3b;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.portal-link:hover {
+    color: #2f6f5d;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DATABASE PAGE
+   UPDATED
+========================================================= */
+
+.database-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 520px);
+
+    gap: 24px;
+
+    justify-content: start;
+
+    width: 100%;
+}
+
+.database-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7e3;
+
+    border-top: 4px solid #174a3b;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 8px 26px rgba(23, 74, 59, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.database-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 35px rgba(23, 74, 59, 0.12);
+}
+
+.database-card-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 18px;
+
+    border-radius: 9px;
+
+    background: #eaf3ef;
+
+    color: #174a3b;
+
+    font-size: 21px;
+}
+
+.database-card h3 {
+    margin: 0 0 10px;
+
+    color: #174a3b;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+}
+
+.database-card p {
+    margin: 0 0 18px;
+
+    color: #66736e;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DATABASE EXPLORE BUTTON
+   FIXED GLOBAL CSS CONFLICT
+========================================================= */
+
+.database-card a {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 7px;
+
+    width: fit-content !important;
+    min-width: 130px !important;
+    max-width: max-content !important;
+
+    height: auto !important;
+    min-height: 44px;
+
+    margin: 4px 0 0 !important;
+    padding: 11px 22px !important;
+
+    background: #174a3b !important;
+
+    border: 1px solid #174a3b !important;
+    border-radius: 7px !important;
+
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+
+    font-weight: 800 !important;
+
+    text-align: center !important;
+    text-indent: 0 !important;
+
+    text-decoration: none !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.database-card a:hover {
+    background: #10382d !important;
+
+    border-color: #10382d !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    transform: translateY(-2px);
+}
+
+.database-card a:focus,
+.database-card a:active {
+    background: #10382d !important;
+
+    border-color: #10382d !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   NOTICE / INFORMATION BOX
+========================================================= */
+
+.datahub-notice {
+    max-width: 900px;
+
+    margin: 40px auto 0;
+
+    padding: 18px 22px;
+
+    background: #eef5f2;
+
+    border-left: 4px solid #174a3b;
+
+    border-radius: 6px;
+
+    color: #4b5c55;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+body.datahub-page .site-footer {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    body.datahub-page .site-header .brand {
+        max-width: 320px;
+    }
+
+    body.datahub-page .site-header .main-nav > a,
+    body.datahub-page .site-header .nav-dropdown-toggle {
+        padding-left: 7px;
+        padding-right: 7px;
+
+        font-size: 13px;
+    }
+
+    .datahub-grid {
+        gap: 18px;
+    }
+
+    .datahub-card {
+        padding: 27px 22px;
+    }
+
+    .statistics-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .database-grid {
+        grid-template-columns:
+            minmax(320px, 520px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    body.datahub-page .site-header .header-inner {
+        min-height: 68px;
+    }
+
+    body.datahub-page .site-header .brand {
+        height: 68px;
+    }
+
+    body.datahub-page .site-header .brand-logo {
+        flex-basis: 48px;
+
+        width: 48px !important;
+        min-width: 48px !important;
+        max-width: 48px !important;
+
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+    }
+
+    body.datahub-page .site-header .brand-logo img {
+        width: 48px !important;
+        min-width: 48px !important;
+        max-width: 48px !important;
+
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+    }
+
+    body.datahub-page .site-header .main-nav {
+        display: none;
+    }
+
+    body.datahub-page .site-header .menu-toggle {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        width: 42px;
+        height: 42px;
+
+        margin-left: auto;
+
+        padding: 8px;
+    }
+
+    body.datahub-page .site-header .menu-toggle span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        background: #174a3b;
+    }
+
+
+    /* DATA HUB */
+
+    .datahub-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .datahub-resource-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .database-grid {
+        grid-template-columns:
+            minmax(320px, 520px);
+    }
+
+    .portal-grid {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body.datahub-page .site-header .brand-text span {
+        display: none;
+    }
+
+    body.datahub-page .site-header .brand-text strong {
+        font-size: 17px;
+    }
+
+
+    .datahub-hero {
+        padding: 70px 15px 65px;
+    }
+
+    .datahub-hero h1 {
+        font-size: 42px;
+    }
+
+    .datahub-hero p {
+        font-size: 14px;
+    }
+
+
+    .datahub-intro,
+    .datahub-section,
+    .datahub-resources,
+    .datahub-cta {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .datahub-container {
+        width: min(100% - 30px, 1180px);
+    }
+
+
+    .datahub-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .datahub-resource-grid {
+        width: min(100% - 30px, 1180px);
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .datahub-card {
+        min-height: auto;
+
+        padding: 28px 23px;
+    }
+
+
+    .database-grid {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+    }
+
+    .database-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .database-card a {
+        min-width: 125px !important;
+    }
+
+
+    .statistics-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body.datahub-page .site-header .brand-logo {
+        margin-right: 8px;
+    }
+
+    body.datahub-page .site-header .brand-text strong {
+        font-size: 16px;
+    }
+
+
+    .datahub-hero {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .datahub-hero h1 {
+        font-size: 35px;
+    }
+
+    .datahub-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .datahub-hero p {
+        font-size: 14px;
+    }
+
+
+    .datahub-intro h2,
+    .datahub-section-heading h2 {
+        font-size: 28px;
+    }
+
+
+    .datahub-card h3 {
+        font-size: 21px;
+    }
+
+
+    .datahub-card-icon {
+        width: 51px;
+        height: 51px;
+
+        font-size: 22px;
+    }
+
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .database-card {
+        padding: 24px 20px;
+    }
+
+
+    .database-card a {
+        min-width: 120px !important;
+
+        padding: 10px 18px !important;
+    }
+
+
+    .portal-card {
+        padding: 24px 20px;
+    }
+
+
+    .datahub-cta {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .datahub-cta h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+body.datahub-page a:focus-visible,
+body.datahub-page button:focus-visible {
+    outline: 3px solid rgba(201, 154, 74, 0.55);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body.datahub-page *,
+    body.datahub-page *::before,
+    body.datahub-page *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+/* =========================================================
+   STATISTICS PAGE - CARD & BUTTON FIX
+   ========================================================= */
+
+.datahub-page .datahub-section {
+    padding-top: 35px;
+    padding-bottom: 70px;
+}
+
+/* Statistics cards layout */
+.datahub-page .datahub-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+/* Card */
+.datahub-page .datahub-grid .datahub-card {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+
+    padding: 28px 24px !important;
+
+    background: #ffffff !important;
+    border: 1px solid #d9e3df !important;
+    border-top: 4px solid #0d5948 !important;
+    border-radius: 12px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Icon */
+.datahub-page .datahub-grid .datahub-card .datahub-card-icon {
+    width: 52px !important;
+    height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-bottom: 18px !important;
+
+    background: #eaf3f0 !important;
+    border-radius: 10px !important;
+
+    font-size: 25px !important;
+    line-height: 1 !important;
+}
+
+/* Card title */
+.datahub-page .datahub-grid .datahub-card h3 {
+    margin: 0 0 12px 0 !important;
+
+    color: #063f34 !important;
+    font-size: 21px !important;
+    line-height: 1.3 !important;
+}
+
+/* Card paragraph */
+.datahub-page .datahub-grid .datahub-card p {
+    margin: 0 0 22px 0 !important;
+
+    color: #49615b !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+/* =========================================================
+   EXPLORE BUTTON - IMPORTANT FIX
+   ========================================================= */
+
+.datahub-page .datahub-grid .datahub-card .datahub-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+    max-width: max-content !important;
+    min-width: 0 !important;
+
+    min-height: 42px !important;
+
+    margin-top: auto !important;
+    padding: 10px 18px !important;
+
+    background: #0d5948 !important;
+    color: #ffffff !important;
+
+    border: 1px solid #0d5948 !important;
+    border-radius: 7px !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+
+    text-decoration: none !important;
+    text-indent: 0 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    box-shadow: none !important;
+
+    box-sizing: border-box !important;
+}
+
+.datahub-page .datahub-grid .datahub-card .datahub-button:hover {
+    background: #084637 !important;
+    color: #ffffff !important;
+    border-color: #084637 !important;
+    text-decoration: none !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .datahub-page .datahub-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .datahub-page .datahub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .datahub-page .datahub-grid .datahub-card {
+        padding: 24px 20px !important;
+    }
+
+    .datahub-page .datahub-grid .datahub-card h3 {
+        font-size: 19px !important;
+    }
+
+    .datahub-page .datahub-grid .datahub-card .datahub-button {
+        width: fit-content !important;
+    }
+
+}
+/* =========================================================
+   REFUGEE STATISTICS BUTTON - FINAL FIX
+   ========================================================= */
+
+body.datahub-page a.statistics-explore-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    width: auto !important;
+    min-width: 210px !important;
+    max-width: 240px !important;
+    height: 44px !important;
+
+    margin-top: 15px !important;
+    padding: 0 20px !important;
+
+    background-color: #0d5948 !important;
+    background: #0d5948 !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #0d5948 !important;
+    border-radius: 7px !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    line-height: 44px !important;
+    text-align: center !important;
+
+    text-decoration: none !important;
+    text-indent: 0 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    box-sizing: border-box !important;
+
+    box-shadow: none !important;
+}
+
+body.datahub-page a.statistics-explore-btn i {
+    display: inline-block !important;
+
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+    line-height: 1 !important;
+}
+
+body.datahub-page a.statistics-explore-btn:hover {
+    background-color: #084637 !important;
+    background: #084637 !important;
+
+    color: #ffffff !important;
+
+    border-color: #084637 !important;
+
+    text-decoration: none !important;
+}
+
+body.datahub-page a.statistics-explore-btn:hover i {
+    color: #ffffff !important;
+}
