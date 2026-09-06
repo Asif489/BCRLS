@@ -214,7 +214,7 @@ ol {
 
     color: var(--muted);
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 600;
 
     text-transform: uppercase;
@@ -249,9 +249,10 @@ ol {
 
     background: transparent;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 
+    line-height: 1.5;
     white-space: nowrap;
 
     transition:
@@ -2397,7 +2398,7 @@ ol {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(3, minmax(0, 1fr));
 
     gap: 20px;
 }
@@ -3214,43 +3215,64 @@ ol {
 
 
 /* =========================================================
-   FOOTER
+   FOOTER — SHARED SITE-WIDE
+   Purpose:
+   - Keeps the existing footer content unchanged.
+   - Keeps Explore, Resources and Connect columns side-by-side.
+   - Keeps links inside each column vertically stacked.
+   - Keeps the logo visible without changing its artwork.
 ========================================================= */
 
 .site-footer {
-    background:
-        #103d30;
-
-    color:
-        rgba(255,255,255,.70);
+    width: 100%;
+    background: #103d30;
+    color: rgba(255,255,255,.70);
 }
 
-.footer-main {
-    padding:
-        75px 0 55px;
+.site-footer > .container {
+    padding-top: 65px;
+    padding-bottom: 0;
 }
 
 .footer-grid {
     display: grid;
-
-    grid-template-columns:
-        1.7fr
-        1fr
-        1fr
-        1fr;
-
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
     gap: 50px;
+    align-items: start;
 }
 
-
-/* FOOTER BRAND */
-
+/* Footer brand/logo area */
 .footer-brand {
     max-width: 400px;
 }
 
 .footer-brand .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
     margin-bottom: 18px;
+}
+
+.footer-brand .brand-logo {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.footer-brand .brand-logo img {
+    display: block;
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    opacity: 1;
+    visibility: visible;
 }
 
 .footer-brand .brand-text strong {
@@ -3258,163 +3280,246 @@ ol {
 }
 
 .footer-brand .brand-text span {
-    color:
-        rgba(255,255,255,.45);
+    color: rgba(255,255,255,.45);
+    font-size: 10px;
 }
 
 .footer-brand > p {
-    color:
-        rgba(255,255,255,.58);
-
-    font-size: 12px;
-
+    color: rgba(255,255,255,.58);
+    font-size: 13px;
     line-height: 1.85;
 }
 
-
-/* FOOTER SOCIAL */
-
-.footer-social {
+/* Footer social icons */
+.footer-social,
+.site-footer .social-links {
     display: flex;
-
+    align-items: center;
     gap: 8px;
-
     margin-top: 20px;
 }
 
-.footer-social a {
+.footer-social a,
+.site-footer .social-links a {
     width: 36px;
     height: 36px;
-
+    flex: 0 0 36px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    color:
-        rgba(255,255,255,.70);
-
-    background:
-        rgba(255,255,255,.07);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
+    margin: 0;
+    color: rgba(255,255,255,.70);
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.10);
     border-radius: 50%;
-
     transition:
         background var(--transition),
         color var(--transition),
+        border-color var(--transition),
         transform var(--transition);
 }
 
-.footer-social a:hover {
+.footer-social a:hover,
+.site-footer .social-links a:hover {
     color: white;
-
-    background:
-        var(--primary);
-
-    transform:
-        translateY(-3px);
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
 }
 
+/* Footer column headings */
+.footer-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-/* FOOTER COLUMN */
-
+.footer-column h3,
 .footer-column h4 {
-    margin-bottom: 18px;
-
+    display: block;
+    width: 100%;
+    margin: 0 0 18px;
     color: white;
-
-    font-size: 11px;
-
+    font-size: 12px;
     font-weight: 800;
-
+    line-height: 1.3;
     letter-spacing: 1px;
-
     text-transform: uppercase;
 }
 
-.footer-column a {
+/* Footer links — each link gets its own line */
+.footer-column > a {
     display: block;
-
-    margin-bottom: 9px;
-
-    color:
-        rgba(255,255,255,.55);
-
-    font-size: 11px;
-
+    width: fit-content;
+    margin: 0 0 9px;
+    padding: 0;
+    color: rgba(255,255,255,.55);
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
     transition:
         color var(--transition),
         transform var(--transition);
 }
 
-.footer-column a:hover {
-    color:
-        #a9e5c8;
-
-    transform:
-        translateX(4px);
+.footer-column > a:hover {
+    color: #a9e5c8;
+    transform: translateX(4px);
 }
 
-
-/* =========================================================
-   FOOTER BOTTOM
-========================================================= */
-
+/* Footer bottom bar */
 .footer-bottom {
     min-height: 65px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 20px;
-
-    padding:
-        18px 0;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.09);
+    margin-top: 28px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255,255,255,.09);
 }
 
 .footer-bottom p {
-    color:
-        rgba(255,255,255,.42);
-
-    font-size: 9px;
-
+    margin: 0;
+    color: rgba(255,255,255,.42);
+    font-size: 10px;
     line-height: 1.5;
 }
 
-.footer-bottom-links {
+.footer-bottom-links,
+.footer-bottom > div {
     display: flex;
-
     align-items: center;
-
     gap: 18px;
+    flex-wrap: wrap;
 }
 
-.footer-bottom-links a {
-    color:
-        rgba(255,255,255,.45);
-
-    font-size: 9px;
-
-    transition:
-        color var(--transition);
+.footer-bottom-links a,
+.footer-bottom > div a {
+    margin: 0;
+    color: rgba(255,255,255,.45);
+    font-size: 10px;
+    line-height: 1.5;
+    transition: color var(--transition);
 }
 
-.footer-bottom-links a:hover {
-    color:
-        white;
+.footer-bottom-links a:hover,
+.footer-bottom > div a:hover {
+    color: white;
 }
 
+/* Footer — tablet */
+@media screen and (max-width: 1000px) {
+    .site-footer > .container {
+        padding-top: 55px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 40px 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 600px;
+    }
+}
+
+/* Footer — mobile */
+@media screen and (max-width: 768px) {
+    .site-footer > .container {
+        padding-top: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .footer-brand > p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-bottom-links,
+    .footer-bottom > div {
+        align-items: flex-start;
+        gap: 10px 18px;
+    }
+}
+
+/* Footer — small mobile */
+@media screen and (max-width: 480px) {
+    .site-footer > .container {
+        width: calc(100% - 30px);
+        padding-top: 45px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 18px;
+    }
+
+    .footer-brand .brand-logo {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
+
+    .footer-brand .brand-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .footer-brand .brand-text strong {
+        font-size: 18px;
+    }
+
+    .footer-column h3,
+    .footer-column h4 {
+        margin-bottom: 14px;
+        font-size: 11px;
+    }
+
+    .footer-column > a {
+        font-size: 11px;
+        white-space: normal;
+    }
+
+    .footer-social,
+    .site-footer .social-links {
+        gap: 7px;
+    }
+
+    .footer-social a,
+    .site-footer .social-links a {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .footer-bottom {
+        gap: 8px;
+    }
+
+    .footer-bottom p,
+    .footer-bottom-links a,
+    .footer-bottom > div a {
+        font-size: 9px;
+    }
+}
 
 /* =========================================================
    PAGE LOAD ANIMATION
@@ -3555,4 +3660,340 @@ ol {
         transition-duration:
             0.01ms !important;
     }
+}
+/* =========================================================
+   HOMEPAGE-ONLY VISUAL FIXES
+   Purpose:
+   - These selectors require #newsletter, which exists on the homepage.
+   - Other pages using style.css are not affected by these rules.
+========================================================= */
+
+/* Hero heading line spacing */
+body:has(#newsletter) .hero h1 {
+    line-height: 1.14 !important;
+    letter-spacing: -1.5px !important;
+}
+
+body:has(#newsletter) .hero h1 span {
+    margin-top: 7px;
+}
+
+/* Section heading spacing */
+body:has(#newsletter) .section-header h2,
+body:has(#newsletter) .section-header.centered h2 {
+    line-height: 1.18;
+}
+
+/* Research card top row */
+body:has(#newsletter) .research-card-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+body:has(#newsletter) .research-card-top span {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .9px;
+    text-transform: uppercase;
+}
+
+body:has(#newsletter) .research-card-top i {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: var(--primary-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* Research card links */
+body:has(#newsletter) .card-link {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-top: 22px;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    transition: gap var(--transition), color var(--transition);
+}
+
+body:has(#newsletter) .card-link:hover {
+    gap: 13px;
+    color: var(--primary-dark);
+}
+
+/* Section title + action link row */
+body:has(#newsletter) .section-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+body:has(#newsletter) .section-header-row h2 {
+    margin-top: 12px;
+    color: var(--dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 4vw, 54px);
+    line-height: 1.18;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+body:has(#newsletter) .section-header-row .text-link {
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Founder/image helpers */
+body:has(#newsletter) .image-frame {
+    position: relative;
+    z-index: 1;
+}
+
+body:has(#newsletter) .image-caption {
+    display: block;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+
+body:has(#newsletter) .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(73,169,121,.16),
+            transparent 45%
+        ),
+        var(--primary-light);
+}
+
+body:has(#newsletter) .placeholder-image i {
+    font-size: 42px;
+    opacity: .75;
+}
+
+/* Connect information cards */
+body:has(#newsletter) .connect-info {
+    width: 100%;
+    max-width: 620px;
+}
+
+body:has(#newsletter) .connect-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(28,91,69,.05);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+body:has(#newsletter) .connect-info-item:last-child {
+    margin-bottom: 0;
+}
+
+body:has(#newsletter) .connect-info-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-dark);
+    box-shadow: var(--shadow-sm);
+}
+
+body:has(#newsletter) .feature-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 13px;
+}
+
+body:has(#newsletter) .connect-info-item h3 {
+    color: var(--dark);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+body:has(#newsletter) .connect-info-item p {
+    margin-top: 6px;
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+body:has(#newsletter) .connection-form,
+body:has(#newsletter) .connect-form {
+    margin-top: 25px;
+}
+
+body:has(#newsletter) .connection-form > .btn {
+    width: 100%;
+    margin-top: 4px;
+}
+
+body:has(#newsletter) .form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 2px 0 18px;
+}
+
+body:has(#newsletter) .form-check input {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    margin-top: 2px;
+    accent-color: var(--primary);
+}
+
+body:has(#newsletter) .form-check label {
+    margin: 0 !important;
+    color: var(--muted) !important;
+    font-size: 10px !important;
+    line-height: 1.55 !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+/* Newsletter separation from footer */
+body:has(#newsletter) .newsletter-section {
+    background: var(--white);
+}
+
+body:has(#newsletter) .newsletter-inner {
+    background:
+        linear-gradient(
+            120deg,
+            #064c3c,
+            #08745a
+        );
+}
+
+/* Homepage responsive adjustments */
+@media screen and (max-width: 900px) {
+    body:has(#newsletter) .section-header-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 35px;
+    }
+
+    body:has(#newsletter) .section-header-row .text-link {
+        margin-bottom: 0;
+    }
+
+    body:has(#newsletter) .connect-layout {
+        gap: 30px !important;
+    }
+
+    body:has(#newsletter) .connect-info {
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body:has(#newsletter) .hero h1 {
+        line-height: 1.12 !important;
+        letter-spacing: -1.2px !important;
+    }
+
+    body:has(#newsletter) .hero h1 span {
+        margin-top: 6px;
+    }
+
+    body:has(#newsletter) .section-header h2,
+    body:has(#newsletter) .section-header.centered h2,
+    body:has(#newsletter) .section-header-row h2 {
+        line-height: 1.18 !important;
+    }
+
+    body:has(#newsletter) .connect-form-card {
+        padding: 24px 20px !important;
+        border-radius: 20px !important;
+    }
+
+    body:has(#newsletter) .connect-info-item {
+        padding: 16px;
+        gap: 13px;
+    }
+
+    body:has(#newsletter) .feature-icon {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    body:has(#newsletter) .connect-info-item h3 {
+        font-size: 19px;
+    }
+
+    body:has(#newsletter) .connect-info-item p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body:has(#newsletter) .hero h1 {
+        line-height: 1.14 !important;
+    }
+
+    body:has(#newsletter) .connect-info-item {
+        padding: 15px;
+    }
+
+    body:has(#newsletter) .form-check label {
+        font-size: 9px !important;
+    }
+}
+
+
+/* Header typography — readable size, original layout preserved */
+.site-header .brand-text strong {
+    font-size: 25px;
+}
+
+.site-header .brand-text span {
+    font-size: 15px;
+}
+
+.site-header .nav-link,
+.site-header .nav-dropdown-toggle {
+    font-size: 17px;
 }
