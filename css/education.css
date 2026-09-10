@@ -1342,3 +1342,6 @@
         color: #222;
     }
 }
+
+
+.certificate-course-highlight{padding:70px 0;background:linear-gradient(135deg,#f4faf7,#eaf4ef);border-bottom:1px solid #dce8e3}.certificate-course-highlight .container{width:min(1120px,calc(100% - 40px));margin:0 auto}.certificate-course-highlight .section-label{color:#087b5a;font-size:12px;font-weight:800;letter-spacing:.12em}.certificate-course-highlight h1{max-width:850px;margin:10px 0 14px;color:#17343a;font-family:"Playfair Display",Georgia,serif;font-size:clamp(32px,4vw,50px);line-height:1.15}.certificate-course-highlight p{max-width:760px;color:#60736c;font-size:16px;line-height:1.75}.education-cta{display:inline-flex;gap:9px;align-items:center;margin-top:12px;padding:12px 18px;border-radius:8px;background:#087b5a;color:#fff;text-decoration:none;font-weight:700}@media(max-width:640px){.certificate-course-highlight{padding:52px 0}.certificate-course-highlight .container{width:min(100% - 28px,1120px)}}

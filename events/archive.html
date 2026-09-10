@@ -1,1543 +1,931 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
+<meta charset="utf-8"/>
+<link rel="icon" href="../assets/logo.png" type="image/png">
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="BCRLS Event Archive - Past conferences, lectures, seminars, workshops and academic events."
-    >
-
-    <title>Event Archive | BCRLS</title>
-
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    >
-
-
-    <!-- Existing Website CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-
-    <link rel="stylesheet" href="../css/responsible.css">
-
-    <!-- Events Only CSS -->
-    <link rel="stylesheet" href="/css/events.css">
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="BCRLS Event Archive - Past conferences, lectures, seminars, workshops and academic events." name="description"/>
+<title>Event Archive | BCRLS</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Existing Website CSS -->
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/responsive.css" rel="stylesheet"/>
+<!-- Events Only CSS -->
+<link href="../css/events.css" rel="stylesheet"/>
+    <link href="../css/design-system.css" rel="stylesheet"/>
 </head>
-
-
 <body>
-
-
 <!-- =========================================================
      HEADER
      ========================================================= -->
-
 <header class="site-header">
-
-    <div class="container header-container">
-
-        <!-- BRAND -->
-
-        <a href="../index.html" class="brand">
-
-            <div class="brand-logo">
-
-                <img
-                    src="../assets/logo.png"
-                    alt="BCRLS Logo"
-                >
-
-            </div>
-
-
-            <div class="brand-text">
-
-                <strong>BCRLS</strong>
-
-                <span>
+<div class="header-inner">
+<!-- BRAND -->
+<a class="brand" href="../index.html">
+<div class="brand-logo">
+<img alt="BCRLS Logo" src="../assets/logo.png"/>
+</div>
+<div class="brand-text">
+<strong>
+                    BCRLS
+                </strong>
+<span>
                     Bangladesh Center for Refugee Law Studies
                 </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- NAVIGATION -->
-
-        <nav class="main-nav">
-
-            <a href="../index.html" class="nav-link">
+</div>
+</a>
+<!-- NAVIGATION -->
+<nav aria-label="Main Navigation" class="main-nav" id="mainNav">
+<!-- HOME -->
+<a class="nav-link" href="../index.html">
                 Home
             </a>
+<!-- =================================================
+                 ABOUT
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-
-            <!-- ABOUT -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     About
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../pages/about.html">
-                        About
+</button>
+<div class="dropdown-menu">
+<a href="../pages/about.html">
+                        Who We Are
                     </a>
-
-                    <a href="../pages/Founder.html">
-                        Founder
+<a href="../pages/mission.html">
+                        Mission
                     </a>
-
-                    <a href="../pages/team.html">
+<a href="../pages/vision.html">
+                        Vision
+                    </a>
+<a href="../pages/Strategic-Objectives.html">
+                        Strategic Objectives
+                    </a>
+<a href="../pages/Founder.html">
+                        Founder's Message
+                    </a>
+<a href="../pages/team.html">
                         Team
                     </a>
+</div>
+</div>
+<!-- =================================================
+                 RESEARCH & PUBLICATIONS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
+                    Research &amp; Publications
 
-            </div>
-
-
-            <!-- RESEARCH & PUBLICATIONS -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
-                    Research & Publications
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../research/journal.html">
-                        Journal
-                    </a>
-
-                    <a href="../research/conference-proceedings.html">
+</button>
+<div class="dropdown-menu">
+<a href="../research/conference-proceedings.html">
                         Conference Proceedings
                     </a>
-
-                    <a href="../research/blog.html">
+<a href="../research/journal.html">
+                        Journal
+                    </a>
+<a href="../research/blog.html">
                         Blog
                     </a>
+</div>
+</div>
+<!-- =================================================
+                 LIBRARY
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
-
-            </div>
-
-
-            <!-- LIBRARY -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     Library
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../library/academic.html">
+</button>
+<div class="dropdown-menu">
+<a href="../library/academic.html">
                         Academic Journals
                     </a>
-
-                    <a href="../library/reports.html">
-                        Reports & Policy Documents
+<a href="../library/report.html">
+                        Reports &amp; Policy Documents
                     </a>
-
-                    <a href="../library/books.html">
-                        Books & E-Books
+<a href="../library/books.html">
+                        Books &amp; E-Books
                     </a>
+</div>
+</div>
+<!-- =================================================
+                 EDUCATION
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
-
-            </div>
-
-
-            <!-- EDUCATION -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     Education
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../education/index.html">
-                        Education
+</button>
+<div class="dropdown-menu">
+<a href="../education/masters.html">
+                        Master's Programmes
                     </a>
+<a href="../education/phd.html">
+                        PhD Programmes
+                    </a>
+<a href="../education/traning.html">
+                        Professonal Training/Short course
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 DATA HUB
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
+                    Data Hub
 
-            </div>
-
-
-            <!-- DATA HUB -->
-
-            <a href="../data/index.html" class="nav-link">
-                Data Hub
-            </a>
-
-
-            <!-- EVENTS -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
-                    Events
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
+</button>
+<div class="dropdown-menu">
+<a href="../datahub/statistics.html">
+                        Refugee Statistics
+                    </a>
+<a href="../datahub/dataPortal.html">
+                        Rohingya Data Portal
+                    </a>
+<a href="../datahub/database.html">
+                        South Asia Database
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 EVENTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle active" type="button">
 
-                <div class="dropdown-menu">
+                    Events
 
-                    <a href="upcoming.html">
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../events/index.html">
                         Upcoming Events
                     </a>
-
-                    <a href="archive.html">
+<a class="active" href="../events/archive.html">
                         Event Archive
                     </a>
+</div>
+</div>
+<!-- =================================================
+                 INSIGHTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
-
-            </div>
-
-
-            <!-- INSIGHTS -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     Insights
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../insights/index.html">
-                        Insights
+</button>
+<div class="dropdown-menu">
+<a href="../insights/index.html#expert-interviews">
+                        Expert Interviews
                     </a>
+<a href="../insights/index.html#refugee-voices">
+                        Refugee Voices
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 MEDIA
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
-
-            </div>
-
-
-            <!-- MEDIA -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     Media
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../media/gallery.html">
-                        Gallery
+</button>
+<div class="dropdown-menu">
+<a href="../media/promo-video.html">
+                        BCRLS Promo Video
                     </a>
+<a href="../media/newsroom.html">
+                        Newsroom
+                    </a>
+<a href="../media/gallery.html">
+                        Photo Gallery
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 GET INVOLVED
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </div>
-
-            </div>
-
-
-            <!-- GET INVOLVED -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                >
                     Get Involved
+
                     <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="../get-involved/index.html">
-                        Get Involved
+</button>
+<div class="dropdown-menu">
+<a href="../get-involved/index.html">
+                         Overview
                     </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <a href="../contact.html" class="nav-link">
+<a href="../get-involved/become-a-member.html">
+                        Become a Member
+                    </a>
+<a href="../get-involved/campus-fellow.html">
+                        Campus Fellow
+                    </a>
+<a href="../get-involved/internship-programme.html">
+                        Internship Programme
+                    </a>
+<a href="../get-involved/partner-with-us.html">
+                        Partner With Us
+                    </a>
+</div>
+</div>
+<!-- CONTACT -->
+<a class="nav-link" href="../contact.html">
                 Contact
             </a>
-
-        </nav>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            type="button"
-            class="mobile-menu-toggle"
-            aria-label="Open Menu"
-        >
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-    </div>
-
-</header>
-
-
-
+</nav>
+<!-- MOBILE MENU -->
+<button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header><div class="menu-overlay" id="menuOverlay">
+</div>
 <!-- =========================================================
      MAIN
      ========================================================= -->
-
 <main class="events-page">
-
-
-    <!-- =====================================================
+<!-- =====================================================
          EVENT HERO
          ===================================================== -->
-
-    <section class="events-hero">
-
-        <div class="container">
-
-            <div class="events-hero-content">
-
-                <span class="events-eyebrow">
+<section class="events-hero">
+<div class="container">
+<div class="events-hero-content">
+<span class="events-eyebrow">
                     BCRLS EVENTS
                 </span>
-
-                <h1>
+<h1>
                     Event Archive
                 </h1>
-
-                <p>
+<p>
                     Explore past conferences, lectures, seminars,
                     workshops and other academic and professional
                     events organized by the Bangladesh Center for
                     Refugee Law Studies.
                 </p>
-
-                <a
-                    href="upcoming.html"
-                    class="events-hero-link"
-                >
+<a class="events-hero-link" href="upcoming.html">
                     Upcoming Events
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
+</a>
+</div>
+</div>
+</section>
+<!-- =====================================================
          ARCHIVE
          ===================================================== -->
-
-    <section
-        class="events-section"
-        id="event-archive"
-    >
-
-        <div class="container">
-
-
-            <!-- SECTION HEADER -->
-
-            <div class="events-section-header">
-
-                <div class="events-section-number">
+<section class="events-section" id="event-archive">
+<div class="container">
+<!-- SECTION HEADER -->
+<div class="events-section-header">
+<div class="events-section-number">
                     01
                 </div>
-
-                <div>
-
-                    <span class="events-eyebrow">
+<div>
+<span class="events-eyebrow">
                         PAST EVENTS
                     </span>
-
-                    <h2>
+<h2>
                         Explore Our Past Events
                     </h2>
-
-                    <p>
+<p>
                         Browse lectures, seminars, workshops,
                         research activities and academic events
                         conducted by BCRLS.
                     </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
+</div>
+</div>
+<!-- =================================================
                  EVENT GRID
                  ================================================= -->
-
-            <div class="events-grid">
-
-
-                <!-- =================================================
+<div class="events-grid">
+<!-- =================================================
                      EVENT 01
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/inaugural-lecture-series.png"
-                            alt="BCRLS Inaugural Lecture Series"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="BCRLS Inaugural Lecture Series" src="../assets/images/events/archive/inaugural-lecture-series.svg"/>
+<span class="event-number">
                             Event 01
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             LECTURE SERIES
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             BCRLS Inaugural Lecture Series
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             BCRLS inaugural lecture series featuring
                             academic discussions on refugee law,
                             displacement and refugee protection.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="1"
-                        >
+<button class="event-details-btn" data-event-id="1" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 02
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/james-hathaway-session.png"
-                            alt="Session with Professor James C. Hathaway"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Session with Professor James C. Hathaway" src="../assets/images/events/archive/james-hathaway-session.svg"/>
+<span class="event-number">
                             Event 02
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             ACADEMIC SESSION
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Session with Professor James C. Hathaway
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             An interactive academic session with
                             Professor James C. Hathaway focusing on
                             international refugee law and protection.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="2"
-                        >
+<button class="event-details-btn" data-event-id="2" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 03
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/kate-ogg-lecture.png"
-                            alt="Lecture with Kate Ogg"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Lecture with Kate Ogg" src="../assets/images/events/archive/kate-ogg-lecture.svg"/>
+<span class="event-number">
                             Event 03
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             LECTURE
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Lecture with Kate Ogg
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             Academic lecture addressing refugee
                             protection, litigation and access to
                             justice.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="3"
-                        >
+<button class="event-details-btn" data-event-id="3" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 04
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/interdisciplinary-legal-writing.png"
-                            alt="Workshop on Interdisciplinary Legal Writing"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Workshop on Interdisciplinary Legal Writing" src="../assets/images/events/archive/interdisciplinary-legal-writing.svg"/>
+<span class="event-number">
                             Event 04
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             WORKSHOP
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Workshop on Interdisciplinary Legal Writing
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             A workshop exploring interdisciplinary
                             approaches to legal research and writing
                             in refugee law.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="4"
-                        >
+<button class="event-details-btn" data-event-id="4" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 05
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/refugee-law-research-workshop.png"
-                            alt="Workshop on Refugee Law Research"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Workshop on Refugee Law Research" src="../assets/images/events/archive/refugee-law-research-workshop.svg"/>
+<span class="event-number">
                             Event 05
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             WORKSHOP
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Workshop on Refugee Law Research
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             An academic workshop focused on research
                             approaches and methodologies in international
                             refugee law.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="5"
-                        >
+<button class="event-details-btn" data-event-id="5" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 06
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/temporary-protection-session.png"
-                            alt="Session on Temporary Protection"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Session on Temporary Protection" src="../assets/images/events/archive/temporary-protection-session.svg"/>
+<span class="event-number">
                             Event 06
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             ACADEMIC SESSION
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Session on Temporary Protection
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             Expert discussion on temporary protection
                             and its legal foundations in refugee and
                             displacement contexts.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="6"
-                        >
+<button class="event-details-btn" data-event-id="6" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 07
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/jane-mcadam-qa.png"
-                            alt="Q&A with Jane McAdam"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Q&amp;A with Jane McAdam" src="../assets/images/events/archive/jane-mcadam-qa.svg"/>
+<span class="event-number">
                             Event 07
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
-                            Q&A SESSION
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
+                            Q&amp;A SESSION
                         </span>
-
-                        <h3 class="event-card-title">
-                            Q&A with Jane McAdam
+<h3 class="event-card-title">
+                            Q&amp;A with Jane McAdam
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             An interactive discussion on climate
                             change, displacement and refugee
                             protection.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="7"
-                        >
+<button class="event-details-btn" data-event-id="7" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 08
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/nafees-ahmad-session.png"
-                            alt="Session with Nafees Ahmad"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Session with Nafees Ahmad" src="../assets/images/events/archive/nafees-ahmad-session.svg"/>
+<span class="event-number">
                             Event 08
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             ACADEMIC SESSION
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Session with Nafees Ahmad
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
                                 Past Event
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             Academic discussion concerning displacement,
                             statelessness, refugee protection and
                             migration governance.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="8"
-                        >
+<button class="event-details-btn" data-event-id="8" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 09
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/field-visit-bhasan-char.png"
-                            alt="Field Visit to Bhasan Char"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Field Visit to Bhasan Char" src="../assets/images/events/archive/field-visit-bhasan-char.svg"/>
+<span class="event-number">
                             Event 09
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             FIELD VISIT
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Field Visit to Bhasan Char
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-                                <i class="fa-solid fa-location-dot"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-solid fa-location-dot"></i>
                                 Bhasan Char, Bangladesh
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             A BCRLS field research visit focusing on
                             higher education access and livelihood
                             opportunities for Rohingya refugees.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="9"
-                        >
+<button class="event-details-btn" data-event-id="9" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 10
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/foundations-refugee-law-seminar.png"
-                            alt="Seminar on Foundations of Refugee Law"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Seminar on Foundations of Refugee Law" src="../assets/images/events/archive/foundations-refugee-law-seminar.svg"/>
+<span class="event-number">
                             Event 10
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             SEMINAR
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Seminar on Foundations of Refugee Law
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
 
                                 19 January 2026
 
                             </span>
-
-
-                            <span>
-
-                                <i class="fa-solid fa-location-dot"></i>
+<span>
+<i class="fa-solid fa-location-dot"></i>
 
                                 Jagannath University
 
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             Academic seminar discussing the foundations,
                             principles and contemporary challenges of
                             refugee law.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="10"
-                        >
+<button class="event-details-btn" data-event-id="10" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 11
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/asylum-south-asia-special-lecture.png"
-                            alt="Asylum Under International Refugee Law and in South Asia"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Asylum Under International Refugee Law and in South Asia" src="../assets/images/events/archive/asylum-south-asia-special-lecture.svg"/>
+<span class="event-number">
                             Event 11
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             SPECIAL LECTURE
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Asylum Under International Refugee Law
                             and in South Asia
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-
-                                <i class="fa-regular fa-calendar"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-regular fa-calendar"></i>
 
                                 10 April 2026
 
                             </span>
-
-
-                            <span>
-
-                                <i class="fa-solid fa-location-dot"></i>
+<span>
+<i class="fa-solid fa-location-dot"></i>
 
                                 NSU
 
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             A comparative academic discussion on asylum
                             under international refugee law and within
                             the South Asian context.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="11"
-                        >
+<button class="event-details-btn" data-event-id="11" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
+</button>
+</div>
+</article>
+<!-- =================================================
                      EVENT 12
                      ================================================= -->
-
-                <article class="event-card">
-
-                    <div class="event-card-image">
-
-                        <img
-                            src="../assets/images/events/archive/rohingya-genocide-academic-dialogue.png"
-                            alt="Academic Dialogue on the Rohingya Genocide"
-                        >
-
-                        <span class="event-number">
+<article class="event-card">
+<div class="event-card-image">
+<img alt="Academic Dialogue on the Rohingya Genocide" src="../assets/images/events/archive/rohingya-genocide-academic-dialogue.svg"/>
+<span class="event-number">
                             Event 12
                         </span>
-
-                    </div>
-
-
-                    <div class="event-card-body">
-
-                        <span class="event-card-type">
+</div>
+<div class="event-card-body">
+<span class="event-card-type">
                             ACADEMIC DIALOGUE
                         </span>
-
-                        <h3 class="event-card-title">
+<h3 class="event-card-title">
                             Academic Dialogue on the Rohingya Genocide
                         </h3>
-
-                        <div class="event-card-meta">
-
-                            <span>
-
-                                <i class="fa-solid fa-book-open"></i>
+<div class="event-card-meta">
+<span>
+<i class="fa-solid fa-book-open"></i>
 
                                 Research Dialogue
 
                             </span>
-
-                        </div>
-
-                        <p class="event-card-description">
+</div>
+<p class="event-card-description">
                             An academic dialogue focusing on scholarship,
                             legal recognition and accountability concerning
                             the Rohingya genocide.
                         </p>
-
-                        <button
-                            type="button"
-                            class="event-details-btn"
-                            data-event-id="12"
-                        >
+<button class="event-details-btn" data-event-id="12" type="button">
                             Event Details
                             <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
 </main>
-
-
-
 <!-- =========================================================
      EVENT DETAILS MODAL
      ========================================================= -->
-
-<div
-    class="event-modal"
-    id="eventModal"
-    aria-hidden="true"
->
-
-    <div class="event-modal-overlay"></div>
-
-
-    <div
-        class="event-modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="eventModalTitle"
-    >
-
-
-        <button
-            type="button"
-            class="event-modal-close"
-            id="eventModalClose"
-            aria-label="Close"
-        >
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-
-        <div class="event-modal-image">
-
-            <img
-                id="eventModalImage"
-                src=""
-                alt=""
-            >
-
-        </div>
-
-
-        <div class="event-modal-body">
-
-            <span
-                class="event-modal-type"
-                id="eventModalType"
-            ></span>
-
-
-            <h2 id="eventModalTitle"></h2>
-
-
-            <div class="event-modal-meta">
-
-                <div>
-
-                    <i class="fa-regular fa-calendar"></i>
-
-                    <span id="eventModalDate"></span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <span id="eventModalLocation"></span>
-
-                </div>
-
-            </div>
-
-
-            <!-- ABOUT -->
-
-            <div class="event-modal-section">
-
-                <h3>
+<div aria-hidden="true" class="event-modal" id="eventModal">
+<div class="event-modal-overlay"></div>
+<div aria-labelledby="eventModalTitle" aria-modal="true" class="event-modal-content" role="dialog">
+<button aria-label="Close" class="event-modal-close" id="eventModalClose" type="button">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<div class="event-modal-image">
+<img alt="" id="eventModalImage" src=""/>
+</div>
+<div class="event-modal-body">
+<span class="event-modal-type" id="eventModalType"></span>
+<h2 id="eventModalTitle"></h2>
+<div class="event-modal-meta">
+<div>
+<i class="fa-regular fa-calendar"></i>
+<span id="eventModalDate"></span>
+</div>
+<div>
+<i class="fa-solid fa-location-dot"></i>
+<span id="eventModalLocation"></span>
+</div>
+</div>
+<!-- ABOUT -->
+<div class="event-modal-section">
+<h3>
                     About the Event
                 </h3>
-
-                <p id="eventModalDescription"></p>
-
-            </div>
-
-
-            <!-- SPEAKERS -->
-
-            <div
-                class="event-modal-section"
-                id="eventModalSpeakersWrapper"
-            >
-
-                <h3>
+<p id="eventModalDescription"></p>
+</div>
+<!-- SPEAKERS -->
+<div class="event-modal-section" id="eventModalSpeakersWrapper">
+<h3>
                     Speakers
                 </h3>
-
-                <ul id="eventModalSpeakers"></ul>
-
-            </div>
-
-
-            <!-- PROGRAMME -->
-
-            <div
-                class="event-modal-section"
-                id="eventModalProgrammeWrapper"
-            >
-
-                <h3>
+<ul id="eventModalSpeakers"></ul>
+</div>
+<!-- PROGRAMME -->
+<div class="event-modal-section" id="eventModalProgrammeWrapper">
+<h3>
                     Programme
                 </h3>
-
-                <p id="eventModalProgramme"></p>
-
-            </div>
-
-
-            <!-- ORGANIZER -->
-
-            <div
-                class="event-modal-section"
-                id="eventModalOrganizerWrapper"
-            >
-
-                <h3>
+<p id="eventModalProgramme"></p>
+</div>
+<!-- ORGANIZER -->
+<div class="event-modal-section" id="eventModalOrganizerWrapper">
+<h3>
                     Organized By
                 </h3>
-
-                <p id="eventModalOrganizer"></p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<p id="eventModalOrganizer"></p>
 </div>
-
-
-
+</div>
+</div>
+</div>
 <!-- =========================================================
      FOOTER
      ========================================================= -->
-
 <footer class="site-footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <!-- FOOTER BRAND -->
-
-            <div class="footer-brand">
-
-                <a
-                    href="../index.html"
-                    class="brand"
-                >
-
-                    <div class="brand-logo">
-
-                        <img
-                            src="../assets/logo.png"
-                            alt="BCRLS Logo"
-                        >
-
-                    </div>
-
-
-                    <div class="brand-text">
-
-                        <strong>BCRLS</strong>
-
-                        <span>
+<div class="container">
+<div class="footer-grid">
+<!-- FOOTER BRAND -->
+<div class="footer-brand">
+<a class="brand" href="../index.html">
+<div class="brand-logo">
+<img alt="BCRLS Logo" src="../assets/logo.png"/>
+</div>
+<div class="brand-text">
+<strong>BCRLS</strong>
+<span>
                             Bangladesh Center for Refugee Law Studies
                         </span>
-
-                    </div>
-
-                </a>
-
-
-                <p>
+</div>
+</a>
+<p>
                     A research, education and
                     knowledge platform dedicated
                     to refugee law, displacement,
                     human rights and related issues.
                 </p>
-
-
-                <div class="social-links">
-
-                    <a
-                        href="https://www.facebook.com/share/1JpX7yRkGh/"
-                        aria-label="Facebook"
-                    >
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-
-                    <a
-                        href="https://www.linkedin.com/company/bangladesh-center-for-refugee-law-studies-bcrls/"
-                        aria-label="LinkedIn"
-                    >
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- EXPLORE -->
-
-            <div class="footer-column">
-
-                <h3>
+<div class="social-links">
+<a aria-label="Facebook" href="https://www.facebook.com/share/1JpX7yRkGh/">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/company/bangladesh-center-for-refugee-law-studies-bcrls/">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+</div>
+</div>
+<!-- EXPLORE -->
+<div class="footer-column">
+<h3>
                     Explore
                 </h3>
-
-                <a href="../pages/about.html">
+<a href="../pages/about.html">
                     About
                 </a>
-
-                <a href="../pages/Founder.html">
+<a href="../pages/Founder.html">
                     Founder
                 </a>
-
-                <a href="../pages/team.html">
+<a href="../pages/team.html">
                     Team
                 </a>
-
-                <a href="../research/journal.html">
+<a href="../research/journal.html">
                     Journal
                 </a>
-
-                <a href="archive.html">
+<a href="archive.html">
                     Events
                 </a>
-
-            </div>
-
-
-
-            <!-- RESOURCES -->
-
-            <div class="footer-column">
-
-                <h3>
+</div>
+<!-- RESOURCES -->
+<div class="footer-column">
+<h3>
                     Resources
                 </h3>
-
-                <a href="../research/conference-proceedings.html">
+<a href="../research/conference-proceedings.html">
                     Conference Proceedings
                 </a>
-
-                <a href="../research/blog.html">
+<a href="../research/blog.html">
                     Blog
                 </a>
-
-                <a href="../library/index.html">
+<a href="../library/index.html">
                     Library
                 </a>
-
-                <a href="../data/index.html">
+<a href="../data/index.html">
                     Data Hub
                 </a>
-
-                <a href="../media/gallery.html">
+<a href="../media/gallery.html">
                     Gallery
                 </a>
-
-            </div>
-
-
-
-            <!-- CONNECT -->
-
-            <div class="footer-column">
-
-                <h3>
+</div>
+<!-- CONNECT -->
+<div class="footer-column">
+<h3>
                     Connect
                 </h3>
-
-                <a href="../index.html#connect">
+<a href="../index.html#connect">
                     Connect With BCRLS
                 </a>
-
-                <a href="../pages/team.html">
+<a href="../pages/team.html">
                     Team
                 </a>
-
-                <a href="../get-involved/index.html">
+<a href="../get-involved/index.html">
                     Get Involved
                 </a>
-
-                <a href="../contact.html">
+<a href="../contact.html">
                     Contact
                 </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOOTER BOTTOM -->
-
-        <div class="footer-bottom">
-
-            <p>
+</div>
+</div>
+<!-- FOOTER BOTTOM -->
+<div class="footer-bottom">
+<p>
                 © <span id="currentYear">2026</span>
                 BCRLS. All rights reserved.
             </p>
-
-            <div>
-
-                <a href="#">
+<div>
+<a href="#">
                     Privacy Policy
                 </a>
-
-                <a href="#">
+<a href="#">
                     Terms of Use
                 </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
+</div>
 </footer>
-
-
-
 <!-- =========================================================
      JAVASCRIPT
      ========================================================= -->
-
 <script src="../js/app.js"></script>
-
-<script src="/js/events.js"></script>
-
-
+<script src="../js/events.js"></script>
 </body>
-
 </html>

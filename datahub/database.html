@@ -1,482 +1,392 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Database | BCRLS</title>
-
-    <!-- FAVICON -->
-    <link
-        rel="icon"
-        type="image/png"
-        href="../assets/logo.png"
-    >
-
-    <!-- EXISTING WEBSITE CSS -->
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/responsible.css"
-    >
-
-    <!-- COMMON DATA HUB CSS -->
-    <link
-        rel="stylesheet"
-        href="../css/datahub.css"
-    >
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Database | BCRLS</title>
+<!-- FAVICON -->
+<link href="../assets/logo.png" rel="icon" type="image/png"/>
+<!-- EXISTING WEBSITE CSS -->
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/responsive.css" rel="stylesheet"/>
+<link href="../css/responsive.css" rel="stylesheet"/>
+<!-- COMMON DATA HUB CSS -->
+<link href="../css/datahub.css" rel="stylesheet"/>
+    <link href="../css/design-system.css" rel="stylesheet"/>
 </head>
-
-
 <body class="datahub-page">
-
-
 <!-- =========================================================
      HEADER
 ========================================================= -->
-
 <header class="site-header">
-
-    <div class="header-inner">
-
-        <!-- BRAND -->
-
-        <a
-            href="../index.html"
-            class="brand"
-        >
-
-            <div class="brand-logo">
-
-                <img
-                    src="../assets/logo.png"
-                    alt="BCRLS Logo"
-                >
-
-            </div>
-
-            <div class="brand-text">
-
-                <strong>
+<div class="header-inner">
+<!-- BRAND -->
+<a class="brand" href="../index.html">
+<div class="brand-logo">
+<img alt="BCRLS Logo" src="../assets/logo.png"/>
+</div>
+<div class="brand-text">
+<strong>
                     BCRLS
                 </strong>
-
-                <span>
-                    BANGLADESH CENTER FOR REFUGEE LAW STUDIES
+<span>
+                    Bangladesh Center for Refugee Law Studies
                 </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-
-        <div class="menu-overlay"></div>
-
-
-        <!-- NAVIGATION -->
-
-        <nav class="main-nav">
-
-            <a
-                href="../index.html"
-                class="nav-link"
-            >
+</div>
+</a>
+<!-- NAVIGATION -->
+<nav aria-label="Main Navigation" class="main-nav" id="mainNav">
+<!-- HOME -->
+<a class="nav-link active" href="../index.html">
                 Home
             </a>
+<!-- =================================================
+                 ABOUT
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
+                    About
 
-            <a
-                href="../about.html"
-                class="nav-link"
-            >
-                About
-            </a>
-
-
-            <!-- RESEARCH & PUBLICATIONS -->
-
-            <div class="nav-dropdown">
-
-                <button
-                    class="nav-dropdown-toggle"
-                    type="button"
-                    aria-expanded="false"
-                >
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../pages/about.html">
+                        Who We Are
+                    </a>
+<a href="../pages/mission.html">
+                        Mission
+                    </a>
+<a href="../pages/vision.html">
+                        Vision
+                    </a>
+<a href="../pages/Strategic-Objectives.html">
+                        Strategic Objectives
+                    </a>
+<a href="../pages/Founder.html">
+                        Founder's Message
+                    </a>
+<a href="../pages/team.html">
+                        Team
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 RESEARCH & PUBLICATIONS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
                     Research &amp; Publications
 
-                    <span class="dropdown-arrow">
-                        ⌃
-                    </span>
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../research/conference-proceedings.html">
+                        Conference Proceedings
+                    </a>
+<a href="../research/journal.html">
+                        Journal
+                    </a>
+<a href="../research/blog.html">
+                        Blog
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 LIBRARY
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                </button>
+                    Library
 
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../library/academic.html">
+                        Academic Journals
+                    </a>
+<a href="../library/report.html">
+                        Reports &amp; Policy Documents
+                    </a>
+<a href="../library/books.html">
+                        Books &amp; E-Books
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 EDUCATION
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                <div class="dropdown-menu research-menu">
+                    Education
 
-                    <!-- CONFERENCE -->
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../education/masters.html">
+                        Master's Programmes
+                    </a>
+<a href="../education/phd.html">
+                        PhD Programmes
+                    </a>
+<a href="../education/traning.html">
+                        Professonal Training/Short course
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 DATA HUB
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                    <div class="research-group">
+                    Data Hub
 
-                        <div class="research-main">
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../datahub/statistics.html">
+                        Refugee Statistics
+                    </a>
+<a href="../datahub/dataPortal.html">
+                        Rohingya Data Portal
+                    </a>
+<a class="active" href="../datahub/database.html">
+                        South Asia Database
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 EVENTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                            <span>➤</span>
+                    Events
 
-                            <strong>
-                                Conference Proceedings
-                            </strong>
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../events/index.html">
+                        Upcoming Events
+                    </a>
+<a href="../events/archive.html">
+                        Event Archive
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 INSIGHTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                        </div>
+                    Insights
 
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../insights/index.html#expert-interviews">
+                        Expert Interviews
+                    </a>
+<a href="../insights/index.html#refugee-voices">
+                        Refugee Voices
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 MEDIA
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                        <div class="research-submenu">
+                    Media
 
-                            <a href="conference-proceedings.html">
-                                Archive (Proceeding-Pdf)
-                            </a>
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../media/promo-video.html">
+                        BCRLS Promo Video
+                    </a>
+<a href="../media/newsroom.html">
+                        Newsroom
+                    </a>
+<a href="../media/gallery.html">
+                        Photo Gallery
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 GET INVOLVED
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
 
-                        </div>
+                    Get Involved
 
-                    </div>
-
-
-                    <!-- JOURNAL -->
-
-                    <div class="research-group">
-
-                        <div class="research-main">
-
-                            <span>➤</span>
-
-                            <strong>
-                                Journal
-                            </strong>
-
-                        </div>
-
-
-                        <div class="research-submenu">
-
-                            <a href="journal.html">
-                                Journal Home
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- BLOG -->
-
-                    <div class="research-group">
-
-                        <div class="research-main">
-
-                            <span>➤</span>
-
-                            <strong>
-                                Blog
-                            </strong>
-
-                        </div>
-
-
-                        <div class="research-submenu">
-
-                            <a href="/research/blog.html">
-                                Call for Blog
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- DATA HUB -->
-
-            <a
-                href="datahub.html"
-                class="nav-link active"
-            >
-                Data Hub
-            </a>
-
-
-            <!-- TEAM -->
-
-            <a
-                href="../team.html"
-                class="nav-link"
-            >
-                Team
-            </a>
-
-
-            <!-- CONTACT -->
-
-            <a
-                href="../contact.html"
-                class="nav-link"
-            >
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../get-involved/index.html">
+                         Overview
+                    </a>
+<a href="../get-involved/become-a-member.html">
+                        Become a Member
+                    </a>
+<a href="../get-involved/campus-fellow.html">
+                        Campus Fellow
+                    </a>
+<a href="../get-involved/internship-programme.html">
+                        Internship Programme
+                    </a>
+<a href="../get-involved/partner-with-us.html">
+                        Partner With Us
+                    </a>
+</div>
+</div>
+<!-- CONTACT -->
+<a class="nav-link" href="../contact.html">
                 Contact
             </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-
+</nav>
+<!-- MOBILE MENU -->
+<button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header><div class="menu-overlay" id="menuOverlay">
+</div>
 <main>
-
-    <!-- =====================================================
+<!-- =====================================================
          HERO
     ====================================================== -->
-
-    <section class="datahub-hero">
-
-        <div class="datahub-hero-content">
-
-            <span class="datahub-eyebrow">
+<section class="datahub-hero">
+<div class="datahub-hero-content">
+<span class="datahub-eyebrow">
                 BCRLS Data Hub
             </span>
-
-            <h1>
+<h1>
                 South Asia Database
             </h1>
-
-            <p>
+<p>
                 Explore relevant refugee, displacement,
                 migration and population databases for
                 research and analysis.
             </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
+</div>
+</section>
+<!-- =====================================================
          DATABASE
     ====================================================== -->
-
-    <section class="datahub-section">
-
-        <div class="datahub-container">
-
-            <div class="datahub-section-heading">
-
-                <span class="datahub-label">
+<section class="datahub-section">
+<div class="datahub-container">
+<div class="datahub-section-heading">
+<span class="datahub-label">
                     Database Collection
                 </span>
-
-                <h2>
+<h2>
                     Available Database
                 </h2>
-
-                <p>
+<p>
                     Access the available database below.
                     More databases can be added here in
                     the future.
                 </p>
-
-            </div>
-
-
-            <!-- DATABASE GRID -->
-
-            <div class="database-grid">
-
-                <!-- SOUTH ASIA DATABASE -->
-
-                <article class="database-card">
-
-                    <div class="database-card-icon">
+</div>
+<!-- DATABASE GRID -->
+<div class="database-grid">
+<!-- SOUTH ASIA DATABASE -->
+<article class="database-card">
+<div class="database-card-icon">
                         ▣
                     </div>
-
-                    <h3>
+<h3>
                         Database
                     </h3>
-
-                    <p>
+<p>
                         A regional population database
                         providing population-related
                         information across South Asian
                         countries.
                     </p>
-
-                    <a
-                        href="https://seap.nationalityforall.org/population/south-asia-population/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="datahub-card-button"
-                    >
+<a class="datahub-card-button" href="https://seap.nationalityforall.org/population/south-asia-population/" rel="noopener noreferrer" target="_blank">
                         Explore Database
 
                         <span class="arrow">
                             →
                         </span>
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
+</a>
+</article>
+</div>
+</div>
+</section>
 </main>
-
-
-
 <!-- =========================================================
      FOOTER
 ========================================================= -->
-
 <footer class="site-footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <!-- FOOTER BRAND -->
-
-            <div class="footer-brand">
-
-                <strong>
+<div class="container">
+<div class="footer-grid">
+<!-- FOOTER BRAND -->
+<div class="footer-brand">
+<strong>
                     BCRLS
                 </strong>
-
-                <p>
+<p>
                     Bangladesh Center for Refugee Law Studies
                 </p>
-
-            </div>
-
-
-
-            <!-- RESEARCH -->
-
-            <div class="footer-column">
-
-                <h4>
+</div>
+<!-- RESEARCH -->
+<div class="footer-column">
+<h4>
                     Research
                 </h4>
-
-
-                <a href="journal.html">
+<a href="journal.html">
                     Journal
                 </a>
-
-
-                <a href="conference-proceedings.html">
+<a href="conference-proceedings.html">
                     Conference Proceedings
                 </a>
-
-
-                <a href="../forms/call-for-papers.html">
+<a href="../forms/call-for-papers.html">
                     Call for Papers
                 </a>
-
-            </div>
-
-
-
-            <!-- DATA HUB -->
-
-            <div class="footer-column">
-
-                <h4>
+</div>
+<!-- DATA HUB -->
+<div class="footer-column">
+<h4>
                     Data Hub
                 </h4>
-
-
-                <a href="datahub.html">
+<a href="datahub.html">
                     Data Hub
                 </a>
-
-
-                <a href="statistics.html">
+<a href="statistics.html">
                     Statistics
                 </a>
-
-
-                <a href="dataportal.html">
+<a href="dataportal.html">
                     Data Portal
                 </a>
-
-
-                <a href="database.html">
+<a href="database.html">
                     Database
                 </a>
-
-            </div>
-
-
-        </div>
-
-
-
-        <div class="footer-bottom">
-
-            <p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>
                 © BJRLDs — Bangladesh Journal of Refugee Law
                 and Displacement Studies
             </p>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </footer>
-
-
-
 <!-- =========================================================
      EXISTING JAVASCRIPT
 ========================================================= -->
-
 <script src="../js/app.js"></script>
-
-
 </body>
-
 </html>

@@ -969,3 +969,42 @@ body.modal-open {
     }
 
 }
+
+/* FINAL TEAM CAROUSEL */
+.team-page .team-carousel{width:100%;overflow:hidden;position:relative}
+.team-page .team-carousel .team-track{display:flex;align-items:stretch;gap:22px;width:max-content;will-change:transform;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
+.team-page .team-carousel .member-card{flex:0 0 calc((min(1120px, 100vw - 40px) - 66px) / 4);width:calc((min(1120px, 100vw - 40px) - 66px) / 4)}
+.team-page .team-carousel .carousel-controls{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:16px}
+.team-page .team-carousel .carousel-arrow{width:44px;height:44px;border:1px solid var(--team-line);border-radius:50%;background:#fff;color:var(--team-dark);cursor:pointer;transition:.25s ease}
+.team-page .team-carousel .carousel-arrow:hover{background:var(--team-green);color:#fff;border-color:var(--team-green)}
+.team-page .team-carousel .carousel-dots{display:flex;align-items:center;gap:7px}
+.team-page .team-carousel .carousel-dot{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:#cbd9d4;cursor:pointer;transition:.25s ease}
+.team-page .team-carousel .carousel-dot.active{width:24px;background:var(--team-green)}
+.team-page .team-carousel .member-placeholder{width:100%;height:100%;min-height:260px;display:grid;place-items:center;background:linear-gradient(135deg,#eaf2ee,#dcebe4);color:var(--team-dark);font-size:2.5rem;font-weight:800}
+.team-page .modal-member-placeholder{min-height:100%;display:grid;place-items:center;font-size:3rem;font-weight:800}
+@media(max-width:800px){.team-page .team-carousel .team-track{gap:18px}.team-page .team-carousel .member-card{flex-basis:calc((100vw - 32px - 18px)/2);width:calc((100vw - 32px - 18px)/2)}}
+@media(max-width:560px){.team-page .team-carousel .team-track{gap:14px}.team-page .team-carousel .member-card{flex-basis:calc(100vw - 28px);width:calc(100vw - 28px)}}
+
+
+/* =========================================================
+   FINAL TEAM DESIGN — clean responsive leadership cards
+========================================================= */
+.team-page .team-panel{display:none;animation:teamFade .35s ease}.team-page .team-panel.active{display:block}
+@keyframes teamFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.team-page .team-selector{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto}
+.team-page .team-selector-btn{min-height:48px;padding:12px 20px;border:1px solid var(--team-line);border-radius:999px;background:#fff;color:var(--team-dark);font:600 15px/1.2 inherit;cursor:pointer;transition:.25s ease}
+.team-page .team-selector-btn:hover,.team-page .team-selector-btn.active{background:var(--team-green);color:#fff;border-color:var(--team-green);box-shadow:0 8px 20px rgba(8,123,90,.15)}
+.team-page .team-grid-wrapper.team-carousel{width:min(1180px,100%);overflow:hidden;position:relative;margin:0 auto}
+.team-page .team-carousel .team-track{display:flex;align-items:stretch;gap:24px;width:max-content;will-change:transform;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
+.team-page .team-carousel .member-card{flex:0 0 calc((min(1180px,100vw - 48px) - 72px)/4);width:calc((min(1180px,100vw - 48px) - 72px)/4);padding:0;display:flex;flex-direction:column;min-height:100%;background:#fff;border:1px solid #dce8e3;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(26,61,51,.07);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.team-page .team-carousel .member-card:hover{transform:translateY(-8px);border-color:rgba(8,123,90,.35);box-shadow:0 22px 45px rgba(26,61,51,.14)}
+.team-page .team-carousel .member-image-wrap{aspect-ratio:4/4.4;min-height:0;background:#edf4f0}
+.team-page .team-carousel .member-photo{object-fit:cover;object-position:center top}
+.team-page .team-carousel .member-name{padding:0 18px;margin:20px 0 0;font-size:1.2rem}
+.team-page .team-carousel .member-role{padding:0 18px;margin:7px 0 0;font-size:.88rem}
+.team-page .member-card-hint{margin-top:auto;padding:16px 18px 19px;display:flex;justify-content:space-between;align-items:center;color:#6a7f76;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-top:1px solid #edf2ef}
+.team-page .member-card-hint span:last-child{color:var(--team-green);font-size:1.15rem;transition:transform .2s ease}.team-page .member-card:hover .member-card-hint span:last-child{transform:translateX(4px)}
+.team-page .team-carousel .carousel-controls{margin-top:26px}.team-page .team-carousel .carousel-arrow{width:46px;height:46px}
+.team-page .panel-header{max-width:900px;margin:0 auto 34px;text-align:center}.team-page .panel-header h2{font-size:clamp(2rem,3.5vw,3rem);margin:6px 0 12px}.team-page .panel-header p{font-size:1rem;line-height:1.8;max-width:850px}
+@media(max-width:900px){.team-page .team-carousel .member-card{flex-basis:calc((100vw - 48px - 24px)/2);width:calc((100vw - 48px - 24px)/2)}}
+@media(max-width:560px){.team-page .team-selector{display:grid;grid-template-columns:1fr;width:100%}.team-page .team-selector-btn{width:100%;border-radius:12px}.team-page .team-carousel .team-track{gap:16px}.team-page .team-carousel .member-card{flex-basis:calc(100vw - 48px);width:calc(100vw - 48px)}.team-page .team-carousel{width:100%}.team-page .panel-header p{font-size:.95rem}}

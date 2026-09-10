@@ -11,7 +11,7 @@ const teamData = {
             name: "Dr. Nakib Muhammad Nasrullah",
             role: "Vice-Chancellor",
             fullRole: "Vice-Chancellor, Islamic University, Bangladesh",
-            photo: "",
+            photo: "../assets/Advisors/Nakib.png",
             bio: ""
         },
 
@@ -19,7 +19,7 @@ const teamData = {
             name: "Professor Dr. Abdullah Al Faruque",
             role: "Professor & Former Dean",
             fullRole: "Professor, Former Dean, Faculty of Law, University of Chittagong",
-            photo: "",
+            photo: "../assets/Advisors/Al Faruque.png",
             bio: ""
         },
 
@@ -27,7 +27,7 @@ const teamData = {
             name: "Professor Dr. Muhammad Ekramul Haque",
             role: "Professor & Dean",
             fullRole: "Professor, Department of Law, Dean, Faculty of Law, University of Dhaka",
-            photo: "",
+            photo: "../assets/Advisors/Ekramul Haque.png",
             bio: ""
         },
 
@@ -35,7 +35,7 @@ const teamData = {
             name: "Professor Dr. Rakiba Nabi",
             role: "Professor & Chairman",
             fullRole: "Professor, Department of Law, University of Chittagong",
-            photo: "",
+            photo: "../assets/Advisors/Nabi.png",
             bio: ""
         },
 
@@ -43,7 +43,7 @@ const teamData = {
             name: "Professor Christine Richardson",
             role: "Professor",
             fullRole: "Professor, Department of Law and Land Administration, Jagannath University",
-            photo: "",
+            photo: "../assets/Advisors/Christine.png",
             bio: ""
         },
 
@@ -51,7 +51,7 @@ const teamData = {
             name: "Professor Dr. Md. Rizwanul Islam",
             role: "Professor & Dean",
             fullRole: "Dean, SHSS, North South University",
-            photo: "",
+            photo: "../assets/Advisors/Rizwanul Islam.jpg",
             bio: ""
         },
 
@@ -59,7 +59,7 @@ const teamData = {
             name: "Dr. Hassan Faruk Al Imran",
             role: "Associate Professor",
             fullRole: "Associate Professor (Law), Independent University Bangladesh",
-            photo: "",
+            photo: "../assets/Advisors/Al Imran.png",
             bio: ""
         },
 
@@ -67,7 +67,7 @@ const teamData = {
             name: "Dr. Jobair Alam",
             role: "Lecturer in Law",
             fullRole: "Lecturer in Law, University of Staffordshire",
-            photo: "",
+            photo: "../assets/Advisors/Jobair.png",
             bio: ""
         },
 
@@ -75,7 +75,7 @@ const teamData = {
             name: "A.B.M. Imdadul Haque Khan",
             role: "Dean",
             fullRole: "Dean, Faculty of Law, Eastern University",
-            photo: "",
+            photo: "../assets/Advisors/imdad.png",
             bio: ""
         }
 
@@ -88,7 +88,7 @@ const teamData = {
             name: "Sakhawat Sajjat Sejan",
             role: "Founder",
             fullRole: "Founder, BCRLS",
-            photo: "../assets/images/founder.jpg",
+            photo: "../assets/Directors/Sejan.jpg",
             bio: "Sakhawat Sajjat Sejan is the Founder of BCRLS. He completed his LL.B. (Hons.) and LL.M. from the University of Chittagong. He is currently serving as an Assistant Professor in the Department of Law at University of Information Technology and Sciences."
         },
 
@@ -96,7 +96,7 @@ const teamData = {
             name: "Raspiatur Rashpi",
             role: "Director",
             fullRole: "Director, Head of Resource Management, Training & Development",
-            photo: "",
+            photo: "../assets/Directors/Rashpi.jpg",
             bio: ""
         },
 
@@ -104,7 +104,7 @@ const teamData = {
             name: "Niaz Mohammad",
             role: "Director",
             fullRole: "Director, Head of Research",
-            photo: "",
+            photo: "../assets/Directors/Niaz.jpg",
             bio: ""
         },
 
@@ -112,7 +112,7 @@ const teamData = {
             name: "Md. Rahul Hasan Joy",
             role: "Director",
             fullRole: "Director, Head of Legal Affairs",
-            photo: "",
+            photo: "../assets/Directors/Joy.jpg",
             bio: ""
         },
 
@@ -120,7 +120,7 @@ const teamData = {
             name: "Mohammad Tawhidul Islam Hridoy",
             role: "Director",
             fullRole: "Director, Head of IT",
-            photo: "",
+            photo: "../assets/Directors/Tawhidul Islam.jpg",
             bio: ""
         },
 
@@ -128,7 +128,7 @@ const teamData = {
             name: "Sumaiya Islam",
             role: "Director",
             fullRole: "Director, Head of Public Relations",
-            photo: "",
+            photo: "../assets/Directors/Sumaiya Islam.jpg",
             bio: ""
         },
 
@@ -136,7 +136,7 @@ const teamData = {
             name: "Md. Omar Farque",
             role: "Executive Director",
             fullRole: "Executive Director",
-            photo: "",
+            photo: "../assets/Directors/Omar Farque.jpg",
             bio: ""
         },
 
@@ -144,7 +144,7 @@ const teamData = {
             name: "Nabila Farhin",
             role: "Director",
             fullRole: "Director, Head of Programs",
-            photo: "",
+            photo: "../assets/Directors/Nabila.jpg",
             bio: ""
         },
 
@@ -152,7 +152,7 @@ const teamData = {
             name: "Md. Riad Mahmud",
             role: "Director",
             fullRole: "Director of Administration and Finance",
-            photo: "",
+            photo: "../assets/Directors/Riad.jpg",
             bio: ""
         }
 
@@ -235,7 +235,7 @@ const panels =
 
 const profileModal =
     document.getElementById(
-        "profileModal"
+        "memberModal"
     );
 
 
@@ -1315,11 +1315,9 @@ function createMemberCard(
         </p>
 
 
-        <div class="view-profile">
-
-            View Profile
+        <div class="member-card-hint" aria-hidden="true">
+            <span>Profile</span>
             <span>→</span>
-
         </div>
 
     `;
@@ -1589,6 +1587,7 @@ function setupTeamSelector() {
                 () => {
 
                     const target =
+                        button.dataset.team ||
                         button.dataset.target;
 
 
@@ -1675,251 +1674,34 @@ function setupTeamSelector() {
    ========================================================= */
 
 function setupModal() {
-
-    if (modalClose) {
-
-        modalClose.addEventListener(
-            "click",
-            closeProfile
-        );
-
-    }
-
-
-    if (profileModal) {
-
-        profileModal.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target ===
-                    profileModal
-                ) {
-
-                    closeProfile();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                event.key ===
-                "Escape"
-            ) {
-
-                closeProfile();
-
-            }
-
-        }
-    );
-
+    if (modalClose) modalClose.addEventListener("click", closeProfile);
+    if (profileModal) profileModal.addEventListener("click", e => {
+        if (e.target === profileModal || e.target.classList.contains("member-modal-overlay")) closeProfile();
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeProfile(); });
 }
 
-
-/* =========================================================
-   OPEN PROFILE
-   ========================================================= */
-
-function openProfile(
-    member
-) {
-
-    if (
-        !profileModal ||
-        !modalContent
-    ) {
-
-        return;
-
+function openProfile(member) {
+    if (!profileModal) return;
+    const nameEl=document.getElementById("modalMemberName");
+    const roleEl=document.getElementById("modalMemberRole");
+    const detailsEl=document.getElementById("modalMemberDetails");
+    const imageEl=document.getElementById("modalMemberImage");
+    if(nameEl) nameEl.textContent=member.name||"";
+    if(roleEl) roleEl.textContent=member.fullRole||member.role||"";
+    if(detailsEl) detailsEl.textContent=member.bio&&member.bio.trim()?member.bio:"Profile details will be updated soon.";
+    if(imageEl){
+        const initials=getInitials(member.name);
+        imageEl.alt=member.name||"BCRLS Team Member";
+        imageEl.src=member.photo||""; imageEl.style.display=member.photo?"block":"none";
+        imageEl.onerror=()=>{imageEl.style.display="none";const w=imageEl.parentElement;if(w&&!w.querySelector(".modal-member-placeholder")){const d=document.createElement("div");d.className="member-placeholder modal-member-placeholder";d.textContent=initials;w.appendChild(d);}};
     }
-
-
-    const initials =
-        getInitials(
-            member.name
-        );
-
-
-    let photoHTML;
-
-
-    if (
-        member.photo &&
-        member.photo.trim() !== ""
-    ) {
-
-        photoHTML = `
-
-            <img
-                class="modal-photo"
-                src="${escapeHTML(
-                    member.photo
-                )}"
-                alt="${escapeHTML(
-                    member.name
-                )}"
-            >
-
-        `;
-
-    } else {
-
-        photoHTML = `
-
-            <div
-                class="
-                    member-placeholder
-                    modal-photo
-                "
-            >
-                ${initials}
-            </div>
-
-        `;
-
-    }
-
-
-    modalContent.innerHTML = `
-
-        ${photoHTML}
-
-
-        <h2 class="modal-name">
-
-            ${escapeHTML(
-                member.name
-            )}
-
-        </h2>
-
-
-        <p class="modal-role">
-
-            ${escapeHTML(
-                member.fullRole ||
-                member.role
-            )}
-
-        </p>
-
-
-        <div class="modal-bio">
-
-            ${
-                member.bio &&
-                member.bio.trim() !== ""
-
-                ?
-
-                escapeHTML(
-                    member.bio
-                )
-
-                :
-
-                "Profile details will be updated soon."
-            }
-
-        </div>
-
-    `;
-
-
-    const modalImage =
-        modalContent.querySelector(
-            ".modal-photo"
-        );
-
-
-    if (
-        modalImage &&
-        modalImage.tagName ===
-        "IMG"
-    ) {
-
-        modalImage.addEventListener(
-            "error",
-            () => {
-
-                const placeholder =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                placeholder.className =
-                    "member-placeholder modal-photo";
-
-
-                placeholder.textContent =
-                    initials;
-
-
-                modalImage.replaceWith(
-                    placeholder
-                );
-
-            }
-        );
-
-    }
-
-
-    profileModal.classList.add(
-        "show"
-    );
-
-
-    profileModal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    document.body.style.overflow =
-        "hidden";
-
+    profileModal.classList.add("active"); profileModal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
 }
-
-
-/* =========================================================
-   CLOSE PROFILE
-   ========================================================= */
 
 function closeProfile() {
-
-    if (!profileModal) {
-        return;
-    }
-
-
-    profileModal.classList.remove(
-        "show"
-    );
-
-
-    profileModal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    document.body.style.overflow =
-        "";
-
+    if(!profileModal)return; profileModal.classList.remove("active"); profileModal.setAttribute("aria-hidden","true"); document.body.style.overflow="";
 }
-
 
 /* =========================================================
    RESPONSIVE RESIZE
