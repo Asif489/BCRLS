@@ -1130,3 +1130,104 @@
   .events-hero { padding: 70px 0 58px; }
   .events-hero h1 { font-size: clamp(36px, 10vw, 50px); }
 }
+
+
+/* =========================================================
+   FINAL EVENT PAGE READABILITY / LINE SPACING
+========================================================= */
+.events-page,
+.events-page main,
+.events-page section {
+    line-height: 1.85;
+}
+
+.events-page p,
+.events-page li,
+.events-page .event-card-description,
+.events-page .events-hero p,
+.events-page .events-section p {
+    line-height: 1.9;
+}
+
+.events-page .event-card-title {
+    line-height: 1.4;
+}
+
+.events-page .event-card-meta span {
+    line-height: 1.7;
+}
+
+.events-page .event-card-body {
+    gap: 12px;
+}
+
+.events-page .event-modal-body {
+    line-height: 1.9;
+}
+
+.events-page .event-modal-body h2 {
+    line-height: 1.35;
+}
+
+.events-page .event-modal-section p,
+.events-page .event-modal-section li {
+    line-height: 1.95;
+}
+
+.events-page .event-modal-meta > div {
+    line-height: 1.8;
+}
+
+.home-upcoming-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+    flex: 0 0 300px;
+}
+
+.home-upcoming-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .home-upcoming-image {
+        height: 210px;
+        flex-basis: auto;
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+
+/* FINAL EVENT POSTER FIX — preserve the complete poster artwork */
+.events-page .event-card-image img {
+    object-fit: contain;
+    object-position: center;
+    background: #f3f6f5;
+}
+.events-page .event-modal-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #eef3f1;
+}
+.events-page .event-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #eef3f1;
+}
+@media (max-width: 700px) {
+    .events-page .event-modal-image img { height: 100%; object-fit: contain; }
+}
+
+/* Homepage event archive — preserve complete poster images */
+.home-event-archive-grid .gallery-item img { object-fit: contain !important; object-position: center; background: #eef3f1; }
+
+/* Event numbering removed from archive cards. */
+.event-number { display:none !important; }

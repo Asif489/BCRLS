@@ -6,161 +6,153 @@
 const teamData = {
 
     advisory: [
-
         {
             name: "Dr. Nakib Muhammad Nasrullah",
-            role: "Vice-Chancellor",
-            fullRole: "Vice-Chancellor, Islamic University, Bangladesh",
+            role: "Former Vice-Chancellor",
+            fullRole: "Former Vice-Chancellor, Islamic University, Bangladesh; Professor, Department of Law, University of Dhaka",
             photo: "../assets/Advisors/Nakib.png",
-            bio: ""
+            bio: "Former Vice-Chancellor, Islamic University, Bangladesh. Professor, Department of Law, University of Dhaka."
         },
-
         {
             name: "Professor Dr. Abdullah Al Faruque",
             role: "Professor & Former Dean",
             fullRole: "Professor, Former Dean, Faculty of Law, University of Chittagong",
             photo: "../assets/Advisors/Al Faruque.png",
-            bio: ""
+            bio: "Professor, Former Dean, Faculty of Law, University of Chittagong."
         },
-
         {
             name: "Professor Dr. Muhammad Ekramul Haque",
-            role: "Professor & Dean",
-            fullRole: "Professor, Department of Law, Dean, Faculty of Law, University of Dhaka",
+            role: "Professor & Dean (Acting)",
+            fullRole: "Professor, Department of Law; Dean (Acting), Faculty of Law, University of Dhaka",
             photo: "../assets/Advisors/Ekramul Haque.png",
-            bio: ""
+            bio: "Professor, Department of Law, Dean (Acting), Faculty of Law, University of Dhaka."
         },
-
         {
             name: "Professor Dr. Rakiba Nabi",
             role: "Professor & Chairman",
-            fullRole: "Professor, Department of Law, University of Chittagong",
+            fullRole: "Chairman, Department of Law, University of Chittagong",
             photo: "../assets/Advisors/Nabi.png",
-            bio: ""
+            bio: "Chairman, Department of Law, University of Chittagong."
         },
-
         {
             name: "Professor Christine Richardson",
             role: "Professor",
             fullRole: "Professor, Department of Law and Land Administration, Jagannath University",
             photo: "../assets/Advisors/Christine.png",
-            bio: ""
+            bio: "Professor, Department of Law and Land Administration, Jagannath University."
         },
-
         {
             name: "Professor Dr. Md. Rizwanul Islam",
-            role: "Professor & Dean",
+            role: "Dean",
             fullRole: "Dean, SHSS, North South University",
             photo: "../assets/Advisors/Rizwanul Islam.jpg",
-            bio: ""
+            bio: "Dean, SHSS, North South University."
         },
-
         {
             name: "Dr. Hassan Faruk Al Imran",
-            role: "Associate Professor",
+            role: "Associate Professor (Law)",
             fullRole: "Associate Professor (Law), Independent University Bangladesh",
             photo: "../assets/Advisors/Al Imran.png",
-            bio: ""
+            bio: "Associate Professor (Law), Independent University Bangladesh."
         },
-
         {
             name: "Dr. Jobair Alam",
             role: "Lecturer in Law",
             fullRole: "Lecturer in Law, University of Staffordshire",
             photo: "../assets/Advisors/Jobair.png",
-            bio: ""
+            bio: "Lecturer in Law, University of Staffordshire."
         },
-
         {
             name: "A.B.M. Imdadul Haque Khan",
             role: "Dean",
             fullRole: "Dean, Faculty of Law, Eastern University",
             photo: "../assets/Advisors/imdad.png",
-            bio: ""
+            bio: "Dean, Faculty of Law, Eastern University."
         }
-
     ],
 
-
     directors: [
-
         {
             name: "Sakhawat Sajjat Sejan",
             role: "Founder",
             fullRole: "Founder, BCRLS",
             photo: "../assets/Directors/Sejan.jpg",
-            bio: "Sakhawat Sajjat Sejan is the Founder of BCRLS. He completed his LL.B. (Hons.) and LL.M. from the University of Chittagong. He is currently serving as an Assistant Professor in the Department of Law at University of Information Technology and Sciences."
+            bio: "Sakhawat Sajjat Sejan is the Founder of BCRLS. He completed his LL.B. (Hons.) and LL.M. from the University of Chittagong. He is currently serving as an Assistant Professor in the Department of Law at University of Information Technology and Sciences. Previously, he worked as an Assistant Professor of Law at the Bangladesh University of Bangladesh and Feni University, where he also served as Head of the Department. He is an active researcher and writer on refugee law and protection."
         },
-
         {
             name: "Raspiatur Rashpi",
             role: "Director",
             fullRole: "Director, Head of Resource Management, Training & Development",
             photo: "../assets/Directors/Rashpi.jpg",
-            bio: ""
+            bio: "Raspiatur Rashpi is currently working as a lecturer, Department of Law, University of Chittagong. She was also the former lecturer in Law, Bangladesh Army International University of Science and Technology. She completed her LLB (Honours) and LLM from Department of Law, University of Chittagong. Her research area of interest includes Climate Change and Environmental laws, Human Rights law, Constitutional law, Refugee law etc."
         },
-
         {
             name: "Niaz Mohammad",
             role: "Director",
             fullRole: "Director, Head of Research",
             photo: "../assets/Directors/Niaz.jpg",
-            bio: ""
+            bio: "Niaz Mohammad is currently working as an Associate Legal Counsel at BRAC and serves as the Director of Research at BCRLS. He previously worked as a Legal Research Assistant at the Centre for Peace and Justice, where he focused on refugee law, including access to justice for Rohingyas in Bangladesh. He completed his LL.B. with distinction from BRAC University and holds a Diploma in Economic, Social and Development Rights from Kathmandu School of Law."
         },
-
         {
             name: "Md. Rahul Hasan Joy",
             role: "Director",
             fullRole: "Director, Head of Legal Affairs",
             photo: "../assets/Directors/Joy.jpg",
-            bio: ""
+            bio: "Md. Rahul Hasan Joy completed his BA.LL.B. (Hons.) from Aligarh Muslim University, India, and his LL.M. in International Law from the University of Rajshahi. He is currently a Lecturer in the Department of Law at the University of Information Technology and Sciences (UITS). Previously, he served as a Lecturer of Law at Feni University. He is also an enrolled Advocate with the Bangladesh Bar Council."
         },
-
         {
             name: "Mohammad Tawhidul Islam Hridoy",
             role: "Director",
             fullRole: "Director, Head of IT",
             photo: "../assets/Directors/Tawhidul Islam.jpg",
-            bio: ""
+            bio: "Mohammad Tawhidul Islam is a Lecturer in the Department of Law at the State University of Bangladesh and currently serves as Director of IT at BCRLS. He previously taught at Feni University and worked at US-Bangla Airlines in Company Secretary and Legal Affairs. He completed his LL.B. and LL.M. from Jahangirnagar University and obtained another LL.M. from South Asian University, New Delhi. His interests include teaching, research, and academic engagement activities."
         },
-
-        {
-            name: "Sumaiya Islam",
-            role: "Director",
-            fullRole: "Director, Head of Public Relations",
-            photo: "../assets/Directors/Sumaiya Islam.jpg",
-            bio: ""
-        },
-
-        {
-            name: "Md. Omar Farque",
-            role: "Executive Director",
-            fullRole: "Executive Director",
-            photo: "../assets/Directors/Omar Farque.jpg",
-            bio: ""
-        },
-
         {
             name: "Nabila Farhin",
             role: "Director",
             fullRole: "Director, Head of Programs",
             photo: "../assets/Directors/Nabila.jpg",
-            bio: ""
+            bio: "Nabila Farhin completed her LL.B. (Hons.) and LL.M. (Thesis) from the University of Chittagong, where she ranked among the top students of her class. She also earned an MSS in Industrial Relations and Labour Studies from the University of Dhaka and a Diploma in Economic, Social and Development Rights from Kathmandu School of Law, Nepal. She is currently a Senior Lecturer at East West University and an Advocate of the Supreme Court of Bangladesh. Previously, she served as Staff Captain in the Judge Advocate General’s Office of the Bangladesh Army and worked as a consultant with TIB, ILO, and BLAST. Her research focuses on labour rights, gender justice, and climate justice."
         },
-
         {
             name: "Md. Riad Mahmud",
             role: "Director",
             fullRole: "Director of Administration and Finance",
             photo: "../assets/Directors/Riad.jpg",
-            bio: ""
-        }
-
+            bio: "Md. Riad Mahmud is currently serving as a Senior Lecturer in the Department of Law at East West University. He is also an Erasmus Mundus Scholar and serves as an Advisor to Jessup Bangladesh. With experience in legal education, research, and international academic collaboration, he brings strong leadership to BCRLS. As Director of Administration and Finance, he contributes to strengthening the organization’s administrative structure, financial governance, and institutional development."
+        },
+        {
+            name: "Sumaiya Islam",
+            role: "Director",
+            fullRole: "Director, Head of Public Relations",
+            photo: "../assets/Directors/Sumaiya Islam.jpg",
+            bio: "Sumaiya Islam completed her LL.B. (Hons.) and LL.M. from Southern University Bangladesh and an additional LL.M. from South Asian University. She is currently a Lecturer in the Department of Law at Manarat International University. She contributes to public engagement, awareness-building, and institutional networking at BCRLS."
+        },
+        {
+            name: "Md. Omar Farque",
+            role: "Executive Director",
+            fullRole: "Executive Director",
+            photo: "../assets/Directors/Omar Farque.jpg",
+            bio: "Md. Omar Farque completed both his LL.B. (Hons.) and LL.M. from Eastern University, where he achieved outstanding academic results, including a Gold Medal in his LL.M. He is currently a Lecturer in Law at Eastern University. Previously, he served as a Lecturer in Law at the European University of Bangladesh. He also works as a Senior Research Associate at I. H. Khan & Associates and as an Assistant Editor at Revival Press. His research interests include Public International Law, Refugee Law, Climate Law, and Islamic Law."
+        },
     ],
 
-
-    operational: []
-
+    operational: [
+        {
+            name: "Kazi Muhibul Haque",
+            role: "Associate Head of IT",
+            fullRole: "Associate Head of IT",
+            photo: "",
+            bio: "Associate Head of IT at BCRLS, supporting digital infrastructure, website operations, data management and technical initiatives."
+        },
+        {
+            name: "Syed Md. Alamgir Hussain",
+            role: "IT Officer",
+            fullRole: "IT Officer",
+            photo: "",
+            bio: "IT Officer at BCRLS, supporting the organization's website, digital platforms and day-to-day technical operations."
+        }
+    ]
 };
 
 
@@ -172,7 +164,7 @@ const CARDS_DESKTOP = 4;
 const CARDS_TABLET = 2;
 const CARDS_MOBILE = 1;
 
-const AUTO_DELAY = 3500;
+const AUTO_DELAY = 3000;
 const SLIDE_DURATION = 650;
 
 
@@ -409,16 +401,7 @@ function renderTeam(type) {
        Controls
     */
 
-    const controls =
-        createControls(
-            type,
-            members.length
-        );
 
-
-    container.appendChild(
-        controls
-    );
 
 
     /*
@@ -480,35 +463,26 @@ function getCardWidth(
     container
 ) {
 
-    const track =
-        container.querySelector(
-            ".team-track"
-        );
+    const track = container.querySelector(".team-track");
+    if (!track) return 0;
 
+    const visible = getVisibleCards();
+    const gap = getTrackGap(track);
+    const viewportWidth = container.clientWidth;
 
-    if (!track) {
-        return 0;
-    }
+    if (!viewportWidth || !visible) return 0;
 
+    // Calculate the exact width from the real viewport so the first
+    // founder card always starts flush with the left edge.
+    const cardWidth =
+        (viewportWidth - gap * (visible - 1)) / visible;
 
-    const card =
-        track.querySelector(
-            ".member-card"
-        );
+    track.querySelectorAll(".member-card").forEach(card => {
+        card.style.flexBasis = `${cardWidth}px`;
+        card.style.width = `${cardWidth}px`;
+    });
 
-
-    if (!card) {
-        return 0;
-    }
-
-
-    return (
-        card.getBoundingClientRect()
-            .width
-        +
-        getTrackGap(track)
-    );
-
+    return cardWidth + gap;
 }
 
 

@@ -4,52 +4,13 @@
 
 const upcomingEvents = [
     {
-        id: 1,
-        type: "CONFERENCE",
-        title: "BCRLS Upcoming Conference",
-        date: "To Be Announced",
-        location: "Dhaka, Bangladesh",
-        image: "../assets/images/events/event-01.jpg",
-        shortDescription: "Conference details, programme, speakers and submission opportunities will be announced.",
-        description: "The Bangladesh Center for Refugee Law Studies will organize an upcoming conference focusing on refugee law, human rights, displacement and related issues.",
-        speakers: ["Speakers will be announced"],
-        programme: "The detailed conference programme will be announced.",
-        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
-    },
-    {
-        id: 2,
-        type: "LECTURE",
-        title: "BCRLS Lecture Series",
-        date: "To Be Announced",
-        location: "Dhaka, Bangladesh",
-        image: "../assets/images/events/event-02.jpg",
-        shortDescription: "An academic lecture focusing on refugee law, human rights and displacement studies.",
-        description: "The BCRLS Lecture Series will bring together academics, researchers and practitioners to discuss contemporary issues in refugee law, international protection, human rights and forced displacement.",
-        speakers: ["Speaker information will be announced"],
-        programme: "The lecture programme and schedule will be announced.",
-        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
-    },
-    {
-        id: 3,
-        type: "SEMINAR",
-        title: "Refugee Law & Human Rights Seminar",
-        date: "To Be Announced",
-        location: "Dhaka, Bangladesh",
-        image: "../assets/images/events/event-03.jpg",
-        shortDescription: "A seminar exploring current legal and human rights issues related to refugees and displacement.",
-        description: "This seminar will provide an academic platform for discussion on refugee protection, international refugee law, human rights and contemporary displacement challenges.",
-        speakers: ["Speaker information will be announced"],
-        programme: "The seminar programme will be announced.",
-        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
-    },
-    {
         id: 4,
         type: "CERTIFICATE COURSE",
-        title: "Certificate Course on Refugee Law & Forced Displacement",
+        title: "Certificate Course on Refugee Law and Statelessness: Foundation to Practice",
         date: "Upcoming — Registration Details To Be Announced",
         location: "BCRLS / Online",
-        image: "../assets/images/events/certificate-course.jpg",
-        shortDescription: "A professional certificate course covering refugee law, international protection, displacement and practical legal research.",
+        image: "../assets/events/certificate.jpeg",
+        shortDescription: "A professional certificate course covering refugee law, statelessness, international protection, displacement and practical legal research.",
         description: "BCRLS will offer a professional certificate course designed for students, researchers, lawyers, development practitioners and others working on refugee law and forced displacement. Course schedule, instructors, fees and registration information will be announced.",
         speakers: ["Course faculty and instructors will be announced"],
         programme: "Course outline and class schedule will be announced.",
@@ -69,7 +30,8 @@ const archiveTitles = [
     [9,"FIELD VISIT","Field Visit to Bhasan Char"],
     [10,"SEMINAR","Seminar on Foundations of Refugee Law"],
     [11,"SPECIAL LECTURE","Asylum Under International Refugee Law and in South Asia"],
-    [12,"ACADEMIC DIALOGUE","Academic Dialogue on the Rohingya Genocide"]
+    [12,"ACADEMIC DIALOGUE","Academic Dialogue on the Rohingya Genocide"],
+    [13,"CONFERENCE","ICERPASA 2026"]
 ];
 
 function getArchiveEventsFromPage() {
@@ -103,7 +65,6 @@ function createEventCard(event) {
     article.innerHTML = `
         <div class="event-card-image">
             <img src="${event.image}" alt="${escapeText(event.title)}" loading="lazy">
-            <span class="event-number">${event.type}</span>
             <div class="event-image-fallback" aria-hidden="true"><i class="fa-regular fa-calendar"></i></div>
         </div>
         <div class="event-card-body">
@@ -130,6 +91,54 @@ function loadUpcomingEvents() {
     if (!grid) return;
     grid.innerHTML = "";
     upcomingEvents.forEach(event => grid.appendChild(createEventCard(event)));
+}
+
+const archiveDateByTitle = {
+    "BCRLS Inaugural Lecture Series": "2025-10-07",
+    "Session with Professor James C. Hathaway": "2025-10-22",
+    "Lecture with Kate Ogg": "2025-11-27",
+    "Workshop on Interdisciplinary Legal Writing": "2025-12-05",
+    "Workshop on Refugee Law Research": "2025-12-13",
+    "Session on Temporary Protection": "2025-01-14",
+    "Q&A with Jane McAdam": "2026-02-25",
+    "Session with Nafees Ahmad": "2026-02-21",
+    "Field Visit to Bhasan Char": "2025-11-24",
+    "Seminar on Foundations of Refugee Law": "2026-01-19",
+    "Asylum Under International Refugee Law and in South Asia": "2026-04-10",
+    "Academic Dialogue on the Rohingya Genocide": "2026-08-25",
+    "ICERPASA 2026": "2026-06-27"
+};
+
+function sortArchiveCardsByDate() {
+    const grid = document.querySelector("#event-archive .events-grid");
+    if (!grid) return;
+    const cards = [...grid.querySelectorAll(":scope > .event-card")];
+    cards.forEach((card, index) => {
+        const title = card.querySelector(".event-card-title")?.textContent.replace(/\s+/g, " ").trim() || "";
+        let iso = archiveDateByTitle[title] || "";
+        if (!iso) {
+            // Handle the multiline title stored in the HTML.
+            const normalized = title.replace(/\s+/g, " ").trim();
+            iso = Object.entries(archiveDateByTitle).find(([key]) => key.replace(/\s+/g, " ").trim() === normalized)?.[1] || "";
+        }
+        card.dataset.eventDate = iso;
+        card.dataset.archiveOrder = String(index);
+        const meta = card.querySelector(".event-card-meta span");
+        if (iso && meta) {
+            const d = new Date(`${iso}T00:00:00`);
+            const formatted = d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+            meta.innerHTML = `<i class="fa-regular fa-calendar"></i>${formatted}`;
+        }
+    });
+    cards.sort((a, b) => {
+        const da = a.dataset.eventDate || "";
+        const db = b.dataset.eventDate || "";
+        if (da && db) return db.localeCompare(da); // newest first
+        if (da && !db) return -1;
+        if (!da && db) return 1;
+        return Number(a.dataset.archiveOrder) - Number(b.dataset.archiveOrder);
+    });
+    cards.forEach(card => grid.appendChild(card));
 }
 
 function bindArchiveCards() {
@@ -194,6 +203,7 @@ function syncHomeEventArchive(){
 
 document.addEventListener("DOMContentLoaded", () => {
     loadUpcomingEvents();
+    sortArchiveCardsByDate();
     const archiveEvents = bindArchiveCards();
     if (document.querySelector(".home-event-archive-grid") && archiveEvents.length) syncHomeEventArchive();
     const close=document.getElementById("eventModalClose"), overlay=document.querySelector(".event-modal-overlay");

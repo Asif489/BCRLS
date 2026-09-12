@@ -3236,7 +3236,7 @@ ol {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+    grid-template-columns: 1.65fr repeat(5, minmax(0, 1fr));
     gap: 50px;
     align-items: start;
 }
@@ -3416,7 +3416,7 @@ ol {
     }
 
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-columns: 1.5fr repeat(2, minmax(0, 1fr));
         gap: 40px 30px;
     }
 
@@ -3996,4 +3996,85 @@ body:has(#newsletter) .newsletter-inner {
 .site-header .nav-link,
 .site-header .nav-dropdown-toggle {
     font-size: 17px;
+}
+
+/* Homepage event archive — preserve complete poster images */
+.home-event-archive-grid .gallery-item img { object-fit: contain !important; object-position: center; background: #eef3f1; }
+
+/* Footer logo consistency */
+.site-footer .footer-mini-brand, .contact-footer .footer-mini-brand, .involved-footer .footer-mini-brand, .cfp-footer .footer-mini-brand { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.site-footer .footer-mini-brand img, .contact-footer .footer-mini-brand img, .involved-footer .footer-mini-brand img, .cfp-footer .footer-mini-brand img { width:48px; height:48px; object-fit:contain; display:block; }
+.contact-footer .footer-mini-brand, .involved-footer .footer-mini-brand, .cfp-footer .footer-mini-brand { justify-content:center; }
+.footer-mini-brand span { font-weight:700; font-size:18px; }
+
+
+/* =========================================================
+   FINAL FOOTER ALIGNMENT — MATCH HOMEPAGE
+   Prevent global flex rules from turning the brand block
+   into a horizontal layout. All standard footers use the
+   same structure and alignment as the homepage footer.
+========================================================= */
+.site-footer .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1.65fr repeat(5, minmax(0, 1fr)) !important;
+    gap: 50px !important;
+    align-items: start !important;
+}
+.site-footer .footer-brand {
+    display: block !important;
+    align-items: initial !important;
+    min-height: 0 !important;
+    max-width: 400px !important;
+    width: auto !important;
+}
+.site-footer .footer-brand .brand {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+.site-footer .footer-brand > p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    margin-top: 0 !important;
+}
+.site-footer .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+}
+.site-footer .footer-column > a {
+    display: block !important;
+    width: fit-content !important;
+    white-space: nowrap !important;
+}
+@media screen and (max-width: 1000px) {
+    .site-footer .footer-grid {
+        grid-template-columns: 1.5fr repeat(2, minmax(0, 1fr)) !important;
+        gap: 40px 30px !important;
+    }
+    .site-footer .footer-brand {
+        grid-column: 1 / -1 !important;
+        max-width: 600px !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 38px 25px !important;
+    }
+    .site-footer .footer-brand {
+        grid-column: 1 / -1 !important;
+        max-width: 100% !important;
+    }
+    .site-footer .footer-brand > p {
+        max-width: 100% !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 30px 18px !important;
+    }
 }

@@ -1008,3 +1008,244 @@ body.modal-open {
 .team-page .panel-header{max-width:900px;margin:0 auto 34px;text-align:center}.team-page .panel-header h2{font-size:clamp(2rem,3.5vw,3rem);margin:6px 0 12px}.team-page .panel-header p{font-size:1rem;line-height:1.8;max-width:850px}
 @media(max-width:900px){.team-page .team-carousel .member-card{flex-basis:calc((100vw - 48px - 24px)/2);width:calc((100vw - 48px - 24px)/2)}}
 @media(max-width:560px){.team-page .team-selector{display:grid;grid-template-columns:1fr;width:100%}.team-page .team-selector-btn{width:100%;border-radius:12px}.team-page .team-carousel .team-track{gap:16px}.team-page .team-carousel .member-card{flex-basis:calc(100vw - 48px);width:calc(100vw - 48px)}.team-page .team-carousel{width:100%}.team-page .panel-header p{font-size:.95rem}}
+
+
+/* =========================================================
+   LEADERSHIP REDESIGN — ADVISORS & TRUSTEES
+========================================================= */
+.team-page .team-showcase{
+    padding-top:76px;
+    background:
+        linear-gradient(180deg,#ffffff 0%,#f7fbf9 100%);
+}
+
+.team-page .team-panel.active{
+    animation:leadershipPanelIn .45s ease both;
+}
+@keyframes leadershipPanelIn{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:none}
+}
+
+.team-page .panel-header{
+    position:relative;
+    max-width:900px;
+    padding:0 18px 28px;
+    margin:0 auto 38px;
+}
+.team-page .panel-header::before{
+    content:"";
+    display:block;
+    width:64px;
+    height:4px;
+    margin:0 auto 22px;
+    border-radius:99px;
+    background:var(--team-green);
+}
+.team-page #directors .panel-header::before{
+    background:#163f50;
+}
+.team-page .panel-header h2{
+    letter-spacing:-.02em;
+}
+
+/* Distinct visual identity for the two boards */
+.team-page #advisory .team-carousel .member-card{
+    border-top:4px solid #087b5a;
+    background:linear-gradient(180deg,#ffffff 0%,#fbfefd 100%);
+}
+.team-page #directors .team-carousel .member-card{
+    border-top:4px solid #163f50;
+    background:linear-gradient(180deg,#ffffff 0%,#f9fbfc 100%);
+}
+.team-page #directors .team-carousel .member-role{
+    color:#163f50;
+}
+
+.team-page .team-carousel .member-card{
+    border-radius:20px;
+    box-shadow:0 14px 34px rgba(20,55,45,.08);
+}
+.team-page .team-carousel .member-card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 26px 50px rgba(20,55,45,.15);
+}
+.team-page .team-carousel .member-image-wrap{
+    aspect-ratio:4 / 4.8;
+    padding:12px 12px 0;
+    background:linear-gradient(145deg,#eef6f2,#e2eee9);
+}
+.team-page #directors .team-carousel .member-image-wrap{
+    background:linear-gradient(145deg,#eef3f6,#e1ebef);
+}
+.team-page .team-carousel .member-photo{
+    border-radius:13px 13px 5px 5px;
+    object-fit:cover;
+    object-position:center top;
+}
+.team-page .team-carousel .member-info{
+    padding:20px 18px 10px;
+}
+.team-page .team-carousel .member-name{
+    min-height:3.25em;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    text-align:center;
+}
+.team-page .member-card-hint{
+    margin-top:auto;
+    padding:15px 18px 17px;
+    background:rgba(245,249,247,.72);
+}
+.team-page #directors .member-card-hint{
+    background:rgba(241,246,248,.72);
+}
+
+/* Cleaner controls */
+.team-page .team-carousel .carousel-controls{
+    margin-top:28px;
+}
+.team-page .team-carousel .carousel-arrow{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+}
+
+/* FULL PROFILE IMAGE — never crop the original portrait */
+.team-page .member-modal-box{
+    width:min(980px,94vw);
+    grid-template-columns:360px 1fr;
+    max-height:min(760px,92vh);
+}
+.team-page .member-modal-image-wrap{
+    min-height:500px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(145deg,#edf6f1,#e0ece7);
+}
+.team-page .member-modal-image{
+    width:100%;
+    height:100%;
+    max-height:100%;
+    object-fit:contain;
+    object-position:center;
+    border-radius:14px;
+    background:#fff;
+}
+.team-page .member-modal-info{
+    padding:54px 52px 48px;
+}
+.team-page .member-modal-info h2{
+    font-size:clamp(2rem,3vw,2.7rem);
+}
+.team-page #modalMemberDetails{
+    font-size:1rem;
+    line-height:1.95;
+}
+
+@media(max-width:900px){
+    .team-page .member-modal-box{grid-template-columns:290px 1fr}
+    .team-page .member-modal-image-wrap{min-height:440px;padding:18px}
+}
+@media(max-width:640px){
+    .team-page .team-showcase{padding-top:58px}
+    .team-page .panel-header{margin-bottom:28px}
+    .team-page .team-carousel .member-image-wrap{aspect-ratio:4/4.7}
+    .team-page .member-modal-box{
+        width:96vw;
+        max-height:94vh;
+        grid-template-columns:1fr;
+        grid-template-rows:minmax(270px,42vh) auto;
+    }
+    .team-page .member-modal-image-wrap{
+        min-height:0;
+        padding:14px;
+    }
+    .team-page .member-modal-info{padding:28px 24px 32px}
+}
+
+
+/* Final team carousel cleanup: no arrows, no dots */
+.team-page .carousel-controls,
+.team-page .carousel-arrow,
+.team-page .carousel-dots,
+.team-page .carousel-dot {
+    display: none !important;
+}
+
+.team-page .operational-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 700px) {
+    .team-page .operational-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   FINAL CAROUSEL ALIGNMENT + FULL PORTRAITS
+   ========================================================= */
+.team-page .team-carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 1px 12px;
+    box-sizing: border-box;
+}
+
+.team-page .team-carousel .team-track {
+    align-items: stretch;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.team-page .team-carousel .member-card {
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Never crop a director/advisor portrait inside the card. */
+.team-page .team-carousel .member-image-wrap {
+    height: 320px;
+    aspect-ratio: auto;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f0f5f2;
+}
+
+.team-page #directors .team-carousel .member-image-wrap {
+    background: #eef3f6;
+}
+
+.team-page .team-carousel .member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* Founder is always visually first; keep the first real card clean. */
+.team-page #directors .team-carousel .member-card:first-of-type {
+    border-top-color: #0b6b52;
+}
+
+@media (max-width: 900px) {
+    .team-page .team-carousel .team-track { gap: 18px; }
+    .team-page .team-carousel .member-image-wrap { height: 300px; }
+}
+
+@media (max-width: 560px) {
+    .team-page .team-carousel .team-track { gap: 16px; }
+    .team-page .team-carousel .member-image-wrap { height: 340px; }
+}
