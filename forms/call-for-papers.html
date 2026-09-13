@@ -256,6 +256,22 @@
         }
 
 
+        /* FINAL ALIGNMENT — remove decorative numbering on this page */
+        .cfp-theme-item,
+        .cfp-guideline {
+            grid-template-columns: 1fr !important;
+        }
+
+        .cfp-theme-item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .cfp-guideline {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         /* MOBILE */
 
         @media (max-width: 650px) {
@@ -310,6 +326,67 @@
     <link href="../css/design-system.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/unique-pages.css">
     <link rel="stylesheet" href="../css/final-polish.css">
+<style>
+/* Call for Papers: page-specific alignment + navigation reliability */
+.cfp-page .site-header { height: 78px; }
+.cfp-page .header-inner { width: min(1420px, calc(100% - 70px)); }
+.cfp-page .cfp-container { width: min(1200px, calc(100% - 48px)); margin-left:auto; margin-right:auto; }
+
+/* Keep the CFP content centered and prevent accidental inherited offsets. */
+.cfp-page .cfp-hero .cfp-container,
+.cfp-page .cfp-main > .cfp-container { margin-left:auto; margin-right:auto; }
+
+.cfp-page .cfp-hero-description,
+.cfp-page .cfp-journal-content p { text-align: left; }
+
+/* Mobile uses the main site's existing .menu-toggle/.main-nav system. */
+@media (max-width:1200px) {
+  .cfp-page .main-nav {
+    position: fixed;
+    top: 78px;
+    right: -100%;
+    width: min(360px, 88vw);
+    height: calc(100vh - 78px);
+    padding: 20px;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    overflow-y: auto;
+    box-shadow: -15px 0 40px rgba(10,55,42,.12);
+    transition: right .3s ease;
+    z-index: 1100;
+  }
+  .cfp-page .main-nav.mobile-open { right:0; }
+  .cfp-page .nav-link,
+  .cfp-page .nav-dropdown-toggle { width:100%; justify-content:space-between; padding:13px; }
+  .cfp-page .nav-dropdown { width:100%; }
+  .cfp-page .nav-dropdown .dropdown-menu {
+    position:static;
+    width:100%;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    box-shadow:none;
+    margin-top:3px;
+  }
+  .cfp-page .nav-dropdown.mobile-open .dropdown-menu { display:block; }
+  .cfp-page .menu-toggle { display:flex; }
+}
+@media (max-width:650px) {
+  .cfp-page .site-header { height:70px; }
+  .cfp-page .main-nav { top:70px; height:calc(100vh - 70px); }
+  .cfp-page .header-inner { width:calc(100% - 28px); }
+  .cfp-page .cfp-container { width:calc(100% - 30px); }
+  .cfp-page .cfp-hero { padding-top:125px; }
+}
+
+/* Center common CFP text blocks only where visual centering is intended. */
+.cfp-page .cfp-footer { text-align:center; }
+</style>
+
 </head>
 <body class="cfp-page">
 <!-- =========================================================
@@ -567,7 +644,7 @@
 <div class="cfp-eyebrow">
 <span></span>
 
-            Bangladesh Centre for Refugee Law Studies
+            Bangladesh Center for Refugee Law Studies
 
         </div>
 <h1>
@@ -637,7 +714,6 @@
         ====================================================== -->
 <section class="cfp-section">
 <div class="cfp-section-heading">
-<span>01</span>
 <div>
 <small>
                         Call for Papers
@@ -690,7 +766,6 @@
         ====================================================== -->
 <section class="cfp-section">
 <div class="cfp-section-heading">
-<span>02</span>
 <div>
 <small>
                         Research Scope
@@ -703,100 +778,85 @@
 <div class="cfp-themes-layout">
 <div class="cfp-theme-list">
 <div class="cfp-theme-item">
-<span>01</span>
 <p>
                             International refugee law and
                             protection frameworks
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>02</span>
 <p>
                             The 1951 Refugee Convention and
                             the 1967 Protocol
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>03</span>
 <p>
                             Statelessness and nationality law
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>04</span>
 <p>
                             Climate change, environmental
                             displacement, and legal protection
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>05</span>
 <p>
                             Non-refoulement and state
                             responsibility
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>06</span>
 <p>
                             Refugee protection in South Asia
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>07</span>
 <p>
                             Rohingya refugee governance and
                             legal accountability
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>08</span>
 <p>
                             Refugee status determination procedures
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>09</span>
 <p>
                             Human rights and refugee protection
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>10</span>
 <p>
                             Gender, children, disability, and
                             intersectional vulnerabilities
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>11</span>
 <p>
                             Refugee access to justice and
                             legal remedies
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>12</span>
 <p>
                             Comparative refugee law
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>13</span>
 <p>
                             Regional and international
                             protection mechanisms
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>14</span>
 <p>
                             Digital technologies, identity systems,
                             and refugee rights
                         </p>
 </div>
 <div class="cfp-theme-item">
-<span>15</span>
 <p>
                             Emerging legal and policy reforms
                             in displacement governance
@@ -847,7 +907,6 @@
         ====================================================== -->
 <section class="cfp-section">
 <div class="cfp-section-heading">
-<span>03</span>
 <div>
 <small>
                         Author Instructions
@@ -859,7 +918,6 @@
 </div>
 <div class="cfp-guidelines">
 <div class="cfp-guideline">
-<span>01</span>
 <div>
 <strong>
                             Word Count
@@ -870,7 +928,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>02</span>
 <div>
 <strong>
                             Language
@@ -881,7 +938,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>03</span>
 <div>
 <strong>
                             Originality
@@ -894,7 +950,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>04</span>
 <div>
 <strong>
                             Abstract
@@ -905,7 +960,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>05</span>
 <div>
 <strong>
                             Keywords
@@ -916,7 +970,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>06</span>
 <div>
 <strong>
                             Citation Style
@@ -927,7 +980,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>07</span>
 <div>
 <strong>
                             Bibliography
@@ -940,7 +992,6 @@
 </div>
 </div>
 <div class="cfp-guideline">
-<span>08</span>
 <div>
 <strong>
                             Formatting
@@ -958,7 +1009,6 @@
         ====================================================== -->
 <section class="cfp-section">
 <div class="cfp-section-heading">
-<span>04</span>
 <div>
 <small>
                         Important Dates
@@ -1032,9 +1082,6 @@
         ====================================================== -->
 <section class="cfp-submission-section">
 <div class="cfp-submission-heading">
-<span>
-                    05
-                </span>
 <div>
 <small>
                         How to Submit
@@ -1103,7 +1150,7 @@
 <div class="cfp-container">
 <p>
             © <span id="cfpYear"></span>
-            Bangladesh Centre for Refugee Law Studies (BCRLS).
+            Bangladesh Center for Refugee Law Studies (BCRLS).
             All rights reserved.
         </p>
 </div>
@@ -1111,114 +1158,5 @@
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const mobileButton =
-        document.getElementById("cfpMobileButton");
-
-    const navigation =
-        document.getElementById("cfpNavigation");
-
-
-    /* MOBILE MENU */
-
-    if (mobileButton && navigation) {
-
-        mobileButton.addEventListener(
-            "click",
-            function () {
-
-                navigation.classList.toggle("open");
-
-                mobileButton.classList.toggle("open");
-
-            }
-        );
-
-    }
-
-
-    /* DROPDOWNS */
-
-    const dropdownButtons =
-        document.querySelectorAll(
-            ".cfp-nav-dropdown-button"
-        );
-
-
-    dropdownButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            function (event) {
-
-                if (window.innerWidth <= 1000) {
-
-                    event.preventDefault();
-
-                    const dropdown =
-                        button.closest(
-                            ".cfp-nav-dropdown"
-                        );
-
-                    dropdown.classList.toggle("open");
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* CLOSE MENU */
-
-    const links =
-        document.querySelectorAll(
-            ".cfp-navigation a"
-        );
-
-
-    links.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                if (window.innerWidth <= 1000) {
-
-                    navigation.classList.remove(
-                        "open"
-                    );
-
-                    mobileButton.classList.remove(
-                        "open"
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* YEAR */
-
-    const year =
-        document.getElementById("cfpYear");
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
-    }
-
-});
-
-</script>
 <script defer="True" src="../js/app.js"></script></body>
 </html>

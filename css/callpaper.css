@@ -2084,3 +2084,120 @@
         font-size: 18px;
     }
 }
+
+/* =========================================================
+   FINAL HEADING ALIGNMENT
+   Section numbers removed; headings stay clean and left aligned.
+========================================================= */
+.cfp-section-heading {
+    display: block;
+    width: 100%;
+    max-width: 1050px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--cfp-green);
+}
+
+.cfp-section-heading small {
+    margin-bottom: 8px;
+}
+
+.cfp-section-heading h2 {
+    margin-left: 0;
+}
+
+.cfp-submission-heading {
+    display: block;
+    width: 100%;
+    max-width: 1050px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 14px;
+    border-left: 3px solid rgba(255,255,255,.35);
+}
+
+.cfp-submission-heading small {
+    margin-bottom: 8px;
+}
+
+.cfp-submission-body {
+    padding-left: 17px;
+    padding-right: 8px;
+}
+
+@media (max-width: 850px) {
+    .cfp-submission-body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .cfp-section-heading,
+    .cfp-submission-heading {
+        padding-left: 11px;
+    }
+}
+
+/* =========================================================
+   FINAL CFP SUBMISSION FIX
+   Restore the intended dark-green submission panel after
+   global page-polish styles and keep its content aligned.
+========================================================= */
+.cfp-page .cfp-submission-section {
+    background: linear-gradient(135deg, #075f4c 0%, #0b8065 100%) !important;
+    color: #fff !important;
+    border: 0 !important;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(4, 60, 45, .14) !important;
+}
+
+.cfp-page .cfp-submission-heading,
+.cfp-page .cfp-submission-body,
+.cfp-page .cfp-contact-row {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.cfp-page .cfp-submission-heading {
+    display: block;
+    margin-bottom: 42px;
+}
+
+.cfp-page .cfp-submission-heading small,
+.cfp-page .cfp-submission-heading h2,
+.cfp-page .cfp-submission-text h3,
+.cfp-page .cfp-submission-text p,
+.cfp-page .cfp-submission-contact > span,
+.cfp-page .cfp-submission-contact > a,
+.cfp-page .cfp-subject,
+.cfp-page .cfp-contact-row span {
+    visibility: visible;
+}
+
+.cfp-page .cfp-submission-heading h2,
+.cfp-page .cfp-submission-text h3 {
+    color: #fff !important;
+}
+
+.cfp-page .cfp-submission-text p {
+    color: rgba(255,255,255,.88) !important;
+}
+
+.cfp-page .cfp-submission-contact {
+    background: rgba(255,255,255,.12) !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+}
+
+@media (max-width: 768px) {
+    .cfp-page .cfp-submission-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cfp-page .cfp-contact-row {
+        grid-template-columns: 1fr;
+    }
+}
