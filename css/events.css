@@ -1234,156 +1234,26 @@
 
 
 /* =========================================================
-   FINAL EVENT UPDATE — grouped galleries + action buttons
+   EVENT ACTIONS + MULTI-PHOTO MODAL
 ========================================================= */
-.events-page .event-card{
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-}
-.events-page .event-card-image{
-    position:relative;
-    overflow:hidden;
-}
-.events-page .event-photo-count{
-    position:absolute;
-    right:12px;
-    bottom:12px;
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    padding:7px 10px;
-    border-radius:999px;
-    background:rgba(16,42,67,.82);
-    color:#fff;
-    font-size:11px;
-    font-weight:700;
-    backdrop-filter:blur(6px);
-}
-.events-page .event-card-body{
-    display:flex;
-    flex-direction:column;
-    flex:1;
-}
-.events-page .event-details-btn,
-.events-page .event-module-btn,
-.events-page .event-register-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-height:42px;
-    padding:10px 14px;
-    border-radius:10px;
-    border:1px solid transparent;
-    text-decoration:none;
-    font:600 13px/1.2 "DM Sans",sans-serif;
-    cursor:pointer;
-    transition:all .2s ease;
-    white-space:nowrap;
-}
-.events-page .event-details-btn{
-    background:#eef8f4;
-    color:#146d50;
-    border-color:#cce7dc;
-}
-.events-page .event-details-btn:hover{
-    background:#dff2e9;
-    transform:translateY(-1px);
-}
-.events-page .event-module-btn{
-    background:#f5f8fa;
-    color:#29485d;
-    border-color:#d9e2ec;
-}
-.events-page .event-module-btn:hover{
-    background:#eaf0f4;
-    transform:translateY(-1px);
-}
-.events-page .event-register-btn{
-    background:#12815e;
-    color:#fff;
-    border-color:#12815e;
-}
-.events-page .event-register-btn:hover{
-    background:#0d6f50;
-    transform:translateY(-1px);
-}
-.events-page .event-card-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-    align-items:center;
-    margin-top:auto;
-    padding-top:14px;
-}
-.events-page .event-card-actions .event-details-btn{
-    flex:1 1 145px;
-}
-.event-modal-gallery{
-    display:none;
-    grid-template-columns:repeat(3,1fr);
-    gap:9px;
-    padding:12px 22px 0;
-    background:#fff;
-}
-.event-gallery-thumb{
-    border:2px solid transparent;
-    padding:0;
-    border-radius:10px;
-    overflow:hidden;
-    background:#f1f5f3;
-    cursor:pointer;
-    aspect-ratio:16/10;
-}
-.event-gallery-thumb.active{
-    border-color:#12815e;
-}
-.event-gallery-thumb img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover!important;
-}
-.event-modal-actions{
-    display:none;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:24px;
-    padding-top:20px;
-    border-top:1px solid #e3e9ed;
-}
-.event-modal-actions .event-module-btn,
-.event-modal-actions .event-register-btn{
-    flex:1 1 190px;
-}
-.home-event-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-top:18px;
-}
-.home-event-actions a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-    min-height:40px;
-    padding:9px 13px;
-    border-radius:9px;
-    text-decoration:none;
-    font:700 12px/1.2 "DM Sans",sans-serif;
-    transition:all .2s ease;
-}
-.home-event-details{background:#eef8f4;color:#146d50;border:1px solid #cce7dc}
-.home-event-module{background:#f5f8fa;color:#29485d;border:1px solid #d9e2ec}
-.home-event-register{background:#12815e;color:#fff;border:1px solid #12815e}
-.home-event-actions a:hover{transform:translateY(-1px)}
-@media(max-width:700px){
-    .events-page .event-card-actions{display:grid;grid-template-columns:1fr;gap:8px}
-    .events-page .event-card-actions>*{width:100%;flex:1 1 auto}
-    .event-modal-gallery{grid-template-columns:repeat(3,1fr);padding:10px 16px 0}
-    .home-event-actions{display:grid;grid-template-columns:1fr}
-    .home-event-actions a{width:100%}
+.event-card-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:auto; padding-top:10px; }
+.event-card-actions a, .event-card-actions button { min-height:42px; }
+.event-module-btn, .event-register-btn { display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:10px 14px; border-radius:8px; text-decoration:none; font-size:13px; font-weight:700; border:1px solid #d6e0e2; }
+.event-module-btn { color:#244b53; background:#f5f8f8; }
+.event-register-btn { color:#fff; background:#087b5a; border-color:#087b5a; }
+.event-module-btn:hover, .event-register-btn:hover { transform:translateY(-1px); }
+.event-modal-gallery-thumbs { display:none; gap:8px; padding:10px 12px 12px; overflow-x:auto; background:#fff; }
+.event-modal-thumb { flex:0 0 72px; width:72px; height:54px; padding:0; border:2px solid transparent; border-radius:7px; overflow:hidden; background:#fff; cursor:pointer; }
+.event-modal-thumb.active { border-color:#087b5a; }
+.event-modal-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+@media(max-width:640px){ .event-card-actions{flex-direction:column;align-items:stretch}.event-card-actions a,.event-card-actions button{width:100%}.event-modal-gallery-thumbs{padding-bottom:8px}.event-modal-thumb{flex-basis:64px;width:64px;height:48px} }
+
+
+/* 2026 responsive course + Drive gallery */
+.course-action-strip { width: 100%; }
+.drive-photo-gallery { width: 100%; }
+@media (max-width: 640px) {
+  .events-page .container { width: min(100% - 24px, 1100px); }
+  .events-page .events-grid { width: 100%; }
+  .course-action-strip { margin-bottom: 22px; }
 }

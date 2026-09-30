@@ -193,6 +193,16 @@ const carouselState = {
    DOM
    ========================================================= */
 
+
+function resolveSiteAsset(path) {
+    if (!path) return "";
+    if (/^(https?:|data:|blob:|\/)/i.test(path)) return path;
+    const clean = String(path).replace(/^\.\.\//, "");
+    const depth = Math.max(0, window.location.pathname.split("/").filter(Boolean).length - 2);
+    const prefix = depth > 0 ? "../".repeat(depth) : "";
+    return prefix + clean;
+}
+
 const grids = {
 
     advisory:
@@ -1369,7 +1379,7 @@ function createImageHTML(
         <img
             class="member-photo"
             src="${escapeHTML(
-                member.photo
+                resolveSiteAsset(member.photo)
             )}"
             alt="${escapeHTML(
                 member.name
@@ -1667,7 +1677,7 @@ function openProfile(member) {
     if(imageEl){
         const initials=getInitials(member.name);
         imageEl.alt=member.name||"BCRLS Team Member";
-        imageEl.src=member.photo||""; imageEl.style.display=member.photo?"block":"none";
+        imageEl.src=resolveSiteAsset(member.photo)||""; imageEl.style.display=member.photo?"block":"none";
         imageEl.onerror=()=>{imageEl.style.display="none";const w=imageEl.parentElement;if(w&&!w.querySelector(".modal-member-placeholder")){const d=document.createElement("div");d.className="member-placeholder modal-member-placeholder";d.textContent=initials;w.appendChild(d);}};
     }
     profileModal.classList.add("active"); profileModal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
@@ -1904,85 +1914,172 @@ function escapeHTML(
 
 }
 /* =========================================================
-   MOBILE / RESPONSIVE NAVIGATION
-   Single delegated controller — one click opens/closes the menu.
+   MOBILE MENU
 ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-    const menuOverlay = document.getElementById("menuOverlay");
 
-    if (!menuToggle || !mainNav) return;
+    const menuToggle =
+        document.querySelector(".menu-toggle");
 
-    const isCompact = () => window.innerWidth <= 1200;
+    const mainNav =
+        document.querySelector(".main-nav");
 
-    function closeDropdowns() {
-        mainNav.querySelectorAll(".nav-dropdown.mobile-open, .nav-dropdown.open")
+    if (!menuToggle || !mainNav) {
+        return;
+    }
+
+
+    /* =========================
+       TOGGLE MENU
+    ========================= */
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            mainNav.classList.contains("mobile-open");
+
+        if (isOpen) {
+
+            closeMobileMenu();
+
+        } else {
+
+            openMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================
+       OPEN
+    ========================= */
+
+    function openMobileMenu() {
+
+        mainNav.classList.add("mobile-open");
+
+        menuToggle.classList.add("active");
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+    }
+
+
+    /* =========================
+       CLOSE
+    ========================= */
+
+    function closeMobileMenu() {
+
+        mainNav.classList.remove("mobile-open");
+
+        menuToggle.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document
+            .querySelectorAll(".nav-dropdown.mobile-open")
             .forEach(dropdown => {
-                dropdown.classList.remove("mobile-open", "open");
+
+                dropdown.classList.remove(
+                    "mobile-open"
+                );
+
             });
     }
 
-    function openMobileMenu() {
-        if (!isCompact()) return;
-        mainNav.classList.add("mobile-open");
-        menuToggle.classList.add("active");
-        document.body.classList.add("menu-open");
-        menuToggle.setAttribute("aria-expanded", "true");
-        if (menuOverlay) menuOverlay.classList.add("active");
-    }
 
-    function closeMobileMenu() {
-        mainNav.classList.remove("mobile-open");
-        menuToggle.classList.remove("active");
-        document.body.classList.remove("menu-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        closeDropdowns();
-        if (menuOverlay) menuOverlay.classList.remove("active");
-    }
+    /* =========================
+       MOBILE DROPDOWNS
+    ========================= */
 
-    menuToggle.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        mainNav.classList.contains("mobile-open")
-            ? closeMobileMenu()
-            : openMobileMenu();
-    });
+    document
+        .querySelectorAll(".nav-dropdown-toggle")
+        .forEach(toggle => {
 
-    if (menuOverlay) {
-        menuOverlay.addEventListener("click", closeMobileMenu);
-    }
+            toggle.addEventListener(
+                "click",
+                event => {
 
-    mainNav.addEventListener("click", (event) => {
-        const toggle = event.target.closest(".nav-dropdown-toggle");
-        if (!toggle || !isCompact()) return;
+                    if (window.innerWidth <= 1200) {
 
-        event.preventDefault();
-        event.stopPropagation();
+                        event.preventDefault();
 
-        const dropdown = toggle.closest(".nav-dropdown");
-        if (!dropdown) return;
+                        const dropdown =
+                            toggle.closest(
+                                ".nav-dropdown"
+                            );
 
-        const wasOpen = dropdown.classList.contains("mobile-open");
+                        if (!dropdown) {
+                            return;
+                        }
 
-        mainNav.querySelectorAll(".nav-dropdown.mobile-open").forEach(item => {
-            if (item !== dropdown) item.classList.remove("mobile-open");
+                        dropdown.classList.toggle(
+                            "mobile-open"
+                        );
+
+                    }
+
+                }
+            );
+
         });
 
-        dropdown.classList.toggle("mobile-open", !wasOpen);
-        dropdown.classList.toggle("open", !wasOpen);
-    });
 
-    mainNav.addEventListener("click", (event) => {
-        const link = event.target.closest("a");
-        if (link && isCompact()) closeMobileMenu();
-    });
+    /* =========================
+       CLOSE AFTER LINK CLICK
+    ========================= */
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeMobileMenu();
-    });
+    mainNav
+        .querySelectorAll("a")
+        .forEach(link => {
 
-    window.addEventListener("resize", () => {
-        if (!isCompact()) closeMobileMenu();
-    });
+            link.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        window.innerWidth <= 1200
+                    ) {
+
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       RESIZE
+    ========================= */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 1200
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
 });

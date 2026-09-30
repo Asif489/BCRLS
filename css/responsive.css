@@ -79,7 +79,7 @@ iframe {
     }
 
 
-    body .menu-overlay {
+    body .site-header .menu-overlay {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -305,7 +305,7 @@ and (max-width: 1200px) {
 
     /* OVERLAY */
 
-    body .menu-overlay {
+    body .site-header .menu-overlay {
         display: none !important;
 
         position: fixed !important;
@@ -319,7 +319,8 @@ and (max-width: 1200px) {
     }
 
 
-    body .menu-overlay.active {
+    body .site-header
+    .menu-overlay.active {
         display: block !important;
 
         opacity: 1 !important;
@@ -963,7 +964,8 @@ and (max-width: 1200px) {
        OVERLAY
     ===================================================== */
 
-    body .menu-overlay {
+    body .site-header
+    .menu-overlay {
         display: none !important;
 
         position: fixed !important;
@@ -977,7 +979,8 @@ and (max-width: 1200px) {
     }
 
 
-    body .menu-overlay.active {
+    body .site-header
+    .menu-overlay.active {
         display: block !important;
 
         opacity: 1 !important;

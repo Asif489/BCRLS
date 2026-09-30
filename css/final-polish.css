@@ -17,3 +17,243 @@ footer a:hover{transform:translateX(2px)}
 .btn:hover,.button:hover,button:hover,input[type=submit]:hover{transform:translateY(-1px)}
 img{max-width:100%;height:auto}
 @media(max-width:768px){footer img[src*="logo.png"]{max-width:160px!important;max-height:60px!important}.page-hero,.hero{padding-top:50px;padding-bottom:50px}}
+
+
+/* =========================================================
+   2026 UPDATE — COURSE ACTIONS / DRIVE GALLERY / ALL DEVICES
+========================================================= */
+.video-wrapper {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr) !important;
+    align-items: stretch;
+}
+.video-frame {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+    height: auto !important;
+}
+.video-frame iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    display: block !important;
+    border: 0 !important;
+}
+
+.home-course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+.home-course-btn,
+.course-strip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 16px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.home-course-btn:hover,
+.course-strip-btn:hover {
+    transform: translateY(-2px);
+}
+.home-course-details,
+.course-strip-btn.module {
+    color: #176f51 !important;
+    background: #eaf5f0;
+    border: 1px solid #cde4da;
+}
+.home-course-module {
+    color: #6b4b00 !important;
+    background: #fff5d9;
+    border: 1px solid #f0ddb0;
+}
+.home-course-register,
+.course-strip-btn.register {
+    color: #fff !important;
+    background: #087b5a;
+    border: 1px solid #087b5a;
+    box-shadow: 0 8px 22px rgba(8,123,90,.18);
+}
+
+.course-action-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 0 28px;
+    padding: 24px;
+    border: 1px solid #dce8e3;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f4faf7, #ffffff);
+}
+.course-action-strip h3 {
+    margin: 5px 0 5px;
+    color: #17343a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(21px, 2.4vw, 30px);
+    line-height: 1.2;
+}
+.course-action-strip p { margin: 0; color: #667871; line-height: 1.6; }
+.course-action-strip-buttons { display: flex; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
+
+.drive-photo-gallery {
+    margin: 0 auto 42px;
+    padding: 26px;
+    border: 1px solid #dce8e3;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(23,52,58,.07);
+}
+.drive-photo-gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 18px;
+}
+.drive-photo-gallery-header h2 { margin: 7px 0 8px; color: #17343a; font-family: "Playfair Display", Georgia, serif; }
+.drive-photo-gallery-header p { margin: 0; max-width: 760px; color: #667871; line-height: 1.7; }
+.drive-gallery-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 15px;
+    border-radius: 10px;
+    color: #fff !important;
+    background: #087b5a;
+    text-decoration: none !important;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.drive-gallery-frame {
+    width: 100%;
+    height: min(720px, 72vh);
+    min-height: 460px;
+    overflow: hidden;
+    border: 1px solid #e2ebe7;
+    border-radius: 16px;
+    background: #f7faf8;
+}
+.drive-gallery-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.drive-gallery-note { margin: 12px 0 0; color: #74827e; font-size: 12px; line-height: 1.6; }
+
+@media (max-width: 1100px) {
+    .video-wrapper { grid-template-columns: 1fr !important; }
+    .video-info { padding: 4px 4px 8px; }
+    .events-preview .event-card { grid-template-columns: minmax(220px, 35%) minmax(0, 1fr) !important; }
+    .events-section .event-card { grid-template-columns: 250px minmax(0, 1fr) !important; }
+}
+@media (max-width: 800px) {
+    .home-course-actions { display: grid; grid-template-columns: 1fr 1fr; }
+    .home-course-btn { width: 100%; }
+    .home-course-register { grid-column: 1 / -1; }
+    .course-action-strip { flex-direction: column; align-items: stretch; }
+    .course-action-strip-buttons { display: grid; grid-template-columns: 1fr 1fr; }
+    .course-strip-btn { width: 100%; }
+    .drive-photo-gallery { padding: 18px; }
+    .drive-photo-gallery-header { flex-direction: column; align-items: stretch; }
+    .drive-gallery-open { width: 100%; }
+    .drive-gallery-frame { height: 68vh; min-height: 420px; }
+}
+@media (max-width: 640px) {
+    .video-wrapper { padding: 12px !important; border-radius: 18px !important; gap: 14px !important; }
+    .video-frame { border-radius: 14px !important; aspect-ratio: 16 / 9 !important; }
+    .video-frame iframe { min-height: 0 !important; }
+    .home-course-actions { grid-template-columns: 1fr; }
+    .home-course-register { grid-column: auto; }
+    .home-course-btn { min-height: 46px; font-size: 13px; }
+    .course-action-strip { padding: 18px; border-radius: 15px; }
+    .course-action-strip-buttons { grid-template-columns: 1fr; }
+    .drive-photo-gallery { margin-bottom: 28px; padding: 14px; border-radius: 16px; }
+    .drive-gallery-frame { height: 70vh; min-height: 390px; border-radius: 12px; }
+    .events-preview .event-card,
+    .events-section .event-card { grid-template-columns: 1fr !important; }
+    .events-preview .event-card .home-upcoming-image,
+    .events-section .event-card .home-upcoming-image { min-height: 230px !important; height: 230px !important; padding: 14px !important; }
+    .events-preview .event-content,
+    .events-section .event-content { padding: 22px 18px !important; }
+    .events-preview .event-content h3,
+    .events-section .event-content h3 { font-size: 23px !important; }
+    .events-preview .event-content p,
+    .events-section .event-content p { font-size: 14px !important; }
+}
+
+
+/* =========================================================
+   COMING SOON — LATEST PUBLICATION
+========================================================= */
+.coming-soon-badge { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin: 8px 0 12px; padding: 9px 13px; border: 1px solid #e8d39d; border-radius: 999px; color: #7a5900; background: linear-gradient(135deg,#fff9e8,#fffdf7); font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.coming-soon-badge i { font-size: 12px; }
+.coming-soon-status { min-width: 230px; padding: 22px !important; border: 1px solid #ead9aa; border-radius: 16px; background: linear-gradient(145deg,#fff9e8,#ffffff); text-align: center; }
+.coming-soon-status > span { display: block; color: #8a6a1d; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+.coming-soon-status .coming-soon-icon { width: 48px; height: 48px; margin: 12px auto 9px; display: grid; place-items: center; border-radius: 50%; background: #fff1c7; color: #8a6a1d; font-size: 20px; }
+.coming-soon-status strong { display: block; color: #5e4708; font-family: "Playfair Display", Georgia, serif; font-size: 24px; }
+.coming-soon-status p { margin: 7px 0 0; color: #756d58; font-size: 12px; line-height: 1.55; }
+@media (max-width: 700px) { .coming-soon-status { width: 100%; min-width: 0; } }
+
+/* =========================================================
+   HEADER — DESKTOP FIT / NO NAV OVERLAP
+========================================================= */
+@media screen and (min-width: 1201px) {
+  body .site-header .header-inner {
+    width: calc(100% - 36px) !important;
+    gap: 10px !important;
+  }
+  body .site-header .brand {
+    gap: 9px !important;
+    min-width: 250px !important;
+  }
+  body .site-header .brand-text strong {
+    font-size: 17px !important;
+  }
+  body .site-header .brand-text span {
+    font-size: 9px !important;
+  }
+  body .site-header .main-nav {
+    gap: 0 !important;
+    flex-wrap: nowrap !important;
+    min-width: 0 !important;
+  }
+  body .site-header .main-nav .nav-link,
+  body .site-header .main-nav .nav-dropdown-toggle {
+    padding: 7px 6px !important;
+    font-size: 12px !important;
+    letter-spacing: -0.15px !important;
+  }
+  body .site-header .main-nav .nav-dropdown-toggle {
+    gap: 4px !important;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1450px) {
+  body .site-header .brand {
+    min-width: 225px !important;
+  }
+  body .site-header .brand-logo {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  body .site-header .brand-logo img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  body .site-header .main-nav .nav-link,
+  body .site-header .main-nav .nav-dropdown-toggle {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 11px !important;
+  }
+}

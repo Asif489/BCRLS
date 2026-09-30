@@ -7,16 +7,17 @@ const upcomingEvents = [
         id: 4,
         type: "CERTIFICATE COURSE",
         title: "Certificate Course on Refugee Law and Statelessness: Foundation to Practice",
-        date: "October 2026 – December 2026",
-        location: "Hybrid",
+        date: "October–December 2026",
+        location: "Hybrid — BCRLS / Online",
         image: "../assets/events/certificate.jpeg",
-        shortDescription: "BCRLS launches its inaugural Certificate Course on Refugee Law and Statelessness, bringing together international scholars and practitioners for 20 lectures from October to December 2026.",
-        description: "The Bangladesh Center for Refugee Law Studies (BCRLS) is delighted to announce its first-ever Certificate Course on Refugee Law and Statelessness: Foundation to Practice, scheduled to be conducted from October to December 2026. This flagship program is designed to provide participants with a comprehensive understanding of refugee law, statelessness, international protection frameworks, and emerging global challenges. Bringing together leading academics and practitioners from across the world, the course will offer both theoretical foundations and practical perspectives on contemporary refugee issues. The program will comprise 20 lectures delivered by distinguished scholars and experts from Germany, the United States, the United Kingdom, Australia, Canada, and beyond, creating a unique platform for global learning and engagement.",
-        speakers: ["International scholars and practitioners from Germany, the United States, the United Kingdom, Australia, Canada, and beyond."],
-        programme: "20 online lectures with interactive activities and online assessment. The course module covers 20 substantive topics, a 12–14 week structure, comparative refugee crises, and a 100-mark online final examination.",
+        images: ["../assets/events/certificate.jpeg"],
+        shortDescription: "BCRLS inaugural certificate course on refugee law and statelessness, delivered through 20 substantive online lectures with Bangladesh/Rohingya and comparative case studies.",
+        description: "BCRLS Launches Its Inaugural Certificate Course on Refugee Law and Statelessness: Foundation to Practice. The course is scheduled for October–December 2026 in hybrid format and includes 20 substantive lectures, interactive activities and a 100-mark online final examination.",
+        speakers: ["International faculty and resource persons — see the course materials"],
+        programme: "20 substantive topics covering refugee law, statelessness, international protection, displacement, legal frameworks and comparative crises. The Bangladesh/Rohingya situation is used as a primary case study.",
         organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
-        moduleLink: "../assets/events/BCRLS_Certificate_Course_Module.pdf",
-        registrationLink: "https://docs.google.com/forms/d/1VrbHgG0045hvt0jbhkkIp1y5uTFRiRnbDLNKWZYFoQs/viewform?chromeless=1&edit_requested=true"
+        registration: "https://docs.google.com/forms/d/1VrbHgG0045hvt0jbhkkIp1y5uTFRiRnbDLNKWZYFoQs/viewform?chromeless=1&edit_requested=true",
+        module: "../assets/docs/BCRLS Module.pdf"
     }
 ];
 
@@ -36,70 +37,6 @@ const archiveTitles = [
     [13,"CONFERENCE","ICERPASA 2026"]
 ];
 
-const archiveEnhancements = {
-    14: {
-        type: "PANEL DISCUSSION",
-        title: "From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma",
-        date: "University of Dhaka",
-        location: "Centre for Advanced Studies in Humanities, Theatre Hall, University of Dhaka",
-        description: "BCRLS organized a panel discussion bringing together academics, researchers, students and practitioners to critically engage with refugee protection, citizenship, justice and the Rohingya integration dilemma in Bangladesh. The discussion focused on practical and policy-oriented pathways for protection, dignified and regulated livelihood opportunities, burden-sharing, and conditions for safe, voluntary and sustainable repatriation.",
-        speakers: [
-            "Mr. Md Abu Bakar Siddique — discussion on refugee protection in non-signatory states",
-            "Mr. Nafiz Ahmed — citizenship law and local integration of Rohingya refugees",
-            "Mr. Riad Mahmud — Session Moderator, Director (Admin & Finance), BCRLS",
-            "Ms. Nabila Farhin — Opening Remarks, Director of Programs, BCRLS",
-            "Mr. Sakhawat Sajjat Sejan — Closing Remarks, Executive Director, BCRLS"
-        ],
-        programme: "Panel discussion connecting legal norms with ground realities, citizenship, justice, livelihood opportunities, burden-sharing and sustainable repatriation.",
-        gallery: [
-            "../assets/events/du_1.jpeg",
-            "../assets/events/du_02.jpeg",
-            "../assets/events/du_03.jpeg"
-        ]
-    },
-    15: {
-        type: "SEMINAR",
-        title: "Administrative and Judicial Governance of Refugees: Protection, Non-Refoulement, Arrest, Detention and Administrative Challenges in Bangladesh",
-        date: "Canadian University of Bangladesh",
-        location: "Department of Law, Canadian University of Bangladesh",
-        description: "BCRLS, in collaboration with the Department of Law, Canadian University of Bangladesh, organized a seminar on refugee protection, non-refoulement, arrest, detention and administrative challenges within Bangladesh's legal framework. The session featured meaningful academic discussion with participation from more than 50 participants.",
-        speakers: [
-            "Dr. Md. Rizwanul Islam — Chief Guest",
-            "Ahmad Ibrahim — Guest, Advisor, Displacement and Climate Justice, BLAST",
-            "Mohammad Sunzad Sheikh — Special Guest, Assistant Professor & Head, Department of Law, Canadian University of Bangladesh",
-            "Md. Riad Mahmud — Session Moderator, Senior Lecturer, East West University"
-        ],
-        programme: "Seminar discussion on refugee protection, non-refoulement, detention and administrative governance in Bangladesh.",
-        gallery: [
-            "../assets/events/canadian_uni_1.jpeg",
-            "../assets/events/canadian_uni_2.jpeg"
-        ]
-    },
-    16: {
-        type: "ONLINE LECTURE SERIES",
-        title: "BCRLS Online Lecture Series: Edges of Belonging: Migration, Statelessness and Refugeehood",
-        date: "11 April – 22 May 2026",
-        location: "Online",
-        description: "At the intersection of law, identity and displacement, this lecture series brings together leading global scholars to critically engage with the evolving landscape of migration, statelessness and refugee protection, exploring the legal, political and human dimensions of belonging.",
-        speakers: [
-            "Dr. Nafees Ahmad",
-            "Dr. Jobair Alam",
-            "Rutaban Yameen",
-            "Susan Kneebone",
-            "Dr. Laura Smith-Khan",
-            "Dr. David Cantor",
-            "Dr. Jaya Ramji-Nogales",
-            "Dr. Kirsten McConnachie"
-        ],
-        programme: "Eight scheduled lectures covering IDPs and international refugee law; UK responses to refugees and stateless persons; foundations of international refugee law; Article 1C; refugee credibility assessments; war refugees and international humanitarian law; global migration law and the Global South; and humanitarian access to IDPs.",
-        gallery: [
-            "../assets/events/online_01.jpeg",
-            "../assets/events/online_02.jpeg",
-            "../assets/events/online_03.jpeg"
-        ]
-    }
-};
-
 function getArchiveEventsFromPage() {
     const cards = [...document.querySelectorAll("#event-archive .event-card")];
     return cards.map((card, i) => {
@@ -109,20 +46,12 @@ function getArchiveEventsFromPage() {
         const img = card.querySelector(".event-card-image img")?.getAttribute("src") || "";
         const meta = [...card.querySelectorAll(".event-card-meta span")].map(x => x.textContent.replace(/\s+/g," ").trim()).filter(Boolean);
         const description = card.querySelector(".event-card-description")?.textContent.replace(/\s+/g," ").trim() || "Archived BCRLS event.";
-        const extra = archiveEnhancements[id] || {};
         return {
-            id,
-            type: extra.type || type,
-            title: extra.title || title,
-            date: extra.date || meta[0] || "Past Event",
-            location: extra.location || meta[1] || "BCRLS",
-            image: extra.gallery?.[0] || img,
-            gallery: extra.gallery || (img ? [img] : []),
-            shortDescription: extra.description || description,
-            description: extra.description || description,
-            speakers: extra.speakers || [],
-            programme: extra.programme || "Programme information is available in the event materials.",
-            organizer: extra.organizer || "Bangladesh Center for Refugee Law Studies (BCRLS)",
+            id, type, title, date: meta[0] || "Past Event", location: meta[1] || "BCRLS",
+            image: img, shortDescription: description, description,
+            images: (card.dataset.eventImages || img).split("|").map(x => x.trim()).filter(Boolean),
+            speakers: [], programme: "Programme information is available in the event materials.",
+            organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
             card
         };
     });
@@ -137,6 +66,7 @@ function createEventCard(event) {
     const article = document.createElement("article");
     article.className = "event-card";
     article.dataset.eventId = event.id;
+    if (event.images?.length) article.dataset.eventImages = event.images.join("|");
     article.innerHTML = `
         <div class="event-card-image">
             <img src="${event.image}" alt="${escapeText(event.title)}" loading="lazy">
@@ -151,9 +81,9 @@ function createEventCard(event) {
             </div>
             <p class="event-card-description">${escapeText(event.shortDescription)}</p>
             <div class="event-card-actions">
-                <button type="button" class="event-details-btn" data-event-id="${event.id}"><i class="fa-regular fa-circle-info"></i> Event Details <i class="fa-solid fa-arrow-right"></i></button>
-                ${event.moduleLink ? `<a class="event-module-btn" href="${event.moduleLink}" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> Course Module</a>` : ""}
-                ${event.registrationLink ? `<a class="event-register-btn" href="${event.registrationLink}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Registration</a>` : ""}
+                <button type="button" class="event-details-btn" data-event-id="${event.id}">Event Details <i class="fa-solid fa-arrow-right"></i></button>
+                ${event.module ? `<a class="event-module-btn" href="${event.module}" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> Course Module</a>` : ""}
+                ${event.registration ? `<a class="event-register-btn" href="${event.registration}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Registration</a>` : ""}
             </div>
         </div>`;
     const img = article.querySelector("img");
@@ -183,7 +113,8 @@ const archiveDateByTitle = {
     "Seminar on Foundations of Refugee Law": "2026-01-19",
     "Asylum Under International Refugee Law and in South Asia": "2026-04-10",
     "Academic Dialogue on the Rohingya Genocide": "2026-08-25",
-    "ICERPASA 2026": "2026-06-27"
+    "ICERPASA 2026": "2026-06-27",
+    "Edges of Belonging: Migration, Statelessness and Refugeehood": "2026-05-22"
 };
 
 function sortArchiveCardsByDate() {
@@ -253,47 +184,32 @@ function openEventDetails(event) {
     const modal = document.getElementById("eventModal");
     if (!modal) return;
     const set = (id, value) => { const el=document.getElementById(id); if(el) el.textContent=value||""; };
-    const gallery = event.gallery?.length ? event.gallery : (event.image ? [event.image] : []);
     const image=document.getElementById("eventModalImage");
-    if(image){ image.src=gallery[0]||""; image.alt=event.title||"BCRLS Event"; }
-
-    const galleryWrap = document.getElementById("eventModalGallery");
-    if (galleryWrap) {
-        galleryWrap.innerHTML = "";
-        if (gallery.length > 1) {
-            gallery.forEach((src, index) => {
-                const thumb = document.createElement("button");
-                thumb.type = "button";
-                thumb.className = "event-gallery-thumb" + (index === 0 ? " active" : "");
-                thumb.innerHTML = `<img src="${src}" alt="${escapeText(event.title)} image ${index + 1}">`;
-                thumb.addEventListener("click", () => {
-                    image.src = src;
-                    galleryWrap.querySelectorAll(".event-gallery-thumb").forEach(x => x.classList.remove("active"));
-                    thumb.classList.add("active");
+    const thumbs=document.getElementById("eventModalGalleryThumbs");
+    const images=(event.images?.length ? event.images : [event.image]).filter(Boolean);
+    if(image){ image.src=images[0]||""; image.alt=event.title||"BCRLS Event"; }
+    if(thumbs){
+        thumbs.innerHTML="";
+        if(images.length>1){
+            thumbs.style.display="flex";
+            images.forEach((src,i)=>{
+                const b=document.createElement("button");
+                b.type="button"; b.className="event-modal-thumb"+(i===0?" active":"");
+                b.innerHTML=`<img src="${src}" alt="${escapeText(event.title)} photo ${i+1}" loading="lazy">`;
+                b.addEventListener("click",()=>{
+                    image.src=src;
+                    thumbs.querySelectorAll(".event-modal-thumb").forEach(x=>x.classList.remove("active"));
+                    b.classList.add("active");
                 });
-                galleryWrap.appendChild(thumb);
+                thumbs.appendChild(b);
             });
-            galleryWrap.style.display = "grid";
-        } else {
-            galleryWrap.style.display = "none";
-        }
+        } else thumbs.style.display="none";
     }
-
     set("eventModalType", event.type); set("eventModalTitle", event.title); set("eventModalDate", event.date); set("eventModalLocation", event.location); set("eventModalDescription", event.description);
-
     const speakers=document.getElementById("eventModalSpeakers"), sw=document.getElementById("eventModalSpeakersWrapper");
     if(sw && speakers){ speakers.innerHTML=""; if(event.speakers?.length){ sw.style.display="block"; event.speakers.forEach(x=>{const li=document.createElement("li");li.textContent=x;speakers.appendChild(li);}); } else sw.style.display="none"; }
     const pw=document.getElementById("eventModalProgrammeWrapper"), p=document.getElementById("eventModalProgramme"); if(pw&&p){pw.style.display=event.programme?"block":"none";p.textContent=event.programme||"";}
     const ow=document.getElementById("eventModalOrganizerWrapper"), o=document.getElementById("eventModalOrganizer"); if(ow&&o){ow.style.display=event.organizer?"block":"none";o.textContent=event.organizer||"";}
-
-    const actions=document.getElementById("eventModalActions");
-    if(actions){
-        actions.innerHTML = "";
-        if(event.moduleLink) actions.innerHTML += `<a class="event-module-btn" href="${event.moduleLink}" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> View Course Module</a>`;
-        if(event.registrationLink) actions.innerHTML += `<a class="event-register-btn" href="${event.registrationLink}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Registration</a>`;
-        actions.style.display = actions.innerHTML ? "flex" : "none";
-    }
-
     modal.classList.add("active"); modal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
 }
 

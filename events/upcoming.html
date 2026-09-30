@@ -223,7 +223,7 @@
 <a href="../media/newsroom.html">
                         Newsroom
                     </a>
-<a href="../media/gallery.html">
+<a href="../media/gallery.html" aria-label="Photo Gallery">
                         Photo Gallery
                     </a>
 </div>
@@ -313,6 +313,17 @@
 <!-- =========================================
                  EVENT GRID
                  ========================================= -->
+<div class="course-action-strip" aria-label="Certificate course resources">
+    <div>
+        <span class="events-eyebrow">CERTIFICATE COURSE</span>
+        <h3>Refugee Law and Statelessness: Foundation to Practice</h3>
+        <p>October–December 2026 · Hybrid format · 20 lectures · Online final examination</p>
+    </div>
+    <div class="course-action-strip-buttons">
+        <a class="course-strip-btn module" href="../assets/docs/BCRLS Module.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> Course Module</a>
+        <a class="course-strip-btn register" href="https://docs.google.com/forms/d/1VrbHgG0045hvt0jbhkkIp1y5uTFRiRnbDLNKWZYFoQs/viewform?chromeless=1&edit_requested=true" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Registration</a>
+    </div>
+</div>
 <div class="events-grid" id="upcomingEventsGrid">
 <!-- Only the current Certificate Course is displayed here. -->
 </div>
@@ -331,8 +342,8 @@
 <!-- Image -->
 <div class="event-modal-image">
 <img alt="" id="eventModalImage" src=""/>
+<div class="event-modal-gallery-thumbs" id="eventModalGalleryThumbs" aria-label="Event photos"></div>
 </div>
-<div class="event-modal-gallery" id="eventModalGallery" aria-label="Event photo gallery"></div>
 <!-- Details -->
 <div class="event-modal-body">
 <span class="event-modal-type" id="eventModalType">
@@ -379,7 +390,6 @@
 <p id="eventModalOrganizer">
 </p>
 </div>
-<div class="event-modal-actions" id="eventModalActions"></div>
 </div>
 </div>
 </div>

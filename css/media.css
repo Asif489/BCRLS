@@ -1,0 +1,61 @@
+
+/* =========================================================
+   BCRLS MEDIA — GOOGLE DRIVE PHOTO GALLERY
+========================================================= */
+.media-gallery-page { background: #f7f9fb; min-height: 100vh; }
+.media-gallery-hero { padding: 88px 0 54px; background: linear-gradient(135deg, #eef8f4 0%, #ffffff 58%, #f8f3e8 100%); border-bottom: 1px solid #dce8e3; }
+.media-eyebrow { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .16em; color: #087b5a; }
+.media-gallery-hero h1 { margin: 10px 0 14px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(38px, 6vw, 68px); line-height: 1.05; color: #17343a; }
+.media-gallery-hero p { max-width: 760px; margin: 0; color: #667871; font-size: 17px; line-height: 1.75; }
+.media-gallery-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.media-gallery-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 12px 18px; border-radius: 11px; text-decoration: none !important; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease; }
+.media-gallery-btn:hover { transform: translateY(-2px); }
+.media-gallery-btn.primary { color: #fff !important; background: #087b5a; box-shadow: 0 9px 24px rgba(8,123,90,.18); }
+.media-gallery-btn.secondary { color: #176f51 !important; background: #fff; border: 1px solid #cde4da; }
+.media-gallery-section { padding: 42px 0 70px; }
+.media-gallery-card { padding: 28px; border: 1px solid #dce8e3; border-radius: 22px; background: #fff; box-shadow: 0 14px 38px rgba(23,52,58,.08); }
+.media-gallery-card-head { margin-bottom: 20px; }
+.media-gallery-card h2 { margin: 7px 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(26px, 3.2vw, 40px); color: #17343a; }
+.media-gallery-card-head p { margin: 0; max-width: 860px; color: #667871; line-height: 1.7; }
+.media-drive-frame { width: 100%; height: min(760px, 76vh); min-height: 460px; overflow: hidden; border: 1px solid #e2ebe7; border-radius: 16px; background: #f7faf8; }
+.media-drive-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.media-gallery-note { margin: 13px 0 0; color: #74827e; font-size: 12px; line-height: 1.6; }
+@media (max-width: 800px) {
+  .media-gallery-hero { padding: 68px 0 42px; }
+  .media-gallery-actions { display: grid; grid-template-columns: 1fr; }
+  .media-gallery-btn { width: 100%; }
+  .media-gallery-card { padding: 20px; border-radius: 17px; }
+  .media-drive-frame { height: 70vh; min-height: 420px; }
+}
+@media (max-width: 520px) {
+  .media-gallery-hero { padding: 52px 0 34px; }
+  .media-gallery-hero h1 { font-size: 36px; }
+  .media-gallery-hero p { font-size: 15px; }
+  .media-gallery-section { padding: 26px 0 48px; }
+  .media-gallery-card { padding: 14px; border-radius: 15px; }
+  .media-drive-frame { height: 68vh; min-height: 390px; border-radius: 12px; }
+}
+
+
+/* =========================================================
+   BCRLS PHOTO SLIDESHOW — ONE PHOTO AT A TIME
+========================================================= */
+.media-slideshow { width:100%; }
+.media-slide-stage { position:relative; width:100%; aspect-ratio:16/9; min-height:420px; overflow:hidden; border-radius:18px; background:#102b2b; display:flex; align-items:center; justify-content:center; box-shadow:0 18px 42px rgba(23,52,58,.16); }
+.media-slide-stage img { width:100%; height:100%; object-fit:contain; display:block; opacity:1; transition:opacity .45s ease, transform .45s ease; }
+.media-slide-stage img.is-changing { opacity:.15; transform:scale(1.015); }
+.media-slide-arrow { position:absolute; z-index:3; top:50%; transform:translateY(-50%); width:48px; height:48px; border:1px solid rgba(255,255,255,.35); border-radius:50%; background:rgba(0,0,0,.45); color:#fff; cursor:pointer; display:grid; place-items:center; font-size:17px; backdrop-filter:blur(8px); transition:.2s ease; }
+.media-slide-arrow:hover { background:rgba(8,123,90,.9); transform:translateY(-50%) scale(1.06); }
+.media-slide-arrow.prev { left:18px; }
+.media-slide-arrow.next { right:18px; }
+.media-slide-caption { position:absolute; left:18px; right:18px; bottom:18px; z-index:2; padding:11px 15px; border-radius:10px; background:rgba(0,0,0,.52); color:#fff; font-size:14px; font-weight:700; backdrop-filter:blur(8px); }
+.media-slide-play { position:absolute; z-index:3; right:18px; top:18px; display:inline-flex; align-items:center; gap:8px; padding:9px 13px; border:1px solid rgba(255,255,255,.32); border-radius:999px; background:rgba(0,0,0,.46); color:#fff; cursor:pointer; backdrop-filter:blur(8px); font-weight:700; }
+.media-slide-progress { height:4px; margin-top:12px; overflow:hidden; border-radius:99px; background:#e4eee9; }
+.media-slide-progress span { display:block; width:0; height:100%; background:#087b5a; transition:width .1s linear; }
+.media-slide-thumbs { display:flex; gap:9px; margin-top:14px; overflow-x:auto; padding:3px 2px 8px; scrollbar-width:thin; }
+.media-slide-thumb { flex:0 0 88px; height:60px; padding:0; border:2px solid transparent; border-radius:8px; overflow:hidden; background:#eef4f1; cursor:pointer; opacity:.68; transition:.2s ease; }
+.media-slide-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.media-slide-thumb:hover, .media-slide-thumb.active { opacity:1; border-color:#087b5a; }
+.media-gallery-actions-bottom { margin-top:18px; }
+@media (max-width:800px){ .media-slide-stage { min-height:330px; aspect-ratio:4/3; border-radius:14px; } .media-slide-arrow { width:42px; height:42px; } .media-slide-arrow.prev{left:10px}.media-slide-arrow.next{right:10px}.media-slide-play{right:10px;top:10px}.media-slide-caption{left:10px;right:10px;bottom:10px;font-size:12px}.media-slide-thumbs{gap:7px}.media-slide-thumb{flex-basis:72px;height:50px} }
+@media (max-width:520px){ .media-slide-stage { min-height:245px; aspect-ratio:4/3; } .media-slide-arrow{width:38px;height:38px;font-size:14px}.media-slide-play span{display:none}.media-slide-play{width:38px;height:38px;padding:0;justify-content:center}.media-slide-caption{font-size:11px;padding:8px 10px}.media-slide-thumb{flex-basis:64px;height:44px} }

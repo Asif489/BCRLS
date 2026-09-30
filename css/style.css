@@ -234,22 +234,23 @@ ol {
     align-items: center;
     justify-content: flex-end;
 
-    gap: 3px;
+    gap: 1px;
 
     margin-left: auto;
+    min-width: 0;
 }
 
 .nav-link,
 .nav-dropdown-toggle {
     position: relative;
 
-    padding: 10px 11px;
+    padding: 8px 7px;
 
     color: #526b63;
 
     background: transparent;
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 
     line-height: 1.5;
@@ -4078,3 +4079,6 @@ body:has(#newsletter) .newsletter-inner {
         gap: 30px 18px !important;
     }
 }
+
+
+.home-course-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}.home-course-actions .card-link,.home-course-actions .event-module-btn,.home-course-actions .event-register-btn{min-height:42px}.home-course-actions .event-module-btn,.home-course-actions .event-register-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}.home-course-actions .event-module-btn{color:#244b53;background:#f5f8f8;border:1px solid #d6e0e2}.home-course-actions .event-register-btn{color:#fff;background:#087b5a;border:1px solid #087b5a}@media(max-width:640px){.home-course-actions{flex-direction:column;align-items:stretch}.home-course-actions>*{width:100%;text-align:center}}
