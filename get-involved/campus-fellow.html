@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" href="../assets/logo.png" type="image/png">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campus Fellow | BCRLS</title>
+<meta content="Campus Fellow opportunities at the Bangladesh Center for Refugee Law Studies." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/get-involved.css" rel="stylesheet"/>
+<link href="../css/responsive.css" rel="stylesheet"/>
+<style>
+
+        /* =====================================================
+           CAMPUS FELLOW PAGE
+        ===================================================== */
+
+        .fellow-page {
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .fellow-hero {
+            padding: 145px 24px 80px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(112,186,157,.16),
+                    transparent 32%
+                );
+        }
+
+
+        .fellow-hero-inner {
+            width: min(1180px,100%);
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.1fr)
+                minmax(300px,.9fr);
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .fellow-label {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 14px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(24,105,77,.12);
+
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.85);
+
+            color: #197052;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: .1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .fellow-label span {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #70b89b;
+        }
+
+
+        .fellow-hero h1 {
+            max-width: 720px;
+
+            margin: 0 0 20px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px,6vw,70px);
+
+            line-height: 1.02;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .fellow-hero h1 span {
+            color: #217a59;
+        }
+
+
+        .fellow-hero-text {
+            max-width: 650px;
+
+            margin: 0;
+
+            color: #6c8179;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HERO CARD
+        ===================================================== */
+
+        .fellow-visual {
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .fellow-visual-card {
+            width: min(100%,390px);
+
+            min-height: 360px;
+
+            padding: 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(24,105,77,.10);
+
+            border-radius: 28px;
+
+            background: #fff;
+
+            box-shadow:
+                0 25px 70px
+                rgba(34,91,70,.10);
+        }
+
+
+        .fellow-visual-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -90px;
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(112,186,157,.13);
+        }
+
+
+        .fellow-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #e5f3ed;
+
+            color: #177153;
+
+            font-size: 25px;
+        }
+
+
+        .fellow-visual-card h3 {
+            margin: 30px 0 12px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 29px;
+
+            line-height: 1.15;
+        }
+
+
+        .fellow-visual-card p {
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .fellow-points {
+            margin-top: 28px;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .fellow-point {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #557168;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .fellow-point i {
+            width: 25px;
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .fellow-content {
+            width:
+                min(
+                    calc(100% - 48px),
+                    1180px
+                );
+
+            margin: auto;
+
+            padding:
+                20px 0 100px;
+        }
+
+
+        .fellow-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,.85fr)
+                minmax(0,1.15fr);
+
+            gap: 35px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           LEFT INFORMATION
+        ===================================================== */
+
+        .fellow-info {
+            padding: 35px;
+
+            background: #edf7f2;
+
+            border:
+                1px solid
+                rgba(24,105,77,.08);
+
+            border-radius: 25px;
+        }
+
+
+        .fellow-info-label {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .fellow-info h2 {
+            margin: 0 0 15px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.15;
+        }
+
+
+        .fellow-info > p {
+            margin: 0 0 25px;
+
+            color: #657c73;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+
+        .fellow-list {
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .fellow-item {
+            display: flex;
+
+            gap: 13px;
+
+            align-items: flex-start;
+        }
+
+
+        .fellow-item-icon {
+            width: 36px;
+            height: 36px;
+
+            flex: 0 0 36px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #fff;
+
+            color: #197052;
+
+            font-size: 13px;
+        }
+
+
+        .fellow-item h3 {
+            margin: 0 0 3px;
+
+            color: #294b3f;
+
+            font-size: 14px;
+        }
+
+
+        .fellow-item p {
+            margin: 0;
+
+            color: #71857e;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           APPLICATION CARD
+        ===================================================== */
+
+        .fellow-application {
+            padding: 40px;
+
+            background: #fff;
+
+            border:
+                1px solid
+                rgba(24,105,77,.10);
+
+            border-radius: 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(34,91,70,.07);
+        }
+
+
+        .fellow-form-header {
+            margin-bottom: 30px;
+        }
+
+
+        .fellow-form-label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #217a59;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .fellow-form-header h2 {
+            margin: 0 0 9px;
+
+            color: #17382d;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 32px;
+        }
+
+
+        .fellow-form-header p {
+            margin: 0;
+
+            color: #72857e;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .fellow-form {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 20px;
+        }
+
+
+        .fellow-form-group {
+            min-width: 0;
+        }
+
+
+        .fellow-form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .fellow-form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .fellow-form input,
+        .fellow-form select,
+        .fellow-form textarea {
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid
+                #dbe9e3;
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background: #f9fcfa;
+
+            color: #294b3f;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .fellow-form textarea {
+            min-height: 125px;
+
+            resize: vertical;
+        }
+
+
+        .fellow-form input::placeholder,
+        .fellow-form textarea::placeholder {
+            color: #a2b1ac;
+        }
+
+
+        .fellow-form input:focus,
+        .fellow-form select:focus,
+        .fellow-form textarea:focus {
+            border-color: #4b9b79;
+
+            background: #fff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(75,155,121,.10);
+        }
+
+
+        /* =====================================================
+           RESEARCH AREAS
+        ===================================================== */
+
+        .fellow-research-title {
+            margin-bottom: 12px;
+
+            color: #36574b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .fellow-research-options {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 10px;
+        }
+
+
+        .fellow-research-option {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 11px 12px;
+
+            border:
+                1px solid
+                #e0ece7;
+
+            border-radius: 10px;
+
+            background: #f9fcfa;
+
+            color: #60766d;
+
+            font-size: 11px;
+
+            cursor: pointer;
+        }
+
+
+        .fellow-research-option input {
+            width: 15px;
+
+            height: 15px;
+
+            accent-color: #197052;
+        }
+
+
+        /* =====================================================
+           FILE
+        ===================================================== */
+
+        .fellow-file {
+            padding: 18px;
+
+            border:
+                1px dashed
+                #bcd8cc;
+
+            border-radius: 12px;
+
+            background: #f9fcfa;
+        }
+
+
+        .fellow-file input {
+            border: 0;
+
+            padding: 0;
+
+            background: transparent;
+        }
+
+
+        .fellow-file small {
+            display: block;
+
+            margin-top: 7px;
+
+            color: #91a39c;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           ACTION
+        ===================================================== */
+
+        .fellow-form-actions {
+            grid-column: 1 / -1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        .fellow-required {
+            color: #8a9b95;
+
+            font-size: 10px;
+        }
+
+
+        .fellow-submit {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 23px;
+
+            border: 0;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #176e50,
+                    #278160
+                );
+
+            color: #fff;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,110,80,.15);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .fellow-submit:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,110,80,.20);
+        }
+
+
+        .fellow-message {
+            display: none;
+
+            grid-column: 1 / -1;
+
+            padding: 12px 14px;
+
+            border-radius: 10px;
+
+            background: #edf7f2;
+
+            color: #197052;
+
+            font-size: 12px;
+        }
+
+
+        .fellow-message.show {
+            display: block;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width:900px) {
+
+            .fellow-hero {
+                padding:
+                    120px 20px 65px;
+            }
+
+
+            .fellow-hero-inner {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .fellow-visual {
+                justify-content: flex-start;
+            }
+
+
+            .fellow-layout {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width:650px) {
+
+            .fellow-hero {
+                padding:
+                    105px 17px 55px;
+            }
+
+
+            .fellow-hero h1 {
+                font-size:
+                    clamp(40px,12vw,53px);
+            }
+
+
+            .fellow-hero-text {
+                font-size: 14px;
+            }
+
+
+            .fellow-visual-card {
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 28px;
+
+                border-radius: 22px;
+            }
+
+
+            .fellow-content {
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 65px;
+            }
+
+
+            .fellow-info {
+                padding: 27px;
+
+                border-radius: 21px;
+            }
+
+
+            .fellow-info h2 {
+                font-size: 30px;
+            }
+
+
+            .fellow-application {
+                padding:
+                    27px 19px;
+
+                border-radius: 21px;
+            }
+
+
+            .fellow-form-header h2 {
+                font-size: 29px;
+            }
+
+
+            .fellow-form {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .fellow-form-group.full {
+                grid-column: auto;
+            }
+
+
+            .fellow-research-options {
+                grid-template-columns: 1fr;
+            }
+
+
+            .fellow-form-actions {
+                grid-column: auto;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .fellow-submit {
+                width: 100%;
+            }
+
+
+            .fellow-required {
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width:390px) {
+
+            .fellow-hero h1 {
+                font-size: 38px;
+            }
+
+
+            .fellow-visual-card {
+                padding: 24px;
+            }
+
+
+            .fellow-info {
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+    <link href="../css/design-system.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/unique-pages.css">
+    <link rel="stylesheet" href="../css/final-polish.css">
+</head>
+<body class="involved-page fellow-page">
+<!-- =====================================================
+         HEADER
+    ===================================================== -->
+<header class="site-header">
+<div class="header-inner">
+<!-- BRAND -->
+<a class="brand" href="../index.html">
+<div class="brand-logo">
+<img alt="BCRLS Logo" src="../assets/logo.png"/>
+</div>
+<div class="brand-text">
+<strong>
+                    BCRLS
+                </strong>
+<span>
+                    Bangladesh Center for Refugee Law Studies
+                </span>
+</div>
+</a>
+<!-- NAVIGATION -->
+<nav aria-label="Main Navigation" class="main-nav" id="mainNav">
+<!-- HOME -->
+<a class="nav-link active" href="../index.html">
+                Home
+            </a>
+<!-- =================================================
+                 ABOUT
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    About
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../pages/about.html">
+                        Who We Are
+                    </a>
+<a href="../pages/mission.html">
+                        Mission
+                    </a>
+<a href="../pages/vision.html">
+                        Vision
+                    </a>
+<a href="../pages/Strategic-Objectives.html">
+                        Strategic Objectives
+                    </a>
+<a href="../pages/Founder.html">
+                        Founder's Message
+                    </a>
+<a href="../pages/team.html">
+                        Team
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 RESEARCH & PUBLICATIONS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Research &amp; Publications
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../research/conference-proceedings.html">
+                        Conference Proceedings
+                    </a>
+<a href="../research/journal.html">
+                        Journal
+                    </a>
+<a href="../research/blog.html">
+                        Blog
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 LIBRARY
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Library
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../library/academic.html">
+                        Academic Journals
+                    </a>
+<a href="../library/report.html">
+                        Reports &amp; Policy Documents
+                    </a>
+<a href="../library/books.html">
+                        Books &amp; E-Books
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 EDUCATION
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Education
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../education/masters.html">
+                        Master's Programmes
+                    </a>
+<a href="../education/phd.html">
+                        PhD Programmes
+                    </a>
+<a href="../education/traning.html">
+                        Professonal Training/Short course
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 DATA HUB
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Data Hub
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../datahub/statistics.html">
+                        Refugee Statistics
+                    </a>
+<a href="../datahub/dataPortal.html">
+                        Rohingya Data Portal
+                    </a>
+<a href="../datahub/database.html">
+                        South Asia Database
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 EVENTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Events
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../events/index.html">
+                        Upcoming Events
+                    </a>
+<a href="../events/archive.html">
+                        Event Archive
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 INSIGHTS
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Insights
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../insights/index.html#expert-interviews">
+                        Expert Interviews
+                    </a>
+<a href="../insights/index.html#refugee-voices">
+                        Refugee Voices
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 MEDIA
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Media
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../media/promo-video.html">
+                        BCRLS Promo Video
+                    </a>
+<a href="../media/newsroom.html">
+                        Newsroom
+                    </a>
+<a href="../media/gallery.html">
+                        Photo Gallery
+                    </a>
+</div>
+</div>
+<!-- =================================================
+                 GET INVOLVED
+            ================================================== -->
+<div class="nav-dropdown">
+<button class="nav-dropdown-toggle" type="button">
+
+                    Get Involved
+
+                    <i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="dropdown-menu">
+<a href="../get-involved/index.html">
+                         Overview
+                    </a>
+<a href="../get-involved/become-a-member.html">
+                        Become a Member
+                    </a>
+<a class="active" href="../get-involved/campus-fellow.html">
+                        Campus Fellow
+                    </a>
+<a href="../get-involved/internship-programme.html">
+                        Internship Programme
+                    </a>
+<a href="../get-involved/partner-with-us.html">
+                        Partner With Us
+                    </a>
+</div>
+</div>
+<!-- CONTACT -->
+<a class="nav-link" href="../contact.html">
+                Contact
+            </a>
+</nav>
+<!-- MOBILE MENU -->
+<button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<div class="menu-overlay" id="menuOverlay">
+</div>
+<!-- =====================================================
+         MAIN
+    ===================================================== -->
+<main>
+<!-- HERO -->
+<section class="fellow-hero">
+<div class="fellow-hero-inner">
+<div>
+<div class="fellow-label">
+<span></span>
+
+                        BCRLS Campus Fellowship
+
+                    </div>
+<h1>
+
+                        Learn With Purpose,
+                        <span>Lead With Impact</span>
+</h1>
+<p class="fellow-hero-text">
+
+                        The BCRLS Campus Fellow opportunity
+                        is designed for university students
+                        interested in refugee law, displacement,
+                        human rights, migration and related
+                        areas of learning and advocacy.
+
+                    </p>
+</div>
+<div class="fellow-visual">
+<div class="fellow-visual-card">
+<div class="fellow-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+<h3>
+
+                            Connect.
+                            Learn. Contribute.
+
+                        </h3>
+<p>
+
+                            Build knowledge, engage with
+                            important conversations and
+                            contribute to meaningful activities
+                            related to refugee protection,
+                            human rights and displacement.
+
+                        </p>
+<div class="fellow-points">
+<div class="fellow-point">
+<i class="fa-solid fa-check"></i>
+
+                                Campus engagement
+
+                            </div>
+<div class="fellow-point">
+<i class="fa-solid fa-check"></i>
+
+                                Academic learning
+
+                            </div>
+<div class="fellow-point">
+<i class="fa-solid fa-check"></i>
+
+                                Advocacy &amp; awareness
+
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================
+             CONTENT
+        ================================================= -->
+<section class="fellow-content">
+<div class="fellow-layout">
+<!-- LEFT -->
+<div class="fellow-info">
+<span class="fellow-info-label">
+                        Campus Fellowship
+                    </span>
+<h2>
+
+                        Turn campus
+                        engagement into
+                        meaningful impact.
+
+                    </h2>
+<p>
+
+                        Campus Fellows can engage with
+                        BCRLS activities and contribute to
+                        conversations surrounding refugee law,
+                        displacement, migration, human rights
+                        and related policy issues.
+
+                    </p>
+<div class="fellow-list">
+<div class="fellow-item">
+<div class="fellow-item-icon">
+<i class="fa-solid fa-book-open"></i>
+</div>
+<div>
+<h3>
+                                    Academic Learning
+                                </h3>
+<p>
+
+                                    Explore important legal,
+                                    social and policy questions
+                                    through academic learning.
+
+                                </p>
+</div>
+</div>
+<div class="fellow-item">
+<div class="fellow-item-icon">
+<i class="fa-solid fa-users"></i>
+</div>
+<div>
+<h3>
+                                    Campus Community
+                                </h3>
+<p>
+
+                                    Connect students and
+                                    build a community interested
+                                    in refugee and human rights
+                                    issues.
+
+                                </p>
+</div>
+</div>
+<div class="fellow-item">
+<div class="fellow-item-icon">
+<i class="fa-solid fa-bullhorn"></i>
+</div>
+<div>
+<h3>
+                                    Awareness &amp; Advocacy
+                                </h3>
+<p>
+
+                                    Support awareness initiatives,
+                                    discussions and educational
+                                    activities on campus.
+
+                                </p>
+</div>
+</div>
+<div class="fellow-item">
+<div class="fellow-item-icon">
+<i class="fa-solid fa-comments"></i>
+</div>
+<div>
+<h3>
+                                    Knowledge Exchange
+                                </h3>
+<p>
+
+                                    Participate in seminars,
+                                    discussions and other
+                                    knowledge-sharing activities.
+
+                                </p>
+</div>
+</div>
+<div class="fellow-item">
+<div class="fellow-item-icon">
+<i class="fa-solid fa-scale-balanced"></i>
+</div>
+<div>
+<h3>
+                                    Refugee Law &amp; Rights
+                                </h3>
+<p>
+
+                                    Learn about legal and policy
+                                    dimensions of refugee protection,
+                                    displacement and human rights.
+
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- APPLICATION -->
+<div class="fellow-application">
+<div class="fellow-form-header">
+<span class="fellow-form-label">
+                            Campus Fellow Application
+                        </span>
+<h2>
+                            Become a Campus Fellow
+                        </h2>
+<p>
+
+                            Tell us about yourself, your
+                            university interests and why you
+                            would like to contribute to BCRLS
+                            activities.
+
+                        </p>
+</div>
+<form class="fellow-form" id="fellowForm">
+<!-- NAME -->
+<div class="fellow-form-group">
+<label for="fellowName">
+                                Full Name *
+                            </label>
+<input id="fellowName" name="name" placeholder="Your full name" required="" type="text"/>
+</div>
+<!-- EMAIL -->
+<div class="fellow-form-group">
+<label for="fellowEmail">
+                                Email Address *
+                            </label>
+<input id="fellowEmail" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<!-- PHONE -->
+<div class="fellow-form-group">
+<label for="fellowPhone">
+                                Phone Number
+                            </label>
+<input id="fellowPhone" name="phone" placeholder="+880 1XXX-XXXXXX" type="tel"/>
+</div>
+<!-- INSTITUTION -->
+<div class="fellow-form-group">
+<label for="fellowInstitution">
+                                University / Institution *
+                            </label>
+<input id="fellowInstitution" name="institution" placeholder="University / Institution" required="" type="text"/>
+</div>
+<!-- STUDY LEVEL -->
+<div class="fellow-form-group">
+<label for="fellowPosition">
+                                Current Status *
+                            </label>
+<select id="fellowPosition" name="position" required="">
+<option value="">
+                                    Select your status
+                                </option>
+<option value="Undergraduate Student">
+                                    Undergraduate Student
+                                </option>
+<option value="Graduate Student">
+                                    Graduate Student
+                                </option>
+<option value="Postgraduate Student">
+                                    Postgraduate Student
+                                </option>
+<option value="Other">
+                                    Other
+                                </option>
+</select>
+</div>
+<!-- STUDY AREA -->
+<div class="fellow-form-group">
+<label for="fellowExperience">
+                                Field of Study
+                            </label>
+<select id="fellowExperience" name="fieldOfStudy">
+<option value="">
+                                    Select field
+                                </option>
+<option value="Law">
+                                    Law
+                                </option>
+<option value="Political Science">
+                                    Political Science
+                                </option>
+<option value="International Relations">
+                                    International Relations
+                                </option>
+<option value="Development Studies">
+                                    Development Studies
+                                </option>
+<option value="Social Sciences">
+                                    Social Sciences
+                                </option>
+<option value="Other">
+                                    Other
+                                </option>
+</select>
+</div>
+<!-- INTEREST AREAS -->
+<div class="fellow-form-group full">
+<div class="fellow-research-title">
+
+                                Areas of Interest
+
+                            </div>
+<div class="fellow-research-options">
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="Refugee Law"/>
+
+                                    Refugee Law
+
+                                </label>
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="Human Rights"/>
+
+                                    Human Rights
+
+                                </label>
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="Displacement"/>
+
+                                    Displacement
+
+                                </label>
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="Migration"/>
+
+                                    Migration
+
+                                </label>
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="International Law"/>
+
+                                    International Law
+
+                                </label>
+<label class="fellow-research-option">
+<input name="interestArea" type="checkbox" value="Policy"/>
+
+                                    Policy
+
+                                </label>
+</div>
+</div>
+<!-- CAMPUS / RESEARCH INTEREST -->
+<div class="fellow-form-group full">
+<label for="fellowResearchTitle">
+                                Proposed Activity / Interest
+                            </label>
+<input id="fellowResearchTitle" name="interest" placeholder="What would you like to contribute or explore?" type="text"/>
+</div>
+<!-- MOTIVATION -->
+<div class="fellow-form-group full">
+<label for="fellowMotivation">
+                                Motivation *
+                            </label>
+<textarea id="fellowMotivation" name="motivation" placeholder="Tell us why you would like to become a BCRLS Campus Fellow and how you would like to contribute..." required=""></textarea>
+</div>
+<!-- CV -->
+<div class="fellow-form-group full">
+<label for="fellowCV">
+                                CV / Resume
+                            </label>
+<div class="fellow-file">
+<input accept=".pdf,.doc,.docx" id="fellowCV" name="cv" type="file"/>
+<small>
+                                    PDF, DOC or DOCX recommended.
+                                </small>
+</div>
+</div>
+<!-- MESSAGE -->
+<div class="fellow-message" id="fellowMessage"></div>
+<!-- ACTION -->
+<div class="fellow-form-actions">
+<span class="fellow-required">
+                                * Required fields
+                            </span>
+<button class="fellow-submit" type="submit">
+
+                                Submit Application
+
+                                <i class="fa-solid fa-arrow-right"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- =====================================================
+         FOOTER
+    ===================================================== -->
+<footer class="involved-footer"><div class="footer-mini-brand"><img src="../assets/logo.png" alt="BCRLS Logo"><span>BCRLS</span></div>
+
+        ©
+        <span id="currentYear"></span>
+        BCRLS. All rights reserved.
+
+    </footer>
+<script defer="" src="../js/app.js"></script>
+<script src="../js/get-involved.js"></script>
+<!-- =====================================================
+         CAMPUS FELLOW PAGE JS
+    ===================================================== -->
+<script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "fellowForm"
+                    );
+
+                const message =
+                    document.getElementById(
+                        "fellowMessage"
+                    );
+
+
+                if (form) {
+
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+
+                            event.preventDefault();
+
+
+                            if (
+                                !form.checkValidity()
+                            ) {
+
+                                form.reportValidity();
+
+                                return;
+
+                            }
+
+
+                            const formData =
+                                new FormData(form);
+
+
+                            console.log(
+                                "BCRLS Campus Fellow Application:",
+                                Object.fromEntries(
+                                    formData.entries()
+                                )
+                            );
+
+
+                            message.textContent =
+                                "Thank you for your interest in becoming a BCRLS Campus Fellow. Your application has been received.";
+
+                            message.classList.add(
+                                "show"
+                            );
+
+
+                            message.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+                        }
+                    );
+
+                }
+
+
+                const year =
+                    document.getElementById(
+                        "currentYear"
+                    );
+
+
+                if (year) {
+
+                    year.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+</body>
+</html>

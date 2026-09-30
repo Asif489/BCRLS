@@ -1,0 +1,3820 @@
+/* =========================================================
+   BCRLS RESPONSIVE CSS
+   FINAL UPDATED VERSION
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media screen and (min-width: 1201px) {
+
+    body .site-header .main-nav {
+        display: flex !important;
+
+        position: static !important;
+
+        width: auto !important;
+        height: auto !important;
+        max-height: none !important;
+
+        flex-direction: row !important;
+        align-items: center !important;
+
+        padding: 0 !important;
+        margin: 0 0 0 auto !important;
+
+        background: transparent !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+
+        box-shadow: none !important;
+
+        overflow: visible !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: none !important;
+
+        z-index: 100 !important;
+    }
+
+
+    body .site-header .menu-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+
+    body .menu-overlay {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+
+    body .site-header .main-nav .nav-link,
+    body .site-header .main-nav .nav-dropdown-toggle {
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+
+    /* DESKTOP DROPDOWN */
+
+    body .site-header .nav-dropdown {
+        position: relative !important;
+        width: auto !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown
+    .dropdown-menu {
+        position: absolute !important;
+
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+
+        width: max-content !important;
+        min-width: 210px !important;
+
+        display: none !important;
+
+        padding: 8px !important;
+
+        background: #ffffff !important;
+
+        border: 1px solid rgba(20, 90, 65, .10) !important;
+
+        border-radius: 14px !important;
+
+        box-shadow:
+            0 18px 45px
+            rgba(20, 60, 45, .15) !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: translateY(5px) !important;
+
+        z-index: 5000 !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown:hover
+    .dropdown-menu {
+        display: block !important;
+
+        transform: translateY(0) !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown
+    .dropdown-menu a {
+        display: flex !important;
+
+        align-items: center !important;
+
+        width: 100% !important;
+        min-height: 38px !important;
+
+        padding: 9px 12px !important;
+
+        color: #557067 !important;
+
+        background: transparent !important;
+
+        border-radius: 8px !important;
+
+        text-decoration: none !important;
+
+        white-space: nowrap !important;
+
+        font-size: 12px !important;
+
+        transition:
+            background .25s ease,
+            color .25s ease,
+            transform .25s ease !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown
+    .dropdown-menu a:hover {
+        background: #eaf5f0 !important;
+
+        color: #176f51 !important;
+
+        transform: translateX(3px) !important;
+    }
+
+
+    /* DESKTOP HERO */
+
+    .hero-container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-content {
+        min-width: 0;
+    }
+
+    .hero-visual {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET / LAPTOP
+========================================================= */
+
+@media screen and (min-width: 769px)
+and (max-width: 1200px) {
+
+    body .site-header {
+        height: 78px !important;
+    }
+
+
+    body .site-header .header-inner {
+        width: calc(100% - 45px) !important;
+        min-width: 0 !important;
+    }
+
+
+    /* MENU BUTTON */
+
+    body .site-header .menu-toggle {
+        display: flex !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+
+        position: relative !important;
+        z-index: 4000 !important;
+
+        width: 46px !important;
+        height: 46px !important;
+
+        flex-shrink: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        flex-direction: column !important;
+
+        gap: 5px !important;
+
+        padding: 0 !important;
+
+        background: #ffffff !important;
+
+        border: 1px solid rgba(20, 90, 65, .12) !important;
+
+        border-radius: 50% !important;
+
+        cursor: pointer !important;
+    }
+
+
+    body .site-header
+    .menu-toggle span {
+        display: block !important;
+
+        width: 19px !important;
+        height: 2px !important;
+
+        background: #187b59 !important;
+
+        border-radius: 10px !important;
+
+        transition:
+            transform .25s ease,
+            opacity .2s ease !important;
+    }
+
+
+    /* HAMBURGER → X */
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg) !important;
+    }
+
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg) !important;
+    }
+
+
+    /* OVERLAY */
+
+    body .menu-overlay {
+        display: none !important;
+
+        position: fixed !important;
+
+        inset: 0 !important;
+
+        background:
+            rgba(20, 55, 45, .12) !important;
+
+        z-index: 2500 !important;
+    }
+
+
+    body .menu-overlay.active {
+        display: block !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+
+    /* MOBILE/TABLET NAV */
+
+    body .site-header .main-nav {
+        position: fixed !important;
+
+        top: 78px !important;
+
+        right: 15px !important;
+        left: auto !important;
+
+        width: min(360px, 88vw) !important;
+
+        height: calc(100vh - 95px) !important;
+        max-height: calc(100vh - 95px) !important;
+
+        padding: 15px !important;
+        margin: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+
+        gap: 4px !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        background: #ffffff !important;
+
+        border:
+            1px solid
+            rgba(20, 90, 65, .12) !important;
+
+        border-radius: 20px !important;
+
+        box-shadow:
+            0 20px 50px
+            rgba(20, 60, 45, .18) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        transform: translateX(110%) !important;
+
+        z-index: 3500 !important;
+
+        transition:
+            transform .28s ease,
+            opacity .22s ease,
+            visibility .28s ease !important;
+    }
+
+
+    /* OPEN */
+
+    body .site-header
+    .main-nav.active,
+
+    body .site-header
+    .main-nav.mobile-open {
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+
+        transform: translateX(0) !important;
+    }
+
+
+    /* NAV LINKS */
+
+    body .site-header
+    .main-nav
+    .nav-link,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown-toggle {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 49px !important;
+
+        align-items: center !important;
+
+        justify-content: space-between !important;
+
+        padding: 13px 15px !important;
+
+        margin: 0 !important;
+
+        color: #315f51 !important;
+
+        background: transparent !important;
+
+        border: none !important;
+
+        border-radius: 10px !important;
+
+        font-size: 13px !important;
+
+        font-weight: 600 !important;
+
+        text-align: left !important;
+
+        cursor: pointer !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-link:hover,
+
+    body .site-header
+    .main-nav
+    .nav-link.active,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown-toggle:hover {
+        background: #eef8f4 !important;
+
+        color: #176f51 !important;
+    }
+
+
+    /* DROPDOWN */
+
+    body .site-header
+    .main-nav
+    .nav-dropdown {
+        width: 100% !important;
+
+        position: relative !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-dropdown
+    .dropdown-menu {
+        position: static !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        display: none !important;
+
+        margin: 3px 0 7px !important;
+
+        padding: 6px !important;
+
+        background: #f5faf7 !important;
+
+        border: none !important;
+
+        border-radius: 12px !important;
+
+        box-shadow: none !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+
+        overflow: hidden !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-dropdown.open
+    .dropdown-menu,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown.mobile-open
+    .dropdown-menu {
+        display: block !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .dropdown-menu a {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 40px !important;
+
+        align-items: center !important;
+
+        padding: 10px 12px !important;
+
+        color: #557067 !important;
+
+        background: transparent !important;
+
+        border-radius: 8px !important;
+
+        font-size: 12px !important;
+
+        font-weight: 500 !important;
+
+        text-decoration: none !important;
+
+        white-space: normal !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .dropdown-menu a:hover {
+        background: #e5f3ed !important;
+
+        color: #176f51 !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown-toggle i {
+        transition: transform .25s ease !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown.open
+    .nav-dropdown-toggle i,
+
+    body .site-header
+    .nav-dropdown.mobile-open
+    .nav-dropdown-toggle i {
+        transform: rotate(180deg) !important;
+    }
+
+
+    /* HERO TABLET */
+
+    .hero-container {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(280px, .8fr) !important;
+
+        gap: 40px !important;
+    }
+
+
+    .hero-content {
+        min-width: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    .hero h1 {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .container {
+        width: calc(100% - 40px) !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        width: 100% !important;
+
+        max-width: 100vw !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    .hero-container {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 45px !important;
+    }
+
+
+    .hero-content {
+        width: 100% !important;
+
+        max-width: 800px !important;
+
+        min-width: 0 !important;
+    }
+
+
+    .hero h1 {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size:
+            clamp(46px, 8vw, 72px) !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: -3px !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+
+    .hero-visual {
+        width: 100% !important;
+
+        max-width: 700px !important;
+
+        margin: 0 auto !important;
+    }
+
+
+    /* FOUNDER */
+
+    .chairman-layout {
+        grid-template-columns: 1fr !important;
+
+        gap: 45px !important;
+    }
+
+
+    .chairman-image {
+        max-width: 430px !important;
+
+        margin: 0 auto !important;
+    }
+
+
+    /* RESEARCH */
+
+    .research-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+
+    .research-card:last-child {
+        grid-column: 1 / -1 !important;
+    }
+
+
+    /* EVENTS */
+
+    .event-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* LATEST */
+
+    .latest-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+
+    .latest-card:last-child {
+        grid-column: 1 / -1 !important;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-strip {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+
+    /* CONNECT */
+
+    .connect-layout {
+        grid-template-columns: 1fr !important;
+
+        gap: 45px !important;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-inner {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr !important;
+    }
+
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   MENU KEPT WORKING
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       CONTAINER
+    ===================================================== */
+
+    .container {
+        width: calc(100% - 30px) !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    body .site-header {
+        width: 100% !important;
+
+        height: 70px !important;
+    }
+
+
+    body .site-header
+    .header-inner {
+        width: calc(100% - 24px) !important;
+
+        height: 70px !important;
+
+        margin: 0 auto !important;
+
+        min-width: 0 !important;
+
+        gap: 10px !important;
+    }
+
+
+    /* BRAND */
+
+    body .site-header
+    .brand {
+        min-width: 0 !important;
+
+        max-width: calc(100% - 55px) !important;
+    }
+
+
+    body .site-header
+    .brand-logo {
+        width: 44px !important;
+
+        height: 44px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    body .site-header
+    .brand-text {
+        min-width: 0 !important;
+    }
+
+
+    body .site-header
+    .brand-text strong {
+        font-size: 17px !important;
+    }
+
+
+    body .site-header
+    .brand-text span {
+        max-width: 170px !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       MENU BUTTON
+       DO NOT CHANGE
+    ===================================================== */
+
+    body .site-header
+    .menu-toggle {
+        display: flex !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+
+        position: relative !important;
+
+        z-index: 5000 !important;
+
+        width: 42px !important;
+
+        height: 42px !important;
+
+        flex-shrink: 0 !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        flex-direction: column !important;
+
+        gap: 5px !important;
+
+        padding: 0 !important;
+
+        background: #ffffff !important;
+
+        border:
+            1px solid
+            rgba(20, 90, 65, .12) !important;
+
+        border-radius: 50% !important;
+
+        cursor: pointer !important;
+    }
+
+
+    body .site-header
+    .menu-toggle span {
+        display: block !important;
+
+        width: 18px !important;
+
+        height: 2px !important;
+
+        background: #187b59 !important;
+
+        border-radius: 10px !important;
+
+        transition:
+            transform .25s ease,
+            opacity .2s ease !important;
+    }
+
+
+    /* HAMBURGER → X */
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg) !important;
+    }
+
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+
+    body .site-header
+    .menu-toggle.active
+    span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg) !important;
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    body .menu-overlay {
+        display: none !important;
+
+        position: fixed !important;
+
+        inset: 0 !important;
+
+        background:
+            rgba(20, 55, 45, .10) !important;
+
+        z-index: 2500 !important;
+    }
+
+
+    body .menu-overlay.active {
+        display: block !important;
+
+        opacity: 1 !important;
+
+        visibility: visible !important;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+    ===================================================== */
+
+    body .site-header
+    .main-nav {
+        position: fixed !important;
+
+        top: 70px !important;
+
+        left: 12px !important;
+
+        right: 12px !important;
+
+        width: auto !important;
+
+        height: auto !important;
+
+        max-height:
+            calc(100vh - 85px) !important;
+
+        padding: 10px !important;
+
+        margin: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        justify-content: flex-start !important;
+
+        gap: 3px !important;
+
+        overflow-x: hidden !important;
+
+        overflow-y: auto !important;
+
+        background: #ffffff !important;
+
+        border:
+            1px solid
+            rgba(20, 90, 65, .12) !important;
+
+        border-radius: 18px !important;
+
+        box-shadow:
+            0 20px 50px
+            rgba(20, 60, 45, .18) !important;
+
+        opacity: 0 !important;
+
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        transform:
+            translateY(-10px) !important;
+
+        z-index: 4000 !important;
+
+        transition:
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease !important;
+    }
+
+
+    /* MENU OPEN */
+
+    body .site-header
+    .main-nav.active,
+
+    body .site-header
+    .main-nav.mobile-open {
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+
+        transform:
+            translateY(0) !important;
+    }
+
+
+    /* =====================================================
+       NAV LINKS
+    ===================================================== */
+
+    body .site-header
+    .main-nav
+    .nav-link,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown-toggle {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 47px !important;
+
+        align-items: center !important;
+
+        justify-content: space-between !important;
+
+        padding: 11px 13px !important;
+
+        margin: 0 !important;
+
+        color: #315f51 !important;
+
+        background: transparent !important;
+
+        border: none !important;
+
+        border-radius: 9px !important;
+
+        font-size: 12px !important;
+
+        font-weight: 600 !important;
+
+        text-align: left !important;
+
+        cursor: pointer !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-link:hover,
+
+    body .site-header
+    .main-nav
+    .nav-link.active,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown-toggle:hover {
+        color: #176f51 !important;
+
+        background: #eef8f4 !important;
+    }
+
+
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
+    body .site-header
+    .main-nav
+    .nav-dropdown {
+        position: relative !important;
+
+        width: 100% !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-dropdown
+    .dropdown-menu {
+        position: static !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        max-width: 100% !important;
+
+        display: none !important;
+
+        margin: 2px 0 6px !important;
+
+        padding: 5px !important;
+
+        background: #f5faf7 !important;
+
+        border: none !important;
+
+        border-radius: 10px !important;
+
+        box-shadow: none !important;
+
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        transform: none !important;
+
+        overflow: hidden !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .nav-dropdown.open
+    .dropdown-menu,
+
+    body .site-header
+    .main-nav
+    .nav-dropdown.mobile-open
+    .dropdown-menu {
+        display: block !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .dropdown-menu a {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 39px !important;
+
+        align-items: center !important;
+
+        padding: 9px 12px !important;
+
+        color: #557067 !important;
+
+        background: transparent !important;
+
+        border-radius: 8px !important;
+
+        font-size: 11px !important;
+
+        font-weight: 500 !important;
+
+        text-decoration: none !important;
+
+        white-space: normal !important;
+    }
+
+
+    body .site-header
+    .main-nav
+    .dropdown-menu a:hover {
+        color: #176f51 !important;
+
+        background: #e5f3ed !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown-toggle i {
+        transition:
+            transform .25s ease !important;
+    }
+
+
+    body .site-header
+    .nav-dropdown.open
+    .nav-dropdown-toggle i,
+
+    body .site-header
+    .nav-dropdown.mobile-open
+    .nav-dropdown-toggle i {
+        transform:
+            rotate(180deg) !important;
+    }
+
+
+    /* =====================================================
+       HERO — FIXED
+    ===================================================== */
+
+    .hero {
+        width: 100% !important;
+
+        max-width: 100vw !important;
+
+        min-width: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    .hero-container {
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding:
+            42px 0 50px !important;
+    }
+
+
+    .hero-content {
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding:
+            0 18px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* HERO TITLE */
+
+    .hero h1 {
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin:
+            20px 0 0 !important;
+
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        font-size:
+            clamp(
+                40px,
+                11.2vw,
+                56px
+            ) !important;
+
+        line-height:
+            1.02 !important;
+
+        letter-spacing:
+            -1.8px !important;
+
+        font-weight:
+            700 !important;
+
+        text-align:
+            left !important;
+
+        white-space:
+            normal !important;
+
+        overflow:
+            visible !important;
+
+        overflow-wrap:
+            normal !important;
+
+        word-break:
+            normal !important;
+
+        transform:
+            none !important;
+    }
+
+
+    .hero h1 span {
+        max-width: 100% !important;
+
+        white-space: normal !important;
+    }
+
+
+    /* HERO DESCRIPTION */
+
+    .hero-content > p,
+    .hero-description {
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin:
+            25px 0 0 !important;
+
+        padding: 0 !important;
+
+        font-size:
+            13px !important;
+
+        line-height:
+            1.75 !important;
+
+        overflow-wrap:
+            break-word !important;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .hero-actions {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        flex-wrap: wrap !important;
+
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        margin:
+            25px 0 0 !important;
+    }
+
+
+    .hero-actions .btn {
+        width: auto !important;
+
+        min-height:
+            50px !important;
+
+        padding:
+            0 18px !important;
+
+        flex:
+            0 1 auto !important;
+
+        font-size:
+            11px !important;
+    }
+
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin:
+            35px auto 0 !important;
+
+        padding:
+            0 18px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .hero-image-card {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        height:
+            350px !important;
+
+        margin: 0 auto !important;
+
+        border-radius:
+            24px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       GENERAL GRIDS
+    ===================================================== */
+
+    .research-grid {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .research-card:last-child {
+        grid-column:
+            auto !important;
+    }
+
+
+    .latest-grid {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .latest-card:last-child {
+        grid-column:
+            auto !important;
+    }
+
+
+    .gallery-strip {
+        grid-template-columns:
+            1fr 1fr !important;
+    }
+
+
+    /* =====================================================
+       FOUNDER
+    ===================================================== */
+
+    .chairman-layout {
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            35px !important;
+    }
+
+
+    .chairman-image {
+        width: 100% !important;
+
+        max-width:
+            380px !important;
+
+        margin:
+            0 auto !important;
+    }
+
+
+    .chairman-details {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    /* =====================================================
+       CALL FOR PAPERS
+    ===================================================== */
+
+    .call-banner {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            25px !important;
+
+        padding:
+            42px 25px !important;
+
+        border-radius:
+            25px !important;
+    }
+
+
+    .call-content {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+
+    .call-content h2 {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size:
+            40px !important;
+
+        letter-spacing:
+            -1.5px !important;
+    }
+
+
+    .call-description {
+        max-width:
+            100% !important;
+
+        font-size:
+            13px !important;
+    }
+
+
+    .call-meta {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .call-submit-btn {
+        width:
+            100% !important;
+    }
+
+
+    .call-visual {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height:
+            320px !important;
+
+        margin-top:
+            5px !important;
+    }
+
+
+    .call-document {
+        width:
+            205px !important;
+
+        min-height:
+            270px !important;
+    }
+
+
+    .call-visual-lines {
+        width:
+            290px !important;
+
+        height:
+            290px !important;
+    }
+
+
+    .call-floating-card {
+        right:
+            50% !important;
+
+        bottom:
+            0 !important;
+
+        transform:
+            translateX(50%) !important;
+    }
+
+
+    /* =====================================================
+       CONNECT
+    ===================================================== */
+
+    .connect-layout {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .form-row {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    .newsletter-inner {
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            25px !important;
+
+        padding:
+            35px 25px !important;
+    }
+
+
+    .newsletter-form {
+        flex-direction:
+            column !important;
+
+        align-items:
+            stretch !important;
+    }
+
+
+    .newsletter-form input {
+        width:
+            100% !important;
+    }
+
+
+    .newsletter-form .btn {
+        width:
+            100% !important;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-grid {
+        grid-template-columns:
+            1fr 1fr !important;
+    }
+
+
+    .footer-brand {
+        grid-column:
+            1 / -1 !important;
+    }
+
+
+    .footer-bottom {
+        flex-direction:
+            column !important;
+
+        align-items:
+            flex-start !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        width:
+            calc(100% - 24px) !important;
+    }
+
+
+    body .site-header
+    .header-inner {
+        width:
+            calc(100% - 18px) !important;
+    }
+
+
+    body .site-header
+    .main-nav {
+        top:
+            70px !important;
+
+        left:
+            8px !important;
+
+        right:
+            8px !important;
+
+        max-height:
+            calc(100vh - 80px) !important;
+
+        padding:
+            8px !important;
+
+        border-radius:
+            17px !important;
+    }
+
+
+    body .site-header
+    .menu-toggle {
+        width:
+            40px !important;
+
+        height:
+            40px !important;
+    }
+
+
+    /* =====================================================
+       SMALL PHONE HERO
+    ===================================================== */
+
+    .hero-container {
+        padding:
+            35px 0 45px !important;
+    }
+
+
+    .hero-content {
+        padding:
+            0 16px !important;
+    }
+
+
+    .hero h1 {
+        width:
+            100% !important;
+
+        max-width:
+            100% !important;
+
+        font-size:
+            clamp(
+                36px,
+                11.2vw,
+                50px
+            ) !important;
+
+        line-height:
+            1.03 !important;
+
+        letter-spacing:
+            -1.4px !important;
+
+        margin-top:
+            20px !important;
+    }
+
+
+    .hero-content > p,
+    .hero-description {
+        font-size:
+            12px !important;
+
+        line-height:
+            1.75 !important;
+    }
+
+
+    .hero-actions {
+        gap:
+            9px !important;
+    }
+
+
+    .hero-actions .btn {
+        min-height:
+            48px !important;
+
+        padding:
+            0 15px !important;
+
+        font-size:
+            10px !important;
+    }
+
+
+    .hero-visual {
+        padding:
+            0 16px !important;
+    }
+
+
+    .hero-image-card {
+        height:
+            320px !important;
+    }
+
+
+    /* CALL PAPERS */
+
+    .call-banner {
+        padding:
+            35px 20px !important;
+    }
+
+
+    .call-content h2 {
+        font-size:
+            36px !important;
+    }
+
+
+    .call-visual {
+        min-height:
+            290px !important;
+    }
+
+
+    .call-document {
+        width:
+            180px !important;
+
+        min-height:
+            240px !important;
+    }
+
+
+    .call-visual-lines {
+        width:
+            255px !important;
+
+        height:
+            255px !important;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-strip {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .gallery-item {
+        height:
+            230px !important;
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns:
+            1fr !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+    body .site-header
+    .main-nav {
+        left:
+            6px !important;
+
+        right:
+            6px !important;
+    }
+
+
+    .container {
+        width:
+            calc(100% - 20px) !important;
+    }
+
+
+    .hero-content {
+        padding:
+            0 14px !important;
+    }
+
+
+    .hero h1 {
+        font-size:
+            35px !important;
+
+        line-height:
+            1.04 !important;
+
+        letter-spacing:
+            -1px !important;
+    }
+
+
+    .hero-actions {
+        flex-direction:
+            column !important;
+
+        align-items:
+            stretch !important;
+    }
+
+
+    .hero-actions .btn {
+        width:
+            100% !important;
+    }
+
+
+    .hero-image-card {
+        height:
+            290px !important;
+    }
+
+
+    .call-content h2 {
+        font-size:
+            33px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE BODY LOCK
+========================================================= */
+
+body.menu-open {
+    overflow: hidden !important;
+}
+
+/* =========================================================
+   FINAL TYPOGRAPHY & FORM READABILITY
+   Desktop + Tablet + Mobile
+========================================================= */
+
+/* ---------- DESKTOP / DEFAULT ---------- */
+
+@media screen and (min-width: 901px) {
+
+    /* Main navigation */
+    html body .site-header .main-nav .nav-link,
+    html body .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 15px !important;
+        line-height: 1.45 !important;
+    }
+
+    /* Desktop dropdown */
+    html body .site-header .main-nav .dropdown-menu a,
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        padding: 10px 14px !important;
+    }
+
+    /* Left connection information */
+    html body .connect-info-item h3 {
+        font-size: 19px !important;
+        line-height: 1.35 !important;
+    }
+
+    html body .connect-info-item p {
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+    }
+
+    /* Connection form card */
+    html body .connect-form-card {
+        padding: 30px !important;
+    }
+
+    html body .connect-form-card .form-header .section-label {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+
+    html body .connect-form-card .form-header h3 {
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+    }
+
+    html body .connect-form-card .form-header > p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Form labels — clearly readable on desktop */
+    html body .connection-form .form-group label {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+        letter-spacing: .4px !important;
+    }
+
+    /* Input / select / textarea text */
+    html body .connection-form .form-group input,
+    html body .connection-form .form-group select,
+    html body .connection-form .form-group textarea,
+    html body .connection-form input[type="text"],
+    html body .connection-form input[type="email"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-family: inherit !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        padding: 13px 15px !important;
+        min-height: 52px !important;
+    }
+
+    html body .connection-form .form-group input::placeholder,
+    html body .connection-form .form-group textarea::placeholder,
+    html body .connection-form input::placeholder {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        opacity: .9 !important;
+    }
+
+    html body .connection-form .form-group textarea {
+        min-height: 135px !important;
+        resize: vertical !important;
+    }
+
+    /* Checkbox */
+    html body .connection-form .form-check {
+        align-items: flex-start !important;
+        gap: 9px !important;
+    }
+
+    html body .connection-form .form-check input[type="checkbox"] {
+        width: 17px !important;
+        height: 17px !important;
+        min-width: 17px !important;
+        margin-top: 3px !important;
+    }
+
+    html body .connection-form .form-check label {
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        line-height: 1.55 !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+    }
+
+    /* Submit button */
+    html body .connection-form > .btn,
+    html body .connection-form .btn {
+        min-height: 54px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Newsletter */
+    html body .newsletter-form input {
+        font-size: 16px !important;
+    }
+
+    html body .newsletter-form input::placeholder {
+        font-size: 14px !important;
+    }
+
+    html body .newsletter-form .btn {
+        font-size: 16px !important;
+    }
+}
+
+
+/* ---------- TABLET / MOBILE ---------- */
+
+@media screen and (max-width: 900px) {
+
+    /* General readable text */
+    body {
+        font-size: 14px !important;
+    }
+
+    body p,
+    body li {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    body small,
+    body .small {
+        font-size: 12px !important;
+    }
+
+    /* Main mobile menu */
+    html body .site-header .main-nav .nav-link,
+    html body .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        line-height: 1.45 !important;
+        min-height: 54px !important;
+        padding: 14px 16px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown-toggle i {
+        font-size: 12px !important;
+    }
+
+    /* Conference Proceedings / Journal / Blog */
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        line-height: 1.5 !important;
+        min-height: 52px !important;
+        padding: 13px 16px !important;
+    }
+
+    /* Connection form card */
+    .connect-form-card {
+        padding: 28px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        line-height: 1.5 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* IMPORTANT: form controls themselves */
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea,
+    .connection-form input[type="text"],
+    .connection-form input[type="email"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-family: inherit !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        min-height: 54px !important;
+        padding: 14px 15px !important;
+    }
+
+    .connection-form input::placeholder,
+    .connection-form textarea::placeholder {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        opacity: .85 !important;
+    }
+
+    .connection-form select {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    .connection-form textarea {
+        min-height: 140px !important;
+        resize: vertical !important;
+    }
+
+    /* Checkbox text */
+    .connection-form .form-check {
+        align-items: flex-start !important;
+    }
+
+    .connection-form .form-check input[type="checkbox"] {
+        width: 19px !important;
+        height: 19px !important;
+        min-width: 19px !important;
+        margin-top: 3px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Submit */
+    .connection-form .btn {
+        min-height: 54px !important;
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        padding: 0 22px !important;
+    }
+
+    /* Newsletter */
+    .newsletter-form input {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-height: 54px !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        padding: 14px 15px !important;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 15px !important;
+    }
+
+    .newsletter-form .btn {
+        min-height: 54px !important;
+        font-size: 16px !important;
+    }
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media screen and (max-width: 480px) {
+
+    html body .site-header .main-nav .nav-link,
+    html body .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 16px !important;
+        min-height: 53px !important;
+        padding: 14px 15px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 18px !important;
+        min-height: 52px !important;
+        padding: 13px 15px !important;
+    }
+
+    .connect-form-card {
+        padding: 22px 18px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 16px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 16px !important;
+        min-height: 54px !important;
+        padding: 14px !important;
+    }
+
+    .connection-form textarea {
+        min-height: 135px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 15px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn {
+        width: 100% !important;
+        font-size: 16px !important;
+        min-height: 54px !important;
+    }
+
+    .newsletter-form input {
+        font-size: 16px !important;
+    }
+}
+
+
+/* ---------- VERY SMALL PHONES ---------- */
+
+@media screen and (max-width: 360px) {
+
+    /* Nothing below 12px */
+    body,
+    body p,
+    body li {
+        font-size: 13px !important;
+    }
+
+    body small,
+    body .small {
+        font-size: 12px !important;
+    }
+
+    html body .site-header .main-nav .nav-link,
+    html body .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 15px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 17px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 15px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 15px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 14px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn,
+    .newsletter-form input {
+        font-size: 15px !important;
+    }
+}
+
+/* =========================================================
+   DESKTOP CONNECT → NEWSLETTER SPACING FIX
+   Keeps the sections visually close without changing mobile.
+========================================================= */
+@media screen and (min-width: 901px) {
+    .connect-section {
+        padding-bottom: 40px !important;
+    }
+
+    .connect-section + .newsletter-section {
+        padding-top: 40px !important;
+    }
+
+    /* Keep the newsletter content readable on desktop */
+    .newsletter-section .newsletter-inner h2 {
+        font-size: 38px !important;
+        line-height: 1.2 !important;
+    }
+
+    .newsletter-section .newsletter-inner p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .newsletter-section .newsletter-form input {
+        font-size: 15px !important;
+    }
+
+    .newsletter-section .newsletter-form input::placeholder {
+        font-size: 14px !important;
+    }
+
+    .newsletter-section .newsletter-form .btn {
+        font-size: 15px !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL TYPOGRAPHY BOOST — ALL TEXT
+   ========================================================= */
+
+/* Desktop */
+@media screen and (min-width: 901px) {
+    body {
+        font-size: 16px !important;
+    }
+
+    body p,
+    body li {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+
+    .site-header .nav-link,
+    .site-header .nav-dropdown-toggle {
+        font-size: 16px !important;
+    }
+
+    .site-header .main-nav .dropdown-menu a,
+    .site-header .main-nav .nav-dropdown .dropdown-menu a {
+        font-size: 15px !important;
+    }
+
+    .section-label {
+        font-size: 13px !important;
+    }
+
+    .section-header h2,
+    .section-header.centered h2,
+    .section-header-row h2 {
+        font-size: 40px !important;
+    }
+
+    .section-header p,
+    .section-header.centered p,
+    .section-header-row p {
+        font-size: 15px !important;
+    }
+
+    .connect-info-item h3 {
+        font-size: 22px !important;
+    }
+
+    .connect-info-item p {
+        font-size: 14px !important;
+    }
+
+    .form-header h3 {
+        font-size: 30px !important;
+    }
+
+    .form-header p {
+        font-size: 15px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 16px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 16px !important;
+    }
+
+    .connection-form input::placeholder,
+    .connection-form textarea::placeholder {
+        font-size: 15px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 13px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn {
+        font-size: 16px !important;
+    }
+
+    .newsletter-section .newsletter-inner h2 {
+        font-size: 40px !important;
+    }
+
+    .newsletter-section .newsletter-inner p {
+        font-size: 15px !important;
+    }
+
+    .newsletter-section .newsletter-form input,
+    .newsletter-section .newsletter-form input::placeholder {
+        font-size: 16px !important;
+    }
+}
+
+/* Tablet + Mobile */
+@media screen and (max-width: 900px) {
+    body {
+        font-size: 15px !important;
+    }
+
+    body p,
+    body li {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    body small,
+    body .small {
+        font-size: 12px !important;
+    }
+
+    .site-header .main-nav .nav-link,
+    .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 17px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 19px !important;
+    }
+
+    .section-label {
+        font-size: 13px !important;
+    }
+
+    .section-header h2,
+    .section-header.centered h2,
+    .section-header-row h2 {
+        font-size: 34px !important;
+    }
+
+    .section-header p,
+    .section-header.centered p,
+    .section-header-row p {
+        font-size: 15px !important;
+    }
+
+    .connect-info-item h3 {
+        font-size: 21px !important;
+    }
+
+    .connect-info-item p {
+        font-size: 14px !important;
+    }
+
+    .form-header h3 {
+        font-size: 29px !important;
+    }
+
+    .form-header p {
+        font-size: 15px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 17px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 17px !important;
+    }
+
+    .connection-form input::placeholder,
+    .connection-form textarea::placeholder {
+        font-size: 15px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 14px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn,
+    .newsletter-form input {
+        font-size: 17px !important;
+    }
+
+    .newsletter-section .newsletter-inner h2 {
+        font-size: 34px !important;
+    }
+
+    .newsletter-section .newsletter-inner p {
+        font-size: 15px !important;
+    }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+    body,
+    body p,
+    body li {
+        font-size: 15px !important;
+    }
+
+    .site-header .main-nav .nav-link,
+    .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 17px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 19px !important;
+    }
+
+    .section-header h2,
+    .section-header.centered h2,
+    .section-header-row h2 {
+        font-size: 31px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 17px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 17px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 14px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn,
+    .newsletter-form input {
+        font-size: 17px !important;
+    }
+}
+
+/* Very small phones — keep everything readable */
+@media screen and (max-width: 360px) {
+    body,
+    body p,
+    body li {
+        font-size: 14px !important;
+    }
+
+    body small,
+    body .small {
+        font-size: 12px !important;
+    }
+
+    .site-header .main-nav .nav-link,
+    .site-header .main-nav .nav-dropdown-toggle {
+        font-size: 16px !important;
+    }
+
+    html body .site-header .main-nav .nav-dropdown .dropdown-menu a,
+    html body .site-header .main-nav .dropdown-menu li a {
+        font-size: 18px !important;
+    }
+
+    .connection-form .form-group label {
+        font-size: 16px !important;
+    }
+
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 16px !important;
+    }
+
+    .connection-form .form-check label {
+        font-size: 13px !important;
+    }
+
+    .connection-form .btn,
+    .newsletter-form .btn,
+    .newsletter-form input {
+        font-size: 16px !important;
+    }
+}
+/* =========================================================
+   FINAL READABILITY FIX
+   All normal visible text is 15px or larger.
+   Keeps mobile menu/layout intact.
+========================================================= */
+
+/* Connection section — desktop */
+@media screen and (min-width: 901px) {
+    body:has(#newsletter) .connection-form .form-group label {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+    }
+
+    body:has(#newsletter) .connection-form input,
+    body:has(#newsletter) .connection-form select,
+    body:has(#newsletter) .connection-form textarea {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    body:has(#newsletter) .connection-form input::placeholder,
+    body:has(#newsletter) .connection-form textarea::placeholder {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .connection-form .form-check label {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    body:has(#newsletter) .connection-form .btn {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .connect-info-item h3 {
+        font-size: 22px !important;
+    }
+
+    body:has(#newsletter) .connect-info-item p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    body:has(#newsletter) .form-header p {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .newsletter-inner p,
+    body:has(#newsletter) .newsletter-form input,
+    body:has(#newsletter) .newsletter-form input::placeholder,
+    body:has(#newsletter) .newsletter-form .btn {
+        font-size: 16px !important;
+    }
+}
+
+/* Footer + Newsletter — all normal text 15px+ */
+body:has(#newsletter) .newsletter-inner p,
+body:has(#newsletter) .newsletter-form input,
+body:has(#newsletter) .newsletter-form input::placeholder,
+body:has(#newsletter) .newsletter-form .btn {
+    font-size: 16px !important;
+}
+
+body:has(#newsletter) .site-footer .footer-brand > p,
+body:has(#newsletter) .site-footer .footer-column a,
+body:has(#newsletter) .site-footer .footer-bottom,
+body:has(#newsletter) .site-footer .footer-bottom a,
+body:has(#newsletter) .site-footer .footer-bottom span,
+body:has(#newsletter) .site-footer .footer-column p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+
+body:has(#newsletter) .site-footer .footer-column h3 {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+}
+
+body:has(#newsletter) .site-footer .footer-brand h2,
+body:has(#newsletter) .newsletter-inner h2 {
+    font-size: 40px !important;
+    line-height: 1.15 !important;
+}
+
+/* Mobile + tablet */
+@media screen and (max-width: 900px) {
+    body:has(#newsletter) .connection-form .form-group label {
+        font-size: 17px !important;
+    }
+
+    body:has(#newsletter) .connection-form input,
+    body:has(#newsletter) .connection-form select,
+    body:has(#newsletter) .connection-form textarea {
+        font-size: 17px !important;
+    }
+
+    body:has(#newsletter) .connection-form input::placeholder,
+    body:has(#newsletter) .connection-form textarea::placeholder {
+        font-size: 15px !important;
+    }
+
+    /* Important: previous CSS had this at 9–14px */
+    body:has(#newsletter) .connection-form .form-check label,
+    body:has(#newsletter) .form-check label {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+    }
+
+    body:has(#newsletter) .connection-form .btn {
+        font-size: 17px !important;
+    }
+
+    body:has(#newsletter) .site-footer .footer-brand > p,
+    body:has(#newsletter) .site-footer .footer-column a,
+    body:has(#newsletter) .site-footer .footer-column p,
+    body:has(#newsletter) .site-footer .footer-bottom,
+    body:has(#newsletter) .site-footer .footer-bottom a,
+    body:has(#newsletter) .site-footer .footer-bottom span {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .site-footer .footer-column h3 {
+        font-size: 17px !important;
+    }
+
+    body:has(#newsletter) .newsletter-inner p {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .newsletter-form input,
+    body:has(#newsletter) .newsletter-form input::placeholder,
+    body:has(#newsletter) .newsletter-form .btn {
+        font-size: 17px !important;
+    }
+}
+
+/* Small phones — still keep normal text at 15px+ */
+@media screen and (max-width: 480px) {
+    body:has(#newsletter) .connection-form .form-group label {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .connection-form input,
+    body:has(#newsletter) .connection-form select,
+    body:has(#newsletter) .connection-form textarea {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .connection-form .form-check label {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .connection-form .btn {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .site-footer .footer-brand > p,
+    body:has(#newsletter) .site-footer .footer-column a,
+    body:has(#newsletter) .site-footer .footer-column p,
+    body:has(#newsletter) .site-footer .footer-bottom,
+    body:has(#newsletter) .site-footer .footer-bottom a,
+    body:has(#newsletter) .site-footer .footer-bottom span {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .site-footer .footer-column h3 {
+        font-size: 16px !important;
+    }
+}
+
+/* Very small phones */
+@media screen and (max-width: 360px) {
+    body:has(#newsletter) .connection-form .form-group label,
+    body:has(#newsletter) .connection-form input,
+    body:has(#newsletter) .connection-form select,
+    body:has(#newsletter) .connection-form textarea,
+    body:has(#newsletter) .connection-form .form-check label {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .connection-form .btn,
+    body:has(#newsletter) .newsletter-form input,
+    body:has(#newsletter) .newsletter-form .btn {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .site-footer .footer-brand > p,
+    body:has(#newsletter) .site-footer .footer-column a,
+    body:has(#newsletter) .site-footer .footer-column p,
+    body:has(#newsletter) .site-footer .footer-bottom,
+    body:has(#newsletter) .site-footer .footer-bottom a,
+    body:has(#newsletter) .site-footer .footer-bottom span {
+        font-size: 15px !important;
+    }
+}
+
+/* =========================================================
+   CONTACT PAGE — GLOBAL READABILITY FIX
+   The contact page does not use #newsletter, so previous
+   homepage-only typography rules did not affect it.
+========================================================= */
+
+/* Contact page content */
+.contact-grid > div > p,
+.contact-info,
+.contact-info small,
+.contact-info b,
+.contact-item strong,
+.contact-item span,
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.form-note {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+
+.contact-grid > div > p {
+    line-height: 1.8 !important;
+}
+
+.contact-info small,
+.contact-info b,
+.contact-item strong,
+.contact-item span {
+    font-size: 15px !important;
+}
+
+.contact-form label {
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    min-height: 52px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    font-size: 15px !important;
+}
+
+/* Main contact headings */
+.connect-info h2 {
+    font-size: clamp(40px, 4vw, 58px) !important;
+}
+
+.connect-info > p,
+.connect-form-card > p,
+.form-header p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+.connect-form-card h3 {
+    font-size: 32px !important;
+}
+
+/* Contact page footer — no text below 15px */
+.footer,
+.footer p,
+.footer a,
+.footer span,
+.footer small,
+.footer strong,
+.footer li,
+.footer-links a,
+.footer-brand strong,
+.footer-brand small,
+.footer-bottom {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+
+.footer-brand strong,
+.footer-column h3 {
+    font-size: 17px !important;
+}
+
+.footer-brand small {
+    font-size: 15px !important;
+}
+
+/* Keep navigation readable too */
+.site-header .nav-link,
+.site-header .nav-dropdown-toggle {
+    font-size: 16px !important;
+}
+
+.site-header .nav-dropdown .dropdown-menu a,
+.site-header .dropdown-menu li a {
+    font-size: 15px !important;
+}
+
+/* Mobile contact page */
+@media screen and (max-width: 900px) {
+    .contact-grid > div > p,
+    .contact-info,
+    .contact-info small,
+    .contact-info b,
+    .contact-item strong,
+    .contact-item span,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select,
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder,
+    .form-note {
+        font-size: 15px !important;
+    }
+
+    .contact-form label {
+        font-size: 16px !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        font-size: 16px !important;
+        min-height: 52px;
+    }
+
+    .connect-form-card h3 {
+        font-size: 30px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-grid > div > p,
+    .contact-info,
+    .contact-info small,
+    .contact-info b,
+    .contact-item strong,
+    .contact-item span,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select,
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder,
+    .form-note,
+    .footer,
+    .footer p,
+    .footer a,
+    .footer span,
+    .footer small,
+    .footer strong,
+    .footer li,
+    .footer-links a,
+    .footer-bottom {
+        font-size: 15px !important;
+    }
+
+    .contact-form label {
+        font-size: 16px !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        font-size: 16px !important;
+    }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE DESIGN SYSTEM
+   Standardized typography, spacing, sizing and breakpoints
+========================================================= */
+
+/* GLOBAL / DESKTOP DEFAULT */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+.container {
+    width: calc(100% - 48px) !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+}
+
+h2 {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+}
+
+h3 {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+}
+
+h4 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+}
+
+p,
+li,
+label,
+input,
+select,
+textarea,
+button {
+    font-size: 16px !important;
+}
+
+small,
+.small {
+    font-size: 14px !important;
+}
+
+/* NAVBAR */
+.site-header,
+.site-header .header-inner {
+    height: 72px !important;
+}
+
+.site-header .nav-link,
+.site-header .nav-dropdown-toggle {
+    font-size: 15px !important;
+}
+
+.site-header .nav-dropdown .dropdown-menu a,
+.site-header .dropdown-menu li a {
+    font-size: 14px !important;
+}
+
+/* SECTION / GRID SPACING */
+section {
+    margin-bottom: 80px;
+}
+
+.research-grid,
+.latest-grid,
+.gallery-strip,
+.event-grid,
+.footer-grid {
+    gap: 24px !important;
+}
+
+/* COMMON CARDS */
+.research-card,
+.latest-card,
+.event-card,
+.news-card,
+.datahub-card,
+.connect-form-card,
+.contact-form,
+.contact-info-card {
+    padding: 24px !important;
+    border-radius: 10px !important;
+}
+
+/* CARD TITLES */
+.research-card h3,
+.latest-card h3,
+.event-card h3,
+.news-card h3,
+.datahub-card h3,
+.card-title {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+}
+
+/* BUTTONS */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 10px 22px !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    border-radius: 6px !important;
+}
+
+/* FORMS */
+.form-group label,
+.contact-form label,
+.connection-form label {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.connection-form input,
+.connection-form select,
+.connection-form textarea {
+    min-height: 46px !important;
+    height: 46px !important;
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    border-radius: 6px !important;
+}
+
+.form-group textarea,
+.contact-form textarea,
+.connection-form textarea {
+    height: auto !important;
+    min-height: 140px !important;
+}
+
+.form-check label,
+.connection-form .form-check label,
+.contact-form .form-check label {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 14px !important;
+}
+
+/* CONNECTION / CONTACT TEXT */
+.contact-item strong,
+.contact-item span,
+.contact-info strong,
+.contact-info span,
+.contact-info small,
+.contact-info b {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+}
+
+.connect-form-card > p,
+.connect-info > p,
+.contact-grid > div > p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+/* NEWSLETTER */
+.newsletter-form input,
+.newsletter-form button,
+.newsletter-form .btn {
+    min-height: 44px !important;
+    height: 44px !important;
+    font-size: 15px !important;
+    border-radius: 6px !important;
+}
+
+/* FOOTER */
+.footer p,
+.footer a,
+.footer li,
+.footer span,
+.footer strong,
+.footer-brand small,
+.footer-bottom,
+.footer-bottom a,
+.footer-bottom span {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+.footer-column h3,
+.footer-links h3,
+.footer-brand strong {
+    font-size: 18px !important;
+}
+
+/* =========================================================
+   TABLET: 768px – 1024px
+========================================================= */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .container {
+        width: calc(100% - 48px) !important;
+        max-width: 100% !important;
+    }
+
+    .site-header,
+    .site-header .header-inner {
+        height: 72px !important;
+    }
+
+    h1 {
+        font-size: 44px !important;
+    }
+
+    h2 {
+        font-size: 34px !important;
+    }
+
+    h3 {
+        font-size: 23px !important;
+    }
+
+    .connect-layout,
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    .research-grid,
+    .latest-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 24px !important;
+    }
+
+    .footer-grid {
+        gap: 24px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE: below 768px
+========================================================= */
+@media screen and (max-width: 767px) {
+
+    .container {
+        width: calc(100% - 32px) !important;
+        max-width: 100% !important;
+    }
+
+    body {
+        font-size: 16px !important;
+    }
+
+    h1 {
+        font-size: 36px !important;
+        line-height: 1.15 !important;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    h4 {
+        font-size: 19px !important;
+    }
+
+    p,
+    li {
+        font-size: 16px !important;
+    }
+
+    small,
+    .small {
+        font-size: 13px !important;
+    }
+
+    section {
+        margin-bottom: 60px;
+    }
+
+    .site-header,
+    .site-header .header-inner {
+        height: 64px !important;
+    }
+
+    .site-header .nav-link,
+    .site-header .nav-dropdown-toggle {
+        font-size: 16px !important;
+    }
+
+    .site-header .nav-dropdown .dropdown-menu a,
+    .site-header .dropdown-menu li a {
+        font-size: 15px !important;
+    }
+
+    /* Keep existing mobile menu behavior while matching 64px header */
+    body .site-header .main-nav {
+        top: 64px !important;
+    }
+
+    .research-grid,
+    .latest-grid,
+    .event-grid,
+    .gallery-strip,
+    .connect-layout,
+    .contact-grid,
+    .newsletter-inner,
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .research-card,
+    .latest-card,
+    .event-card,
+    .news-card,
+    .datahub-card,
+    .connect-form-card,
+    .contact-form,
+    .contact-info-card {
+        padding: 24px !important;
+        border-radius: 10px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .form-group {
+        margin-bottom: 16px !important;
+    }
+
+    .form-group label,
+    .contact-form label,
+    .connection-form label {
+        font-size: 14px !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        min-height: 46px !important;
+        height: 46px !important;
+        font-size: 15px !important;
+    }
+
+    .form-group textarea,
+    .contact-form textarea,
+    .connection-form textarea {
+        min-height: 140px !important;
+        height: auto !important;
+    }
+
+    .btn,
+    button,
+    input[type="submit"],
+    input[type="button"] {
+        height: 44px !important;
+        min-height: 44px !important;
+        font-size: 15px !important;
+        padding: 10px 22px !important;
+    }
+
+    .newsletter-form {
+        gap: 16px !important;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button,
+    .newsletter-form .btn {
+        height: 44px !important;
+        min-height: 44px !important;
+        font-size: 15px !important;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li,
+    .footer span,
+    .footer strong,
+    .footer-brand small,
+    .footer-bottom,
+    .footer-bottom a,
+    .footer-bottom span {
+        font-size: 14px !important;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE: below 480px
+========================================================= */
+@media screen and (max-width: 479px) {
+
+    .container {
+        width: calc(100% - 32px) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    h1 {
+        font-size: 32px !important;
+    }
+
+    h2 {
+        font-size: 28px !important;
+    }
+
+    h3 {
+        font-size: 21px !important;
+    }
+
+    h4 {
+        font-size: 18px !important;
+    }
+
+    p,
+    li {
+        font-size: 16px !important;
+    }
+
+    small,
+    .small {
+        font-size: 13px !important;
+    }
+
+    .research-card,
+    .latest-card,
+    .event-card,
+    .news-card,
+    .datahub-card,
+    .connect-form-card,
+    .contact-form,
+    .contact-info-card {
+        padding: 20px !important;
+    }
+
+    .site-header .nav-link,
+    .site-header .nav-dropdown-toggle {
+        font-size: 16px !important;
+    }
+
+    .site-header .nav-dropdown .dropdown-menu a,
+    .site-header .dropdown-menu li a {
+        font-size: 15px !important;
+    }
+
+    .form-group label,
+    .contact-form label,
+    .connection-form label {
+        font-size: 14px !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .connection-form input,
+    .connection-form select,
+    .connection-form textarea {
+        font-size: 15px !important;
+    }
+
+    .form-check label,
+    .connection-form .form-check label,
+    .contact-form .form-check label {
+        font-size: 14px !important;
+    }
+
+    .btn,
+    button,
+    input[type="submit"],
+    input[type="button"] {
+        font-size: 15px !important;
+    }
+}
+
+/* =========================================================
+   HOMEPAGE DESKTOP WIDTH + READABILITY FIX
+   IMPORTANT: scoped to the homepage only so other pages
+   keep their own layout/container/typography.
+========================================================= */
+@media screen and (min-width: 1025px) {
+
+    body:has(#newsletter) {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Wider homepage content area only */
+    body:has(#newsletter) .container {
+        width: calc(100% - 64px) !important;
+        max-width: 1400px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Homepage sections only */
+    body:has(#newsletter) section.section,
+    body:has(#newsletter) .section {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+
+    body:has(#newsletter) .section-label {
+        font-size: 14px !important;
+    }
+
+    body:has(#newsletter) .section-header h2,
+    body:has(#newsletter) .section-header.centered h2,
+    body:has(#newsletter) .section-header-row h2 {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+    }
+
+    body:has(#newsletter) .section-header p,
+    body:has(#newsletter) .section-header-row p {
+        font-size: 16px !important;
+        line-height: 1.75 !important;
+    }
+
+    /* Homepage hero */
+    body:has(#newsletter) .hero h1 {
+        font-size: 52px !important;
+        line-height: 1.12 !important;
+    }
+
+    body:has(#newsletter) .hero p {
+        font-size: 16px !important;
+        line-height: 1.75 !important;
+    }
+
+    body:has(#newsletter) .hero .btn,
+    body:has(#newsletter) .hero a.btn {
+        font-size: 15px !important;
+    }
+
+    /* Homepage grids use the wider content area */
+    body:has(#newsletter) .research-grid,
+    body:has(#newsletter) .latest-grid,
+    body:has(#newsletter) .event-grid,
+    body:has(#newsletter) .news-grid,
+    body:has(#newsletter) .datahub-grid {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        gap: 24px !important;
+    }
+
+    body:has(#newsletter) .research-card,
+    body:has(#newsletter) .latest-card,
+    body:has(#newsletter) .event-card,
+    body:has(#newsletter) .news-card,
+    body:has(#newsletter) .datahub-card {
+        padding: 24px !important;
+    }
+
+    body:has(#newsletter) .research-card h3,
+    body:has(#newsletter) .latest-card h3,
+    body:has(#newsletter) .event-card h3,
+    body:has(#newsletter) .news-card h3,
+    body:has(#newsletter) .datahub-card h3 {
+        font-size: 20px !important;
+    }
+
+    body:has(#newsletter) .research-card p,
+    body:has(#newsletter) .latest-card p,
+    body:has(#newsletter) .event-card p,
+    body:has(#newsletter) .news-card p,
+    body:has(#newsletter) .datahub-card p,
+    body:has(#newsletter) .card-description {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    body:has(#newsletter) .card-link,
+    body:has(#newsletter) .text-link {
+        font-size: 14px !important;
+    }
+
+    body:has(#newsletter) .chairman-layout,
+    body:has(#newsletter) .connect-layout,
+    body:has(#newsletter) .contact-grid,
+    body:has(#newsletter) .video-wrapper,
+    body:has(#newsletter) .newsletter-inner,
+    body:has(#newsletter) .footer-grid {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    body:has(#newsletter) .chairman-layout { gap: 64px !important; }
+    body:has(#newsletter) .connect-layout { gap: 48px !important; }
+    body:has(#newsletter) .contact-grid { gap: 48px !important; }
+
+    /* Homepage connection/contact form readability */
+    body:has(#newsletter) .connection-form label,
+    body:has(#newsletter) .contact-form label,
+    body:has(#newsletter) .form-group label {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) .connection-form input,
+    body:has(#newsletter) .connection-form select,
+    body:has(#newsletter) .connection-form textarea,
+    body:has(#newsletter) .contact-form input,
+    body:has(#newsletter) .contact-form select,
+    body:has(#newsletter) .contact-form textarea,
+    body:has(#newsletter) .form-group input,
+    body:has(#newsletter) .form-group select,
+    body:has(#newsletter) .form-group textarea {
+        font-size: 16px !important;
+    }
+
+    body:has(#newsletter) .form-check label,
+    body:has(#newsletter) .connection-form .form-check label,
+    body:has(#newsletter) .contact-form .form-check label {
+        font-size: 15px !important;
+    }
+
+    body:has(#newsletter) input::placeholder,
+    body:has(#newsletter) textarea::placeholder {
+        font-size: 15px !important;
+    }
+
+    /* Homepage footer readability */
+    body:has(#newsletter) .footer p,
+    body:has(#newsletter) .footer a,
+    body:has(#newsletter) .footer li,
+    body:has(#newsletter) .footer span,
+    body:has(#newsletter) .footer small,
+    body:has(#newsletter) .footer strong,
+    body:has(#newsletter) .footer-bottom,
+    body:has(#newsletter) .footer-bottom a,
+    body:has(#newsletter) .footer-bottom span,
+    body:has(#newsletter) .footer-brand small {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    body:has(#newsletter) .footer-column h3,
+    body:has(#newsletter) .footer-links h3,
+    body:has(#newsletter) .footer-brand strong {
+        font-size: 19px !important;
+    }
+
+    body:has(#newsletter) .gallery-strip {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+    }
+}
+
+/* Tablet: wider homepage only; other pages remain untouched. */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body:has(#newsletter) .container {
+        width: calc(100% - 48px) !important;
+        max-width: 100% !important;
+    }
+}
+
+/* =========================================================
+   GLOBAL DESIGN-SYSTEM TYPOGRAPHY — SAFE / NON-LAYOUT
+   Do not change page-specific containers or section geometry.
+========================================================= */
+@media screen and (min-width: 1025px) {
+    body {
+        font-size: 16px;
+    }
+
+    .site-header .nav-link,
+    .site-header .nav-dropdown-toggle {
+        font-size: 15px !important;
+    }
+}
+
+/* =========================================================
+   FINAL HOMEPAGE TRANSITION + BRAND POLISH
+   Homepage only for layout changes; brand sizing is global.
+========================================================= */
+
+/* Remove the unwanted white band between the homepage hero and next section. */
+@media screen and (min-width: 1025px) {
+    body:has(#newsletter) .hero {
+        margin-bottom: 0 !important;
+    }
+
+    body:has(#newsletter) .hero + section,
+    body:has(#newsletter) .hero + .section {
+        margin-top: 0 !important;
+    }
+
+    body:has(#newsletter) .hero + section.section,
+    body:has(#newsletter) .hero + .section {
+        padding-top: 64px !important;
+    }
+
+    /* Make the BCRLS brand name more prominent on desktop. */
+    body .site-header .brand-text strong {
+        font-size: 21px !important;
+        line-height: 1.1 !important;
+        font-weight: 800 !important;
+        letter-spacing: .2px !important;
+    }
+
+    body .site-header .brand-text span {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Mobile/tablet brand remains compact but clearly readable. */
+@media screen and (max-width: 1024px) {
+    body .site-header .brand-text strong {
+        font-size: 19px !important;
+        line-height: 1.1 !important;
+        font-weight: 800 !important;
+    }
+
+    body .site-header .brand-text span {
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+    }
+}

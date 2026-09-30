@@ -1,0 +1,2517 @@
+/* =========================================================
+   BCRLS ABOUT PAGES
+   about.css
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.about-page,
+.about-page * {
+    box-sizing: border-box;
+}
+
+.about-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+
+    background: #f7faf8;
+
+    color: #294b3f;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+}
+
+.about-page img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-header {
+    position: relative;
+
+    width: 100%;
+    height: 88px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid
+        #edf1ef;
+
+    z-index: 1000;
+}
+
+
+.about-header-inner {
+    width: 100%;
+    height: 100%;
+
+    padding:
+        0 28px 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.about-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    color: #17382d;
+
+    text-decoration: none;
+}
+
+
+.about-brand-logo {
+    width: 48px !important;
+    height: 48px !important;
+
+    min-width: 48px !important;
+    min-height: 48px !important;
+
+    max-width: 48px !important;
+    max-height: 48px !important;
+
+    display: block;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    object-fit: contain !important;
+}
+
+
+.about-brand-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.about-brand-name {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #14744d;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.about-brand-title {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #71827c;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: .025em;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.about-nav {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+.about-nav-link,
+.about-nav-button {
+    position: relative;
+
+    height: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #536b63;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease;
+}
+
+
+.about-nav-link:hover,
+.about-nav-button:hover {
+    color: #197052;
+}
+
+
+.about-nav-link.active,
+.about-nav-button.active {
+    color: #197052;
+}
+
+
+.about-nav-button i {
+    font-size: 8px;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.about-nav-dropdown {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.about-nav-dropdown:hover
+.about-nav-button i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   NAV DROPDOWN
+========================================================= */
+
+.about-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% - 1px);
+
+    right: -15px;
+
+    width: 225px;
+
+    padding: 9px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #e2ebe7;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(28,78,59,.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+}
+
+
+.about-nav-dropdown:hover
+.about-dropdown-menu,
+.about-nav-dropdown.open
+.about-dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+}
+
+
+.about-dropdown-menu a {
+    display: block;
+
+    width: 100%;
+
+    padding:
+        12px 14px;
+
+    margin: 0;
+
+    border-radius: 8px;
+
+    color: #566e65;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.about-dropdown-menu a:hover,
+.about-dropdown-menu a.active {
+    background: #edf7f2;
+
+    color: #197052;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.about-mobile-button {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #edf7f2;
+
+    color: #197052;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NEW WHO WE ARE HERO
+========================================================= */
+
+.about-hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        80px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f1f8f5 100%
+        );
+
+    overflow: hidden;
+}
+
+
+.about-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    right: -220px;
+    top: -200px;
+
+    border:
+        1px solid
+        rgba(18,63,54,.10);
+
+    border-radius: 50%;
+
+    animation:
+        aboutHeroFloat
+        12s
+        ease-in-out
+        infinite;
+}
+
+
+.about-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: -110px;
+    bottom: -170px;
+
+    background:
+        rgba(25,112,82,.045);
+
+    border-radius: 50%;
+}
+
+
+.about-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px,100%);
+
+    margin: 0 auto;
+
+    animation:
+        aboutHeroReveal
+        .8s
+        cubic-bezier(.22,1,.36,1)
+        both;
+}
+
+
+.about-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    color: #197052;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .20em;
+
+    line-height: 1.4;
+}
+
+
+.about-hero h1 {
+    max-width: 900px;
+
+    margin:
+        0 0 25px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(50px,7vw,88px);
+
+    font-weight: 600;
+
+    line-height: .98;
+
+    letter-spacing: -.05em;
+}
+
+
+.about-hero h1 em {
+    display: block;
+
+    color: #217a59;
+
+    font-style: normal;
+}
+
+
+.about-hero-content > p {
+    max-width: 760px;
+
+    margin:
+        0 0 28px;
+
+    color: #71857d;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+
+.about-hero-line {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.about-hero-line span {
+    width: 45px;
+    height: 2px;
+
+    background: #217a59;
+}
+
+
+.about-hero-line small {
+    color: #197052;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+}
+
+
+@keyframes aboutHeroReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes aboutHeroFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(-25px,25px);
+    }
+
+}
+
+
+/* =========================================================
+   WHO WE ARE SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        105px 24px;
+
+    scroll-margin-top: 80px;
+}
+
+
+.about-who {
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.about-section-heading {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin:
+        0 auto 60px;
+
+    text-align: center;
+}
+
+
+.about-section-heading .about-eyebrow {
+    margin-bottom: 15px;
+}
+
+
+.about-section-heading h2 {
+    margin: 0;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(40px,5vw,64px);
+
+    font-weight: 600;
+
+    line-height: 1.03;
+
+    letter-spacing: -.045em;
+}
+
+
+.about-section-heading h2 em {
+    color: #217a59;
+
+    font-style: normal;
+}
+
+
+.about-who-grid {
+    width: min(1180px,100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        430px;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+
+.about-who-text {
+    max-width: 720px;
+}
+
+
+.about-who-text p {
+    margin:
+        0 0 20px;
+
+    color: #71857d;
+
+    font-size: 15px;
+
+    line-height: 1.95;
+}
+
+
+.about-who-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+.about-who-text .about-lead {
+    color: #36584c;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   WHO WE ARE FOCUS CARDS
+========================================================= */
+
+.about-focus {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.about-focus-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        minmax(0,1fr);
+
+    gap: 15px;
+
+    padding:
+        23px 22px;
+
+    background: #f4f8f6;
+
+    border:
+        1px solid
+        #dce9e3;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s cubic-bezier(.22,1,.36,1),
+        background .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+.about-focus-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: #217a59;
+
+    transform:
+        scaleY(0);
+
+    transform-origin: bottom;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.about-focus-card:hover {
+    transform:
+        translateX(7px);
+
+    background: #ffffff;
+
+    border-color:
+        #cbded5;
+
+    box-shadow:
+        0 15px 35px
+        rgba(28,78,59,.08);
+}
+
+
+.about-focus-card:hover::before {
+    transform:
+        scaleY(1);
+}
+
+
+.about-focus-number {
+    color:
+        rgba(18,63,54,.35);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+
+.about-focus-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #217a59;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: .17em;
+}
+
+
+.about-focus-card h3 {
+    margin:
+        0 0 7px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.about-focus-card p {
+    margin: 0;
+
+    color: #71857d;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   OUR APPROACH
+========================================================= */
+
+.about-approach {
+    background: #f7faf8;
+}
+
+
+.about-approach-grid {
+    width: min(1180px,100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap: 17px;
+}
+
+
+.about-approach-card {
+    position: relative;
+
+    min-height: 310px;
+
+    padding:
+        30px 25px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #dce9e3;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s cubic-bezier(.22,1,.36,1),
+        box-shadow .4s ease;
+}
+
+
+.about-approach-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -45px;
+    bottom: -45px;
+
+    background: #edf7f2;
+
+    border-radius: 50%;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.about-approach-card:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(28,78,59,.09);
+}
+
+
+.about-approach-card:hover::after {
+    transform:
+        scale(2);
+}
+
+
+.about-approach-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 38px;
+
+    color: #197052;
+
+    background: #edf7f2;
+
+    border-radius: 13px;
+
+    font-size: 17px;
+}
+
+
+.about-approach-card > span {
+    position: absolute;
+
+    top: 30px;
+    right: 25px;
+
+    color:
+        rgba(18,63,54,.25);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.about-approach-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0 0 12px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+}
+
+
+.about-approach-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #71857d;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   AREAS OF FOCUS
+========================================================= */
+
+.about-focus-section {
+    background: #ffffff;
+}
+
+
+.about-focus-layout {
+    width: min(1180px,100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        .85fr
+        1.15fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+.about-focus-heading h2 {
+    margin:
+        0 0 20px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(40px,5vw,62px);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: -.045em;
+}
+
+
+.about-focus-heading h2 em {
+    color: #217a59;
+
+    font-style: normal;
+}
+
+
+.about-focus-heading p {
+    max-width: 480px;
+
+    margin: 0;
+
+    color: #71857d;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.about-focus-list {
+    border-top:
+        1px solid
+        #dce9e3;
+}
+
+
+.about-focus-row {
+    display: grid;
+
+    grid-template-columns:
+        45px
+        minmax(0,1fr)
+        25px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 76px;
+
+    border-bottom:
+        1px solid
+        #dce9e3;
+
+    transition:
+        padding .35s ease,
+        background .3s ease;
+}
+
+
+.about-focus-row:hover {
+    padding-left: 12px;
+
+    background: #f4f8f6;
+}
+
+
+.about-focus-row > span {
+    color:
+        rgba(18,63,54,.35);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.about-focus-row strong {
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+
+.about-focus-row i {
+    color: #217a59;
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    transform:
+        translateX(-8px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+
+.about-focus-row:hover i {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   COLLABORATION / NETWORK
+========================================================= */
+
+.about-network {
+    padding-top: 0;
+
+    background: #ffffff;
+}
+
+
+.about-network-card {
+    width: min(1180px,100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 80px;
+
+    padding:
+        65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123f36,
+            #08795e
+        );
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 70px
+        rgba(18,63,54,.14);
+}
+
+
+.about-network-card .about-eyebrow {
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+.about-network-card h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(40px,5vw,60px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -.045em;
+}
+
+
+.about-network-card h2 em {
+    color: #9ad0b8;
+
+    font-style: normal;
+}
+
+
+.about-network-card p {
+    margin:
+        0 0 27px;
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.about-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    min-height: 48px;
+
+    padding:
+        0 21px;
+
+    color: #17382d;
+
+    background: #ffffff;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.about-button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,.15);
+}
+
+
+.about-button i {
+    transition:
+        transform .3s ease;
+}
+
+
+.about-button:hover i {
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.about-page
+.about-section-heading,
+.about-page
+.about-who-text,
+.about-page
+.about-focus-card,
+.about-page
+.about-approach-card,
+.about-page
+.about-focus-row,
+.about-page
+.about-network-card {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.22,1,.36,1);
+}
+
+
+.about-page
+.about-section-heading.is-visible,
+.about-page
+.about-who-text.is-visible,
+.about-page
+.about-focus-card.is-visible,
+.about-page
+.about-approach-card.is-visible,
+.about-page
+.about-focus-row.is-visible,
+.about-page
+.about-network-card.is-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   STAGGER ANIMATION
+========================================================= */
+
+.about-focus-card:nth-child(1) {
+    transition-delay: .05s;
+}
+
+
+.about-focus-card:nth-child(2) {
+    transition-delay: .12s;
+}
+
+
+.about-focus-card:nth-child(3) {
+    transition-delay: .19s;
+}
+
+
+.about-approach-card:nth-child(1) {
+    transition-delay: .05s;
+}
+
+
+.about-approach-card:nth-child(2) {
+    transition-delay: .12s;
+}
+
+
+.about-approach-card:nth-child(3) {
+    transition-delay: .19s;
+}
+
+
+.about-approach-card:nth-child(4) {
+    transition-delay: .26s;
+}
+
+
+.about-focus-row:nth-child(1) {
+    transition-delay: .05s;
+}
+
+
+.about-focus-row:nth-child(2) {
+    transition-delay: .10s;
+}
+
+
+.about-focus-row:nth-child(3) {
+    transition-delay: .15s;
+}
+
+
+.about-focus-row:nth-child(4) {
+    transition-delay: .20s;
+}
+
+
+.about-focus-row:nth-child(5) {
+    transition-delay: .25s;
+}
+
+
+/* =========================================================
+   FOUNDER HERO
+   EXISTING DESIGN — KEPT
+========================================================= */
+
+.about-founder-hero {
+    width: 100%;
+
+    padding:
+        100px 24px 75px;
+
+    background:
+        radial-gradient(
+            circle at 84% 15%,
+            rgba(91,165,132,.18),
+            transparent 35%
+        );
+}
+
+
+.about-page-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 14px;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        #dcebe4;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #197052;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .11em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.about-page-label-dot {
+    width: 7px;
+    height: 7px;
+
+    flex:
+        0 0 7px;
+
+    border-radius: 50%;
+
+    background: #63a98a;
+}
+
+
+.about-founder-hero h1 {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin:
+        0 0 18px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(44px,6vw,70px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: -.035em;
+}
+
+
+.about-founder-hero h1 span {
+    color: #217a59;
+}
+
+
+.about-founder-intro {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #71857d;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   FOUNDER CONTENT
+========================================================= */
+
+.about-founder-section {
+    width: 100%;
+
+    padding:
+        20px 24px 100px;
+}
+
+
+.about-founder-card {
+    width: min(1180px,100%);
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        270px minmax(0,1fr);
+
+    gap: 55px;
+
+    padding: 52px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #dfeae5;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(34,91,70,.07);
+}
+
+
+/* =========================================================
+   FOUNDER PROFILE
+========================================================= */
+
+.about-founder-profile {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.about-founder-photo {
+    width: 190px;
+    height: 230px;
+
+    margin:
+        0 auto 22px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #dcebe4;
+
+    border-radius: 22px;
+
+    background: #edf7f2;
+}
+
+
+.about-founder-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+}
+
+
+.about-founder-profile h2 {
+    margin:
+        0 0 7px;
+
+    padding: 0;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.about-founder-profile p {
+    margin: 0;
+
+    padding: 0;
+
+    color: #789088;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+.about-founder-divider {
+    width: 50px;
+    height: 2px;
+
+    margin:
+        18px auto;
+
+    background: #66a98b;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.about-founder-message {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.about-message-label {
+    display: block;
+
+    margin:
+        0 0 10px;
+
+    color: #217a59;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.about-founder-message h2 {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin:
+        0 0 28px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px,4vw,45px);
+
+    font-weight: 600;
+
+    line-height: 1.15;
+}
+
+
+.about-founder-message p {
+    width: 100%;
+
+    margin:
+        0 0 20px;
+
+    padding: 0;
+
+    color: #5f756c;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.about-founder-quote {
+    width: 100%;
+
+    margin:
+        35px 0;
+
+    padding:
+        27px 30px;
+
+    border-left:
+        3px solid
+        #217a59;
+
+    border-radius:
+        0 16px 16px 0;
+
+    background: #edf7f2;
+}
+
+
+.about-founder-quote i {
+    display: block;
+
+    margin:
+        0 0 10px;
+
+    color: #217a59;
+
+    font-size: 20px;
+}
+
+
+.about-founder-quote p {
+    margin: 0;
+
+    color: #36584c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.about-founder-signature {
+    margin-top: 42px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid
+        #e4ede8;
+}
+
+
+.about-founder-signature strong {
+    display: block;
+
+    margin:
+        0 0 5px;
+
+    color: #17382d;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.about-founder-signature span {
+    color: #758980;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.about-back-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 30px;
+
+    color: #197052;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease;
+}
+
+
+.about-back-link:hover {
+    color: #12563f;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .about-nav {
+        gap: 19px;
+    }
+
+
+    .about-brand-title {
+        font-size: 7.5px;
+    }
+
+
+    .about-founder-card {
+        gap: 40px;
+
+        padding: 42px;
+    }
+
+
+    .about-who-grid {
+        gap: 50px;
+    }
+
+
+    .about-approach-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-founder-hero {
+        padding:
+            90px 20px 60px;
+    }
+
+
+    .about-founder-section {
+        padding:
+            15px 20px 70px;
+    }
+
+
+    .about-founder-card {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+        padding: 38px;
+    }
+
+
+    .about-founder-profile {
+        text-align: center;
+    }
+
+
+    .about-founder-photo {
+        width: 180px;
+        height: 220px;
+    }
+
+
+    .about-who-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .about-focus-layout {
+        gap: 50px;
+    }
+
+
+    .about-network-card {
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .about-nav {
+        display: none;
+    }
+
+
+    .about-mobile-button {
+        display: flex;
+    }
+
+
+    .about-brand-title {
+        display: inline;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-header {
+        height: 78px;
+    }
+
+
+    .about-header-inner {
+        padding:
+            0 16px;
+    }
+
+
+    .about-brand {
+        gap: 9px;
+    }
+
+
+    .about-brand-logo {
+        width: 43px !important;
+        height: 43px !important;
+
+        min-width: 43px !important;
+        min-height: 43px !important;
+
+        max-width: 43px !important;
+        max-height: 43px !important;
+    }
+
+
+    .about-brand-name {
+        font-size: 16px;
+    }
+
+
+    .about-brand-title {
+        display: block;
+
+        width: 210px;
+
+        max-width: 210px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        font-size: 7px;
+    }
+
+
+    /* =====================================================
+       WHO WE ARE HERO
+    ===================================================== */
+
+    .about-hero {
+        min-height: auto;
+
+        padding:
+            75px 17px;
+    }
+
+
+    .about-hero h1 {
+        font-size: 46px;
+    }
+
+
+    .about-hero-content > p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .about-hero-line {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 9px;
+    }
+
+
+    /* =====================================================
+       WHO WE ARE
+    ===================================================== */
+
+    .about-section {
+        padding:
+            75px 17px;
+    }
+
+
+    .about-section-heading {
+        margin-bottom: 42px;
+    }
+
+
+    .about-section-heading h2 {
+        font-size: 40px;
+    }
+
+
+    .about-who-text .about-lead {
+        font-size: 17px;
+    }
+
+
+    .about-who-text p {
+        font-size: 13px;
+
+        line-height: 1.85;
+    }
+
+
+    .about-focus-card {
+        padding:
+            21px;
+    }
+
+
+    /* =====================================================
+       APPROACH
+    ===================================================== */
+
+    .about-approach-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .about-approach-card {
+        min-height: auto;
+
+        padding:
+            27px;
+    }
+
+
+    .about-approach-icon {
+        margin-bottom: 28px;
+    }
+
+
+    /* =====================================================
+       AREAS OF FOCUS
+    ===================================================== */
+
+    .about-focus-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .about-focus-heading h2 {
+        font-size: 40px;
+    }
+
+
+    .about-focus-row {
+        min-height: 68px;
+
+        grid-template-columns:
+            35px
+            minmax(0,1fr)
+            20px;
+    }
+
+
+    .about-focus-row strong {
+        font-size: 17px;
+    }
+
+
+    .about-focus-row i {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* =====================================================
+       NETWORK
+    ===================================================== */
+
+    .about-network {
+        padding-top: 0;
+    }
+
+
+    .about-network-card {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding:
+            40px 28px;
+
+        border-radius: 19px;
+    }
+
+
+    .about-network-card h2 {
+        font-size: 40px;
+    }
+
+
+    .about-network-card p {
+        font-size: 13px;
+    }
+
+
+    .about-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       OLD FOUNDER PAGE — KEPT
+    ===================================================== */
+
+    .about-founder-hero {
+        padding:
+            75px 17px 50px;
+    }
+
+
+    .about-founder-section {
+        padding:
+            10px 16px 60px;
+    }
+
+
+    .about-founder-card {
+        padding:
+            27px 20px;
+
+        border-radius: 21px;
+    }
+
+
+    .about-founder-hero h1 {
+        font-size: 41px;
+    }
+
+
+    .about-founder-intro {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .about-founder-message h2 {
+        font-size: 30px;
+    }
+
+
+    .about-founder-message p {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .about-founder-quote {
+        padding:
+            22px 20px;
+    }
+
+
+    .about-founder-quote p {
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-brand-title {
+        width: 170px;
+
+        max-width: 170px;
+
+        font-size: 6.5px;
+    }
+
+
+    .about-brand-name {
+        font-size: 15px;
+    }
+
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+
+    .about-section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .about-focus-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .about-focus-card {
+        grid-template-columns:
+            32px
+            minmax(0,1fr);
+
+        gap: 10px;
+
+        padding:
+            19px 17px;
+    }
+
+
+    .about-focus-card h3 {
+        font-size: 19px;
+    }
+
+
+    .about-focus-card p {
+        font-size: 10.5px;
+    }
+
+
+    .about-network-card {
+        padding:
+            35px 22px;
+    }
+
+
+    .about-network-card h2 {
+        font-size: 34px;
+    }
+
+
+    .about-founder-card {
+        padding:
+            23px 17px;
+    }
+
+
+    .about-founder-hero h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.about-page
+a:focus-visible,
+.about-page
+button:focus-visible {
+    outline:
+        2px solid
+        #217a59;
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+/* =========================================================
+   BCRLS BRAND MARK — WHO WE ARE HERO
+========================================================= */
+.about-hero-layout {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-hero-layout .about-hero-content {
+    width: auto;
+    margin: 0;
+}
+
+.about-hero-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 34px 28px;
+    border: 1px solid rgba(18,63,54,.12);
+    border-radius: 28px;
+    background: rgba(255,255,255,.72);
+    box-shadow: 0 24px 60px rgba(18,63,54,.10);
+    backdrop-filter: blur(8px);
+    animation: aboutBrandFloat 5s ease-in-out infinite;
+}
+
+.about-hero-logo-ring {
+    width: 190px;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 8px solid rgba(33,122,89,.10);
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(18,63,54,.12);
+}
+
+.about-hero-logo-ring img {
+    width: 158px;
+    height: 158px;
+    object-fit: contain;
+    display: block;
+}
+
+.about-hero-logo > span {
+    max-width: 230px;
+    text-align: center;
+    color: #197052;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: .14em;
+}
+
+@keyframes aboutBrandFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 900px) {
+    .about-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+    .about-hero-logo {
+        width: min(320px, 100%);
+        margin: 0 auto;
+        padding: 26px 20px;
+    }
+    .about-hero-logo-ring {
+        width: 150px;
+        height: 150px;
+    }
+    .about-hero-logo-ring img {
+        width: 124px;
+        height: 124px;
+    }
+}
