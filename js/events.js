@@ -37,6 +37,94 @@ const archiveTitles = [
     [13,"CONFERENCE","ICERPASA 2026"]
 ];
 
+
+const archiveEventDetails = {
+    1: {
+        description: "The BCRLS inaugural lecture series featured three distinguished speakers addressing ethnography of refugees, global burden-sharing, and legal challenges of boat refugees, marking the beginning of BCRLS’s academic journey.",
+        programme: "A three-speaker inaugural lecture series focused on refugee ethnography, global burden-sharing and the legal challenges faced by boat refugees.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Professor Dr. Nasir Uddin — Department of Anthropology, University of Chittagong", "Dr. Hassan Faruk Al Imran — Associate Professor (Law), Independent University Bangladesh", "Professor Dr. Rakiba Nabi — Chairman, Department of Law, University of Chittagong"],
+        images: ["../assets/events/inargument.jpeg"]
+    },
+    2: {
+        description: "An exclusive interactive session with Professor James C. Hathaway, focusing on fundamental questions on refugee status, rights, and global protection systems.",
+        programme: "Interactive academic discussion on refugee status, refugee rights and global protection systems.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Professor James C. Hathaway"],
+        images: ["../assets/events/qa_session_james.jpeg"]
+    },
+    3: {
+        description: "A focused discussion on refugee litigation, access to justice, and community sponsorship, highlighting the role of courts and displaced voices in protection frameworks.",
+        programme: "Discussion on refugee rights litigation, access to justice and community sponsorship.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Professor Kate Ogg"],
+        images: ["../assets/events/lecture_series.jpeg"]
+    },
+    4: {
+        description: "Session conducted by Naureen Rahim on “How to Write: IRL and Interdisciplinarity,” providing practical guidance and interdisciplinary research insights.",
+        programme: "Practical guidance on writing and interdisciplinary approaches to international refugee law research.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Ms. Naureen Rahim — PhD Candidate, University of Oslo"],
+        images: ["../assets/events/interdisciplinary.jpeg"]
+    },
+    5: {
+        description: "An academic workshop led by Rutaban Yameen on pursuing research in international refugee law, aimed at strengthening research skills among participants.",
+        programme: "Workshop on how to pursue research in international refugee law, with a focus on research skills and refugee-law scholarship.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Rutaban Yameen — PhD Candidate, University of New South Wales"],
+        images: ["../assets/events/workshop.jpeg"]
+    },
+    6: {
+        description: "Expert lecture by Dr. Meltem İneli Ciğer exploring legal foundations and applications of temporary protection in international refugee law.",
+        programme: "Expert lecture and discussion on temporary protection in international refugee law.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Dr. Meltem İneli Ciğer — Associate Professor, Süleyman Demirel University; Associate, Migration Policy Centre, European University Institute"],
+        images: ["../assets/events/temporary_protection.jpeg"]
+    },
+    7: {
+        description: "An interactive session on climate-induced displacement, addressing legal and humanitarian challenges in the context of climate change.",
+        programme: "Q&A and discussion on climate-induced displacement and related legal and humanitarian challenges.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Scientia Professor Jane McAdam"],
+        images: ["../assets/events/qa_jeny.jpeg"]
+    },
+    8: {
+        description: "An academic session featuring Dr. Nafees Ahmad. The discussion covered climate-induced displacement, statelessness, refugee protection gaps, and the intersection of artificial intelligence with migration governance, contributing to regional discourse on refugee law in South Asia.",
+        programme: "Academic discussion on climate-induced displacement, statelessness, refugee protection gaps and AI in migration governance.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Dr. Nafees Ahmad — Associate Professor at South Asian University, New Delhi"],
+        images: ["../assets/events/south_asia_nafees.jpeg"]
+    },
+    9: {
+        description: "A BCRLS field visit to Bhasan Char conducted as part of the research project “Legal Aspects of Higher Education Access and Livelihood through Income-Generating Activities for the Rohingyas in Bangladesh.” The visit aimed to gather first-hand insights and empirical data on legal and practical challenges surrounding education access and livelihood opportunities for Rohingya refugees.",
+        programme: "Field engagement in Bhasan Char focused on education access, livelihood opportunities, empirical research and evidence-based policy analysis.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["BCRLS Directors and Executive Members"],
+        images: ["../assets/events/Field_Visit-2.jpeg", "../assets/events/Field_Vist-1.jpeg"]
+    },
+    10: {
+        description: "On 19 January 2026 at Jagannath University, BCRLS in collaboration with the Department of Law and Land Administration, Jagannath University, hosted the academic seminar “Foundations of Refugee Law: Principles, Protection, and Contemporary Challenges.”",
+        programme: "Discussion on core principles of refugee law, evolving protection frameworks and contemporary challenges in refugee protection.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law and Land Administration, Jagannath University",
+        speakers: ["Sakhawat Sajjat Sejan — Speaker", "Honourable Christine Richardson — Chief Guest", "Meftahul Hasan — Special Guest, Assistant Professor, Department of Law, Jagannath University"],
+        images: ["../assets/events/Foundations.jpeg"]
+    },
+    11: {
+        description: "BCRLS, in collaboration with the NSU Center for Legal Research (NSU CLR), presented the special lecture “Asylum Under International Refugee Law and in South Asia: A Comparative Analysis.” The programme was held on 10 April 2026 from 10:00 AM to 12:00 PM at the Moot Court Room (NAC 616), North South University.",
+        programme: "Comparative examination of asylum law in South Asia within the broader framework of international refugee law and international protection.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS) in collaboration with the NSU Center for Legal Research (NSU CLR)",
+        speakers: ["Dr. Simon Behrman — Associate Professor, School of Law, University of Warwick"],
+        images: ["../assets/events/Asylum Under International Refugee Law.jpeg"]
+    },
+    12: {
+        description: "BCRLS convened a high-level academic dialogue with Professor Kjell Anderson of the University of Manitoba Law School (Canada), centering on evolving scholarship surrounding the Rohingya genocide. The discussion examined legal recognition, evidentiary challenges and international accountability, situating the Rohingya crisis within the wider theme of “Forgotten Genocides” in South Asia.",
+        programme: "Scholarly discussion on the Rohingya genocide, legal recognition, evidentiary challenges and international accountability.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Professor Kjell Anderson — University of Manitoba Law School, Canada"],
+        images: ["../assets/events/Justice_Accountibi.jpeg"]
+    }
+};
+
 function getArchiveEventsFromPage() {
     const cards = [...document.querySelectorAll("#event-archive .event-card")];
     return cards.map((card, i) => {
@@ -46,12 +134,15 @@ function getArchiveEventsFromPage() {
         const img = card.querySelector(".event-card-image img")?.getAttribute("src") || "";
         const meta = [...card.querySelectorAll(".event-card-meta span")].map(x => x.textContent.replace(/\s+/g," ").trim()).filter(Boolean);
         const description = card.querySelector(".event-card-description")?.textContent.replace(/\s+/g," ").trim() || "Archived BCRLS event.";
+        const detail = archiveEventDetails[id] || {};
         return {
             id, type, title, date: meta[0] || "Past Event", location: meta[1] || "BCRLS",
-            image: img, shortDescription: description, description,
-            images: (card.dataset.eventImages || img).split("|").map(x => x.trim()).filter(Boolean),
-            speakers: [], programme: "Programme information is available in the event materials.",
-            organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+            image: img, shortDescription: description,
+            description: detail.description || description,
+            images: detail.images || (card.dataset.eventImages || img).split("|").map(x => x.trim()).filter(Boolean),
+            speakers: detail.speakers || [],
+            programme: detail.programme || "Programme information is available in the event materials.",
+            organizer: detail.organizer || "Bangladesh Center for Refugee Law Studies (BCRLS)",
             card
         };
     });

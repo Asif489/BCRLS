@@ -56,3 +56,18 @@
 .media-slide-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
 .media-slide-thumb:hover, .media-slide-thumb.active { opacity:1; border-color:#087b5a; }
 .media-gallery-actions-bottom { margin-top:18px; }
+
+
+/* The gallery now uses a controlled one-photo-at-a-time slideshow. */
+.drive-gallery-live { display:none !important; }
+
+@media (max-width: 900px) {
+  .media-slide-stage { min-height: 320px; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 640px) {
+  .media-slide-stage { min-height: 245px; aspect-ratio: 4 / 3; border-radius: 12px; }
+  .media-slide-arrow { width: 40px; height: 40px; font-size: 14px; }
+  .media-slide-arrow.prev { left: 10px; }
+  .media-slide-arrow.next { right: 10px; }
+  .media-slide-caption { left: 10px; right: 10px; bottom: 10px; font-size: 12px; padding: 9px 11px; }
+}

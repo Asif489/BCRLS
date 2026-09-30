@@ -71,10 +71,6 @@
 <span class="media-eyebrow">MEDIA</span>
 <h1>BCRLS Photo Gallery</h1>
 <p>Explore photographs from BCRLS events, academic activities, seminars, lectures and other institutional moments.</p>
-<div class="media-gallery-actions">
-<a class="media-gallery-btn primary" href="https://drive.google.com/drive/folders/1bcNSw114VUJUXqM2G0KeagFHuTb5hgl4" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open Photo Collection</a>
-<a class="media-gallery-btn secondary" href="../events/archive.html"><i class="fa-solid fa-calendar-days"></i> Event Archive</a>
-</div>
 </div>
 </section>
 <section class="media-gallery-section">
@@ -84,26 +80,23 @@
 <div>
 <span class="media-eyebrow">BCRLS PHOTO ARCHIVE</span>
 <h2>Moments from BCRLS</h2>
-<p>Explore BCRLS events, seminars, lectures and academic activities through an automatic photo slideshow.</p>
+<p>Photos are presented one at a time in an automatic BCRLS photo slideshow.</p>
 </div>
 </div>
 
-<div class="media-slideshow" id="mediaSlideshow" aria-label="BCRLS Photo Slideshow">
+<div class="media-slideshow" aria-label="BCRLS Photo Gallery Slideshow">
   <div class="media-slide-stage">
-    <button class="media-slide-arrow prev" id="galleryPrev" type="button" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
     <img id="galleryMainImage" src="../assets/events/du_1.jpeg" alt="BCRLS event photo" loading="eager">
+    <button class="media-slide-arrow prev" id="galleryPrev" type="button" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
     <button class="media-slide-arrow next" id="galleryNext" type="button" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
-    <div class="media-slide-caption" id="galleryCaption">BCRLS Event</div>
+    <div class="media-slide-caption" id="galleryCaption">University of Dhaka — BCRLS panel discussion</div>
   </div>
-  <div class="media-slide-progress"><span id="galleryProgress"></span></div>
-  <div class="media-slide-thumbs" id="galleryThumbs" aria-label="Photo thumbnails"></div>
+  <div class="media-slide-progress" aria-hidden="true"><span id="galleryProgress"></span></div>
 </div>
 
 <div class="media-gallery-actions media-gallery-actions-bottom">
-  <a class="media-gallery-btn primary" href="https://drive.google.com/drive/folders/1bcNSw114VUJUXqM2G0KeagFHuTb5hgl4" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open Full Google Drive Collection</a>
   <a class="media-gallery-btn secondary" href="../events/archive.html"><i class="fa-solid fa-calendar-days"></i> Event Archive</a>
 </div>
-<p class="media-gallery-note"><i class="fa-solid fa-circle-info"></i> The slideshow uses the event photos bundled with this website. The Google Drive button opens the live collection so newly uploaded photos remain available there.</p>
 </div>
 </div>
 </section>
@@ -112,5 +105,6 @@
 <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="currentYear">2026</span> BCRLS. All rights reserved.</p></div></div></footer>
 <script src="../js/app.js"></script>
 <script src="../js/media-gallery.js"></script>
+
 </body>
 </html>

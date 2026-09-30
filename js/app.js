@@ -1925,6 +1925,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainNav =
         document.querySelector(".main-nav");
 
+    const menuOverlay =
+        document.querySelector(".menu-overlay");
+
     if (!menuToggle || !mainNav) {
         return;
     }
@@ -1960,6 +1963,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mainNav.classList.add("mobile-open");
 
+        if (menuOverlay) menuOverlay.classList.add("active");
+
         menuToggle.classList.add("active");
 
         document.body.classList.add("menu-open");
@@ -1978,6 +1983,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function closeMobileMenu() {
 
         mainNav.classList.remove("mobile-open");
+
+        if (menuOverlay) menuOverlay.classList.remove("active");
 
         menuToggle.classList.remove("active");
 
@@ -1998,6 +2005,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
     }
+
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeMobileMenu);
+    }
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMobileMenu();
+    });
 
 
     /* =========================

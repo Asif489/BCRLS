@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const caption = document.getElementById("galleryCaption");
   const prev = document.getElementById("galleryPrev");
   const next = document.getElementById("galleryNext");
-  const thumbs = document.getElementById("galleryThumbs");
   const progress = document.getElementById("galleryProgress");
-  if (!image || !thumbs) return;
+  if (!image || !caption || !progress) return;
 
   const photos = [
     ["../assets/events/du_1.jpeg", "University of Dhaka — BCRLS panel discussion"],
@@ -18,51 +17,55 @@ document.addEventListener("DOMContentLoaded", () => {
     ["../assets/events/online_03.jpeg", "BCRLS Online Lecture Series — Participants"],
     ["../assets/events/Conference.jpeg", "BCRLS Conference"],
     ["../assets/events/Conference-23.jpeg", "BCRLS Conference — Session"],
-    ["../assets/events/lecture_series.jpeg", "BCRLS Lecture Series"],
-    ["../assets/events/workshop.jpeg", "BCRLS Workshop"]
+    ["../assets/events/inargument.jpeg", "BCRLS Inaugural Lecture Series"],
+    ["../assets/events/qa_session_james.jpeg", "Session with Professor James C. Hathaway"],
+    ["../assets/events/lecture_series.jpeg", "Lecture with Kate Ogg"],
+    ["../assets/events/interdisciplinary.jpeg", "Workshop on Interdisciplinary Legal Writing"],
+    ["../assets/events/workshop.jpeg", "Workshop on Refugee Law Research"],
+    ["../assets/events/temporary_protection.jpeg", "Session on Temporary Protection"],
+    ["../assets/events/qa_jeny.jpeg", "Q&A with Jane McAdam"],
+    ["../assets/events/south_asia_nafees.jpeg", "Session with Nafees Ahmad"],
+    ["../assets/events/Field_Visit-2.jpeg", "Field Visit to Bhasan Char"],
+    ["../assets/events/Field_Vist-1.jpeg", "Field Visit to Bhasan Char — field activity"],
+    ["../assets/events/Foundations.jpeg", "Seminar on Foundations of Refugee Law"],
+    ["../assets/events/Asylum Under International Refugee Law.jpeg", "Special Lecture — Asylum Under International Refugee Law"],
+    ["../assets/events/Justice_Accountibi.jpeg", "Academic Dialogue on the Rohingya Genocide"]
   ];
 
   let index = 0;
-  let elapsed = 0;
   const duration = 2000;
-
-  photos.forEach(([src, text], i) => {
-    const btn = document.createElement("button");
-    btn.className = "media-slide-thumb";
-    btn.type = "button";
-    btn.setAttribute("aria-label", `Show photo ${i + 1}`);
-    btn.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
-    btn.addEventListener("click", () => show(i));
-    thumbs.appendChild(btn);
-  });
-
-  const thumbEls = [...thumbs.children];
+  let elapsed = 0;
+  let last = performance.now();
+  let timer;
 
   function show(i) {
     index = (i + photos.length) % photos.length;
     image.classList.add("is-changing");
-    window.setTimeout(() => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
       image.src = photos[index][0];
       image.alt = photos[index][1];
       caption.textContent = photos[index][1];
       image.onload = () => image.classList.remove("is-changing");
-    }, 180);
-    thumbEls.forEach((el, n) => el.classList.toggle("active", n === index));
+      image.classList.remove("is-changing");
+    }, 120);
     elapsed = 0;
   }
 
-  prev.addEventListener("click", () => show(index - 1));
-  next.addEventListener("click", () => show(index + 1));
-  const stage = document.querySelector(".media-slide-stage");
+  prev?.addEventListener("click", () => show(index - 1));
+  next?.addEventListener("click", () => show(index + 1));
 
-  let touchX = null;
-  stage.addEventListener("touchstart", e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
-  stage.addEventListener("touchend", e => {
-    if (touchX === null) return;
-    const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
-    touchX = null;
-  }, {passive:true});
+  const stage = document.querySelector(".media-slide-stage");
+  if (stage) {
+    let touchX = null;
+    stage.addEventListener("touchstart", e => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", e => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+      touchX = null;
+    }, { passive: true });
+  }
 
   function tick(now) {
     elapsed += now - last;
@@ -72,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(tick);
   }
 
-  last = performance.now();
   show(0);
   requestAnimationFrame(tick);
 });
