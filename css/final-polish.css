@@ -257,3 +257,199 @@ img{max-width:100%;height:auto}
     font-size: 11px !important;
   }
 }
+
+/* =========================================================
+   HOME CERTIFICATE COURSE — MOBILE FIX
+========================================================= */
+@media (max-width: 768px) {
+    .events-section .event-card {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .events-section .event-card .event-content {
+        min-width: 0;
+        padding: 22px 18px 20px;
+    }
+
+    .events-section .event-card h3,
+    .events-section .event-card .event-title {
+        font-size: 22px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .events-section .event-card p,
+    .events-section .event-card .event-description {
+        font-size: 14px;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
+    }
+
+    .home-course-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        gap: 9px;
+        margin-top: 18px;
+    }
+
+    .home-course-btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-section .event-card .event-content {
+        padding: 19px 15px 18px;
+    }
+
+    .events-section .event-card h3,
+    .events-section .event-card .event-title {
+        font-size: 20px;
+    }
+}
+
+/* =========================================================
+   FINAL MOBILE FIX — HOMEPAGE CERTIFICATE CARD + PROMO VIDEO
+   Keep poster and content in separate rows on small screens.
+========================================================= */
+@media (max-width: 700px) {
+    .events-section .event-card,
+    body:has(#newsletter) .events-preview .event-card {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        overflow: hidden !important;
+    }
+
+    .events-section .event-card .home-upcoming-image,
+    body:has(#newsletter) .events-preview .home-upcoming-image {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: 1 / 1 !important;
+        flex: none !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .events-section .event-card .home-upcoming-image img,
+    body:has(#newsletter) .events-preview .home-upcoming-image img {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        display: block !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+
+    .events-section .event-card .event-content,
+    body:has(#newsletter) .events-preview .event-content {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        position: relative !important;
+        z-index: 2 !important;
+        padding: 20px 16px 22px !important;
+        margin: 0 !important;
+        background: #fff !important;
+    }
+
+    .events-section .event-card .event-content h3,
+    body:has(#newsletter) .events-preview .event-content h3 {
+        margin: 0 !important;
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .events-section .event-card .event-content p,
+    body:has(#newsletter) .events-preview .event-content p {
+        margin: 12px 0 0 !important;
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    .home-course-actions {
+        margin-top: 16px !important;
+    }
+
+    /* Promo video: never exceed the phone viewport width. */
+    .video-wrapper,
+    body:has(#newsletter) .video-wrapper {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        padding: 10px !important;
+        border-radius: 16px !important;
+    }
+
+    .video-frame {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-width: 0 !important;
+        aspect-ratio: 16 / 9 !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+    }
+
+    .video-frame iframe {
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        border: 0 !important;
+    }
+
+    .video-info {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 16px 4px 4px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .events-section .event-card .event-content,
+    body:has(#newsletter) .events-preview .event-content {
+        padding: 18px 14px 20px !important;
+    }
+
+    .events-section .event-card .event-content h3,
+    body:has(#newsletter) .events-preview .event-content h3 {
+        font-size: 20px !important;
+    }
+
+    .home-course-btn {
+        min-height: 44px !important;
+    }
+}

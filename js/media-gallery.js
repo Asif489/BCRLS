@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const caption = document.getElementById("galleryCaption");
   const prev = document.getElementById("galleryPrev");
   const next = document.getElementById("galleryNext");
-  const play = document.getElementById("galleryPlay");
   const thumbs = document.getElementById("galleryThumbs");
   const progress = document.getElementById("galleryProgress");
   if (!image || !thumbs) return;
@@ -24,10 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let index = 0;
-  let running = true;
   let elapsed = 0;
   const duration = 2000;
-  let last = performance.now();
 
   photos.forEach(([src, text], i) => {
     const btn = document.createElement("button");
@@ -56,16 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prev.addEventListener("click", () => show(index - 1));
   next.addEventListener("click", () => show(index + 1));
-  play.addEventListener("click", () => {
-    running = !running;
-    play.innerHTML = running ? '<i class="fa-solid fa-pause"></i><span>Pause</span>' : '<i class="fa-solid fa-play"></i><span>Play</span>';
-    play.setAttribute("aria-label", running ? "Pause slideshow" : "Play slideshow");
-    last = performance.now();
-  });
-
   const stage = document.querySelector(".media-slide-stage");
-  stage.addEventListener("mouseenter", () => { running = false; });
-  stage.addEventListener("mouseleave", () => { running = true; last = performance.now(); });
 
   let touchX = null;
   stage.addEventListener("touchstart", e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
@@ -77,14 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }, {passive:true});
 
   function tick(now) {
-    const dt = now - last;
+    elapsed += now - last;
     last = now;
-    if (running) elapsed += dt;
     progress.style.width = `${Math.min(100, (elapsed / duration) * 100)}%`;
-    if (running && elapsed >= duration) show(index + 1);
+    if (elapsed >= duration) show(index + 1);
     requestAnimationFrame(tick);
   }
 
+  last = performance.now();
   show(0);
   requestAnimationFrame(tick);
 });
