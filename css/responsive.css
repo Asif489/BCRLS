@@ -4333,3 +4333,188 @@ html.bcrls-desktop-mode body .site-header .menu-overlay {
         font-size: 11px !important;
     }
 }
+
+
+/* =========================================================
+   FINAL MOBILE DEVICE OVERRIDE
+   Chrome Android may expose a desktop-sized CSS viewport.
+   If the physical device is a phone/tablet, ALWAYS use the
+   hamburger drawer instead of the tiny horizontal desktop nav.
+========================================================= */
+
+html.bcrls-mobile-device body .site-header {
+    height: 78px !important;
+}
+
+html.bcrls-mobile-device body .site-header .header-inner {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+html.bcrls-mobile-device body .site-header .menu-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 6000 !important;
+    width: 46px !important;
+    height: 46px !important;
+    flex: 0 0 46px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(20,90,65,.12) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+}
+
+html.bcrls-mobile-device body .site-header .menu-toggle span {
+    display: block !important;
+    width: 19px !important;
+    height: 2px !important;
+    background: #187b59 !important;
+    border-radius: 10px !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav {
+    position: fixed !important;
+    top: 78px !important;
+    right: 12px !important;
+    left: auto !important;
+    width: min(360px, calc(100vw - 24px)) !important;
+    height: calc(100vh - 90px) !important;
+    max-height: calc(100vh - 90px) !important;
+    padding: 12px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(20,90,65,.12) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 20px 50px rgba(20,60,45,.18) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(110%) !important;
+    z-index: 5500 !important;
+    transition: transform .28s ease, opacity .22s ease, visibility .28s ease !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav.mobile-open,
+html.bcrls-mobile-device body .site-header .main-nav.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(0) !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-link,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown-toggle {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 49px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 13px 14px !important;
+    margin: 0 !important;
+    color: #315f51 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    white-space: normal !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-link.active,
+html.bcrls-mobile-device body .site-header .main-nav .nav-link:hover,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown-toggle:hover {
+    background: #eef8f4 !important;
+    color: #176f51 !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown {
+    position: relative !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown .dropdown-menu,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown:hover .dropdown-menu {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    display: none !important;
+    margin: 2px 0 6px !important;
+    padding: 5px !important;
+    background: #f5faf7 !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    overflow: hidden !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown.mobile-open .dropdown-menu,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown.open .dropdown-menu {
+    display: block !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .dropdown-menu a {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    color: #557067 !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.45 !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+}
+
+html.bcrls-mobile-device body .site-header .nav-dropdown-toggle i {
+    transition: transform .25s ease !important;
+}
+
+html.bcrls-mobile-device body .site-header .nav-dropdown.mobile-open .nav-dropdown-toggle i,
+html.bcrls-mobile-device body .site-header .nav-dropdown.open .nav-dropdown-toggle i {
+    transform: rotate(180deg) !important;
+}
+
+html.bcrls-mobile-device body .site-header .menu-overlay {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+@media (max-width: 480px) {
+    html.bcrls-mobile-device body .site-header .main-nav {
+        right: 8px !important;
+        width: calc(100vw - 16px) !important;
+    }
+}

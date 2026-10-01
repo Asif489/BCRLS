@@ -1924,10 +1924,21 @@ function escapeHTML(
     function updateDeviceMode() {
         var ua = navigator.userAgent || '';
         var touchDevice = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+
+        // Chrome Android can report a desktop-sized CSS viewport when
+        // "Desktop site" is enabled. The physical screen is still a phone,
+        // so keep the hamburger navigation on touch/mobile devices.
+        var shortScreenSide = Math.min(
+            Number(window.screen && window.screen.width) || Infinity,
+            Number(window.screen && window.screen.height) || Infinity
+        );
+        var mobilePhysicalScreen = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) ||
+            (touchDevice && shortScreenSide <= 600);
         var desktopViewport = window.innerWidth >= 768;
 
         root.classList.toggle('bcrls-touch-device', touchDevice);
-        root.classList.toggle('bcrls-desktop-mode', touchDevice && desktopViewport);
+        root.classList.toggle('bcrls-mobile-device', mobilePhysicalScreen);
+        root.classList.toggle('bcrls-desktop-mode', touchDevice && desktopViewport && !mobilePhysicalScreen);
     }
 
     updateDeviceMode();
