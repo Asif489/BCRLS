@@ -4518,3 +4518,88 @@ html.bcrls-mobile-device body .site-header .menu-overlay {
         width: calc(100vw - 16px) !important;
     }
 }
+
+/* =========================================================
+   MOBILE NAV FINAL: INLINE DROPDOWNS / NO GAPS
+   Keep each submenu directly under its own menu item.
+========================================================= */
+html.bcrls-mobile-device body .site-header .main-nav,
+html.bcrls-touch-device body .site-header .main-nav {
+    justify-content: flex-start !important;
+    align-content: flex-start !important;
+    align-items: stretch !important;
+    height: calc(100vh - 90px) !important;
+    min-height: 0 !important;
+    gap: 0 !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown-toggle,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown-toggle {
+    position: relative !important;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 49px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 13px 14px !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown .dropdown-menu,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown:hover .dropdown-menu,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown .dropdown-menu,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown:hover .dropdown-menu {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    float: none !important;
+    clear: both !important;
+    display: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 0 6px 0 !important;
+    padding: 5px !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown.mobile-open > .dropdown-menu,
+html.bcrls-mobile-device body .site-header .main-nav .nav-dropdown.open > .dropdown-menu,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown.mobile-open > .dropdown-menu,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown.open > .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+}
+
+html.bcrls-mobile-device body .site-header .main-nav .dropdown-menu a,
+html.bcrls-touch-device body .site-header .main-nav .dropdown-menu a {
+    position: static !important;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    transform: none !important;
+}
