@@ -1919,11 +1919,20 @@ function escapeHTML(
    Detect touch/mobile devices separately so the site menu remains usable.
 ========================================================= */
 (function () {
-    var ua = navigator.userAgent || '';
-    var touchDevice = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
-    if (touchDevice) {
-        document.documentElement.classList.add('bcrls-touch-device');
+    var root = document.documentElement;
+
+    function updateDeviceMode() {
+        var ua = navigator.userAgent || '';
+        var touchDevice = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+        var desktopViewport = window.innerWidth >= 768;
+
+        root.classList.toggle('bcrls-touch-device', touchDevice);
+        root.classList.toggle('bcrls-desktop-mode', touchDevice && desktopViewport);
     }
+
+    updateDeviceMode();
+    window.addEventListener('resize', updateDeviceMode, { passive: true });
+    window.addEventListener('orientationchange', updateDeviceMode, { passive: true });
 })();
 
 /* =========================================================
