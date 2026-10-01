@@ -651,3 +651,131 @@ img{max-width:100%;height:auto}
         padding-bottom: 48px;
     }
 }
+
+
+/* =========================================================
+   FINAL HOMEPAGE EVENT SLIDER + ALL-DEVICE SAFETY
+   Keep the homepage moments as a single archive photo at a time.
+========================================================= */
+.gallery-section .home-event-archive-slider {
+    width: min(100%, 1000px) !important;
+    max-width: 100% !important;
+    margin: 28px auto 0 !important;
+    padding: 0 !important;
+}
+
+.gallery-section .home-event-viewport {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.gallery-section .home-event-track {
+    display: flex !important;
+    width: 100% !important;
+}
+
+.gallery-section .home-event-slide {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    height: clamp(260px, 48vw, 520px) !important;
+}
+
+.gallery-section .home-event-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Desktop-mode Chrome on phones often reports a tablet-like viewport. */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .container,
+    .site-header .header-inner,
+    main,
+    section,
+    .section {
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .hero-container,
+    .video-wrapper,
+    .video-frame,
+    .video-info,
+    .gallery-section .home-event-archive-slider {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    #overview-video .video-frame {
+        width: 100% !important;
+        aspect-ratio: 16 / 9 !important;
+        min-height: 0 !important;
+    }
+
+    #overview-video .video-frame iframe {
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-section .section-header-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+    }
+
+    .gallery-section .home-event-archive-slider {
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    .gallery-section .home-event-slide {
+        height: clamp(240px, 62vw, 390px) !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-section .home-event-slide {
+        height: 280px !important;
+    }
+}
+
+/* =========================================================
+   HOMEPAGE DRIVE VIDEO — keep the real player visible
+========================================================= */
+#overview-video .video-frame {
+    position: relative !important;
+    overflow: hidden !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+}
+
+#overview-video .video-frame iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    z-index: 3 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#overview-video .promo-video-fallback {
+    z-index: 1 !important;
+}

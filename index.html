@@ -798,19 +798,26 @@
             <div class="video-frame">
 
                 <iframe
-                    src="https://drive.google.com/file/d/1_RRCaGQKQtBQZMtmZ-fdwciOJW_kTE0W/preview?rm=minimal"
+                    src="about:blank"
+                    data-video-src="https://drive.google.com/file/d/1_RRCaGQKQtBQZMtmZ-fdwciOJW_kTE0W/preview?rm=minimal"
                     title="BCRLS Promo Video"
-                    loading="eager"
+                    loading="lazy"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allow="autoplay; fullscreen; encrypted-media; picture-in-picture; clipboard-write; web-share"
                     allowfullscreen
                 >
                 </iframe>
 
-                <div class="promo-video-fallback" aria-live="polite">
-                    <span>Promo video is loading…</span>
-                    <a href="https://drive.google.com/file/d/1_RRCaGQKQtBQZMtmZ-fdwciOJW_kTE0W/view" target="_blank" rel="noopener">Open video</a>
-                </div>
+                <button
+                    type="button"
+                    class="promo-play-button"
+                    id="promoPlayButton"
+                    aria-label="Play BCRLS Promo Video"
+                >
+                    <span class="promo-play-icon" aria-hidden="true">▶</span>
+                    <span class="promo-play-text">Play Promo Video</span>
+                </button>
+
 
             </div>
 
@@ -1613,7 +1620,7 @@
 
 
 <!-- =====================================================
-     EVENT ARCHIVE
+     EVENT ARCHIVE / MOMENTS FROM OUR EVENTS
 ===================================================== -->
 
 <section class="section gallery-section" id="event-archive">
@@ -1629,78 +1636,56 @@
             </a>
         </div>
 
-        <div class="home-event-moments-grid">
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="Canadian University seminar">
-                <div class="home-event-moment-image"><img src="assets/events/canadian_uni_1.jpeg" alt="Administrative and Judicial Governance of Refugees seminar at Canadian University" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Seminar</span>
-                    <h3>Administrative and Judicial Governance of Refugees</h3>
-                    <p>Canadian University of Bangladesh</p>
+        <div class="home-event-archive-slider" data-home-event-slider aria-label="BCRLS event archive photo slider">
+            <div class="home-event-viewport">
+                <div class="home-event-track">
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/inargument.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/qa_session_james.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/lecture_series.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/interdisciplinary.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/workshop.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/temporary_protection.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/qa_jeny.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/south_asia_nafees.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/Field_Visit-2.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/Foundations.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/Asylum Under International Refugee Law.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/Justice_Accountibi.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/canadian_uni_1.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/du_1.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
+                    <a class="home-event-slide" href="events/archive.html" aria-label="BCRLS event archive photo">
+                        <img src="assets/events/Conference-23.jpeg" alt="BCRLS event archive" loading="lazy">
+                    </a>
                 </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="Canadian University seminar photo">
-                <div class="home-event-moment-image"><img src="assets/events/canadian_uni_2.jpeg" alt="Canadian University seminar on refugee protection" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>BCRLS Event</span>
-                    <h3>Refugee Protection &amp; Administrative Challenges</h3>
-                    <p>Canadian University of Bangladesh</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="University of Dhaka panel discussion">
-                <div class="home-event-moment-image"><img src="assets/events/du_1.jpeg" alt="From Norms to Ground Realities panel discussion at University of Dhaka" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Panel Discussion</span>
-                    <h3>From Norms to Ground Realities</h3>
-                    <p>University of Dhaka</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="University of Dhaka panel discussion photo">
-                <div class="home-event-moment-image"><img src="assets/events/du_02.jpeg" alt="University of Dhaka panel discussion on citizenship and Rohingya integration" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Academic Dialogue</span>
-                    <h3>Citizenship, Justice &amp; Rohingya Integration</h3>
-                    <p>University of Dhaka</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="University of Dhaka panel discussion closing moment">
-                <div class="home-event-moment-image"><img src="assets/events/du_03.jpeg" alt="University of Dhaka panel discussion closing moment" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Event Moment</span>
-                    <h3>Dialogue on Refugee Protection in South Asia</h3>
-                    <p>University of Dhaka</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="ICERPASA 2026">
-                <div class="home-event-moment-image"><img src="assets/events/Conference-23.jpeg" alt="ICERPASA 2026" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>International Conference</span>
-                    <h3>ICERPASA 2026</h3>
-                    <p>University of Chittagong</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="Academic Dialogue on the Rohingya Genocide">
-                <div class="home-event-moment-image"><img src="assets/events/Justice_Accountibi.jpeg" alt="Academic Dialogue on the Rohingya Genocide" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Academic Dialogue</span>
-                    <h3>Academic Dialogue on the Rohingya Genocide</h3>
-                    <p>BCRLS</p>
-                </div>
-            </a>
-
-            <a class="home-event-moment-card" href="events/archive.html" aria-label="Asylum Under International Refugee Law and in South Asia">
-                <div class="home-event-moment-image"><img src="assets/events/Asylum Under International Refugee Law.jpeg" alt="Asylum Under International Refugee Law and in South Asia" loading="lazy"></div>
-                <div class="home-event-moment-content">
-                    <span>Lecture</span>
-                    <h3>Asylum Under International Refugee Law and in South Asia</h3>
-                    <p>BCRLS</p>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
 </section>
@@ -2450,6 +2435,16 @@
 
 <script
     src="js/app.js"
+    defer
+></script>
+
+<script
+    src="js/home-events.js?v=13"
+    defer
+></script>
+
+<script
+    src="js/home-promo-video.js?v=19"
     defer
 ></script>
 

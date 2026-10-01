@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         stop();
         timer = window.setInterval(() => {
             if (!isAnimating) goTo(index + 1);
-        }, 2000);
+        }, 4000);
     }
 
     function stop() {

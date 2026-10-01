@@ -1914,6 +1914,19 @@ function escapeHTML(
 
 }
 /* =========================================================
+   DEVICE MODE DETECTION
+   Chrome Android Desktop Mode can report a desktop-sized viewport.
+   Detect touch/mobile devices separately so the site menu remains usable.
+========================================================= */
+(function () {
+    var ua = navigator.userAgent || '';
+    var touchDevice = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+    if (touchDevice) {
+        document.documentElement.classList.add('bcrls-touch-device');
+    }
+})();
+
+/* =========================================================
    MOBILE MENU
 ========================================================= */
 
@@ -2028,7 +2041,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 event => {
 
-                    if (window.innerWidth <= 1200) {
+                    if (window.innerWidth <= 1200 || document.documentElement.classList.contains("bcrls-touch-device")) {
 
                         event.preventDefault();
 
@@ -2088,7 +2101,8 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             if (
-                window.innerWidth > 1200
+                window.innerWidth > 1200 &&
+                !document.documentElement.classList.contains("bcrls-touch-device")
             ) {
 
                 closeMobileMenu();

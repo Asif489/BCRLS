@@ -3978,3 +3978,238 @@ textarea::placeholder {
         border-radius: 15px !important;
     }
 }
+
+
+/* =========================================================
+   FINAL TOUCH-DEVICE / CHROME DESKTOP MODE OVERRIDES
+========================================================= */
+html.bcrls-touch-device body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+html.bcrls-touch-device body .site-header {
+    width: 100% !important;
+    height: 70px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 6000 !important;
+}
+
+html.bcrls-touch-device body .site-header .header-inner {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 70px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+html.bcrls-touch-device body .site-header .menu-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 7000 !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    flex: 0 0 42px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    background: #fff !important;
+    border: 1px solid rgba(20,90,65,.15) !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+}
+
+html.bcrls-touch-device body .site-header .menu-toggle span {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 18px !important;
+    height: 2px !important;
+    flex: 0 0 2px !important;
+    background: #187b59 !important;
+    border-radius: 10px !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav {
+    position: fixed !important;
+    top: 70px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: calc(100dvh - 85px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    background: #fff !important;
+    border: 1px solid rgba(20,90,65,.12) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 20px 50px rgba(20,60,45,.18) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-10px) !important;
+    z-index: 6500 !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav.mobile-open,
+html.bcrls-touch-device body .site-header .main-nav.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav .nav-link,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown-toggle {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 47px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 14px !important;
+    font-size: 15px !important;
+    text-align: left !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown {
+    position: relative !important;
+    width: 100% !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav .dropdown-menu {
+    position: static !important;
+    display: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 5px !important;
+    margin: 2px 0 6px !important;
+    background: #f5faf7 !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown.mobile-open .dropdown-menu,
+html.bcrls-touch-device body .site-header .main-nav .nav-dropdown.open .dropdown-menu {
+    display: block !important;
+}
+
+html.bcrls-touch-device body .site-header .menu-overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 6200 !important;
+    background: rgba(20,55,45,.12) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+html.bcrls-touch-device body .site-header .menu-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Home promo play button */
+#overview-video .promo-play-button {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 8 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    min-width: 150px !important;
+    min-height: 52px !important;
+    padding: 12px 18px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: rgba(24,123,89,.96) !important;
+    color: #fff !important;
+    font: inherit !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.24) !important;
+    touch-action: manipulation !important;
+}
+
+#overview-video .promo-play-button[hidden] {
+    display: none !important;
+}
+
+#overview-video .promo-play-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+#overview-video .promo-play-icon {
+    font-size: 18px !important;
+    line-height: 1 !important;
+}
+
+#overview-video .promo-play-text {
+    font-size: 14px !important;
+}
+
+#overview-video .promo-video-fallback {
+    z-index: 1 !important;
+}
+
+@media (max-width: 520px), (max-height: 600px) {
+    html.bcrls-touch-device body .site-header,
+    html.bcrls-touch-device body .site-header .header-inner {
+        height: 62px !important;
+    }
+    html.bcrls-touch-device body .site-header .main-nav {
+        top: 62px !important;
+        left: 8px !important;
+        right: 8px !important;
+        max-height: calc(100dvh - 74px) !important;
+        border-radius: 15px !important;
+    }
+    html.bcrls-touch-device body .site-header .menu-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        flex-basis: 40px !important;
+    }
+}
+
+/* HOME PROMO: embedded Drive player stays on the homepage */
+#overview-video .promo-play-button.is-loading {
+    opacity: .72 !important;
+    cursor: wait !important;
+}
+#overview-video .video-frame iframe {
+    position: relative !important;
+    z-index: 1 !important;
+}
+#overview-video .promo-play-button {
+    z-index: 8 !important;
+}
