@@ -1955,3 +1955,113 @@ body.datahub-page a.statistics-explore-btn:hover {
 body.datahub-page a.statistics-explore-btn:hover i {
     color: #ffffff !important;
 }
+
+/* =========================================================
+   DATA HUB CONTENT HEADING COLOR FIX
+   Keep page/content headings dark green; hero remains white.
+========================================================= */
+body.datahub-page .datahub-section-heading h2,
+body.datahub-page .datahub-card h3,
+body.datahub-page .portal-card h3,
+body.datahub-page .database-card h3,
+body.datahub-page .statistics-card h3,
+body.datahub-page .datahub-intro h2 {
+    color: #174a3b !important;
+}
+body.datahub-page .datahub-hero h1,
+body.datahub-page .datahub-hero .datahub-eyebrow {
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   FINAL DATA HUB VISIBILITY + RESPONSIVE FIX
+   ========================================================= */
+body.datahub-page .datahub-hero {
+    margin-top: 78px !important;
+    background: linear-gradient(135deg, #10382d 0%, #174a3b 55%, #1e5a47 100%) !important;
+    color: #ffffff !important;
+}
+
+body.datahub-page .datahub-hero::before {
+    content: "DATA" !important;
+    color: rgba(255,255,255,.055) !important;
+}
+
+body.datahub-page .datahub-hero-content,
+body.datahub-page .datahub-hero h1,
+body.datahub-page .datahub-hero p,
+body.datahub-page .datahub-eyebrow {
+    position: relative;
+    z-index: 3;
+}
+
+body.datahub-page .datahub-hero h1,
+body.datahub-page .datahub-hero .datahub-eyebrow {
+    color: #ffffff !important;
+}
+
+body.datahub-page .datahub-hero p {
+    color: rgba(255,255,255,.88) !important;
+}
+
+body.datahub-page .datahub-section-heading h2,
+body.datahub-page .datahub-intro h2,
+body.datahub-page .datahub-section h2,
+body.datahub-page .portal-card h3,
+body.datahub-page .datahub-section-heading p {
+    color: #174a3b !important;
+}
+
+body.datahub-page .datahub-section-heading p {
+    color: #66736e !important;
+}
+
+@media (max-width: 1500px) {
+    body.datahub-page .datahub-hero {
+        margin-top: 72px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.datahub-page .datahub-hero {
+        margin-top: 68px !important;
+        padding: 58px 18px 54px !important;
+    }
+
+    body.datahub-page .datahub-hero h1 {
+        font-size: clamp(34px, 9vw, 48px) !important;
+        line-height: 1.08 !important;
+    }
+
+    body.datahub-page .datahub-hero p {
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+
+    body.datahub-page .datahub-section,
+    body.datahub-page .datahub-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 520px) {
+    body.datahub-page .datahub-hero {
+        margin-top: 68px !important;
+        padding: 46px 15px 44px !important;
+    }
+
+    body.datahub-page .datahub-hero .datahub-eyebrow {
+        font-size: 10px !important;
+        padding: 6px 12px !important;
+    }
+
+    body.datahub-page .datahub-hero h1 {
+        font-size: 32px !important;
+        margin-bottom: 14px !important;
+    }
+
+    body.datahub-page .datahub-hero p {
+        font-size: 13px !important;
+    }
+}

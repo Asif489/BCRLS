@@ -34,7 +34,9 @@ const archiveTitles = [
     [10,"SEMINAR","Seminar on Foundations of Refugee Law"],
     [11,"SPECIAL LECTURE","Asylum Under International Refugee Law and in South Asia"],
     [12,"ACADEMIC DIALOGUE","Academic Dialogue on the Rohingya Genocide"],
-    [13,"CONFERENCE","ICERPASA 2026"]
+    [13,"CONFERENCE","ICERPASA 2026"],
+    [14,"SEMINAR","Administrative and Judicial Governance of Refugees"],
+    [15,"PANEL DISCUSSION","From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma"]
 ];
 
 
@@ -122,6 +124,28 @@ const archiveEventDetails = {
         organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
         speakers: ["Professor Kjell Anderson — University of Manitoba Law School, Canada"],
         images: ["../assets/events/Justice_Accountibi.jpeg"]
+    },
+    14: {
+        description: "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law, Canadian University of Bangladesh, successfully organized the seminar titled “Administrative and Judicial Governance of Refugees: Protection, Non-Refoulement, Arrest, Detention and Administrative Challenges in Bangladesh.” The session featured meaningful discussion on refugee protection, non-refoulement, detention and administrative challenges within Bangladesh’s legal framework, with participation from more than 50 participants.",
+        programme: "A seminar examining refugee protection, non-refoulement, arrest, detention and administrative governance challenges in Bangladesh.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law, Canadian University of Bangladesh",
+        speakers: ["Dr. Md. Rizwanul Islam — Professor of Law & Dean (SHSS), North South University", "Ahmad Ibrahim — Advisor, Displacement and Climate Justice, BLAST", "Mohammad Sunzad Sheikh — Assistant Professor & Head, Department of Law, Canadian University of Bangladesh", "Md. Riad Mahmud — Senior Lecturer, East West University; Session Moderator"],
+        images: ["../assets/events/canadian_uni_1.jpeg", "../assets/events/canadian_uni_2.jpeg"]
+    },
+    15: {
+        description: "Bangladesh Center for Refugee Law Studies (BCRLS) successfully organized the panel discussion titled “From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma” at the Centre for Advanced Studies in Humanities, Theatre Hall, University of Dhaka. The session brought together academics, researchers, students and practitioners to critically engage with refugee protection, citizenship, justice and the continuing challenges surrounding the Rohingya crisis in Bangladesh.",
+        programme: "The discussion focused on practical and policy-oriented pathways for refugee protection, dignified and regulated income-generating opportunities, regional and international diplomatic engagement, and conditions for safe, voluntary and sustainable repatriation.",
+        organizer: "Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Mr. Md Abu Bakar Siddique — discussion on protection of refugees in non-signatory states", "Mr. Nafiz Ahmed — discussion on citizenship law and local integration", "Mr. Riad Mahmud — Session Moderator", "Ms. Nabila Farhin — Opening Remarks", "Mr. Sakhawat Sajjat Sejan — Closing Remarks"],
+        images: ["../assets/events/du_1.jpeg", "../assets/events/du_02.jpeg", "../assets/events/du_03.jpeg"]
+    }
+,    13: {
+        type: "CONFERENCE",
+        description: "The International Conference on Evolving Refugee Protection Architectures in SouthAsia 2026 (ICERPASA 2026) was successfully held on June 27, 2026. Organized by the Department of Law, University of Chittagong, in collaboration with the Bangladesh Center for Refugee Law Studies (BCRLS), this prestigious event served as a vital regional platform for advancing scholarship, policy dialogue, and cooperation on forced migration and human rights.\n\nThe conference brought together a distinguished gathering of members from the judiciary, academia, government institutions, international organizations, and humanitarian sectors. Through rigorous academic sessions, thought-provoking discussions, and research presentations, ICERPASA 2026 successfully fostered collaborative approaches and key recommendations to address contemporary refugee and displacement challenges across South Asia.",
+        programme: "Regional academic and policy conference on evolving refugee protection architectures in South Asia, featuring academic sessions, research presentations, policy dialogue and discussion on forced migration and human rights.",
+        organizer: "Department of Law, University of Chittagong, in collaboration with the Bangladesh Center for Refugee Law Studies (BCRLS)",
+        speakers: ["Members of the judiciary, academia, government institutions, international organizations, and humanitarian sectors"],
+        images: ["../assets/events/Conference-23.jpeg"]
     }
 };
 
@@ -136,7 +160,7 @@ function getArchiveEventsFromPage() {
         const description = card.querySelector(".event-card-description")?.textContent.replace(/\s+/g," ").trim() || "Archived BCRLS event.";
         const detail = archiveEventDetails[id] || {};
         return {
-            id, type, title, date: meta[0] || "Past Event", location: meta[1] || "BCRLS",
+            id, type: detail.type || type, title, date: meta[0] || "Past Event", location: meta[1] || "BCRLS",
             image: img, shortDescription: description,
             description: detail.description || description,
             images: detail.images || (card.dataset.eventImages || img).split("|").map(x => x.trim()).filter(Boolean),
@@ -204,6 +228,8 @@ const archiveDateByTitle = {
     "Seminar on Foundations of Refugee Law": "2026-01-19",
     "Asylum Under International Refugee Law and in South Asia": "2026-04-10",
     "Academic Dialogue on the Rohingya Genocide": "2026-08-25",
+    "Administrative and Judicial Governance of Refugees": "2026-06-07",
+    "From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma": "2026-05-07",
     "ICERPASA 2026": "2026-06-27",
     "Edges of Belonging: Migration, Statelessness and Refugeehood": "2026-05-22"
 };
@@ -296,7 +322,11 @@ function openEventDetails(event) {
             });
         } else thumbs.style.display="none";
     }
-    set("eventModalType", event.type); set("eventModalTitle", event.title); set("eventModalDate", event.date); set("eventModalLocation", event.location); set("eventModalDescription", event.description);
+    set("eventModalType", event.type); set("eventModalTitle", event.title); set("eventModalDate", event.date); set("eventModalLocation", event.location);
+    const descEl = document.getElementById("eventModalDescription");
+    if (descEl) {
+        descEl.innerHTML = escapeText(event.description).replace(/\n\n/g, "<br><br>").replace(/\n/g, "<br>");
+    }
     const speakers=document.getElementById("eventModalSpeakers"), sw=document.getElementById("eventModalSpeakersWrapper");
     if(sw && speakers){ speakers.innerHTML=""; if(event.speakers?.length){ sw.style.display="block"; event.speakers.forEach(x=>{const li=document.createElement("li");li.textContent=x;speakers.appendChild(li);}); } else sw.style.display="none"; }
     const pw=document.getElementById("eventModalProgrammeWrapper"), p=document.getElementById("eventModalProgramme"); if(pw&&p){pw.style.display=event.programme?"block":"none";p.textContent=event.programme||"";}

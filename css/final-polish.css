@@ -534,3 +534,120 @@ img{max-width:100%;height:auto}
         border-radius: 14px !important;
     }
 }
+
+
+/* =========================================================
+   FINAL MOBILE/DESKTOP-SITE NAV FIX
+   Keep the three-line menu visible when a phone requests
+   the desktop site and reports a tablet-sized CSS viewport.
+========================================================= */
+@media screen and (max-width: 1500px) {
+    html body .site-header .menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 9000 !important;
+        flex: 0 0 44px !important;
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    html body .site-header .menu-toggle span {
+        display: block !important;
+        width: 19px !important;
+        height: 2px !important;
+        background: #187b59 !important;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    html body .site-header .menu-toggle {
+        flex-basis: 40px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* =========================================================
+   PROMO VIDEO — ROBUST DRIVE EMBED + FALLBACK
+========================================================= */
+.video-frame {
+    position: relative !important;
+    overflow: hidden !important;
+    background: #102b2b !important;
+}
+.video-frame iframe {
+    position: relative !important;
+    z-index: 2 !important;
+}
+.promo-video-fallback {
+    position: absolute;
+    inset: auto 12px 12px 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 13px;
+    border-radius: 10px;
+    background: rgba(0,0,0,.58);
+    color: #fff;
+    font-size: 12px;
+}
+.promo-video-fallback a {
+    color: #fff !important;
+    font-weight: 700;
+    text-decoration: underline !important;
+}
+
+/* =========================================================
+   DRIVE PHOTO GALLERY — PHOTO GRID, NOT EVENT ARCHIVE
+========================================================= */
+.drive-photo-grid {
+    width: 100%;
+    height: min(760px, 78vh);
+    min-height: 520px;
+    overflow: hidden;
+    border: 1px solid #e2ebe7;
+    border-radius: 16px;
+    background: #f7faf8;
+}
+.drive-photo-grid iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+@media (max-width: 800px) {
+    .drive-photo-grid { height: 72vh; min-height: 430px; }
+}
+@media (max-width: 520px) {
+    .drive-photo-grid { height: 70vh; min-height: 390px; border-radius: 12px; }
+    .promo-video-fallback {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+}
+
+
+/* =========================================================
+   PROMO PAGE — SHARED SITE CHROME
+   Keeps the promo page aligned with the main BCRLS shell.
+========================================================= */
+.promo-video-page {
+    /* Keep content below the fixed 78px site header. */
+    padding-top: 112px;
+    padding-bottom: 72px;
+}
+.promo-video-page .section-header {
+    margin-bottom: 34px;
+}
+@media (max-width: 768px) {
+    .promo-video-page {
+        /* Extra clearance for the fixed mobile header/menu area. */
+        padding-top: 96px;
+        padding-bottom: 48px;
+    }
+}

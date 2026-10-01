@@ -71,3 +71,287 @@
   .media-slide-arrow.next { right: 10px; }
   .media-slide-caption { left: 10px; right: 10px; bottom: 10px; font-size: 12px; padding: 9px 11px; }
 }
+
+/* =========================================================
+   BCRLS LIVE DRIVE SLIDESHOW — polished gallery UI
+========================================================= */
+.media-gallery-card-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; }
+.media-gallery-live-badge { flex:0 0 auto; display:inline-flex; align-items:center; gap:8px; padding:9px 13px; border:1px solid #cfe6dc; border-radius:999px; background:#f3fbf7; color:#087b5a; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.media-gallery-live-badge i { font-size:8px; animation:bcrlsLivePulse 1.5s ease-in-out infinite; }
+@keyframes bcrlsLivePulse { 0%,100%{opacity:.35} 50%{opacity:1} }
+.media-slideshow { width:100%; margin-top:22px; }
+.media-slide-stage { position:relative; width:100%; aspect-ratio:16/9; min-height:460px; overflow:hidden; border-radius:20px; background:linear-gradient(135deg,#17343a,#0b5e49); display:flex; align-items:center; justify-content:center; box-shadow:0 20px 48px rgba(23,52,58,.16); }
+.media-slide-stage::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(to top,rgba(0,0,0,.34),transparent 35%); opacity:.8; }
+.media-slide-stage img { position:relative; z-index:1; width:100%; height:100%; object-fit:contain; display:block; opacity:1; transition:opacity .45s ease,transform .45s ease; }
+.media-slide-stage img.is-changing { opacity:.12; transform:scale(1.015); }
+.media-slide-arrow { position:absolute; z-index:4; top:50%; transform:translateY(-50%); width:50px; height:50px; border:1px solid rgba(255,255,255,.38); border-radius:50%; background:rgba(0,0,0,.42); color:#fff; cursor:pointer; display:grid; place-items:center; font-size:16px; backdrop-filter:blur(8px); transition:.2s ease; }
+.media-slide-arrow:hover { background:#087b5a; transform:translateY(-50%) scale(1.06); }
+.media-slide-arrow.prev { left:18px; }
+.media-slide-arrow.next { right:18px; }
+.media-slide-caption { position:absolute; z-index:4; left:20px; right:20px; bottom:18px; padding:11px 15px; border-radius:10px; background:rgba(0,0,0,.48); color:#fff; font-size:14px; font-weight:700; backdrop-filter:blur(8px); }
+.media-slide-progress { height:4px; margin-top:12px; overflow:hidden; border-radius:99px; background:#e3eee9; }
+.media-slide-progress span { display:block; width:0; height:100%; background:#087b5a; transition:width .05s linear; }
+.media-slide-meta { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-top:10px; color:#71817b; font-size:12px; font-weight:700; }
+.media-slide-thumbs { display:flex; gap:9px; margin-top:14px; overflow-x:auto; padding:3px 2px 8px; scrollbar-width:thin; }
+.media-slide-thumb { flex:0 0 88px; height:60px; padding:0; border:2px solid transparent; border-radius:8px; overflow:hidden; background:#eef4f1; cursor:pointer; opacity:.64; transition:.2s ease; }
+.media-slide-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.media-slide-thumb:hover,.media-slide-thumb.active { opacity:1; border-color:#087b5a; }
+.media-gallery-loading { position:absolute; z-index:3; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; color:#fff; text-align:center; padding:30px; background:linear-gradient(135deg,#17343a,#087b5a); }
+.media-gallery-loading i { font-size:42px; margin-bottom:5px; }
+.media-gallery-loading strong { font-size:19px; }
+.media-gallery-loading span { font-size:13px; opacity:.82; }
+.media-gallery-error { margin-top:16px; display:flex; align-items:flex-start; gap:13px; padding:15px 17px; border:1px solid #e5d7b8; border-radius:12px; background:#fffaf0; color:#6f5a2b; }
+.media-gallery-error > i { margin-top:2px; font-size:18px; }
+.media-gallery-error strong,.media-gallery-error span { display:block; }
+.media-gallery-error span { margin-top:4px; font-size:13px; line-height:1.6; }
+.media-gallery-error code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; }
+.media-gallery-actions-bottom { justify-content:flex-start; }
+@media(max-width:800px){
+  .media-gallery-card-head { align-items:flex-start; flex-direction:column; }
+  .media-gallery-live-badge { align-self:flex-start; }
+  .media-slide-stage { min-height:330px; aspect-ratio:16/10; border-radius:16px; }
+}
+@media(max-width:520px){
+  .media-slide-stage { min-height:245px; aspect-ratio:4/3; border-radius:13px; }
+  .media-slide-arrow { width:40px; height:40px; font-size:13px; }
+  .media-slide-arrow.prev { left:10px; }
+  .media-slide-arrow.next { right:10px; }
+  .media-slide-caption { left:10px; right:10px; bottom:10px; font-size:12px; padding:9px 11px; }
+  .media-slide-meta { font-size:11px; }
+  .media-slide-thumb { flex-basis:72px; height:50px; }
+}
+
+/* =========================================================
+   BCRLS NEWSROOM
+========================================================= */
+.newsroom-page { background:#f5f8f7; }
+.newsroom-hero { padding:92px 0 68px; background:linear-gradient(135deg,#eef7f3 0%,#f8fbfa 62%,#edf4f1 100%); border-bottom:1px solid #dfeae5; }
+.newsroom-hero-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; }
+.newsroom-hero h1 { margin:8px 0 12px; color:#17343a; font-family:"Playfair Display",Georgia,serif; font-size:clamp(38px,5vw,64px); line-height:1.05; }
+.newsroom-hero p { max-width:760px; margin:0; color:#60736d; font-size:17px; line-height:1.8; }
+.newsroom-hero-mark { width:128px; height:128px; flex:0 0 128px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; border:1px solid #cfe3da; border-radius:24px; background:#fff; color:#087b5a; box-shadow:0 14px 35px rgba(23,52,58,.08); }
+.newsroom-hero-mark i { font-size:34px; }
+.newsroom-hero-mark span { font-size:10px; font-weight:800; letter-spacing:.12em; text-align:center; line-height:1.35; }
+.newsroom-section { padding:60px 0 85px; }
+.newsroom-section-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:22px; }
+.newsroom-section-heading h2 { margin:7px 0 0; color:#17343a; font-family:"Playfair Display",Georgia,serif; font-size:clamp(28px,3.5vw,42px); }
+.newsroom-count { display:inline-flex; align-items:center; gap:8px; padding:9px 13px; border:1px solid #d6e5df; border-radius:999px; background:#fff; color:#567169; font-size:12px; font-weight:800; }
+.newsroom-feature { display:grid; grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr); overflow:hidden; border:1px solid #d9e6e1; border-radius:24px; background:#fff; box-shadow:0 18px 50px rgba(23,52,58,.09); }
+.newsroom-feature-media { position:relative; min-height:480px; background:#dfeae5; overflow:hidden; }
+.newsroom-feature-media img { width:100%; height:100%; min-height:480px; object-fit:cover; display:block; transition:transform .5s ease; }
+.newsroom-feature:hover .newsroom-feature-media img { transform:scale(1.025); }
+.newsroom-media-tag { position:absolute; left:18px; bottom:18px; display:inline-flex; align-items:center; gap:7px; padding:9px 12px; border-radius:999px; background:rgba(0,0,0,.56); color:#fff; font-size:11px; font-weight:800; backdrop-filter:blur(8px); }
+.newsroom-feature-content { display:flex; flex-direction:column; justify-content:center; padding:42px 44px; }
+.newsroom-meta { display:flex; flex-wrap:wrap; gap:10px 18px; color:#087b5a; font-size:12px; font-weight:800; }
+.newsroom-meta span { display:inline-flex; align-items:center; gap:7px; }
+.newsroom-feature-content h2 { margin:15px 0 14px; color:#17343a; font-family:"Playfair Display",Georgia,serif; font-size:clamp(30px,3.4vw,46px); line-height:1.12; }
+.newsroom-lead { margin:0; color:#63736f; font-size:16px; line-height:1.8; }
+.newsroom-highlights { display:grid; gap:10px; margin:23px 0 25px; }
+.newsroom-highlights div { display:flex; align-items:center; gap:10px; color:#405e55; font-size:13px; font-weight:700; }
+.newsroom-highlights i { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:#eef8f3; color:#087b5a; font-size:12px; }
+.newsroom-read { align-self:flex-start; display:inline-flex; align-items:center; gap:9px; padding:13px 17px; border-radius:10px; background:#087b5a; color:#fff !important; font-size:13px; font-weight:800; text-decoration:none; box-shadow:0 10px 25px rgba(8,123,90,.18); transition:.2s ease; }
+.newsroom-read:hover { transform:translateY(-2px); background:#075f46; }
+.newsroom-footer-note { display:flex; align-items:flex-start; gap:10px; margin-top:16px; padding:14px 16px; border:1px solid #dfeae5; border-radius:12px; background:#fff; color:#73827d; font-size:12px; line-height:1.6; }
+.newsroom-footer-note i { color:#087b5a; margin-top:2px; }
+@media(max-width:850px){
+  .newsroom-hero { padding:68px 0 52px; }
+  .newsroom-hero-inner { align-items:flex-start; }
+  .newsroom-feature { grid-template-columns:1fr; }
+  .newsroom-feature-media,.newsroom-feature-media img { min-height:330px; }
+  .newsroom-feature-content { padding:30px 26px 34px; }
+}
+@media(max-width:560px){
+  .newsroom-hero-inner { gap:24px; }
+  .newsroom-hero-mark { width:78px; height:78px; flex-basis:78px; border-radius:16px; }
+  .newsroom-hero-mark i { font-size:23px; }
+  .newsroom-hero-mark span { display:none; }
+  .newsroom-section { padding:40px 0 60px; }
+  .newsroom-section-heading { align-items:flex-start; flex-direction:column; }
+  .newsroom-feature-media,.newsroom-feature-media img { min-height:245px; }
+  .newsroom-feature-content { padding:24px 20px 27px; }
+  .newsroom-feature-content h2 { font-size:30px; }
+}
+
+
+/* =========================================================
+   BCRLS GALLERY v8 — image only
+========================================================= */
+.media-slide-stage::after { display:none; }
+.media-slide-stage img { object-fit:contain; background:transparent; }
+.media-gallery-loading { background:linear-gradient(135deg,#17343a,#087b5a); }
+.media-slide-progress,
+.media-slide-meta,
+.media-slide-thumbs,
+.media-slide-caption,
+.media-gallery-error { display:none !important; }
+
+/* Photo Gallery: image-only slideshow */
+.media-gallery-page .media-gallery-section { padding-top: 34px; padding-bottom: 54px; }
+.media-gallery-page .media-slideshow { margin: 0 auto; max-width: 1200px; }
+.media-gallery-page .media-slide-stage { min-height: 520px; aspect-ratio: 16 / 10; background: #111; border-radius: 14px; }
+.media-gallery-page .media-slide-stage::after { display:none; }
+.media-gallery-page .media-slide-stage img { object-fit: contain; }
+@media (max-width: 768px) {
+  .media-gallery-page .media-slide-stage { min-height: 300px; aspect-ratio: 4 / 3; border-radius: 10px; }
+}
+
+
+/* =========================================================
+   PHOTO GALLERY PAGE HEADING
+========================================================= */
+.media-gallery-page .media-gallery-hero {
+  padding: 58px 0 42px;
+  background: linear-gradient(135deg, #10382d 0%, #174a3b 55%, #1e5a47 100%);
+  color: #fff;
+}
+.media-gallery-page .media-gallery-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.media-gallery-page .media-gallery-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.media-gallery-page .media-gallery-hero h1 {
+  margin: 0 0 10px;
+  color: #fff !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.1;
+}
+.media-gallery-page .media-gallery-hero p {
+  margin: 0 auto;
+  max-width: 700px;
+  color: rgba(255,255,255,.86);
+  font-size: 15px;
+  line-height: 1.7;
+}
+@media (max-width: 640px) {
+  .media-gallery-page .media-gallery-hero { padding: 44px 0 32px; }
+  .media-gallery-page .media-gallery-hero h1 { font-size: 34px; }
+}
+
+/* =========================================================
+   FINAL PHOTO GALLERY HEADING + DEVICE RESPONSIVENESS
+   ========================================================= */
+body .media-gallery-page {
+    padding-top: 78px !important;
+    min-height: 100vh;
+}
+
+body .media-gallery-page .media-gallery-hero {
+    margin-top: 0 !important;
+    padding: 58px 0 46px !important;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+body .media-gallery-page .media-gallery-hero-content {
+    width: 100%;
+}
+
+body .media-gallery-page .media-gallery-eyebrow {
+    color: #ffffff !important;
+    margin-bottom: 12px !important;
+}
+
+body .media-gallery-page .media-gallery-hero h1 {
+    color: #ffffff !important;
+    margin: 0 0 10px !important;
+}
+
+body .media-gallery-page .media-gallery-hero p {
+    color: rgba(255,255,255,.9) !important;
+}
+
+body .media-gallery-page .media-gallery-section {
+    width: 100%;
+}
+
+body .media-gallery-page .media-slideshow,
+body .media-gallery-page .media-slide-stage {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body .media-gallery-page .media-slide-stage {
+    min-height: 520px;
+}
+
+@media (max-width: 1500px) {
+    body .media-gallery-page {
+        padding-top: 72px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body .media-gallery-page {
+        padding-top: 68px !important;
+    }
+
+    body .media-gallery-page .media-gallery-hero {
+        padding: 46px 0 34px !important;
+        min-height: 0;
+    }
+
+    body .media-gallery-page .media-gallery-hero h1 {
+        font-size: clamp(34px, 9vw, 48px) !important;
+    }
+
+    body .media-gallery-page .media-gallery-hero p {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+        padding: 0 10px;
+    }
+
+    body .media-gallery-page .media-gallery-section {
+        padding: 26px 0 44px !important;
+    }
+
+    body .media-gallery-page .media-slide-stage {
+        min-height: 300px !important;
+        aspect-ratio: 4 / 3 !important;
+        border-radius: 12px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    body .media-gallery-page {
+        padding-top: 68px !important;
+    }
+
+    body .media-gallery-page .media-gallery-hero {
+        padding: 38px 0 30px !important;
+    }
+
+    body .media-gallery-page .media-gallery-hero h1 {
+        font-size: 34px !important;
+    }
+
+    body .media-gallery-page .media-gallery-eyebrow {
+        font-size: 10px !important;
+        padding: 5px 12px !important;
+    }
+
+    body .media-gallery-page .media-slide-stage {
+        min-height: 245px !important;
+        aspect-ratio: 4 / 3 !important;
+        border-radius: 10px !important;
+    }
+
+    body .media-gallery-page .media-slide-arrow {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
