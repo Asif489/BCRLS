@@ -2050,7 +2050,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 event => {
 
-                    if (window.innerWidth <= 1200 || document.documentElement.classList.contains("bcrls-touch-device")) {
+                    if (mainNav.classList.contains("mobile-open") || window.innerWidth <= 1200 || document.documentElement.classList.contains("bcrls-touch-device")) {
 
                         event.preventDefault();
 
@@ -2088,7 +2088,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 () => {
 
                     if (
-                        window.innerWidth <= 1200
+                        mainNav.classList.contains("mobile-open") ||
+                        window.innerWidth <= 1200 ||
+                        document.documentElement.classList.contains("bcrls-touch-device")
                     ) {
 
                         closeMobileMenu();
@@ -2110,6 +2112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             if (
+                !mainNav.classList.contains("mobile-open") &&
                 window.innerWidth > 1200 &&
                 !document.documentElement.classList.contains("bcrls-touch-device")
             ) {

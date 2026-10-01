@@ -1,781 +1,2127 @@
-/* BCRLS Final Visual Polish */
-:root{--bcrls-navy:#102a43;--bcrls-teal:#0f766e;--bcrls-gold:#c59b4a;--bcrls-ink:#243b53;--bcrls-bg:#f7f9fb;--bcrls-border:#d9e2ec}
-body{background:var(--bcrls-bg);color:var(--bcrls-ink)}
-main{isolation:isolate}
-section:not(.hero):not(.page-hero){scroll-margin-top:90px}
-.page-hero,.hero{position:relative;overflow:hidden}
-.page-hero:after,.hero:after{content:"";position:absolute;inset:auto -10% -55px auto;width:260px;height:160px;border-radius:50%;background:rgba(197,155,74,.10);pointer-events:none}
-.section-title{letter-spacing:-.02em}
-.card,.event-card,.member-card,.programme-card,.datahub-card,.blog-card,.journal-card,.library-card{border:1px solid var(--bcrls-border);box-shadow:0 10px 30px rgba(16,42,67,.07);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.card:hover,.event-card:hover,.member-card:hover,.programme-card:hover,.datahub-card:hover,.blog-card:hover,.journal-card:hover,.library-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(16,42,67,.12);border-color:rgba(15,118,110,.28)}
-footer{border-top:1px solid #d9e2ec}
-footer img[src*="logo.png"]{width:auto!important;height:auto!important;max-width:190px!important;max-height:70px!important;object-fit:contain!important;display:block!important}
-footer .footer-logo,.footer-brand{display:flex;align-items:center;min-height:70px}
-footer a{transition:color .2s ease,transform .2s ease}
-footer a:hover{transform:translateX(2px)}
-.btn,.button,button,input[type=submit]{border-radius:8px;transition:transform .2s ease,box-shadow .2s ease}
-.btn:hover,.button:hover,button:hover,input[type=submit]:hover{transform:translateY(-1px)}
-img{max-width:100%;height:auto}
-@media(max-width:768px){footer img[src*="logo.png"]{max-width:160px!important;max-height:60px!important}.page-hero,.hero{padding-top:50px;padding-bottom:50px}}
+/* =========================================================
+   BCRLS TEAM
+   Infinite Circular Team Carousel
+   ========================================================= */
+
+const teamData = {
+
+    advisory: [
+        {
+            name: "Dr. Nakib Muhammad Nasrullah",
+            role: "Former Vice-Chancellor",
+            fullRole: "Former Vice-Chancellor, Islamic University, Bangladesh; Professor, Department of Law, University of Dhaka",
+            photo: "../assets/Advisors/Nakib.png",
+            bio: "Former Vice-Chancellor, Islamic University, Bangladesh. Professor, Department of Law, University of Dhaka."
+        },
+        {
+            name: "Professor Dr. Abdullah Al Faruque",
+            role: "Professor & Former Dean",
+            fullRole: "Professor, Former Dean, Faculty of Law, University of Chittagong",
+            photo: "../assets/Advisors/Al Faruque.png",
+            bio: "Professor, Former Dean, Faculty of Law, University of Chittagong."
+        },
+        {
+            name: "Professor Dr. Muhammad Ekramul Haque",
+            role: "Professor & Dean (Acting)",
+            fullRole: "Professor, Department of Law; Dean (Acting), Faculty of Law, University of Dhaka",
+            photo: "../assets/Advisors/Ekramul Haque.png",
+            bio: "Professor, Department of Law, Dean (Acting), Faculty of Law, University of Dhaka."
+        },
+        {
+            name: "Professor Dr. Rakiba Nabi",
+            role: "Professor & Chairman",
+            fullRole: "Chairman, Department of Law, University of Chittagong",
+            photo: "../assets/Advisors/Nabi.png",
+            bio: "Chairman, Department of Law, University of Chittagong."
+        },
+        {
+            name: "Professor Christine Richardson",
+            role: "Professor",
+            fullRole: "Professor, Department of Law and Land Administration, Jagannath University",
+            photo: "../assets/Advisors/Christine.png",
+            bio: "Professor, Department of Law and Land Administration, Jagannath University."
+        },
+        {
+            name: "Professor Dr. Md. Rizwanul Islam",
+            role: "Dean",
+            fullRole: "Dean, SHSS, North South University",
+            photo: "../assets/Advisors/Rizwanul Islam.jpg",
+            bio: "Dean, SHSS, North South University."
+        },
+        {
+            name: "Dr. Hassan Faruk Al Imran",
+            role: "Associate Professor (Law)",
+            fullRole: "Associate Professor (Law), Independent University Bangladesh",
+            photo: "../assets/Advisors/Al Imran.png",
+            bio: "Associate Professor (Law), Independent University Bangladesh."
+        },
+        {
+            name: "Dr. Jobair Alam",
+            role: "Lecturer in Law",
+            fullRole: "Lecturer in Law, University of Staffordshire",
+            photo: "../assets/Advisors/Jobair.png",
+            bio: "Lecturer in Law, University of Staffordshire."
+        },
+        {
+            name: "A.B.M. Imdadul Haque Khan",
+            role: "Dean",
+            fullRole: "Dean, Faculty of Law, Eastern University",
+            photo: "../assets/Advisors/imdad.png",
+            bio: "Dean, Faculty of Law, Eastern University."
+        }
+    ],
+
+    directors: [
+        {
+            name: "Sakhawat Sajjat Sejan",
+            role: "Founder",
+            fullRole: "Founder, BCRLS",
+            photo: "../assets/Directors/Sejan.jpg",
+            bio: "Sakhawat Sajjat Sejan is the Founder of BCRLS. He completed his LL.B. (Hons.) and LL.M. from the University of Chittagong. He is currently serving as an Assistant Professor in the Department of Law at University of Information Technology and Sciences. Previously, he worked as an Assistant Professor of Law at the Bangladesh University of Bangladesh and Feni University, where he also served as Head of the Department. He is an active researcher and writer on refugee law and protection."
+        },
+        {
+            name: "Raspiatur Rashpi",
+            role: "Director",
+            fullRole: "Director, Head of Resource Management, Training & Development",
+            photo: "../assets/Directors/Rashpi.jpg",
+            bio: "Raspiatur Rashpi is currently working as a lecturer, Department of Law, University of Chittagong. She was also the former lecturer in Law, Bangladesh Army International University of Science and Technology. She completed her LLB (Honours) and LLM from Department of Law, University of Chittagong. Her research area of interest includes Climate Change and Environmental laws, Human Rights law, Constitutional law, Refugee law etc."
+        },
+        {
+            name: "Niaz Mohammad",
+            role: "Director",
+            fullRole: "Director, Head of Research",
+            photo: "../assets/Directors/Niaz.jpg",
+            bio: "Niaz Mohammad is currently working as an Associate Legal Counsel at BRAC and serves as the Director of Research at BCRLS. He previously worked as a Legal Research Assistant at the Centre for Peace and Justice, where he focused on refugee law, including access to justice for Rohingyas in Bangladesh. He completed his LL.B. with distinction from BRAC University and holds a Diploma in Economic, Social and Development Rights from Kathmandu School of Law."
+        },
+        {
+            name: "Md. Rahul Hasan Joy",
+            role: "Director",
+            fullRole: "Director, Head of Legal Affairs",
+            photo: "../assets/Directors/Joy.jpg",
+            bio: "Md. Rahul Hasan Joy completed his BA.LL.B. (Hons.) from Aligarh Muslim University, India, and his LL.M. in International Law from the University of Rajshahi. He is currently a Lecturer in the Department of Law at the University of Information Technology and Sciences (UITS). Previously, he served as a Lecturer of Law at Feni University. He is also an enrolled Advocate with the Bangladesh Bar Council."
+        },
+        {
+            name: "Mohammad Tawhidul Islam Hridoy",
+            role: "Director",
+            fullRole: "Director, Head of IT",
+            photo: "../assets/Directors/Tawhidul Islam.jpg",
+            bio: "Mohammad Tawhidul Islam is a Lecturer in the Department of Law at the State University of Bangladesh and currently serves as Director of IT at BCRLS. He previously taught at Feni University and worked at US-Bangla Airlines in Company Secretary and Legal Affairs. He completed his LL.B. and LL.M. from Jahangirnagar University and obtained another LL.M. from South Asian University, New Delhi. His interests include teaching, research, and academic engagement activities."
+        },
+        {
+            name: "Nabila Farhin",
+            role: "Director",
+            fullRole: "Director, Head of Programs",
+            photo: "../assets/Directors/Nabila.jpg",
+            bio: "Nabila Farhin completed her LL.B. (Hons.) and LL.M. (Thesis) from the University of Chittagong, where she ranked among the top students of her class. She also earned an MSS in Industrial Relations and Labour Studies from the University of Dhaka and a Diploma in Economic, Social and Development Rights from Kathmandu School of Law, Nepal. She is currently a Senior Lecturer at East West University and an Advocate of the Supreme Court of Bangladesh. Previously, she served as Staff Captain in the Judge Advocate General’s Office of the Bangladesh Army and worked as a consultant with TIB, ILO, and BLAST. Her research focuses on labour rights, gender justice, and climate justice."
+        },
+        {
+            name: "Md. Riad Mahmud",
+            role: "Director",
+            fullRole: "Director of Administration and Finance",
+            photo: "../assets/Directors/Riad.jpg",
+            bio: "Md. Riad Mahmud is currently serving as a Senior Lecturer in the Department of Law at East West University. He is also an Erasmus Mundus Scholar and serves as an Advisor to Jessup Bangladesh. With experience in legal education, research, and international academic collaboration, he brings strong leadership to BCRLS. As Director of Administration and Finance, he contributes to strengthening the organization’s administrative structure, financial governance, and institutional development."
+        },
+        {
+            name: "Sumaiya Islam",
+            role: "Director",
+            fullRole: "Director, Head of Public Relations",
+            photo: "../assets/Directors/Sumaiya Islam.jpg",
+            bio: "Sumaiya Islam completed her LL.B. (Hons.) and LL.M. from Southern University Bangladesh and an additional LL.M. from South Asian University. She is currently a Lecturer in the Department of Law at Manarat International University. She contributes to public engagement, awareness-building, and institutional networking at BCRLS."
+        },
+        {
+            name: "Md. Omar Farque",
+            role: "Executive Director",
+            fullRole: "Executive Director",
+            photo: "../assets/Directors/Omar Farque.jpg",
+            bio: "Md. Omar Farque completed both his LL.B. (Hons.) and LL.M. from Eastern University, where he achieved outstanding academic results, including a Gold Medal in his LL.M. He is currently a Lecturer in Law at Eastern University. Previously, he served as a Lecturer in Law at the European University of Bangladesh. He also works as a Senior Research Associate at I. H. Khan & Associates and as an Assistant Editor at Revival Press. His research interests include Public International Law, Refugee Law, Climate Law, and Islamic Law."
+        },
+    ],
+
+    operational: [
+        {
+            name: "Kazi Muhibul Haque",
+            role: "Associate Head of IT",
+            fullRole: "Associate Head of IT",
+            photo: "",
+            bio: "Associate Head of IT at BCRLS, supporting digital infrastructure, website operations, data management and technical initiatives."
+        },
+        {
+            name: "Syed Md. Alamgir Hussain",
+            role: "IT Officer",
+            fullRole: "IT Officer",
+            photo: "",
+            bio: "IT Officer at BCRLS, supporting the organization's website, digital platforms and day-to-day technical operations."
+        }
+    ]
+};
 
 
 /* =========================================================
-   2026 UPDATE — COURSE ACTIONS / DRIVE GALLERY / ALL DEVICES
-========================================================= */
-.video-wrapper {
-    width: 100%;
-    min-width: 0;
-    grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr) !important;
-    align-items: stretch;
-}
-.video-frame {
-    width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    min-height: 0 !important;
-    height: auto !important;
-}
-.video-frame iframe {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 0 !important;
-    display: block !important;
-    border: 0 !important;
-}
+   SETTINGS
+   ========================================================= */
 
-.home-course-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
-}
-.home-course-btn,
-.course-strip-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 11px 16px;
-    border-radius: 10px;
-    text-decoration: none !important;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.2;
-    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.home-course-btn:hover,
-.course-strip-btn:hover {
-    transform: translateY(-2px);
-}
-.home-course-details,
-.course-strip-btn.module {
-    color: #176f51 !important;
-    background: #eaf5f0;
-    border: 1px solid #cde4da;
-}
-.home-course-module {
-    color: #6b4b00 !important;
-    background: #fff5d9;
-    border: 1px solid #f0ddb0;
-}
-.home-course-register,
-.course-strip-btn.register {
-    color: #fff !important;
-    background: #087b5a;
-    border: 1px solid #087b5a;
-    box-shadow: 0 8px 22px rgba(8,123,90,.18);
-}
+const CARDS_DESKTOP = 4;
+const CARDS_TABLET = 2;
+const CARDS_MOBILE = 1;
 
-.course-action-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin: 0 0 28px;
-    padding: 24px;
-    border: 1px solid #dce8e3;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #f4faf7, #ffffff);
-}
-.course-action-strip h3 {
-    margin: 5px 0 5px;
-    color: #17343a;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(21px, 2.4vw, 30px);
-    line-height: 1.2;
-}
-.course-action-strip p { margin: 0; color: #667871; line-height: 1.6; }
-.course-action-strip-buttons { display: flex; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
-
-.drive-photo-gallery {
-    margin: 0 auto 42px;
-    padding: 26px;
-    border: 1px solid #dce8e3;
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 12px 35px rgba(23,52,58,.07);
-}
-.drive-photo-gallery-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 22px;
-    margin-bottom: 18px;
-}
-.drive-photo-gallery-header h2 { margin: 7px 0 8px; color: #17343a; font-family: "Playfair Display", Georgia, serif; }
-.drive-photo-gallery-header p { margin: 0; max-width: 760px; color: #667871; line-height: 1.7; }
-.drive-gallery-open {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 11px 15px;
-    border-radius: 10px;
-    color: #fff !important;
-    background: #087b5a;
-    text-decoration: none !important;
-    font-weight: 700;
-    white-space: nowrap;
-}
-.drive-gallery-frame {
-    width: 100%;
-    height: min(720px, 72vh);
-    min-height: 460px;
-    overflow: hidden;
-    border: 1px solid #e2ebe7;
-    border-radius: 16px;
-    background: #f7faf8;
-}
-.drive-gallery-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
-.drive-gallery-note { margin: 12px 0 0; color: #74827e; font-size: 12px; line-height: 1.6; }
-
-@media (max-width: 1100px) {
-    .video-wrapper { grid-template-columns: 1fr !important; }
-    .video-info { padding: 4px 4px 8px; }
-    .events-preview .event-card { grid-template-columns: minmax(220px, 35%) minmax(0, 1fr) !important; }
-    .events-section .event-card { grid-template-columns: 250px minmax(0, 1fr) !important; }
-}
-@media (max-width: 800px) {
-    .home-course-actions { display: grid; grid-template-columns: 1fr 1fr; }
-    .home-course-btn { width: 100%; }
-    .home-course-register { grid-column: 1 / -1; }
-    .course-action-strip { flex-direction: column; align-items: stretch; }
-    .course-action-strip-buttons { display: grid; grid-template-columns: 1fr 1fr; }
-    .course-strip-btn { width: 100%; }
-    .drive-photo-gallery { padding: 18px; }
-    .drive-photo-gallery-header { flex-direction: column; align-items: stretch; }
-    .drive-gallery-open { width: 100%; }
-    .drive-gallery-frame { height: 68vh; min-height: 420px; }
-}
-@media (max-width: 640px) {
-    .video-wrapper { padding: 12px !important; border-radius: 18px !important; gap: 14px !important; }
-    .video-frame { border-radius: 14px !important; aspect-ratio: 16 / 9 !important; }
-    .video-frame iframe { min-height: 0 !important; }
-    .home-course-actions { grid-template-columns: 1fr; }
-    .home-course-register { grid-column: auto; }
-    .home-course-btn { min-height: 46px; font-size: 13px; }
-    .course-action-strip { padding: 18px; border-radius: 15px; }
-    .course-action-strip-buttons { grid-template-columns: 1fr; }
-    .drive-photo-gallery { margin-bottom: 28px; padding: 14px; border-radius: 16px; }
-    .drive-gallery-frame { height: 70vh; min-height: 390px; border-radius: 12px; }
-    .events-preview .event-card,
-    .events-section .event-card { grid-template-columns: 1fr !important; }
-    .events-preview .event-card .home-upcoming-image,
-    .events-section .event-card .home-upcoming-image { min-height: 230px !important; height: 230px !important; padding: 14px !important; }
-    .events-preview .event-content,
-    .events-section .event-content { padding: 22px 18px !important; }
-    .events-preview .event-content h3,
-    .events-section .event-content h3 { font-size: 23px !important; }
-    .events-preview .event-content p,
-    .events-section .event-content p { font-size: 14px !important; }
-}
+const AUTO_DELAY = 3000;
+const SLIDE_DURATION = 650;
 
 
 /* =========================================================
-   COMING SOON — LATEST PUBLICATION
-========================================================= */
-.coming-soon-badge { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin: 8px 0 12px; padding: 9px 13px; border: 1px solid #e8d39d; border-radius: 999px; color: #7a5900; background: linear-gradient(135deg,#fff9e8,#fffdf7); font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
-.coming-soon-badge i { font-size: 12px; }
-.coming-soon-status { min-width: 230px; padding: 22px !important; border: 1px solid #ead9aa; border-radius: 16px; background: linear-gradient(145deg,#fff9e8,#ffffff); text-align: center; }
-.coming-soon-status > span { display: block; color: #8a6a1d; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
-.coming-soon-status .coming-soon-icon { width: 48px; height: 48px; margin: 12px auto 9px; display: grid; place-items: center; border-radius: 50%; background: #fff1c7; color: #8a6a1d; font-size: 20px; }
-.coming-soon-status strong { display: block; color: #5e4708; font-family: "Playfair Display", Georgia, serif; font-size: 24px; }
-.coming-soon-status p { margin: 7px 0 0; color: #756d58; font-size: 12px; line-height: 1.55; }
-@media (max-width: 700px) { .coming-soon-status { width: 100%; min-width: 0; } }
+   STATE
+   ========================================================= */
+
+const carouselState = {
+
+    advisory: {
+        current: 0,
+        timer: null,
+        moving: false
+    },
+
+    directors: {
+        current: 0,
+        timer: null,
+        moving: false
+    }
+
+};
+
 
 /* =========================================================
-   HEADER — DESKTOP FIT / NO NAV OVERLAP
-========================================================= */
-@media screen and (min-width: 1201px) {
-  body .site-header .header-inner {
-    width: calc(100% - 36px) !important;
-    gap: 10px !important;
-  }
-  body .site-header .brand {
-    gap: 9px !important;
-    min-width: 250px !important;
-  }
-  body .site-header .brand-text strong {
-    font-size: 17px !important;
-  }
-  body .site-header .brand-text span {
-    font-size: 9px !important;
-  }
-  body .site-header .main-nav {
-    gap: 0 !important;
-    flex-wrap: nowrap !important;
-    min-width: 0 !important;
-  }
-  body .site-header .main-nav .nav-link,
-  body .site-header .main-nav .nav-dropdown-toggle {
-    padding: 7px 6px !important;
-    font-size: 12px !important;
-    letter-spacing: -0.15px !important;
-  }
-  body .site-header .main-nav .nav-dropdown-toggle {
-    gap: 4px !important;
-  }
+   DOM
+   ========================================================= */
+
+
+function resolveSiteAsset(path) {
+    if (!path) return "";
+    if (/^(https?:|data:|blob:|\/)/i.test(path)) return path;
+    const clean = String(path).replace(/^\.\.\//, "");
+    const depth = Math.max(0, window.location.pathname.split("/").filter(Boolean).length - 2);
+    const prefix = depth > 0 ? "../".repeat(depth) : "";
+    return prefix + clean;
 }
 
-@media screen and (min-width: 1201px) and (max-width: 1450px) {
-  body .site-header .brand {
-    min-width: 225px !important;
-  }
-  body .site-header .brand-logo {
-    width: 42px !important;
-    height: 42px !important;
-  }
-  body .site-header .brand-logo img {
-    width: 36px !important;
-    height: 36px !important;
-  }
-  body .site-header .main-nav .nav-link,
-  body .site-header .main-nav .nav-dropdown-toggle {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    font-size: 11px !important;
-  }
-}
+const grids = {
+
+    advisory:
+        document.getElementById(
+            "advisoryGrid"
+        ),
+
+    directors:
+        document.getElementById(
+            "directorsGrid"
+        ),
+
+    operational:
+        document.getElementById(
+            "operationalGrid"
+        )
+
+};
+
+
+const selectorButtons =
+    document.querySelectorAll(
+        ".team-selector-btn"
+    );
+
+
+const panels =
+    document.querySelectorAll(
+        ".team-panel"
+    );
+
+
+const profileModal =
+    document.getElementById(
+        "memberModal"
+    );
+
+
+const modalClose =
+    document.getElementById(
+        "modalClose"
+    );
+
+
+const modalContent =
+    document.getElementById(
+        "modalContent"
+    );
+
 
 /* =========================================================
-   HOME CERTIFICATE COURSE — MOBILE FIX
-========================================================= */
-@media (max-width: 768px) {
-    .events-section .event-card {
-        width: 100%;
-        min-width: 0;
-        overflow: hidden;
-    }
+   INITIALIZE
+   ========================================================= */
 
-    .events-section .event-card .event-content {
-        min-width: 0;
-        padding: 22px 18px 20px;
-    }
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    .events-section .event-card h3,
-    .events-section .event-card .event-title {
-        font-size: 22px;
-        line-height: 1.35;
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
+        renderTeam("advisory");
 
-    .events-section .event-card p,
-    .events-section .event-card .event-description {
-        font-size: 14px;
-        line-height: 1.65;
-        overflow-wrap: anywhere;
-    }
+        renderTeam("directors");
 
-    .home-course-actions {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        width: 100%;
-        gap: 9px;
-        margin-top: 18px;
-    }
+        renderOperational();
 
-    .home-course-btn {
-        width: 100% !important;
-        min-width: 0 !important;
-        justify-content: center;
-        text-align: center;
-        white-space: normal;
-        line-height: 1.3;
-    }
-}
+        setupTeamSelector();
 
-@media (max-width: 480px) {
-    .events-section .event-card .event-content {
-        padding: 19px 15px 18px;
-    }
+        setupModal();
 
-    .events-section .event-card h3,
-    .events-section .event-card .event-title {
-        font-size: 20px;
+        startCarousel("advisory");
+
+        startCarousel("directors");
+
+        setupPauseOnHover();
+
+        setupResize();
+
     }
-}
+);
+
 
 /* =========================================================
-   FINAL MOBILE FIX — HOMEPAGE CERTIFICATE CARD + PROMO VIDEO
-   Keep poster and content in separate rows on small screens.
-========================================================= */
-@media (max-width: 700px) {
-    .events-section .event-card,
-    body:has(#newsletter) .events-preview .event-card {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto auto !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        height: auto !important;
-        overflow: hidden !important;
+   RENDER NORMAL TEAM
+   ========================================================= */
+
+function renderTeam(type) {
+
+    const container =
+        grids[type];
+
+    if (!container) {
+        return;
     }
 
-    .events-section .event-card .home-upcoming-image,
-    body:has(#newsletter) .events-preview .home-upcoming-image {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        aspect-ratio: 1 / 1 !important;
-        flex: none !important;
-        padding: 10px !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-        position: relative !important;
-        overflow: hidden !important;
+
+    const members =
+        teamData[type] || [];
+
+
+    container.innerHTML = "";
+
+
+    if (!members.length) {
+
+        renderEmptyState(
+            container
+        );
+
+        return;
+
     }
 
-    .events-section .event-card .home-upcoming-image img,
-    body:has(#newsletter) .events-preview .home-upcoming-image img {
-        width: 100% !important;
-        height: 100% !important;
-        max-height: none !important;
-        min-height: 0 !important;
-        display: block !important;
-        object-fit: contain !important;
-        object-position: center !important;
-    }
 
-    .events-section .event-card .event-content,
-    body:has(#newsletter) .events-preview .event-content {
-        grid-column: 1 !important;
-        grid-row: 2 !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        height: auto !important;
-        position: relative !important;
-        z-index: 2 !important;
-        padding: 20px 16px 22px !important;
-        margin: 0 !important;
-        background: #fff !important;
-    }
+    container.classList.add(
+        "team-carousel"
+    );
 
-    .events-section .event-card .event-content h3,
-    body:has(#newsletter) .events-preview .event-content h3 {
-        margin: 0 !important;
-        font-size: 21px !important;
-        line-height: 1.3 !important;
-        overflow-wrap: anywhere !important;
-    }
 
-    .events-section .event-card .event-content p,
-    body:has(#newsletter) .events-preview .event-content p {
-        margin: 12px 0 0 !important;
-        font-size: 14px !important;
-        line-height: 1.65 !important;
-    }
+    /*
+       Main track
+    */
 
-    .home-course-actions {
-        margin-top: 16px !important;
-    }
+    const track =
+        document.createElement(
+            "div"
+        );
 
-    /* Promo video: never exceed the phone viewport width. */
-    .video-wrapper,
-    body:has(#newsletter) .video-wrapper {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
-        padding: 10px !important;
-        border-radius: 16px !important;
-    }
+    track.className =
+        "team-track";
 
-    .video-frame {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        min-width: 0 !important;
-        aspect-ratio: 16 / 9 !important;
-        overflow: hidden !important;
-        border-radius: 12px !important;
-    }
 
-    .video-frame iframe {
-        position: absolute !important;
-        inset: 0 !important;
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 100% !important;
-        min-width: 0 !important;
-        min-height: 0 !important;
-        border: 0 !important;
-    }
+    /*
+       IMPORTANT:
 
-    .video-info {
-        width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        padding: 16px 4px 4px !important;
-    }
-}
+       We clone the first few cards
+       at the beginning and end.
 
-@media (max-width: 420px) {
-    .events-section .event-card .event-content,
-    body:has(#newsletter) .events-preview .event-content {
-        padding: 18px 14px 20px !important;
-    }
+       This allows true infinite
+       circular movement.
+    */
 
-    .events-section .event-card .event-content h3,
-    body:has(#newsletter) .events-preview .event-content h3 {
-        font-size: 20px !important;
-    }
+    const visible =
+        getVisibleCards();
 
-    .home-course-btn {
-        min-height: 44px !important;
-    }
-}
 
-/* =========================================================
-   FINAL PHONE VIDEO FIX — HOMEPAGE PROMO VIDEO
-   Keep the Google Drive video strictly inside the phone viewport.
-========================================================= */
-@media screen and (max-width: 700px) {
-    .welcome-section,
-    .welcome-section .container,
-    #overview-video,
-    #overview-video.video-wrapper,
-    #overview-video .video-frame {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-    }
+    const before =
+        members.slice(
+            -visible
+        );
 
-    .welcome-section .container {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-        overflow: hidden !important;
-    }
 
-    #overview-video.video-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 14px !important;
-        padding: 10px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        overflow: hidden !important;
-    }
+    const after =
+        members.slice(
+            0,
+            visible
+        );
 
-    #overview-video .video-frame {
-        position: relative !important;
-        display: block !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9 !important;
-        overflow: hidden !important;
-        border-radius: 12px !important;
-        flex: 0 0 auto !important;
-    }
 
-    #overview-video .video-frame iframe {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        min-height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: 0 !important;
-        display: block !important;
-        aspect-ratio: 16 / 9 !important;
-    }
+    const carouselMembers = [
 
-    #overview-video .video-info {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        padding: 10px 4px 4px !important;
-        box-sizing: border-box !important;
-    }
-}
+        ...before,
 
-@media screen and (max-width: 380px) {
-    .welcome-section .container {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-    }
+        ...members,
 
-    #overview-video.video-wrapper {
-        padding: 8px !important;
-        border-radius: 14px !important;
-    }
+        ...after
+
+    ];
+
+
+    carouselMembers.forEach(
+        (member, index) => {
+
+            const card =
+                createMemberCard(
+                    member,
+                    index
+                );
+
+
+            if (
+                index < visible ||
+                index >=
+                visible + members.length
+            ) {
+
+                card.classList.add(
+                    "carousel-clone"
+                );
+
+            }
+
+
+            track.appendChild(
+                card
+            );
+
+        }
+    );
+
+
+    container.appendChild(
+        track
+    );
+
+
+    /*
+       Controls
+    */
+
+
+
+
+    /*
+       Start at first REAL card.
+    */
+
+    carouselState[type].current =
+        0;
+
+
+    requestAnimationFrame(
+        () => {
+
+            positionCarousel(
+                type,
+                false
+            );
+
+        }
+    );
+
 }
 
 
 /* =========================================================
-   FINAL MOBILE/DESKTOP-SITE NAV FIX
-   Keep the three-line menu visible when a phone requests
-   the desktop site and reports a tablet-sized CSS viewport.
-========================================================= */
-@media screen and (max-width: 1500px) {
-    html body .site-header .menu-toggle {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        position: relative !important;
-        z-index: 9000 !important;
-        flex: 0 0 44px !important;
-        width: 44px !important;
-        height: 44px !important;
+   VISIBLE CARD COUNT
+   ========================================================= */
+
+function getVisibleCards() {
+
+    if (
+        window.innerWidth <= 560
+    ) {
+
+        return CARDS_MOBILE;
+
     }
 
-    html body .site-header .menu-toggle span {
-        display: block !important;
-        width: 19px !important;
-        height: 2px !important;
-        background: #187b59 !important;
-    }
-}
 
-@media screen and (max-width: 520px) {
-    html body .site-header .menu-toggle {
-        flex-basis: 40px !important;
-        width: 40px !important;
-        height: 40px !important;
-    }
-}
+    if (
+        window.innerWidth <= 800
+    ) {
 
-/* =========================================================
-   PROMO VIDEO — ROBUST DRIVE EMBED + FALLBACK
-========================================================= */
-.video-frame {
-    position: relative !important;
-    overflow: hidden !important;
-    background: #102b2b !important;
-}
-.video-frame iframe {
-    position: relative !important;
-    z-index: 2 !important;
-}
-.promo-video-fallback {
-    position: absolute;
-    inset: auto 12px 12px 12px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 13px;
-    border-radius: 10px;
-    background: rgba(0,0,0,.58);
-    color: #fff;
-    font-size: 12px;
-}
-.promo-video-fallback a {
-    color: #fff !important;
-    font-weight: 700;
-    text-decoration: underline !important;
-}
+        return CARDS_TABLET;
 
-/* =========================================================
-   DRIVE PHOTO GALLERY — PHOTO GRID, NOT EVENT ARCHIVE
-========================================================= */
-.drive-photo-grid {
-    width: 100%;
-    height: min(760px, 78vh);
-    min-height: 520px;
-    overflow: hidden;
-    border: 1px solid #e2ebe7;
-    border-radius: 16px;
-    background: #f7faf8;
-}
-.drive-photo-grid iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: 0;
-}
-@media (max-width: 800px) {
-    .drive-photo-grid { height: 72vh; min-height: 430px; }
-}
-@media (max-width: 520px) {
-    .drive-photo-grid { height: 70vh; min-height: 390px; border-radius: 12px; }
-    .promo-video-fallback {
-        font-size: 11px;
-        padding: 8px 10px;
     }
+
+
+    return CARDS_DESKTOP;
+
 }
 
 
 /* =========================================================
-   PROMO PAGE — SHARED SITE CHROME
-   Keeps the promo page aligned with the main BCRLS shell.
-========================================================= */
-.promo-video-page {
-    /* Keep content below the fixed 78px site header. */
-    padding-top: 112px;
-    padding-bottom: 72px;
-}
-.promo-video-page .section-header {
-    margin-bottom: 34px;
-}
-@media (max-width: 768px) {
-    .promo-video-page {
-        /* Extra clearance for the fixed mobile header/menu area. */
-        padding-top: 96px;
-        padding-bottom: 48px;
-    }
+   CARD WIDTH
+   ========================================================= */
+
+function getCardWidth(
+    container
+) {
+
+    const track = container.querySelector(".team-track");
+    if (!track) return 0;
+
+    const visible = getVisibleCards();
+    const gap = getTrackGap(track);
+    const viewportWidth = container.clientWidth;
+
+    if (!viewportWidth || !visible) return 0;
+
+    // Calculate the exact width from the real viewport so the first
+    // founder card always starts flush with the left edge.
+    const cardWidth =
+        (viewportWidth - gap * (visible - 1)) / visible;
+
+    track.querySelectorAll(".member-card").forEach(card => {
+        card.style.flexBasis = `${cardWidth}px`;
+        card.style.width = `${cardWidth}px`;
+    });
+
+    return cardWidth + gap;
 }
 
 
 /* =========================================================
-   FINAL HOMEPAGE EVENT SLIDER + ALL-DEVICE SAFETY
-   Keep the homepage moments as a single archive photo at a time.
-========================================================= */
-.gallery-section .home-event-archive-slider {
-    width: min(100%, 1000px) !important;
-    max-width: 100% !important;
-    margin: 28px auto 0 !important;
-    padding: 0 !important;
+   TRACK GAP
+   ========================================================= */
+
+function getTrackGap(
+    track
+) {
+
+    const styles =
+        window.getComputedStyle(
+            track
+        );
+
+
+    return (
+        parseFloat(
+            styles.columnGap ||
+            styles.gap ||
+            0
+        ) || 0
+    );
+
 }
 
-.gallery-section .home-event-viewport {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
+
+/* =========================================================
+   POSITION CAROUSEL
+   ========================================================= */
+
+function positionCarousel(
+    type,
+    animate = true
+) {
+
+    const container =
+        grids[type];
+
+    if (!container) {
+        return;
+    }
+
+
+    const track =
+        container.querySelector(
+            ".team-track"
+        );
+
+    if (!track) {
+        return;
+    }
+
+
+    const visible =
+        getVisibleCards();
+
+
+    const cardWidth =
+        getCardWidth(
+            container
+        );
+
+
+    /*
+       Clone cards are before
+       the actual first member.
+    */
+
+    const realPosition =
+        visible +
+        carouselState[type].current;
+
+
+    if (!animate) {
+
+        track.style.transition =
+            "none";
+
+    } else {
+
+        track.style.transition =
+            `transform ${SLIDE_DURATION}ms cubic-bezier(.22,.61,.36,1)`;
+
+    }
+
+
+    track.style.transform =
+        `translateX(-${realPosition * cardWidth}px)`;
+
+
+    updateDots(
+        type
+    );
+
 }
 
-.gallery-section .home-event-track {
-    display: flex !important;
-    width: 100% !important;
+
+/* =========================================================
+   NEXT
+   ========================================================= */
+
+function nextSlide(
+    type
+) {
+
+    const state =
+        carouselState[type];
+
+
+    if (
+        state.moving
+    ) {
+
+        return;
+
+    }
+
+
+    const members =
+        teamData[type];
+
+
+    if (
+        !members ||
+        members.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    state.moving =
+        true;
+
+
+    state.current++;
+
+
+    positionCarousel(
+        type,
+        true
+    );
+
+
+    /*
+       When the real last card
+       has moved out, jump back
+       to the first real card
+       without the user seeing it.
+    */
+
+    const visible =
+        getVisibleCards();
+
+
+    setTimeout(
+        () => {
+
+            if (
+                state.current >=
+                members.length
+            ) {
+
+                state.current = 0;
+
+
+                positionCarousel(
+                    type,
+                    false
+                );
+
+            }
+
+
+            state.moving =
+                false;
+
+
+            updateDots(
+                type
+            );
+
+        },
+        SLIDE_DURATION + 30
+    );
+
 }
 
-.gallery-section .home-event-slide {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    min-width: 100% !important;
-    height: clamp(260px, 48vw, 520px) !important;
+
+/* =========================================================
+   PREVIOUS
+   ========================================================= */
+
+function previousSlide(
+    type
+) {
+
+    const state =
+        carouselState[type];
+
+
+    if (
+        state.moving
+    ) {
+
+        return;
+
+    }
+
+
+    const members =
+        teamData[type];
+
+
+    if (
+        !members ||
+        members.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    state.moving =
+        true;
+
+
+    state.current--;
+
+
+    /*
+       If we are before first,
+       jump to last real card.
+    */
+
+    if (
+        state.current < 0
+    ) {
+
+        state.current =
+            members.length - 1;
+
+
+        positionCarousel(
+            type,
+            false
+        );
+
+
+        /*
+           Then move one step
+           backwards visually.
+        */
+
+        requestAnimationFrame(
+            () => {
+
+                requestAnimationFrame(
+                    () => {
+
+                        state.current =
+                            members.length - 2;
+
+                        if (
+                            state.current < 0
+                        ) {
+
+                            state.current =
+                                0;
+
+                        }
+
+
+                        positionCarousel(
+                            type,
+                            true
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    } else {
+
+        positionCarousel(
+            type,
+            true
+        );
+
+    }
+
+
+    setTimeout(
+        () => {
+
+            state.moving =
+                false;
+
+            updateDots(
+                type
+            );
+
+        },
+        SLIDE_DURATION + 30
+    );
+
 }
 
-.gallery-section .home-event-slide img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
+
+/* =========================================================
+   AUTO PLAY
+   ========================================================= */
+
+function startCarousel(
+    type
+) {
+
+    stopCarousel(
+        type
+    );
+
+
+    const members =
+        teamData[type];
+
+
+    if (
+        !members ||
+        members.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    carouselState[type].timer =
+        setInterval(
+            () => {
+
+                nextSlide(
+                    type
+                );
+
+            },
+            AUTO_DELAY
+        );
+
 }
 
-/* Desktop-mode Chrome on phones often reports a tablet-like viewport. */
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-    html, body {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
+
+/* =========================================================
+   STOP AUTO PLAY
+   ========================================================= */
+
+function stopCarousel(
+    type
+) {
+
+    const timer =
+        carouselState[type].timer;
+
+
+    if (timer) {
+
+        clearInterval(
+            timer
+        );
+
+        carouselState[type].timer =
+            null;
+
     }
 
-    .container,
-    .site-header .header-inner,
-    main,
-    section,
-    .section {
-        max-width: 100% !important;
-        min-width: 0 !important;
-    }
-
-    .hero-container,
-    .video-wrapper,
-    .video-frame,
-    .video-info,
-    .gallery-section .home-event-archive-slider {
-        min-width: 0 !important;
-        max-width: 100% !important;
-    }
-
-    #overview-video .video-frame {
-        width: 100% !important;
-        aspect-ratio: 16 / 9 !important;
-        min-height: 0 !important;
-    }
-
-    #overview-video .video-frame iframe {
-        width: 100% !important;
-        height: 100% !important;
-        min-width: 0 !important;
-        min-height: 0 !important;
-        display: block !important;
-    }
 }
 
-@media screen and (max-width: 768px) {
-    .gallery-section .section-header-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 14px !important;
-    }
 
-    .gallery-section .home-event-archive-slider {
-        width: 100% !important;
-        margin-top: 20px !important;
-    }
+/* =========================================================
+   RESTART
+   ========================================================= */
 
-    .gallery-section .home-event-slide {
-        height: clamp(240px, 62vw, 390px) !important;
-    }
+function restartCarousel(
+    type
+) {
+
+    stopCarousel(
+        type
+    );
+
+    startCarousel(
+        type
+    );
+
 }
 
-@media screen and (max-width: 480px) {
-    .gallery-section .home-event-slide {
-        height: 280px !important;
+
+/* =========================================================
+   PAUSE ON HOVER
+   ========================================================= */
+
+function setupPauseOnHover() {
+
+    Object.keys(
+        carouselState
+    ).forEach(
+        type => {
+
+            const container =
+                grids[type];
+
+
+            if (!container) {
+                return;
+            }
+
+
+            container.addEventListener(
+                "mouseenter",
+                () => {
+
+                    stopCarousel(
+                        type
+                    );
+
+                }
+            );
+
+
+            container.addEventListener(
+                "mouseleave",
+                () => {
+
+                    startCarousel(
+                        type
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+function createControls(
+    type,
+    count
+) {
+
+    const controls =
+        document.createElement(
+            "div"
+        );
+
+
+    controls.className =
+        "carousel-controls";
+
+
+    const previous =
+        document.createElement(
+            "button"
+        );
+
+
+    previous.type =
+        "button";
+
+
+    previous.className =
+        "carousel-arrow";
+
+
+    previous.innerHTML =
+        '<i class="fa-solid fa-arrow-left"></i>';
+
+
+    previous.setAttribute(
+        "aria-label",
+        "Previous member"
+    );
+
+
+    previous.addEventListener(
+        "click",
+        () => {
+
+            previousSlide(
+                type
+            );
+
+            restartCarousel(
+                type
+            );
+
+        }
+    );
+
+
+    const dots =
+        document.createElement(
+            "div"
+        );
+
+
+    dots.className =
+        "carousel-dots";
+
+
+    /*
+       Dots represent member positions,
+       not groups.
+
+       Example:
+
+       ● ○ ○ ○ ○ ○ ○ ○ ○
+
+       Every click moves exactly
+       one member.
+    */
+
+    for (
+        let i = 0;
+        i < count;
+        i++
+    ) {
+
+        const dot =
+            document.createElement(
+                "button"
+            );
+
+
+        dot.type =
+            "button";
+
+
+        dot.className =
+            "carousel-dot";
+
+
+        dot.dataset.index =
+            i;
+
+
+        dot.setAttribute(
+            "aria-label",
+            `Show member ${i + 1}`
+        );
+
+
+        if (i === 0) {
+
+            dot.classList.add(
+                "active"
+            );
+
+        }
+
+
+        dot.addEventListener(
+            "click",
+            () => {
+
+                goToSlide(
+                    type,
+                    i
+                );
+
+                restartCarousel(
+                    type
+                );
+
+            }
+        );
+
+
+        dots.appendChild(
+            dot
+        );
+
     }
+
+
+    const next =
+        document.createElement(
+            "button"
+        );
+
+
+    next.type =
+        "button";
+
+
+    next.className =
+        "carousel-arrow";
+
+
+    next.innerHTML =
+        '<i class="fa-solid fa-arrow-right"></i>';
+
+
+    next.setAttribute(
+        "aria-label",
+        "Next member"
+    );
+
+
+    next.addEventListener(
+        "click",
+        () => {
+
+            nextSlide(
+                type
+            );
+
+            restartCarousel(
+                type
+            );
+
+        }
+    );
+
+
+    controls.appendChild(
+        previous
+    );
+
+
+    controls.appendChild(
+        dots
+    );
+
+
+    controls.appendChild(
+        next
+    );
+
+
+    return controls;
+
+}
+
+
+/* =========================================================
+   GO TO SLIDE
+   ========================================================= */
+
+function goToSlide(
+    type,
+    index
+) {
+
+    const state =
+        carouselState[type];
+
+
+    if (
+        state.moving
+    ) {
+
+        return;
+
+    }
+
+
+    const members =
+        teamData[type];
+
+
+    if (
+        !members ||
+        index < 0 ||
+        index >= members.length
+    ) {
+
+        return;
+
+    }
+
+
+    state.current =
+        index;
+
+
+    positionCarousel(
+        type,
+        true
+    );
+
+}
+
+
+/* =========================================================
+   DOT UPDATE
+   ========================================================= */
+
+function updateDots(
+    type
+) {
+
+    const container =
+        grids[type];
+
+
+    if (!container) {
+        return;
+    }
+
+
+    const dots =
+        container.querySelectorAll(
+            ".carousel-dot"
+        );
+
+
+    const current =
+        carouselState[type].current;
+
+
+    dots.forEach(
+        (dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === current
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MEMBER CARD
+   ========================================================= */
+
+function createMemberCard(
+    member,
+    index
+) {
+
+    const card =
+        document.createElement(
+            "article"
+        );
+
+
+    card.className =
+        "member-card";
+
+
+    card.style.setProperty(
+        "--delay",
+        `${index * 50}ms`
+    );
+
+
+    const initials =
+        getInitials(
+            member.name
+        );
+
+
+    card.innerHTML = `
+
+        <div class="member-image-wrap">
+
+            ${createImageHTML(
+                member,
+                initials
+            )}
+
+        </div>
+
+
+        <h3 class="member-name">
+
+            ${escapeHTML(
+                member.name
+            )}
+
+        </h3>
+
+
+        <p class="member-role">
+
+            ${escapeHTML(
+                member.role
+            )}
+
+        </p>
+
+
+        <div class="member-card-hint" aria-hidden="true">
+            <span>Profile</span>
+            <span>→</span>
+        </div>
+
+    `;
+
+
+    const image =
+        card.querySelector(
+            ".member-photo"
+        );
+
+
+    if (image) {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                replaceBrokenImage(
+                    image,
+                    initials
+                );
+
+            }
+        );
+
+    }
+
+
+    card.addEventListener(
+        "click",
+        () => {
+
+            openProfile(
+                member
+            );
+
+        }
+    );
+
+
+    return card;
+
+}
+
+
+/* =========================================================
+   IMAGE HTML
+   ========================================================= */
+
+function createImageHTML(
+    member,
+    initials
+) {
+
+    if (
+        !member.photo ||
+        member.photo.trim() === ""
+    ) {
+
+        return `
+
+            <div
+                class="member-placeholder"
+            >
+                ${initials}
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <img
+            class="member-photo"
+            src="${escapeHTML(
+                resolveSiteAsset(member.photo)
+            )}"
+            alt="${escapeHTML(
+                member.name
+            )}"
+            loading="lazy"
+        >
+
+    `;
+
+}
+
+
+/* =========================================================
+   BROKEN IMAGE
+   ========================================================= */
+
+function replaceBrokenImage(
+    image,
+    initials
+) {
+
+    const wrapper =
+        image.parentElement;
+
+
+    if (!wrapper) {
+        return;
+    }
+
+
+    image.remove();
+
+
+    const placeholder =
+        document.createElement(
+            "div"
+        );
+
+
+    placeholder.className =
+        "member-placeholder";
+
+
+    placeholder.textContent =
+        initials;
+
+
+    wrapper.appendChild(
+        placeholder
+    );
+
+}
+
+
+/* =========================================================
+   INITIALS
+   ========================================================= */
+
+function getInitials(
+    name
+) {
+
+    if (!name) {
+        return "B";
+    }
+
+
+    const words =
+        name
+            .replace(
+                /[.,]/g,
+                ""
+            )
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean);
+
+
+    if (
+        words.length === 1
+    ) {
+
+        return words[0]
+            .substring(
+                0,
+                2
+            )
+            .toUpperCase();
+
+    }
+
+
+    return (
+        words[0].charAt(0) +
+        words[
+            words.length - 1
+        ].charAt(0)
+    ).toUpperCase();
+
+}
+
+
+/* =========================================================
+   EMPTY OPERATIONAL
+   ========================================================= */
+
+function renderOperational() {
+
+    const container =
+        grids.operational;
+
+
+    if (!container) {
+        return;
+    }
+
+
+    container.innerHTML = `
+
+        <div class="empty-team">
+
+            <div class="empty-team-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+            <h3>
+                Operational Team
+            </h3>
+
+
+            <p>
+                Team members will be added here
+                as the operational structure develops.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+function renderEmptyState(
+    container
+) {
+
+    container.innerHTML = `
+
+        <div class="empty-team">
+
+            <div class="empty-team-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <h3>
+                No Members Added Yet
+            </h3>
+
+            <p>
+                Team member information will be
+                updated here.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   TEAM SELECTOR
+   ========================================================= */
+
+function setupTeamSelector() {
+
+    selectorButtons.forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const target =
+                        button.dataset.team ||
+                        button.dataset.target;
+
+
+                    selectorButtons.forEach(
+                        item => {
+
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    panels.forEach(
+                        panel => {
+
+                            panel.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    const targetPanel =
+                        document.getElementById(
+                            target
+                        );
+
+
+                    if (targetPanel) {
+
+                        targetPanel.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+                    /*
+                       Restart visible carousel.
+                    */
+
+                    if (
+                        target ===
+                        "advisory"
+                    ) {
+
+                        restartCarousel(
+                            "advisory"
+                        );
+
+                    }
+
+
+                    if (
+                        target ===
+                        "directors"
+                    ) {
+
+                        restartCarousel(
+                            "directors"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+function setupModal() {
+    if (modalClose) modalClose.addEventListener("click", closeProfile);
+    if (profileModal) profileModal.addEventListener("click", e => {
+        if (e.target === profileModal || e.target.classList.contains("member-modal-overlay")) closeProfile();
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeProfile(); });
+}
+
+function openProfile(member) {
+    if (!profileModal) return;
+    const nameEl=document.getElementById("modalMemberName");
+    const roleEl=document.getElementById("modalMemberRole");
+    const detailsEl=document.getElementById("modalMemberDetails");
+    const imageEl=document.getElementById("modalMemberImage");
+    if(nameEl) nameEl.textContent=member.name||"";
+    if(roleEl) roleEl.textContent=member.fullRole||member.role||"";
+    if(detailsEl) detailsEl.textContent=member.bio&&member.bio.trim()?member.bio:"Profile details will be updated soon.";
+    if(imageEl){
+        const initials=getInitials(member.name);
+        imageEl.alt=member.name||"BCRLS Team Member";
+        imageEl.src=resolveSiteAsset(member.photo)||""; imageEl.style.display=member.photo?"block":"none";
+        imageEl.onerror=()=>{imageEl.style.display="none";const w=imageEl.parentElement;if(w&&!w.querySelector(".modal-member-placeholder")){const d=document.createElement("div");d.className="member-placeholder modal-member-placeholder";d.textContent=initials;w.appendChild(d);}};
+    }
+    profileModal.classList.add("active"); profileModal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
+}
+
+function closeProfile() {
+    if(!profileModal)return; profileModal.classList.remove("active"); profileModal.setAttribute("aria-hidden","true"); document.body.style.overflow="";
 }
 
 /* =========================================================
-   HOMEPAGE DRIVE VIDEO — keep the real player visible
+   RESPONSIVE RESIZE
+   ========================================================= */
+
+function setupResize() {
+
+    let resizeTimer;
+
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            clearTimeout(
+                resizeTimer
+            );
+
+
+            resizeTimer =
+                setTimeout(
+                    () => {
+
+                        Object.keys(
+                            carouselState
+                        ).forEach(
+                            type => {
+
+                                const container =
+                                    grids[type];
+
+
+                                if (!container) {
+                                    return;
+                                }
+
+
+                                const oldTrack =
+                                    container.querySelector(
+                                        ".team-track"
+                                    );
+
+
+                                if (!oldTrack) {
+                                    return;
+                                }
+
+
+                                renderTeam(
+                                    type
+                                );
+
+
+                                restartCarousel(
+                                    type
+                                );
+
+                            }
+                        );
+
+                    },
+                    250
+                );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   DYNAMIC BACKEND FUNCTIONS
+   ========================================================= */
+
+function updateTeam(
+    type,
+    members
+) {
+
+    if (
+        !Object.prototype.hasOwnProperty.call(
+            teamData,
+            type
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    stopCarousel(
+        type
+    );
+
+
+    teamData[type] =
+        Array.isArray(
+            members
+        )
+            ? members
+            : [];
+
+
+    carouselState[type] = {
+
+        current: 0,
+
+        timer: null,
+
+        moving: false
+
+    };
+
+
+    renderTeam(
+        type
+    );
+
+
+    startCarousel(
+        type
+    );
+
+}
+
+
+/* =========================================================
+   ADD MEMBER
+   ========================================================= */
+
+function addTeamMember(
+    type,
+    member
+) {
+
+    if (
+        !teamData[type] ||
+        !member ||
+        !member.name
+    ) {
+
+        return;
+
+    }
+
+
+    teamData[type].push(
+        member
+    );
+
+
+    updateTeam(
+        type,
+        teamData[type]
+    );
+
+}
+
+
+/* =========================================================
+   REMOVE MEMBER
+   ========================================================= */
+
+function removeTeamMember(
+    type,
+    memberName
+) {
+
+    if (
+        !teamData[type]
+    ) {
+
+        return;
+
+    }
+
+
+    teamData[type] =
+        teamData[type].filter(
+            member =>
+                member.name !==
+                memberName
+        );
+
+
+    updateTeam(
+        type,
+        teamData[type]
+    );
+
+}
+
+
+/* =========================================================
+   HTML ESCAPE
+   ========================================================= */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+/* =========================================================
+   DEVICE MODE DETECTION
+   Chrome Android Desktop Mode can report a desktop-sized viewport.
+   Detect touch/mobile devices separately so the site menu remains usable.
 ========================================================= */
-#overview-video .video-frame {
-    position: relative !important;
-    overflow: hidden !important;
-    aspect-ratio: 16 / 9 !important;
-    min-height: 0 !important;
-}
+(function () {
+    var root = document.documentElement;
 
-#overview-video .video-frame iframe {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    border: 0 !important;
-    z-index: 3 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
+    function updateDeviceMode() {
+        var ua = navigator.userAgent || '';
+        var touchDevice = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+        var desktopViewport = window.innerWidth >= 768;
 
-#overview-video .promo-video-fallback {
-    z-index: 1 !important;
-}
+        root.classList.toggle('bcrls-touch-device', touchDevice);
+        root.classList.toggle('bcrls-desktop-mode', touchDevice && desktopViewport);
+    }
+
+    updateDeviceMode();
+    window.addEventListener('resize', updateDeviceMode, { passive: true });
+    window.addEventListener('orientationchange', updateDeviceMode, { passive: true });
+})();
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+    const menuOverlay =
+        document.querySelector(".menu-overlay");
+
+    if (!menuToggle || !mainNav) {
+        return;
+    }
+
+
+    /* =========================
+       TOGGLE MENU
+    ========================= */
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            mainNav.classList.contains("mobile-open");
+
+        if (isOpen) {
+
+            closeMobileMenu();
+
+        } else {
+
+            openMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================
+       OPEN
+    ========================= */
+
+    function openMobileMenu() {
+
+        mainNav.classList.add("mobile-open");
+
+        if (menuOverlay) menuOverlay.classList.add("active");
+
+        menuToggle.classList.add("active");
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+    }
+
+
+    /* =========================
+       CLOSE
+    ========================= */
+
+    function closeMobileMenu() {
+
+        mainNav.classList.remove("mobile-open");
+
+        if (menuOverlay) menuOverlay.classList.remove("active");
+
+        menuToggle.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document
+            .querySelectorAll(".nav-dropdown.mobile-open")
+            .forEach(dropdown => {
+
+                dropdown.classList.remove(
+                    "mobile-open"
+                );
+
+            });
+    }
+
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeMobileMenu);
+    }
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMobileMenu();
+    });
+
+
+    /* =========================
+       MOBILE DROPDOWNS
+    ========================= */
+
+    document
+        .querySelectorAll(".nav-dropdown-toggle")
+        .forEach(toggle => {
+
+            toggle.addEventListener(
+                "click",
+                event => {
+
+                    if (mainNav.classList.contains("mobile-open") || window.innerWidth <= 1200 || document.documentElement.classList.contains("bcrls-touch-device")) {
+
+                        event.preventDefault();
+
+                        const dropdown =
+                            toggle.closest(
+                                ".nav-dropdown"
+                            );
+
+                        if (!dropdown) {
+                            return;
+                        }
+
+                        dropdown.classList.toggle(
+                            "mobile-open"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       CLOSE AFTER LINK CLICK
+    ========================= */
+
+    mainNav
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        mainNav.classList.contains("mobile-open") ||
+                        window.innerWidth <= 1200 ||
+                        document.documentElement.classList.contains("bcrls-touch-device")
+                    ) {
+
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       RESIZE
+    ========================= */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                !mainNav.classList.contains("mobile-open") &&
+                window.innerWidth > 1200 &&
+                !document.documentElement.classList.contains("bcrls-touch-device")
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+});
