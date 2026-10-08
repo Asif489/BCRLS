@@ -3828,7 +3828,7 @@ textarea::placeholder {
    Keep the three-line menu available until the wide desktop
    layout has enough room for the complete navigation.
 ========================================================= */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1310px) {
     html body .site-header .menu-toggle {
         display: flex !important;
         visibility: visible !important;
@@ -4218,11 +4218,11 @@ html.bcrls-touch-device body .site-header .menu-overlay.active {
    CHROME ANDROID "DESKTOP SITE" MODE
    Touch device + wide CSS viewport should use the same
    horizontal desktop navigation instead of the hamburger.
-   Scoped to min-width 1501px: below that the horizontal
+   Scoped to min-width 1311px: below that the horizontal
    navigation does not fit and the hamburger drawer must be
-   used instead (see the max-width 1500px block above).
+   used instead (see the max-width 1310px block above).
 ========================================================= */
-@media screen and (min-width: 1501px) {
+@media screen and (min-width: 1311px) {
 
 html.bcrls-desktop-mode body .site-header .menu-toggle {
     display: none !important;
@@ -4617,7 +4617,7 @@ html.bcrls-touch-device body .site-header .main-nav .dropdown-menu a {
    target. Applied globally: on wide desktop the button is
    display:none, so the extra size is never painted.
    The drawer dropdown links only exist in the drawer layout
-   (max-width 1500px), so they are scoped there in order to
+   (max-width 1310px), so they are scoped there in order to
    leave the wide desktop navigation untouched.
 ========================================================= */
 
@@ -4628,7 +4628,7 @@ html.bcrls-mobile-device body .site-header .menu-toggle {
     min-height: 44px !important;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1310px) {
 
     html body .site-header .main-nav .dropdown-menu a,
     html.bcrls-touch-device body .site-header .main-nav .dropdown-menu a,

@@ -2075,7 +2075,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.classList.contains("open");
 
     const isDrawerLayout = () =>
-        window.innerWidth <= 1500 ||
+        window.innerWidth <= 1310 ||
         isMenuOpen() ||
         document.documentElement.classList.contains("bcrls-touch-device") ||
         document.documentElement.classList.contains("bcrls-mobile-device");
@@ -2466,7 +2466,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!isMenuOpen()) return;
 
         const wideDesktop =
-            window.innerWidth > 1500 &&
+            window.innerWidth > 1310 &&
             !document.documentElement.classList.contains("bcrls-touch-device") &&
             !document.documentElement.classList.contains("bcrls-mobile-device");
 

@@ -541,7 +541,7 @@ img{max-width:100%;height:auto}
    Keep the three-line menu visible when a phone requests
    the desktop site and reports a tablet-sized CSS viewport.
 ========================================================= */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1310px) {
     html body .site-header .menu-toggle {
         display: flex !important;
         visibility: visible !important;
@@ -786,7 +786,7 @@ img{max-width:100%;height:auto}
    Keep the open navigation above the backdrop so every link
    and dropdown remains clickable.
 ========================================================= */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1310px) {
     html body .site-header .main-nav.mobile-open,
     html body .site-header .main-nav.active {
         z-index: 7000 !important;
@@ -909,7 +909,7 @@ img{max-width:100%;height:auto}
    Keep submenus directly under their own parent item.
    Do not inherit desktop absolute dropdown offsets.
 ========================================================= */
-@media screen and (max-width: 1500px), (hover: none) and (pointer: coarse) {
+@media screen and (max-width: 1310px), (hover: none) and (pointer: coarse) {
     html body .site-header .main-nav .nav-dropdown {
         position: relative !important;
         display: block !important;

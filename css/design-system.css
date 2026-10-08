@@ -221,14 +221,14 @@ html, body { overflow-x: hidden; }
 }
 
 /* Keep every desktop navigation item visible on wide PC screens. */
-@media (min-width: 1501px) {
+@media (min-width: 1311px) {
   .site-header .header-inner { width: min(1660px, calc(100% - 44px)); }
   .site-header .nav-link,
   .site-header .nav-dropdown-toggle { font-size: 13.5px; padding-inline: 7px; }
 }
 
 /* Medium PC / laptop: switch to the same reliable menu used on tablets. */
-@media (max-width: 1500px) and (min-width: 769px) {
+@media (max-width: 1310px) and (min-width: 769px) {
   body .site-header { height: 72px !important; }
   body .site-header .header-inner { width: calc(100% - 36px) !important; }
   body .site-header .main-nav {
