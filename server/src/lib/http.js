@@ -18,5 +18,6 @@ const badRequest = (message, details) => new HttpError(400, message, details);
 const unauthorized = (message = "Authentication required") => new HttpError(401, message);
 const forbidden = (message = "Not allowed") => new HttpError(403, message);
 const notFound = (message = "Not found") => new HttpError(404, message);
+const conflict = (message, details) => new HttpError(409, message, details);
 
-module.exports = { asyncRoute, HttpError, badRequest, unauthorized, forbidden, notFound };
+module.exports = { asyncRoute, HttpError, badRequest, unauthorized, forbidden, notFound, conflict };

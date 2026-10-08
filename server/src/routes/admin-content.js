@@ -5,7 +5,7 @@ const { z } = require("zod");
 const db = require("../db/pool");
 const { requireAuth } = require("../middleware/auth");
 const { validate } = require("../middleware/validate");
-const { asyncRoute, badRequest, notFound } = require("../lib/http");
+const { asyncRoute, badRequest, notFound, conflict } = require("../lib/http");
 const { buildDataSchema } = require("../lib/content-validation");
 const { audit } = require("../lib/audit");
 
@@ -70,6 +70,38 @@ function mergeData(existing, patch, fields) {
   }
 
   return merged;
+}
+
+/*
+  A section's match_by column names the field that pairs a stored row with a
+  DOM node instead of position (events: eventId, team: name, ...).  Two rows
+  in one section carrying the same value would make the overlay ambiguous, so
+  create and patch refuse the write with 409.
+*/
+async function assertMatchValueUnique(section, data, excludeId = null) {
+  if (!section.match_by || !data) return;
+
+  const value = data[section.match_by];
+  if (value === undefined || value === null || value === "") return;
+
+  const { rows } = await db.query(
+    `SELECT id, slug
+       FROM content_items
+      WHERE section_id = $1
+        AND (data ->> $2) = $3
+        AND ($4::bigint IS NULL OR id <> $4)
+      LIMIT 1`,
+    [section.id, section.match_by, String(value), excludeId]
+  );
+
+  if (rows.length) {
+    throw conflict(
+      `Duplicate ${section.match_by}: another item in this section already uses ` +
+        `${section.match_by}="${String(value)}" (item "${rows[0].slug}"). ` +
+        `Every item of a section must carry a unique "${section.match_by}" value.`,
+      { field: section.match_by, value: String(value), existingItemId: Number(rows[0].id) }
+    );
+  }
 }
 
 /* ------------------------------------------------------------ list sections */
@@ -153,6 +185,8 @@ router.post(
 
     const body = schema.parse(req.body || {});
 
+    await assertMatchValueUnique(section, body.data);
+
     const slugBase = slugify(body.data.title || body.data.name || body.data.label || section.key);
     const slug = await nextSlug(section, slugBase);
 
@@ -209,6 +243,9 @@ router.patch(
     const body = schema.parse(req.body || {});
 
     const data = body.data ? mergeData(existing.data, body.data, section.fields) : existing.data;
+
+    await assertMatchValueUnique(section, data, existing.id);
+
     const slug = body.slug ? await nextSlug(section, slugify(body.slug), existing.id) : existing.slug;
 
     const item = await db.one(
