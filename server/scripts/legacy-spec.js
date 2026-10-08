@@ -50,7 +50,7 @@ const HTML_COLLECTIONS = [
     pages: ["/events/archive.html"],
     container: ".events-grid",
     item: ".event-card",
-    matchBy: "event-id",
+    matchBy: "eventId",
     slugFrom: "title",
     fields: {
       eventId: { sel: "@data-event-id", label: "Event id", type: "number" },
