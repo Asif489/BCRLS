@@ -122,6 +122,12 @@
         var el = findTarget(root, spec.sel);
         if (!el) return;
 
+        /* nothing to do when the node already says the same thing - keeps an
+           untouched install byte-for-byte identical to the static markup */
+        var same = function (current, next) {
+            return String(current).replace(/\s+/g, " ").trim() === String(next).replace(/\s+/g, " ").trim();
+        };
+
         if (spec.mode === "attr" || spec.attr) {
             var attrName = spec.attr || spec.sel.slice(1);
             var attrValue = String(value);
@@ -129,12 +135,16 @@
             /* never let a stored value turn a link into executable code */
             if (URL_ATTRS[attrName] && UNSAFE_URL.test(attrValue)) return;
 
+            if (el.getAttribute(attrName) === attrValue) return;
             el.setAttribute(attrName, attrValue);
         } else if (spec.mode === "html") {
-            el.innerHTML = [spec.keep || "", esc(value), spec.keepAfter || ""]
+            var rendered = [spec.keep || "", esc(value), spec.keepAfter || ""]
                 .filter(Boolean)
                 .join(" ");
+            if (same(el.innerHTML, rendered)) return;
+            el.innerHTML = rendered;
         } else {
+            if (same(el.textContent, value)) return;
             setTextValue(el, String(value));
         }
     }
@@ -300,55 +310,101 @@
         };
     }
 
+    /* Values are compared with sorted keys so a key re-ordering inside the
+       stored object is not mistaken for an edit. */
+    function sameValue(a, b) {
+        return JSON.stringify(stableKeys(a)) === JSON.stringify(stableKeys(b));
+    }
+
+    function stableKeys(value) {
+        if (!value || typeof value !== "object") return value;
+        if (Array.isArray(value)) return value.map(stableKeys);
+
+        var out = {};
+        Object.keys(value)
+            .sort()
+            .forEach(function (key) {
+                out[key] = stableKeys(value[key]);
+            });
+        return out;
+    }
+
+    /*
+      The archive is rendered by js/events.js.  This hook must not disturb a
+      page that has no administrator edits: sortArchiveCardsByDate() rewrites
+      data-archive-order on every card, so it only runs when an edited row
+      actually changed a date, and the modal buttons are only re-bound when an
+      edited row changed the modal copy.
+    */
     function hookEventsArchive(section, items) {
         whenLoaded(function () {
             var details = globalValue("archiveEventDetails");
             var dateByTitle = globalValue("archiveDateByTitle");
             var ordered = sortedItems(section, items);
+            var edited = ordered.filter(function (item) {
+                return Boolean(item.editedAt);
+            });
 
-            if (details && typeof details === "object") {
-                ordered.forEach(function (item) {
-                    if (!item.editedAt) return;
-                    var id = Number(item.data.eventId);
-                    if (!id) return;
+            var dateChanged = false;
+            var detailChanged = false;
+
+            edited.forEach(function (item) {
+                var id = Number(item.data.eventId);
+
+                if (details && id && !sameValue(details[id], item.data.detail)) {
                     details[id] = item.data.detail || {};
-                });
-            }
+                    detailChanged = true;
+                }
 
-            if (dateByTitle && typeof dateByTitle === "object") {
-                ordered.forEach(function (item) {
-                    if (!item.data.dateIso) return;
+                /* in-memory only: the mapping follows the stored title/date so
+                   a renamed or re-dated card still sorts correctly. No DOM is
+                   touched here. */
+                if (dateByTitle && item.data.dateIso) {
                     var title = String(item.data.title || "").replace(/\s+/g, " ").trim();
                     if (title) dateByTitle[title] = item.data.dateIso;
-                });
-            }
+                }
+            });
 
-            /* the date text on the card is always derived from dateIso */
+            /* the date text on the card follows dateIso */
             var grid = document.querySelector(section.containerSelector);
             if (grid) {
                 Array.prototype.forEach.call(
                     grid.querySelectorAll(section.itemSelector),
                     function (card) {
                         var id = String(card.getAttribute("data-event-id"));
-                        var item = ordered.filter(function (candidate) {
+                        var item = edited.filter(function (candidate) {
                             return String(candidate.data.eventId) === id;
                         })[0];
-                        if (!item || !item.editedAt) return;
+                        if (!item) return;
 
                         var iso = item.data.dateIso;
+                        if (!iso) return;
+
+                        /* only a real date change may re-sort: the sort helper
+                           rewrites data-archive-order on every card */
+                        if ((card.getAttribute("data-event-date") || "") !== iso) {
+                            dateChanged = true;
+                            return;
+                        }
+
                         var span = card.querySelector(".event-card-meta span");
                         if (!span) return;
 
                         var text = formatDate(iso);
+                        var current = String(span.textContent || "").replace(/\s+/g, " ").trim();
+                        if (!text || text === current) return;
+
                         span.innerHTML = '<i class="fa-regular fa-calendar"></i>' + esc(text);
                     }
                 );
             }
 
-            if (typeof sortArchiveCardsByDate === "function") sortArchiveCardsByDate();
+            if (dateChanged && typeof sortArchiveCardsByDate === "function") {
+                sortArchiveCardsByDate();
+            }
 
             /* re-read the cards so the modal shows the edited copy */
-            if (typeof bindArchiveCards === "function") {
+            if (detailChanged && typeof bindArchiveCards === "function") {
                 Array.prototype.forEach.call(
                     document.querySelectorAll(".event-details-btn"),
                     function (button) {
