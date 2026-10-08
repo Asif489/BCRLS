@@ -1,0 +1,2663 @@
+{
+  "generatedAt": "2026-10-08T13:35:30.670Z",
+  "generator": "server/scripts/extract-legacy.js",
+  "spec": "server/scripts/legacy-spec.js",
+  "sections": [
+    {
+      "key": "events-archive",
+      "title": "Event archive",
+      "pages": [
+        "/events/archive.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".events-grid",
+      "itemSelector": ".event-card",
+      "matchBy": "event-id",
+      "importedCount": 15,
+      "optionalFields": [],
+      "fields": {
+        "eventId": {
+          "sel": "@data-event-id",
+          "label": "Event id",
+          "type": "number",
+          "mode": "attr",
+          "attr": "data-event-id"
+        },
+        "image": {
+          "sel": ".event-card-image img",
+          "attr": "src",
+          "label": "Image",
+          "type": "image",
+          "mode": "attr"
+        },
+        "imageAlt": {
+          "sel": ".event-card-image img",
+          "attr": "alt",
+          "label": "Image alt text",
+          "type": "text",
+          "mode": "attr"
+        },
+        "type": {
+          "sel": ".event-card-type",
+          "label": "Type",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".event-card-title",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".event-card-description",
+          "label": "Card description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "dateIso": {
+          "virtual": true,
+          "label": "Date (drives sorting)",
+          "type": "date"
+        },
+        "detail": {
+          "virtual": true,
+          "label": "Details modal",
+          "type": "object",
+          "objectFields": {
+            "description": {
+              "label": "Full description",
+              "type": "textarea"
+            },
+            "programme": {
+              "label": "Programme",
+              "type": "textarea"
+            },
+            "organizer": {
+              "label": "Organizer",
+              "type": "text"
+            },
+            "speakers": {
+              "label": "Speakers",
+              "type": "list"
+            },
+            "images": {
+              "label": "Gallery images",
+              "type": "list"
+            },
+            "type": {
+              "label": "Type override",
+              "type": "text"
+            }
+          }
+        }
+      },
+      "templateHtml": "<article class=\"event-card\" data-event-id=\"{{eventId}}\">\n<div class=\"event-card-image\">\n<img alt=\"{{imageAlt}}\" src=\"{{image}}\">\n</div>\n<div class=\"event-card-body\">\n<span class=\"event-card-type\">{{type}}</span>\n<h3 class=\"event-card-title\">{{title}}</h3>\n<div class=\"event-card-meta\">\n<span><i class=\"fa-regular fa-calendar\"></i> 7 October 2025</span>\n</div>\n<p class=\"event-card-description\">{{description}}</p>\n<button class=\"event-details-btn\" data-event-id=\"1\" type=\"button\">\n                            Event Details\n                            <i class=\"fa-solid fa-arrow-right\"></i>\n</button>\n</div>\n</article>",
+      "items": [
+        {
+          "slug": "bcrls-inaugural-lecture-series",
+          "index": 0,
+          "data": {
+            "eventId": "1",
+            "image": "../assets/events/inargument.jpeg",
+            "imageAlt": "BCRLS Inaugural Lecture Series",
+            "type": "LECTURE SERIES",
+            "title": "BCRLS Inaugural Lecture Series",
+            "description": "BCRLS inaugural lecture series featuring academic discussions on refugee law, displacement and refugee protection.",
+            "detail": {
+              "description": "The BCRLS inaugural lecture series featured three distinguished speakers addressing ethnography of refugees, global burden-sharing, and legal challenges of boat refugees, marking the beginning of BCRLS’s academic journey.",
+              "programme": "A three-speaker inaugural lecture series focused on refugee ethnography, global burden-sharing and the legal challenges faced by boat refugees.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Professor Dr. Nasir Uddin — Department of Anthropology, University of Chittagong",
+                "Dr. Hassan Faruk Al Imran — Associate Professor (Law), Independent University Bangladesh",
+                "Professor Dr. Rakiba Nabi — Chairman, Department of Law, University of Chittagong"
+              ],
+              "images": [
+                "../assets/events/inargument.jpeg"
+              ]
+            },
+            "dateIso": "2025-10-07"
+          }
+        },
+        {
+          "slug": "session-with-professor-james-c-hathaway",
+          "index": 1,
+          "data": {
+            "eventId": "2",
+            "image": "../assets/events/qa_session_james.jpeg",
+            "imageAlt": "Session with Professor James C. Hathaway",
+            "type": "ACADEMIC SESSION",
+            "title": "Session with Professor James C. Hathaway",
+            "description": "An interactive academic session with Professor James C. Hathaway focusing on international refugee law and protection.",
+            "detail": {
+              "description": "An exclusive interactive session with Professor James C. Hathaway, focusing on fundamental questions on refugee status, rights, and global protection systems.",
+              "programme": "Interactive academic discussion on refugee status, refugee rights and global protection systems.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Professor James C. Hathaway"
+              ],
+              "images": [
+                "../assets/events/qa_session_james.jpeg"
+              ]
+            },
+            "dateIso": "2025-10-22"
+          }
+        },
+        {
+          "slug": "lecture-with-kate-ogg",
+          "index": 2,
+          "data": {
+            "eventId": "3",
+            "image": "../assets/events/lecture_series.jpeg",
+            "imageAlt": "Lecture with Kate Ogg",
+            "type": "LECTURE",
+            "title": "Lecture with Kate Ogg",
+            "description": "Academic lecture addressing refugee protection, litigation and access to justice.",
+            "detail": {
+              "description": "A focused discussion on refugee litigation, access to justice, and community sponsorship, highlighting the role of courts and displaced voices in protection frameworks.",
+              "programme": "Discussion on refugee rights litigation, access to justice and community sponsorship.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Professor Kate Ogg"
+              ],
+              "images": [
+                "../assets/events/lecture_series.jpeg"
+              ]
+            },
+            "dateIso": "2025-11-27"
+          }
+        },
+        {
+          "slug": "workshop-on-interdisciplinary-legal-writing",
+          "index": 3,
+          "data": {
+            "eventId": "4",
+            "image": "../assets/events/interdisciplinary.jpeg",
+            "imageAlt": "Workshop on Interdisciplinary Legal Writing",
+            "type": "WORKSHOP",
+            "title": "Workshop on Interdisciplinary Legal Writing",
+            "description": "A workshop exploring interdisciplinary approaches to legal research and writing in refugee law.",
+            "detail": {
+              "description": "Session conducted by Naureen Rahim on “How to Write: IRL and Interdisciplinarity,” providing practical guidance and interdisciplinary research insights.",
+              "programme": "Practical guidance on writing and interdisciplinary approaches to international refugee law research.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Ms. Naureen Rahim — PhD Candidate, University of Oslo"
+              ],
+              "images": [
+                "../assets/events/interdisciplinary.jpeg"
+              ]
+            },
+            "dateIso": "2025-12-05"
+          }
+        },
+        {
+          "slug": "workshop-on-refugee-law-research",
+          "index": 4,
+          "data": {
+            "eventId": "5",
+            "image": "../assets/events/workshop.jpeg",
+            "imageAlt": "Workshop on Refugee Law Research",
+            "type": "WORKSHOP",
+            "title": "Workshop on Refugee Law Research",
+            "description": "An academic workshop focused on research approaches and methodologies in international refugee law.",
+            "detail": {
+              "description": "An academic workshop led by Rutaban Yameen on pursuing research in international refugee law, aimed at strengthening research skills among participants.",
+              "programme": "Workshop on how to pursue research in international refugee law, with a focus on research skills and refugee-law scholarship.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Rutaban Yameen — PhD Candidate, University of New South Wales"
+              ],
+              "images": [
+                "../assets/events/workshop.jpeg"
+              ]
+            },
+            "dateIso": "2025-12-13"
+          }
+        },
+        {
+          "slug": "session-on-temporary-protection",
+          "index": 5,
+          "data": {
+            "eventId": "6",
+            "image": "../assets/events/temporary_protection.jpeg",
+            "imageAlt": "Session on Temporary Protection",
+            "type": "ACADEMIC SESSION",
+            "title": "Session on Temporary Protection",
+            "description": "Expert discussion on temporary protection and its legal foundations in refugee and displacement contexts.",
+            "detail": {
+              "description": "Expert lecture by Dr. Meltem İneli Ciğer exploring legal foundations and applications of temporary protection in international refugee law.",
+              "programme": "Expert lecture and discussion on temporary protection in international refugee law.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Dr. Meltem İneli Ciğer — Associate Professor, Süleyman Demirel University; Associate, Migration Policy Centre, European University Institute"
+              ],
+              "images": [
+                "../assets/events/temporary_protection.jpeg"
+              ]
+            },
+            "dateIso": "2025-01-14"
+          }
+        },
+        {
+          "slug": "q-a-with-jane-mcadam",
+          "index": 6,
+          "data": {
+            "eventId": "7",
+            "image": "../assets/events/qa_jeny.jpeg",
+            "imageAlt": "Q&A with Jane McAdam",
+            "type": "Q&A SESSION",
+            "title": "Q&A with Jane McAdam",
+            "description": "An interactive discussion on climate change, displacement and refugee protection.",
+            "detail": {
+              "description": "An interactive session on climate-induced displacement, addressing legal and humanitarian challenges in the context of climate change.",
+              "programme": "Q&A and discussion on climate-induced displacement and related legal and humanitarian challenges.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Scientia Professor Jane McAdam"
+              ],
+              "images": [
+                "../assets/events/qa_jeny.jpeg"
+              ]
+            },
+            "dateIso": "2026-02-25"
+          }
+        },
+        {
+          "slug": "session-with-nafees-ahmad",
+          "index": 7,
+          "data": {
+            "eventId": "8",
+            "image": "../assets/events/south_asia_nafees.jpeg",
+            "imageAlt": "Session with Nafees Ahmad",
+            "type": "ACADEMIC SESSION",
+            "title": "Session with Nafees Ahmad",
+            "description": "Academic discussion concerning displacement, statelessness, refugee protection and migration governance.",
+            "detail": {
+              "description": "An academic session featuring Dr. Nafees Ahmad. The discussion covered climate-induced displacement, statelessness, refugee protection gaps, and the intersection of artificial intelligence with migration governance, contributing to regional discourse on refugee law in South Asia.",
+              "programme": "Academic discussion on climate-induced displacement, statelessness, refugee protection gaps and AI in migration governance.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Dr. Nafees Ahmad — Associate Professor at South Asian University, New Delhi"
+              ],
+              "images": [
+                "../assets/events/south_asia_nafees.jpeg"
+              ]
+            },
+            "dateIso": "2026-02-21"
+          }
+        },
+        {
+          "slug": "field-visit-to-bhasan-char",
+          "index": 8,
+          "data": {
+            "eventId": "9",
+            "image": "../assets/events/Field_Visit-2.jpeg",
+            "imageAlt": "Field Visit to Bhasan Char",
+            "type": "FIELD VISIT",
+            "title": "Field Visit to Bhasan Char",
+            "description": "A BCRLS field research visit focusing on higher education access and livelihood opportunities for Rohingya refugees.",
+            "detail": {
+              "description": "A BCRLS field visit to Bhasan Char conducted as part of the research project “Legal Aspects of Higher Education Access and Livelihood through Income-Generating Activities for the Rohingyas in Bangladesh.” The visit aimed to gather first-hand insights and empirical data on legal and practical challenges surrounding education access and livelihood opportunities for Rohingya refugees.",
+              "programme": "Field engagement in Bhasan Char focused on education access, livelihood opportunities, empirical research and evidence-based policy analysis.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "BCRLS Directors and Executive Members"
+              ],
+              "images": [
+                "../assets/events/Field_Visit-2.jpeg",
+                "../assets/events/Field_Vist-1.jpeg"
+              ]
+            },
+            "dateIso": "2025-11-24"
+          }
+        },
+        {
+          "slug": "seminar-on-foundations-of-refugee-law",
+          "index": 9,
+          "data": {
+            "eventId": "10",
+            "image": "../assets/events/Foundations.jpeg",
+            "imageAlt": "Seminar on Foundations of Refugee Law",
+            "type": "SEMINAR",
+            "title": "Seminar on Foundations of Refugee Law",
+            "description": "Academic seminar discussing the foundations, principles and contemporary challenges of refugee law.",
+            "detail": {
+              "description": "On 19 January 2026 at Jagannath University, BCRLS in collaboration with the Department of Law and Land Administration, Jagannath University, hosted the academic seminar “Foundations of Refugee Law: Principles, Protection, and Contemporary Challenges.”",
+              "programme": "Discussion on core principles of refugee law, evolving protection frameworks and contemporary challenges in refugee protection.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law and Land Administration, Jagannath University",
+              "speakers": [
+                "Sakhawat Sajjat Sejan — Speaker",
+                "Honourable Christine Richardson — Chief Guest",
+                "Meftahul Hasan — Special Guest, Assistant Professor, Department of Law, Jagannath University"
+              ],
+              "images": [
+                "../assets/events/Foundations.jpeg"
+              ]
+            },
+            "dateIso": "2026-01-19"
+          }
+        },
+        {
+          "slug": "asylum-under-international-refugee-law-and-in-south-asia",
+          "index": 10,
+          "data": {
+            "eventId": "11",
+            "image": "../assets/events/Asylum Under International Refugee Law.jpeg",
+            "imageAlt": "Asylum Under International Refugee Law and in South Asia",
+            "type": "SPECIAL LECTURE",
+            "title": "Asylum Under International Refugee Law and in South Asia",
+            "description": "A comparative academic discussion on asylum under international refugee law and within the South Asian context.",
+            "detail": {
+              "description": "BCRLS, in collaboration with the NSU Center for Legal Research (NSU CLR), presented the special lecture “Asylum Under International Refugee Law and in South Asia: A Comparative Analysis.” The programme was held on 10 April 2026 from 10:00 AM to 12:00 PM at the Moot Court Room (NAC 616), North South University.",
+              "programme": "Comparative examination of asylum law in South Asia within the broader framework of international refugee law and international protection.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS) in collaboration with the NSU Center for Legal Research (NSU CLR)",
+              "speakers": [
+                "Dr. Simon Behrman — Associate Professor, School of Law, University of Warwick"
+              ],
+              "images": [
+                "../assets/events/Asylum Under International Refugee Law.jpeg"
+              ]
+            },
+            "dateIso": "2026-04-10"
+          }
+        },
+        {
+          "slug": "academic-dialogue-on-the-rohingya-genocide",
+          "index": 11,
+          "data": {
+            "eventId": "12",
+            "image": "../assets/events/Justice_Accountibi.jpeg",
+            "imageAlt": "Academic Dialogue on the Rohingya Genocide",
+            "type": "ACADEMIC DIALOGUE",
+            "title": "Academic Dialogue on the Rohingya Genocide",
+            "description": "An academic dialogue focusing on scholarship, legal recognition and accountability concerning the Rohingya genocide.",
+            "detail": {
+              "description": "BCRLS convened a high-level academic dialogue with Professor Kjell Anderson of the University of Manitoba Law School (Canada), centering on evolving scholarship surrounding the Rohingya genocide. The discussion examined legal recognition, evidentiary challenges and international accountability, situating the Rohingya crisis within the wider theme of “Forgotten Genocides” in South Asia.",
+              "programme": "Scholarly discussion on the Rohingya genocide, legal recognition, evidentiary challenges and international accountability.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Professor Kjell Anderson — University of Manitoba Law School, Canada"
+              ],
+              "images": [
+                "../assets/events/Justice_Accountibi.jpeg"
+              ]
+            },
+            "dateIso": "2026-08-25"
+          }
+        },
+        {
+          "slug": "administrative-and-judicial-governance-of-refugees",
+          "index": 12,
+          "data": {
+            "eventId": "14",
+            "image": "../assets/events/canadian_uni_1.jpeg",
+            "imageAlt": "Administrative and Judicial Governance of Refugees",
+            "type": "SEMINAR",
+            "title": "Administrative and Judicial Governance of Refugees",
+            "description": "BCRLS, in collaboration with the Department of Law, Canadian University of Bangladesh, organized a seminar on refugee protection, non-refoulement, arrest, detention and administrative challenges in Bangladesh.",
+            "detail": {
+              "description": "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law, Canadian University of Bangladesh, successfully organized the seminar titled “Administrative and Judicial Governance of Refugees: Protection, Non-Refoulement, Arrest, Detention and Administrative Challenges in Bangladesh.” The session featured meaningful discussion on refugee protection, non-refoulement, detention and administrative challenges within Bangladesh’s legal framework, with participation from more than 50 participants.",
+              "programme": "A seminar examining refugee protection, non-refoulement, arrest, detention and administrative governance challenges in Bangladesh.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS), in collaboration with the Department of Law, Canadian University of Bangladesh",
+              "speakers": [
+                "Dr. Md. Rizwanul Islam — Professor of Law & Dean (SHSS), North South University",
+                "Ahmad Ibrahim — Advisor, Displacement and Climate Justice, BLAST",
+                "Mohammad Sunzad Sheikh — Assistant Professor & Head, Department of Law, Canadian University of Bangladesh",
+                "Md. Riad Mahmud — Senior Lecturer, East West University; Session Moderator"
+              ],
+              "images": [
+                "../assets/events/canadian_uni_1.jpeg",
+                "../assets/events/canadian_uni_2.jpeg"
+              ]
+            },
+            "dateIso": "2026-06-07"
+          }
+        },
+        {
+          "slug": "from-norms-to-ground-realities-citizenship-justice-and-the-rohingya-integration-",
+          "index": 13,
+          "data": {
+            "eventId": "15",
+            "image": "../assets/events/du_1.jpeg",
+            "imageAlt": "From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma",
+            "type": "PANEL DISCUSSION",
+            "title": "From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma",
+            "description": "A BCRLS panel discussion engaging with refugee protection, citizenship, justice and practical pathways surrounding the Rohingya integration dilemma in Bangladesh.",
+            "detail": {
+              "description": "Bangladesh Center for Refugee Law Studies (BCRLS) successfully organized the panel discussion titled “From Norms to Ground Realities: Citizenship, Justice and the Rohingya Integration Dilemma” at the Centre for Advanced Studies in Humanities, Theatre Hall, University of Dhaka. The session brought together academics, researchers, students and practitioners to critically engage with refugee protection, citizenship, justice and the continuing challenges surrounding the Rohingya crisis in Bangladesh.",
+              "programme": "The discussion focused on practical and policy-oriented pathways for refugee protection, dignified and regulated income-generating opportunities, regional and international diplomatic engagement, and conditions for safe, voluntary and sustainable repatriation.",
+              "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Mr. Md Abu Bakar Siddique — discussion on protection of refugees in non-signatory states",
+                "Mr. Nafiz Ahmed — discussion on citizenship law and local integration",
+                "Mr. Riad Mahmud — Session Moderator",
+                "Ms. Nabila Farhin — Opening Remarks",
+                "Mr. Sakhawat Sajjat Sejan — Closing Remarks"
+              ],
+              "images": [
+                "../assets/events/du_1.jpeg",
+                "../assets/events/du_02.jpeg",
+                "../assets/events/du_03.jpeg"
+              ]
+            },
+            "dateIso": "2026-05-07"
+          }
+        },
+        {
+          "slug": "icerpasa-2026",
+          "index": 14,
+          "data": {
+            "eventId": "13",
+            "image": "../assets/events/Conference-23.jpeg",
+            "imageAlt": "ICERPASA 2026",
+            "type": "CONFERENCE",
+            "title": "ICERPASA 2026",
+            "description": "International conference on evolving refugee protection architectures in South Asia, bringing together academic and policy perspectives on refugee protection.",
+            "detail": {
+              "type": "CONFERENCE",
+              "description": "The International Conference on Evolving Refugee Protection Architectures in SouthAsia 2026 (ICERPASA 2026) was successfully held on June 27, 2026. Organized by the Department of Law, University of Chittagong, in collaboration with the Bangladesh Center for Refugee Law Studies (BCRLS), this prestigious event served as a vital regional platform for advancing scholarship, policy dialogue, and cooperation on forced migration and human rights.\n\nThe conference brought together a distinguished gathering of members from the judiciary, academia, government institutions, international organizations, and humanitarian sectors. Through rigorous academic sessions, thought-provoking discussions, and research presentations, ICERPASA 2026 successfully fostered collaborative approaches and key recommendations to address contemporary refugee and displacement challenges across South Asia.",
+              "programme": "Regional academic and policy conference on evolving refugee protection architectures in South Asia, featuring academic sessions, research presentations, policy dialogue and discussion on forced migration and human rights.",
+              "organizer": "Department of Law, University of Chittagong, in collaboration with the Bangladesh Center for Refugee Law Studies (BCRLS)",
+              "speakers": [
+                "Members of the judiciary, academia, government institutions, international organizations, and humanitarian sectors"
+              ],
+              "images": [
+                "../assets/events/Conference-23.jpeg"
+              ]
+            },
+            "dateIso": "2026-06-27"
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-upcoming",
+      "title": "Home - featured course",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".event-grid",
+      "itemSelector": "article.event-card",
+      "matchBy": null,
+      "importedCount": 1,
+      "optionalFields": [],
+      "fields": {
+        "image": {
+          "sel": ".event-card-image img",
+          "attr": "src",
+          "label": "Image",
+          "type": "image",
+          "mode": "attr"
+        },
+        "imageAlt": {
+          "sel": ".event-card-image img",
+          "attr": "alt",
+          "label": "Image alt text",
+          "type": "text",
+          "mode": "attr"
+        },
+        "type": {
+          "sel": ".event-type",
+          "label": "Type",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".event-content h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".event-content > p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "detailsUrl": {
+          "sel": ".home-course-details",
+          "attr": "href",
+          "label": "Details link",
+          "type": "url",
+          "mode": "attr"
+        },
+        "moduleUrl": {
+          "sel": ".home-course-module",
+          "attr": "href",
+          "label": "Module link",
+          "type": "url",
+          "mode": "attr"
+        },
+        "registerUrl": {
+          "sel": ".home-course-register",
+          "attr": "href",
+          "label": "Registration link",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"event-card\">\n\n\n                <div class=\"event-card-image home-upcoming-image\">\n                    <img src=\"{{image}}\" alt=\"{{imageAlt}}\" loading=\"lazy\">\n                </div>\n\n\n                <div class=\"event-content\">\n\n\n                    <span class=\"event-type\">{{type}}</span>\n\n\n                    <h3>{{title}}</h3>\n\n\n                    <p>{{description}}</p>\n\n\n                    <div class=\"home-course-actions\">\n\n                        <a href=\"{{detailsUrl}}\" class=\"home-course-btn home-course-details\">\n                            <i class=\"fa-solid fa-calendar-days\"></i>\n                            Event Details\n                        </a>\n\n                        <a href=\"{{moduleUrl}}\" class=\"home-course-btn home-course-module\" target=\"_blank\" rel=\"noopener\">\n                            <i class=\"fa-regular fa-file-pdf\"></i>\n                            Course Module\n                        </a>\n\n                        <a href=\"{{registerUrl}}\" class=\"home-course-btn home-course-register\" target=\"_blank\" rel=\"noopener\">\n                            <i class=\"fa-solid fa-arrow-up-right-from-square\"></i>\n                            Registration\n                        </a>\n\n                    </div>\n\n\n                </div>\n\n\n            </article>",
+      "items": [
+        {
+          "slug": "certificate-course-on-refugee-law-and-statelessness-foundation-to-practice",
+          "index": 0,
+          "data": {
+            "image": "assets/events/certificate.jpeg",
+            "imageAlt": "Certificate Course on Refugee Law and Statelessness: Foundation to Practice",
+            "type": "Certificate Course",
+            "title": "Certificate Course on Refugee Law and Statelessness: Foundation to Practice",
+            "description": "Professional certificate course on Refugee Law and Statelessness: Foundation to Practice, scheduled for October–December 2026 in hybrid format.",
+            "detailsUrl": "events/upcoming.html",
+            "moduleUrl": "assets/docs/BCRLS Module.pdf",
+            "registerUrl": "https://docs.google.com/forms/d/1VrbHgG0045hvt0jbhkkIp1y5uTFRiRnbDLNKWZYFoQs/viewform?chromeless=1&edit_requested=true"
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-latest",
+      "title": "Home - latest cards",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".latest-grid",
+      "itemSelector": "article.latest-card",
+      "matchBy": null,
+      "importedCount": 2,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".latest-image .placeholder-image i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "category": {
+          "sel": ".latest-content > span",
+          "label": "Category",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".latest-content h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".latest-content > p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".latest-content a.card-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-right\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".latest-content a.card-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"latest-card\">\n\n\n                <div class=\"latest-image\">\n\n                    <div class=\"placeholder-image\">\n\n                        <i class=\"{{icon}}\"></i>\n\n                    </div>\n\n                </div>\n\n\n                <div class=\"latest-content\">\n\n                    <span>{{category}}</span>\n\n\n                    <h3>{{title}}</h3>\n\n\n                    <p>{{description}}</p>\n\n\n                    <a href=\"{{linkUrl}}\" class=\"card-link\"><i class=\"fa-solid fa-arrow-right\"></i> {{linkText}}</a>\n\n                </div>\n\n\n            </article>",
+      "items": [
+        {
+          "slug": "bcrls-newsroom",
+          "index": 0,
+          "data": {
+            "icon": "fa-regular fa-newspaper",
+            "category": "News",
+            "title": "BCRLS Newsroom",
+            "description": "Follow the latest announcements, institutional activities and developments.",
+            "linkText": "Read More",
+            "linkUrl": "media/newsroom.html"
+          }
+        },
+        {
+          "slug": "latest-publications",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-book-open",
+            "category": "Publication",
+            "title": "Latest Publications",
+            "description": "Explore newly published research, articles and academic resources.",
+            "linkText": "Visit Journal Page",
+            "linkUrl": "research/journal.html"
+          }
+        }
+      ]
+    },
+    {
+      "key": "library-academic",
+      "title": "Library - academic journals",
+      "pages": [
+        "/library/academic.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": "#academic-journals .library-resource-grid",
+      "itemSelector": "article.library-resource-card",
+      "matchBy": null,
+      "importedCount": 7,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".library-resource-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "type": {
+          "sel": ".library-resource-type",
+          "label": "Type",
+          "type": "text",
+          "mode": "text"
+        },
+        "meta": {
+          "sel": ".library-resource-meta",
+          "label": "Source / host",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".library-resource-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".library-resource-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "items": [
+        {
+          "slug": "academic-resource-01",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "onlinelibrary.wiley.com",
+            "title": "Academic Resource 01",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://onlinelibrary.wiley.com/doi/epdf/10.1002/wps.20438"
+          }
+        },
+        {
+          "slug": "academic-resource-02",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "inss.org.il",
+            "title": "Academic Resource 02",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://www.inss.org.il/wp-content/uploads/sites/2/systemfiles/SystemFiles/adkan17_4ENG_7_Berti.pdf"
+          }
+        },
+        {
+          "slug": "academic-resource-03",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "mdpi.com",
+            "title": "Academic Resource 03",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://www.mdpi.com/1660-4601/14/8/942"
+          }
+        },
+        {
+          "slug": "academic-resource-04",
+          "index": 3,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "link.springer.com",
+            "title": "Academic Resource 04",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://link.springer.com/article/10.1186/s41018-021-00098-4"
+          }
+        },
+        {
+          "slug": "academic-resource-05",
+          "index": 4,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "mdpi.com",
+            "title": "Academic Resource 05",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://www.mdpi.com/2072-4292/10/5/689"
+          }
+        },
+        {
+          "slug": "academic-resource-06",
+          "index": 5,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "d1wqtxts1xzle7.cloudfront.net",
+            "title": "Academic Resource 06",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://d1wqtxts1xzle7.cloudfront.net/92551752/56679-libre.pdf?1665977487=&response-content-disposition=inline%3B+filename%3DRohingya_Refugee_Crisis_Security_Concern.pdf&Expires=1790143664&Signature=HFtbuKc1wXH9~44aCWIW7LEQVPoGbQ8caTkeoCB2ZxqgJw1-RQc47FJ02CBkqboh2jPbgyhsRC4BnVG9yrD1RO0ldBa3iOjB75o2pekHM1Vr8okaNErVwUu7kcGEtbR-SIrvqwd0mvyqSYjxmml~C61u5uBSHtDWY38dNSVUB7MRvl62bu-IEIZERFFHNQpFfYwO1dMhI5KxUHJEkuUhZkbPIRh7VYLkO9-frj9zqfS-gcrqxViBOQfD8Ug9IfAZJ23qyApZac4rH1o3km7PvBN4oGUciDF5Pe2yjAfO0vGqoF9QFZ~tNoYu8aTyAB1XTH7KUvw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA"
+          }
+        },
+        {
+          "slug": "academic-resource-07",
+          "index": 6,
+          "data": {
+            "icon": "fa-solid fa-file-pdf",
+            "type": "ACADEMIC JOURNAL",
+            "meta": "unhcr.org",
+            "title": "Academic Resource 07",
+            "description": "This resource is included in the BCRLS academic segment and was provided in the latest website update list.",
+            "linkText": "Open Academic Resource",
+            "linkUrl": "https://www.unhcr.org/asia/sites/asia/files/legacy-pdf/59e5f4617.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "key": "library-reports",
+      "title": "Library - reports",
+      "pages": [
+        "/library/report.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": "#reports .library-resource-grid",
+      "itemSelector": "article.library-resource-card",
+      "matchBy": null,
+      "importedCount": 4,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".library-resource-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "type": {
+          "sel": ".library-resource-type",
+          "label": "Type",
+          "type": "text",
+          "mode": "text"
+        },
+        "meta": {
+          "sel": ".library-resource-meta",
+          "label": "Source / host",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".library-resource-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".library-resource-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "items": [
+        {
+          "slug": "reports-resource-01",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-file-lines",
+            "type": "REPORT",
+            "meta": "data.unhcr.org",
+            "title": "Reports Resource 01",
+            "description": "This resource is included in the BCRLS reports segment and was provided in the latest website update list.",
+            "linkText": "Open Report",
+            "linkUrl": "https://data.unhcr.org/en/documents/details/117421"
+          }
+        },
+        {
+          "slug": "reports-resource-02",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-file-lines",
+            "type": "REPORT",
+            "meta": "ifrc.org",
+            "title": "Reports Resource 02",
+            "description": "This resource is included in the BCRLS reports segment and was provided in the latest website update list.",
+            "linkText": "Open Report",
+            "linkUrl": "https://www.ifrc.org/sites/default/files/IFRC_PolicyBrief_GCR.pdf"
+          }
+        },
+        {
+          "slug": "reports-resource-03",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-file-lines",
+            "type": "REPORT",
+            "meta": "hlsenteret.no",
+            "title": "Reports Resource 03",
+            "description": "This resource is included in the BCRLS reports segment and was provided in the latest website update list.",
+            "linkText": "Open Report",
+            "linkUrl": "https://www.hlsenteret.no/english/about/employees/forskning/ellen-emilie-stensrud/policy-brief.-bangladesh-and-the-rohingya-crisis.-khan-and-stensrud.pdf"
+          }
+        },
+        {
+          "slug": "reports-resource-04",
+          "index": 3,
+          "data": {
+            "icon": "fa-solid fa-file-lines",
+            "type": "REPORT",
+            "meta": "kpsrl.org",
+            "title": "Reports Resource 04",
+            "description": "This resource is included in the BCRLS reports segment and was provided in the latest website update list.",
+            "linkText": "Open Report",
+            "linkUrl": "https://kpsrl.org/sites/kpsrl/files/2021-02/Policy%20Brief%20v2.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "key": "library-books",
+      "title": "Library - books",
+      "pages": [
+        "/library/books.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": "#books .library-resource-grid",
+      "itemSelector": "article.library-resource-card",
+      "matchBy": null,
+      "importedCount": 3,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".library-resource-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "type": {
+          "sel": ".library-resource-type",
+          "label": "Type",
+          "type": "text",
+          "mode": "text"
+        },
+        "meta": {
+          "sel": ".library-resource-meta",
+          "label": "Source / host",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".library-resource-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".library-resource-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "items": [
+        {
+          "slug": "books-resource-01",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-book-open",
+            "type": "BOOK / E-BOOK",
+            "meta": "books.google.com.bd",
+            "title": "Books Resource 01",
+            "description": "This resource is included in the BCRLS books segment and was provided in the latest website update list.",
+            "linkText": "Open Book",
+            "linkUrl": "https://books.google.com.bd/books?hl=en&lr=&id=eR5oYvO1uFgC&oi=fnd&pg=PR11&dq=refugee+crisis&ots=IUweaZBXx0&sig=KHJbUaY7tLD7xxfZp0EzDFg-_E8&redir_esc=y#v=onepage&q=refugee%20crisis&f=false"
+          }
+        },
+        {
+          "slug": "books-resource-02",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-book-open",
+            "type": "BOOK / E-BOOK",
+            "meta": "bdebooks.com",
+            "title": "Books Resource 02",
+            "description": "This resource is included in the BCRLS books segment and was provided in the latest website update list.",
+            "linkText": "Open Book",
+            "linkUrl": "https://bdebooks.com/en/books/the-girl-who-smiled-beads-by-clemantine-wamariya/#google_vignette"
+          }
+        },
+        {
+          "slug": "books-resource-03",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-book-open",
+            "type": "BOOK / E-BOOK",
+            "meta": "scribd.com",
+            "title": "Books Resource 03",
+            "description": "This resource is included in the BCRLS books segment and was provided in the latest website update list.",
+            "linkText": "Open Book",
+            "linkUrl": "https://www.scribd.com/document/814260896/We-Are-Displaced-by-Malala-Yousafzai-removed#google_vignette"
+          }
+        }
+      ]
+    },
+    {
+      "key": "education-masters",
+      "title": "Education - master's programmes",
+      "pages": [
+        "/education/masters.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".education-section .container",
+      "itemSelector": "article.training-card",
+      "matchBy": null,
+      "importedCount": 7,
+      "optionalFields": [
+        "degree 3/7",
+        "duration 3/7",
+        "location 3/7",
+        "details 3/7"
+      ],
+      "fields": {
+        "icon": {
+          "sel": ".training-card-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "category": {
+          "sel": ".training-category",
+          "label": "Country",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".training-card-content h3",
+          "label": "University",
+          "type": "text",
+          "mode": "text"
+        },
+        "programme": {
+          "sel": ".training-card-content h4",
+          "label": "Programme",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".training-card-content > p",
+          "label": "Summary",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "degree": {
+          "sel": ".training-meta-item:nth-child(1) span",
+          "label": "Degree",
+          "type": "text",
+          "mode": "text"
+        },
+        "duration": {
+          "sel": ".training-meta-item:nth-child(2) span",
+          "label": "Duration",
+          "type": "text",
+          "mode": "text"
+        },
+        "location": {
+          "sel": ".training-meta-item:nth-child(3) span",
+          "label": "Location",
+          "type": "text",
+          "mode": "text"
+        },
+        "details": {
+          "sel": ".training-details p",
+          "label": "Details",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".training-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".training-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-clock\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "items": [
+        {
+          "slug": "university-of-oxford",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-building-columns",
+            "category": "United Kingdom",
+            "title": "University of Oxford",
+            "programme": "MSc Refugee and Forced Migration Studies",
+            "description": "An interdisciplinary postgraduate programme examining the causes, consequences and responses to forced migration and displacement.",
+            "degree": "MSc",
+            "duration": "9 Months · Full Time",
+            "location": "Oxford, UK",
+            "details": "The programme provides an interdisciplinary approach to understanding forced migration, refugee protection and displacement through academic research and study.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://www.ox.ac.uk/admissions/graduate/courses/msc-refugee-and-forced-migration-studies"
+          }
+        },
+        {
+          "slug": "university-of-london",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-globe",
+            "category": "United Kingdom",
+            "title": "University of London",
+            "programme": "MA Refugee Protection and Forced Migration Studies",
+            "description": "A postgraduate programme focused on refugee protection, forced migration and the legal, political and practical challenges surrounding displacement.",
+            "degree": "MA",
+            "duration": "Online Study",
+            "location": "London, UK",
+            "details": "The programme provides specialised study in refugee protection and forced migration, with a strong focus on contemporary challenges in refugee law and policy.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://www.london.ac.uk/study/courses/postgraduate/ma-refugee-protection-forced-migration-studies"
+          }
+        },
+        {
+          "slug": "university-of-galway",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-scale-balanced",
+            "category": "Ireland",
+            "title": "University of Galway",
+            "programme": "LLM International Migration and Refugee Law and Policy",
+            "description": "A postgraduate law programme focusing on international migration, refugee law, forced displacement, international protection and human rights.",
+            "degree": "LLM",
+            "duration": "1 Year · Full Time",
+            "location": "Galway, Ireland",
+            "details": "The programme explores legal and policy issues surrounding migration and forced displacement, with particular attention to international protection and human rights.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://www.universityofgalway.ie/courses/taught-postgraduate-courses/law-international-migration-refugee-law.html"
+          }
+        },
+        {
+          "slug": "university-of-the-witwatersrand",
+          "index": 3,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of the Witwatersrand",
+            "programme": "MA Migration and Displacement",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.wits.ac.za/course-finder/postgraduate/humanities/ma-migration-and-displacement/"
+          }
+        },
+        {
+          "slug": "university-of-deusto",
+          "index": 4,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Deusto",
+            "programme": "International Migration, Integration and Social Justice in Europe",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.deusto.es/en/home/campus-life/news-events/news/conferencia-international-migration-integration-and-social-justice-in-europe/noticia"
+          }
+        },
+        {
+          "slug": "aalborg-university",
+          "index": 5,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "Aalborg University",
+            "programme": "Global Refugee Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.students.aau.dk/practical/changes-in-study-programmes-at-aau/study-programmes-without-admission/global-refugee-studies"
+          }
+        },
+        {
+          "slug": "university-of-east-london",
+          "index": 6,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of East London",
+            "programme": "Conflict, Displacement and Development",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.uel.ac.uk/our-research/research-institutes-centres-groups/centre-social-change-justice/conflict-displacement-development"
+          }
+        }
+      ]
+    },
+    {
+      "key": "education-phd",
+      "title": "Education - PhD opportunities",
+      "pages": [
+        "/education/phd.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".education-section .container",
+      "itemSelector": "article.training-card",
+      "matchBy": null,
+      "importedCount": 10,
+      "optionalFields": [
+        "degree 2/10",
+        "subject 2/10",
+        "location 2/10",
+        "details 2/10"
+      ],
+      "fields": {
+        "icon": {
+          "sel": ".training-card-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "category": {
+          "sel": ".training-category",
+          "label": "Country",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".training-card-content h3",
+          "label": "University",
+          "type": "text",
+          "mode": "text"
+        },
+        "programme": {
+          "sel": ".training-card-content h4",
+          "label": "Programme / unit",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".training-card-content > p",
+          "label": "Summary",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "degree": {
+          "sel": ".training-meta-item:nth-child(1) span",
+          "label": "Degree",
+          "type": "text",
+          "mode": "text"
+        },
+        "subject": {
+          "sel": ".training-meta-item:nth-child(2) span",
+          "label": "Subject",
+          "type": "text",
+          "mode": "text"
+        },
+        "location": {
+          "sel": ".training-meta-item:nth-child(3) span",
+          "label": "Location",
+          "type": "text",
+          "mode": "text"
+        },
+        "details": {
+          "sel": ".training-details p",
+          "label": "Details",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".training-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".training-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{subject}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "items": [
+        {
+          "slug": "university-of-london",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-building-columns",
+            "category": "United Kingdom",
+            "title": "University of London",
+            "programme": "Refugee Law Initiative",
+            "description": "PhD research opportunities at the Refugee Law Initiative, focusing on refugee law, international protection and related areas of research.",
+            "degree": "PhD",
+            "subject": "Refugee Law",
+            "location": "London, UK",
+            "details": "The Refugee Law Initiative provides a specialist research environment for doctoral study in refugee law and related fields.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://rli.sas.ac.uk/study-us"
+          }
+        },
+        {
+          "slug": "unsw-sydney",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-earth-americas",
+            "category": "Australia",
+            "title": "UNSW Sydney",
+            "programme": "Kaldor Centre for International Refugee Law",
+            "description": "PhD and research degree opportunities in refugee law, forced migration and related areas through the Kaldor Centre for International Refugee Law.",
+            "degree": "PhD / Research Degrees",
+            "subject": "Refugee Law",
+            "location": "Sydney, Australia",
+            "details": "The Kaldor Centre supports advanced research in refugee law and forced migration and provides opportunities for students interested in doctoral and research-based study.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://www.unsw.edu.au/kaldor-centre/about-us/study-with-us"
+          }
+        },
+        {
+          "slug": "universidad-pablo-de-olavide",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "Universidad Pablo de Olavide",
+            "programme": "PhD Migration Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.upo.es/doctorado/en/PhD-Migration-Studies"
+          }
+        },
+        {
+          "slug": "university-of-sussex",
+          "index": 3,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Sussex",
+            "programme": "Migration Studies PhD",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.sussex.ac.uk/study/phd/degrees/migration-studies-phd"
+          }
+        },
+        {
+          "slug": "university-of-oxford",
+          "index": 4,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Oxford",
+            "programme": "DPhil Migration Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-migration-studies?wssl=1"
+          }
+        },
+        {
+          "slug": "linkoping-university",
+          "index": 5,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "Linköping University",
+            "programme": "PhD Studies in Ethnicity and Migration",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://liu.se/en/article/forskarutbildning-i-etnicitet-och-migration"
+          }
+        },
+        {
+          "slug": "university-of-melbourne",
+          "index": 6,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Melbourne",
+            "programme": "Interdisciplinary PhD Program",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://socialequity.unimelb.edu.au/activities/interdisciplinary-phd-program"
+          }
+        },
+        {
+          "slug": "university-of-kent",
+          "index": 7,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Kent",
+            "programme": "Migration Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.kent.ac.uk/courses/postgraduate/334/migration-studies"
+          }
+        },
+        {
+          "slug": "university-for-continuing-education-krems",
+          "index": 8,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University for Continuing Education Krems",
+            "programme": "PhD Migration Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.donau-uni.ac.at/en/studies/phd-migration-studies.html"
+          }
+        },
+        {
+          "slug": "university-of-copenhagen",
+          "index": 9,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "University of Copenhagen",
+            "programme": "PhD Programme in Transnational and Migration Studies",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://researchprofiles.ku.dk/en/activities/phd-programme-in-transnational-and-migration-studies/"
+          }
+        }
+      ]
+    },
+    {
+      "key": "education-training",
+      "title": "Education - training programmes",
+      "pages": [
+        "/education/traning.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".education-section .container",
+      "itemSelector": "article.training-card",
+      "matchBy": null,
+      "importedCount": 4,
+      "optionalFields": [
+        "duration 1/4",
+        "focus 1/4",
+        "audience 1/4",
+        "details 1/4"
+      ],
+      "fields": {
+        "icon": {
+          "sel": ".training-card-icon i",
+          "attr": "class",
+          "label": "Icon class",
+          "type": "text",
+          "mode": "attr"
+        },
+        "category": {
+          "sel": ".training-category",
+          "label": "Country",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".training-card-content h3",
+          "label": "Institution",
+          "type": "text",
+          "mode": "text"
+        },
+        "programme": {
+          "sel": ".training-card-content h4",
+          "label": "Programme",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".training-card-content > p",
+          "label": "Summary",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "duration": {
+          "sel": ".training-meta-item:nth-child(1) span",
+          "label": "Duration",
+          "type": "text",
+          "mode": "text"
+        },
+        "focus": {
+          "sel": ".training-meta-item:nth-child(2) span",
+          "label": "Focus",
+          "type": "text",
+          "mode": "text"
+        },
+        "audience": {
+          "sel": ".training-meta-item:nth-child(3) span",
+          "label": "Audience",
+          "type": "text",
+          "mode": "text"
+        },
+        "details": {
+          "sel": ".training-details p",
+          "label": "Details",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".training-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".training-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-certificate\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{focus}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-user-tie\"></i>\n<span>{{audience}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "items": [
+        {
+          "slug": "university-of-cape-town",
+          "index": 0,
+          "data": {
+            "icon": "fa-solid fa-building-columns",
+            "category": "South Africa",
+            "title": "University of Cape Town",
+            "programme": "Judicial Institute for Africa (JIFA)",
+            "description": "Certified 3-month Introduction to Refugee Law for Judicial Officers.",
+            "duration": "3-Month Certified Programme",
+            "focus": "Introduction to Refugee Law",
+            "audience": "Judicial Officers",
+            "details": "This professional training programme is offered through the Judicial Institute for Africa (JIFA) at the University of Cape Town and focuses on foundational knowledge of refugee law for judicial officers.",
+            "linkText": "Official Programme Details",
+            "linkUrl": "https://law.uct.ac.za/jifa/introduction-refugee-law-judicial-officers-1"
+          }
+        },
+        {
+          "slug": "international-institute-of-humanitarian-law",
+          "index": 1,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "International Institute of Humanitarian Law",
+            "programme": "International Refugee Law and Migration Law",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://iihl.org/international-refugee-law-and-migration-law/"
+          }
+        },
+        {
+          "slug": "biicl",
+          "index": 2,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "BIICL",
+            "programme": "Short Course: Migration and Refugee Law",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://www.biicl.org/short-course-migration-and-refugee-law?cookiesset=1&ts=1790142496"
+          }
+        },
+        {
+          "slug": "unicri",
+          "index": 3,
+          "data": {
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "category": "PDF Website Link",
+            "title": "UNICRI",
+            "programme": "Training: Shaping the Future of Migration Governance Summer School",
+            "description": "External programme/resource link listed in the BCRLS website update document.",
+            "linkText": "Open Official Link",
+            "linkUrl": "https://unicri.org/News/Training-shaping-future-migration-governance-summer-school"
+          }
+        }
+      ]
+    },
+    {
+      "key": "datahub-statistics",
+      "title": "Data hub - statistics links",
+      "pages": [
+        "/datahub/statistics.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".datahub-grid",
+      "itemSelector": "article.datahub-card",
+      "matchBy": null,
+      "importedCount": 5,
+      "optionalFields": [
+        "iconClass 1/5",
+        "iconGlyph 4/5"
+      ],
+      "fields": {
+        "iconClass": {
+          "sel": ".datahub-card-icon i",
+          "attr": "class",
+          "label": "Icon class (Font Awesome)",
+          "type": "text",
+          "mode": "attr"
+        },
+        "iconGlyph": {
+          "sel": ".database-card-icon",
+          "label": "Icon glyph (text)",
+          "type": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".statistics-explore-btn",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".statistics-explore-btn",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"datahub-card\">\n<div class=\"datahub-card-icon\">\n<i class=\"{{iconClass}}\"></i>\n</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"statistics-explore-btn\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "items": [
+        {
+          "slug": "refugee-statistics",
+          "index": 0,
+          "data": {
+            "iconClass": "fa-solid fa-chart-column",
+            "title": "Refugee Statistics",
+            "description": "Access the UNHCR Refugee Statistics platform for official refugee and forced displacement statistics.",
+            "linkText": "Explore Refugee Statistics",
+            "linkUrl": "https://www.unhcr.org/refugee-statistics/?utm_source=chatgpt.com"
+          }
+        },
+        {
+          "slug": "facts-about-refugees-key-facts-faqs-and-statistics",
+          "index": 1,
+          "data": {
+            "iconGlyph": "↗",
+            "title": "Facts About Refugees: Key Facts, FAQs and Statistics",
+            "description": "International Rescue Committee — external resource from the BCRLS update document.",
+            "linkText": "Open Resource",
+            "linkUrl": "https://www.rescue.org/article/facts-about-refugees-key-facts-faqs-and-statistics"
+          }
+        },
+        {
+          "slug": "refugees-world-development-indicators",
+          "index": 2,
+          "data": {
+            "iconGlyph": "↗",
+            "title": "Refugees (World Development Indicators)",
+            "description": "World Bank — external resource from the BCRLS update document.",
+            "linkText": "Open Resource",
+            "linkUrl": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SM.POP.REFG"
+          }
+        },
+        {
+          "slug": "asylum-decisions-annual-statistics",
+          "index": 3,
+          "data": {
+            "iconGlyph": "↗",
+            "title": "Asylum Decisions — Annual Statistics",
+            "description": "Eurostat — external resource from the BCRLS update document.",
+            "linkText": "Open Resource",
+            "linkUrl": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Asylum_decisions_-_annual_statistics"
+          }
+        },
+        {
+          "slug": "refugee-and-migrant-health",
+          "index": 4,
+          "data": {
+            "iconGlyph": "↗",
+            "title": "Refugee and Migrant Health",
+            "description": "World Health Organization — external resource from the BCRLS update document.",
+            "linkText": "Open Resource",
+            "linkUrl": "https://www.who.int/news-room/fact-sheets/detail/refugee-and-migrant-health"
+          }
+        }
+      ]
+    },
+    {
+      "key": "datahub-portals",
+      "title": "Data hub - portals",
+      "pages": [
+        "/datahub/dataPortal.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".portal-grid",
+      "itemSelector": ".portal-card",
+      "matchBy": null,
+      "importedCount": 5,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".database-card-icon",
+          "label": "Icon glyph",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".portal-link",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<span>→</span>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".portal-link",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<div class=\"portal-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"portal-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><span>→</span> {{linkText}}</a>\n</div>",
+      "items": [
+        {
+          "slug": "rohingya-response-resources-data",
+          "index": 0,
+          "data": {
+            "icon": "◫",
+            "title": "Rohingya Response Resources & Data",
+            "description": "Access humanitarian resources, population information, operational datasets, maps, assessments, and other data related to the Rohingya refugee response in Bangladesh.",
+            "linkText": "Explore Data",
+            "linkUrl": "https://rohingyaresponse.org/wp-content/uploads/2025/11/ISCG_BGD_Reference-Map_31-October-2025.pdf "
+          }
+        },
+        {
+          "slug": "iom-displacement-tracking-matrix",
+          "index": 1,
+          "data": {
+            "icon": "◉",
+            "title": "IOM Displacement Tracking Matrix",
+            "description": "Access Bangladesh displacement and population monitoring information from IOM's Displacement Tracking Matrix, including data relevant to humanitarian response and population mobility.",
+            "linkText": "Explore DTM Data",
+            "linkUrl": "https://dtm.iom.int/bangladesh"
+          }
+        },
+        {
+          "slug": "rohingya-refugee-population-dashboard",
+          "index": 2,
+          "data": {
+            "icon": "◫",
+            "title": "Rohingya Refugee Population Dashboard",
+            "description": "UNHCR Bangladesh — external data resource listed in the BCRLS update document.",
+            "linkText": "Explore Data",
+            "linkUrl": "https://data.unhcr.org/en/country/bgd"
+          }
+        },
+        {
+          "slug": "rohingya-response-control-room",
+          "index": 3,
+          "data": {
+            "icon": "◫",
+            "title": "Rohingya Response Control Room",
+            "description": "DGHS Bangladesh — external data resource listed in the BCRLS update document.",
+            "linkText": "Explore Data",
+            "linkUrl": "https://dashboard.dghs.gov.bd/pages/controlroom_rohingya.php"
+          }
+        },
+        {
+          "slug": "bangladesh-unhcr-rohingya-refugee-population-dashboard",
+          "index": 4,
+          "data": {
+            "icon": "◫",
+            "title": "Bangladesh–UNHCR Rohingya Refugee Population Dashboard",
+            "description": "ReliefWeb — external data resource listed in the BCRLS update document.",
+            "linkText": "Explore Data",
+            "linkUrl": "https://reliefweb.int/report/bangladesh/joint-government-bangladesh-unhcr-rohingya-refugee-population-dashboard-august-2026"
+          }
+        }
+      ]
+    },
+    {
+      "key": "datahub-database",
+      "title": "Data hub - databases",
+      "pages": [
+        "/datahub/database.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".database-grid",
+      "itemSelector": "article.database-card",
+      "matchBy": null,
+      "importedCount": 4,
+      "optionalFields": [],
+      "fields": {
+        "icon": {
+          "sel": ".database-card-icon",
+          "label": "Icon glyph",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": "h3",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": "p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".datahub-card-button",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<span class=\"arrow\">\n                            →\n                        </span>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".datahub-card-button",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"database-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"datahub-card-button\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><span class=\"arrow\">\n                            →\n                        </span> {{linkText}}</a>\n</article>",
+      "items": [
+        {
+          "slug": "database",
+          "index": 0,
+          "data": {
+            "icon": "▣",
+            "title": "Database",
+            "description": "A regional population database providing population-related information across South Asian countries.",
+            "linkText": "Explore Database",
+            "linkUrl": "https://seap.nationalityforall.org/population/south-asia-population/"
+          }
+        },
+        {
+          "slug": "south-asia-net-migration-data",
+          "index": 1,
+          "data": {
+            "icon": "▣",
+            "title": "South Asia Net Migration Data",
+            "description": "World Bank — external database/resource listed in the BCRLS update document.",
+            "linkText": "Explore Database",
+            "linkUrl": "https://data.worldbank.org/indicator/SM.POP.FDIP?locations=8S"
+          }
+        },
+        {
+          "slug": "south-asia-refugee-data-documents",
+          "index": 2,
+          "data": {
+            "icon": "▣",
+            "title": "South Asia Refugee Data / Documents",
+            "description": "UNHCR — external database/resource listed in the BCRLS update document.",
+            "linkText": "Explore Database",
+            "linkUrl": "https://data.unhcr.org/en/documents/details/119336"
+          }
+        },
+        {
+          "slug": "south-asia-net-migration",
+          "index": 3,
+          "data": {
+            "icon": "▣",
+            "title": "South Asia Net Migration",
+            "description": "Macrotrends — external database/resource listed in the BCRLS update document.",
+            "linkText": "Explore Database",
+            "linkUrl": "https://www.macrotrends.net/global-metrics/countries/sas/south-asia/net-migration"
+          }
+        }
+      ]
+    },
+    {
+      "key": "media-newsroom",
+      "title": "Newsroom - featured coverage",
+      "pages": [
+        "/media/newsroom.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".newsroom-section",
+      "itemSelector": "article.newsroom-feature",
+      "matchBy": null,
+      "importedCount": 1,
+      "optionalFields": [],
+      "fields": {
+        "image": {
+          "sel": ".newsroom-feature-media img",
+          "attr": "src",
+          "label": "Image",
+          "type": "image",
+          "mode": "attr"
+        },
+        "imageAlt": {
+          "sel": ".newsroom-feature-media img",
+          "attr": "alt",
+          "label": "Image alt text",
+          "type": "text",
+          "mode": "attr"
+        },
+        "mediaTag": {
+          "sel": ".newsroom-media-tag",
+          "label": "Media tag",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-camera\"></i>",
+          "mode": "html"
+        },
+        "outlet": {
+          "sel": ".newsroom-meta span:nth-child(1)",
+          "label": "Publisher",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-building\"></i>",
+          "mode": "html"
+        },
+        "date": {
+          "sel": ".newsroom-meta span:nth-child(2)",
+          "label": "Date",
+          "type": "text",
+          "keep": "<i class=\"fa-regular fa-calendar\"></i>",
+          "mode": "html"
+        },
+        "title": {
+          "sel": ".newsroom-feature-content h2",
+          "label": "Headline",
+          "type": "text",
+          "mode": "text"
+        },
+        "lead": {
+          "sel": ".newsroom-lead",
+          "label": "Lead paragraph",
+          "type": "textarea",
+          "mode": "text"
+        },
+        "highlight1": {
+          "sel": ".newsroom-highlights div:nth-child(1) span",
+          "label": "Highlight 1",
+          "type": "text",
+          "mode": "text"
+        },
+        "highlight2": {
+          "sel": ".newsroom-highlights div:nth-child(2) span",
+          "label": "Highlight 2",
+          "type": "text",
+          "mode": "text"
+        },
+        "highlight3": {
+          "sel": ".newsroom-highlights div:nth-child(3) span",
+          "label": "Highlight 3",
+          "type": "text",
+          "mode": "text"
+        },
+        "linkText": {
+          "sel": ".newsroom-read",
+          "label": "Link text",
+          "type": "text",
+          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "mode": "html"
+        },
+        "linkUrl": {
+          "sel": ".newsroom-read",
+          "attr": "href",
+          "label": "Link URL",
+          "type": "url",
+          "mode": "attr"
+        }
+      },
+      "templateHtml": "<article class=\"newsroom-feature\">\n<div class=\"newsroom-feature-media\">\n<img src=\"{{image}}\" alt=\"{{imageAlt}}\" loading=\"lazy\">\n<div class=\"newsroom-media-tag\"><i class=\"fa-solid fa-camera\"></i> {{mediaTag}}</div>\n</div>\n<div class=\"newsroom-feature-content\">\n<div class=\"newsroom-meta\"><span><i class=\"fa-solid fa-building\"></i> {{outlet}}</span><span><i class=\"fa-regular fa-calendar\"></i> {{date}}</span></div>\n<h2>{{title}}</h2>\n<p class=\"newsroom-lead\">{{lead}}</p>\n<div class=\"newsroom-highlights\">\n<div><i class=\"fa-solid fa-landmark\"></i><span>{{highlight1}}</span></div>\n<div><i class=\"fa-solid fa-users\"></i><span>{{highlight2}}</span></div>\n<div><i class=\"fa-solid fa-scale-balanced\"></i><span>{{highlight3}}</span></div>\n</div>\n<a class=\"newsroom-read\" href=\"{{linkUrl}}\" target=\"_blank\" rel=\"noopener\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</article>",
+      "items": [
+        {
+          "slug": "international-conference-on-refugee-protection-held-at-cu",
+          "index": 0,
+          "data": {
+            "image": "../assets/events/Conference-23.jpeg",
+            "imageAlt": "BCRLS conference event coverage",
+            "mediaTag": "BCRLS Event",
+            "outlet": "ObserverBD",
+            "date": "29 June 2026",
+            "title": "International conference on refugee protection held at CU",
+            "lead": "An international conference on refugee protection in South Asia was held at Chittagong University, bringing together legal, humanitarian and policy perspectives on displacement and forced migration.",
+            "highlight1": "Chittagong University",
+            "highlight2": "Academic & policy participants",
+            "highlight3": "Refugee protection & human rights",
+            "linkText": "Read Full Coverage",
+            "linkUrl": "https://observerbd.com/news/581340"
+          }
+        }
+      ]
+    },
+    {
+      "key": "insights-latest",
+      "title": "Insights - section cards",
+      "pages": [
+        "/insights/index.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".latest-grid",
+      "itemSelector": "article.latest-card",
+      "matchBy": null,
+      "importedCount": 2,
+      "optionalFields": [],
+      "fields": {
+        "category": {
+          "sel": ".latest-content > span",
+          "label": "Category",
+          "type": "text",
+          "mode": "text"
+        },
+        "title": {
+          "sel": ".latest-content h2",
+          "label": "Title",
+          "type": "text",
+          "mode": "text"
+        },
+        "description": {
+          "sel": ".latest-content > p",
+          "label": "Description",
+          "type": "textarea",
+          "mode": "text"
+        }
+      },
+      "templateHtml": "<article class=\"latest-card\" id=\"expert-interviews\"><div class=\"latest-content\"><span>{{category}}</span><h2>{{title}}</h2><p>{{description}}</p></div></article>",
+      "items": [
+        {
+          "slug": "expert-interviews",
+          "index": 0,
+          "data": {
+            "category": "Insights",
+            "title": "Expert Interviews",
+            "description": "This section is being prepared for publication."
+          }
+        },
+        {
+          "slug": "refugee-voices",
+          "index": 1,
+          "data": {
+            "category": "Insights",
+            "title": "Refugee Voices",
+            "description": "This section is being prepared for publication."
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-hero-stats",
+      "title": "Home hero - pillars",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "collection",
+      "sourceType": "html",
+      "containerSelector": ".hero-stats",
+      "itemSelector": ".hero-stat",
+      "matchBy": null,
+      "importedCount": 3,
+      "optionalFields": [],
+      "fields": {
+        "label": {
+          "sel": "strong",
+          "label": "Label",
+          "type": "text",
+          "mode": "text"
+        },
+        "caption": {
+          "sel": "span",
+          "label": "Caption",
+          "type": "text",
+          "mode": "text"
+        }
+      },
+      "templateHtml": "<div class=\"hero-stat\">\n\n                    <strong>{{label}}</strong>\n\n                    <span>{{caption}}</span>\n\n                </div>",
+      "items": [
+        {
+          "slug": "research",
+          "index": 0,
+          "data": {
+            "label": "Research",
+            "caption": "Knowledge & Evidence"
+          }
+        },
+        {
+          "slug": "education",
+          "index": 1,
+          "data": {
+            "label": "Education",
+            "caption": "Learning & Dialogue"
+          }
+        },
+        {
+          "slug": "justice",
+          "index": 2,
+          "data": {
+            "label": "Justice",
+            "caption": "Human Dignity"
+          }
+        }
+      ]
+    },
+    {
+      "key": "events-upcoming",
+      "title": "Upcoming events",
+      "pages": [
+        "/events/index.html",
+        "/events/upcoming.html"
+      ],
+      "kind": "collection",
+      "sourceType": "js",
+      "containerSelector": "#upcomingEventsGrid",
+      "itemSelector": ".event-card",
+      "matchBy": "id",
+      "importedCount": 1,
+      "fields": {
+        "id": {
+          "label": "Event id",
+          "type": "number"
+        },
+        "type": {
+          "label": "Type",
+          "type": "text"
+        },
+        "title": {
+          "label": "Title",
+          "type": "text"
+        },
+        "date": {
+          "label": "Date",
+          "type": "text"
+        },
+        "location": {
+          "label": "Location",
+          "type": "text"
+        },
+        "image": {
+          "label": "Image",
+          "type": "image"
+        },
+        "images": {
+          "label": "Gallery images",
+          "type": "list"
+        },
+        "shortDescription": {
+          "label": "Card description",
+          "type": "textarea"
+        },
+        "description": {
+          "label": "Full description",
+          "type": "textarea"
+        },
+        "speakers": {
+          "label": "Speakers",
+          "type": "list"
+        },
+        "programme": {
+          "label": "Programme",
+          "type": "textarea"
+        },
+        "organizer": {
+          "label": "Organizer",
+          "type": "text"
+        },
+        "registration": {
+          "label": "Registration link",
+          "type": "url"
+        },
+        "module": {
+          "label": "Module link",
+          "type": "url"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "certificate-course-on-refugee-law-and-statelessness-foundation-to-practice",
+          "index": 0,
+          "data": {
+            "id": 4,
+            "type": "CERTIFICATE COURSE",
+            "title": "Certificate Course on Refugee Law and Statelessness: Foundation to Practice",
+            "date": "October–December 2026",
+            "location": "Hybrid — BCRLS / Online",
+            "image": "../assets/events/certificate.jpeg",
+            "images": [
+              "../assets/events/certificate.jpeg"
+            ],
+            "shortDescription": "BCRLS inaugural certificate course on refugee law and statelessness, delivered through 20 substantive online lectures with Bangladesh/Rohingya and comparative case studies.",
+            "description": "BCRLS Launches Its Inaugural Certificate Course on Refugee Law and Statelessness: Foundation to Practice. The course is scheduled for October–December 2026 in hybrid format and includes 20 substantive lectures, interactive activities and a 100-mark online final examination.",
+            "speakers": [
+              "International faculty and resource persons — see the course materials"
+            ],
+            "programme": "20 substantive topics covering refugee law, statelessness, international protection, displacement, legal frameworks and comparative crises. The Bangladesh/Rohingya situation is used as a primary case study.",
+            "organizer": "Bangladesh Center for Refugee Law Studies (BCRLS)",
+            "registration": "https://docs.google.com/forms/d/1VrbHgG0045hvt0jbhkkIp1y5uTFRiRnbDLNKWZYFoQs/viewform?chromeless=1&edit_requested=true",
+            "module": "../assets/docs/BCRLS Module.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "key": "team-advisory",
+      "title": "Team - advisory",
+      "pages": [
+        "/pages/team.html"
+      ],
+      "kind": "collection",
+      "sourceType": "js",
+      "containerSelector": "#advisoryGrid",
+      "itemSelector": ".member-card",
+      "matchBy": "name",
+      "importedCount": 9,
+      "fields": {
+        "name": {
+          "label": "Name",
+          "type": "text"
+        },
+        "role": {
+          "label": "Short role",
+          "type": "text"
+        },
+        "fullRole": {
+          "label": "Full role",
+          "type": "textarea"
+        },
+        "photo": {
+          "label": "Photo",
+          "type": "image"
+        },
+        "bio": {
+          "label": "Bio",
+          "type": "textarea"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "dr-nakib-muhammad-nasrullah",
+          "index": 0,
+          "data": {
+            "name": "Dr. Nakib Muhammad Nasrullah",
+            "role": "Former Vice-Chancellor",
+            "fullRole": "Former Vice-Chancellor, Islamic University, Bangladesh; Professor, Department of Law, University of Dhaka",
+            "photo": "../assets/Advisors/Nakib.png",
+            "bio": "Former Vice-Chancellor, Islamic University, Bangladesh. Professor, Department of Law, University of Dhaka."
+          }
+        },
+        {
+          "slug": "professor-dr-abdullah-al-faruque",
+          "index": 1,
+          "data": {
+            "name": "Professor Dr. Abdullah Al Faruque",
+            "role": "Professor & Former Dean",
+            "fullRole": "Professor, Former Dean, Faculty of Law, University of Chittagong",
+            "photo": "../assets/Advisors/Al Faruque.png",
+            "bio": "Professor, Former Dean, Faculty of Law, University of Chittagong."
+          }
+        },
+        {
+          "slug": "professor-dr-muhammad-ekramul-haque",
+          "index": 2,
+          "data": {
+            "name": "Professor Dr. Muhammad Ekramul Haque",
+            "role": "Professor & Dean (Acting)",
+            "fullRole": "Professor, Department of Law; Dean (Acting), Faculty of Law, University of Dhaka",
+            "photo": "../assets/Advisors/Ekramul Haque.png",
+            "bio": "Professor, Department of Law, Dean (Acting), Faculty of Law, University of Dhaka."
+          }
+        },
+        {
+          "slug": "professor-dr-rakiba-nabi",
+          "index": 3,
+          "data": {
+            "name": "Professor Dr. Rakiba Nabi",
+            "role": "Professor & Chairman",
+            "fullRole": "Chairman, Department of Law, University of Chittagong",
+            "photo": "../assets/Advisors/Nabi.png",
+            "bio": "Chairman, Department of Law, University of Chittagong."
+          }
+        },
+        {
+          "slug": "professor-christine-richardson",
+          "index": 4,
+          "data": {
+            "name": "Professor Christine Richardson",
+            "role": "Professor",
+            "fullRole": "Professor, Department of Law and Land Administration, Jagannath University",
+            "photo": "../assets/Advisors/Christine.png",
+            "bio": "Professor, Department of Law and Land Administration, Jagannath University."
+          }
+        },
+        {
+          "slug": "professor-dr-md-rizwanul-islam",
+          "index": 5,
+          "data": {
+            "name": "Professor Dr. Md. Rizwanul Islam",
+            "role": "Dean",
+            "fullRole": "Dean, SHSS, North South University",
+            "photo": "../assets/Advisors/Rizwanul Islam.jpg",
+            "bio": "Dean, SHSS, North South University."
+          }
+        },
+        {
+          "slug": "dr-hassan-faruk-al-imran",
+          "index": 6,
+          "data": {
+            "name": "Dr. Hassan Faruk Al Imran",
+            "role": "Associate Professor (Law)",
+            "fullRole": "Associate Professor (Law), Independent University Bangladesh",
+            "photo": "../assets/Advisors/Al Imran.png",
+            "bio": "Associate Professor (Law), Independent University Bangladesh."
+          }
+        },
+        {
+          "slug": "dr-jobair-alam",
+          "index": 7,
+          "data": {
+            "name": "Dr. Jobair Alam",
+            "role": "Lecturer in Law",
+            "fullRole": "Lecturer in Law, University of Staffordshire",
+            "photo": "../assets/Advisors/Jobair.png",
+            "bio": "Lecturer in Law, University of Staffordshire."
+          }
+        },
+        {
+          "slug": "a-b-m-imdadul-haque-khan",
+          "index": 8,
+          "data": {
+            "name": "A.B.M. Imdadul Haque Khan",
+            "role": "Dean",
+            "fullRole": "Dean, Faculty of Law, Eastern University",
+            "photo": "../assets/Advisors/imdad.png",
+            "bio": "Dean, Faculty of Law, Eastern University."
+          }
+        }
+      ]
+    },
+    {
+      "key": "team-directors",
+      "title": "Team - board of directors",
+      "pages": [
+        "/pages/team.html"
+      ],
+      "kind": "collection",
+      "sourceType": "js",
+      "containerSelector": "#directorsGrid",
+      "itemSelector": ".member-card",
+      "matchBy": "name",
+      "importedCount": 9,
+      "fields": {
+        "name": {
+          "label": "Name",
+          "type": "text"
+        },
+        "role": {
+          "label": "Short role",
+          "type": "text"
+        },
+        "fullRole": {
+          "label": "Full role",
+          "type": "textarea"
+        },
+        "photo": {
+          "label": "Photo",
+          "type": "image"
+        },
+        "bio": {
+          "label": "Bio",
+          "type": "textarea"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "sakhawat-sajjat-sejan",
+          "index": 0,
+          "data": {
+            "name": "Sakhawat Sajjat Sejan",
+            "role": "Founder",
+            "fullRole": "Founder, BCRLS",
+            "photo": "../assets/Directors/Sejan.jpg",
+            "bio": "Sakhawat Sajjat Sejan is the Founder of BCRLS. He completed his LL.B. (Hons.) and LL.M. from the University of Chittagong. He is currently serving as an Assistant Professor in the Department of Law at University of Information Technology and Sciences. Previously, he worked as an Assistant Professor of Law at the Bangladesh University of Bangladesh and Feni University, where he also served as Head of the Department. He is an active researcher and writer on refugee law and protection."
+          }
+        },
+        {
+          "slug": "raspiatur-rashpi",
+          "index": 1,
+          "data": {
+            "name": "Raspiatur Rashpi",
+            "role": "Director",
+            "fullRole": "Director, Head of Resource Management, Training & Development",
+            "photo": "../assets/Directors/Rashpi.jpg",
+            "bio": "Raspiatur Rashpi is currently working as a lecturer, Department of Law, University of Chittagong. She was also the former lecturer in Law, Bangladesh Army International University of Science and Technology. She completed her LLB (Honours) and LLM from Department of Law, University of Chittagong. Her research area of interest includes Climate Change and Environmental laws, Human Rights law, Constitutional law, Refugee law etc."
+          }
+        },
+        {
+          "slug": "niaz-mohammad",
+          "index": 2,
+          "data": {
+            "name": "Niaz Mohammad",
+            "role": "Director",
+            "fullRole": "Director, Head of Research",
+            "photo": "../assets/Directors/Niaz.jpg",
+            "bio": "Niaz Mohammad is currently working as an Associate Legal Counsel at BRAC and serves as the Director of Research at BCRLS. He previously worked as a Legal Research Assistant at the Centre for Peace and Justice, where he focused on refugee law, including access to justice for Rohingyas in Bangladesh. He completed his LL.B. with distinction from BRAC University and holds a Diploma in Economic, Social and Development Rights from Kathmandu School of Law."
+          }
+        },
+        {
+          "slug": "md-rahul-hasan-joy",
+          "index": 3,
+          "data": {
+            "name": "Md. Rahul Hasan Joy",
+            "role": "Director",
+            "fullRole": "Director, Head of Legal Affairs",
+            "photo": "../assets/Directors/Joy.jpg",
+            "bio": "Md. Rahul Hasan Joy completed his BA.LL.B. (Hons.) from Aligarh Muslim University, India, and his LL.M. in International Law from the University of Rajshahi. He is currently a Lecturer in the Department of Law at the University of Information Technology and Sciences (UITS). Previously, he served as a Lecturer of Law at Feni University. He is also an enrolled Advocate with the Bangladesh Bar Council."
+          }
+        },
+        {
+          "slug": "mohammad-tawhidul-islam-hridoy",
+          "index": 4,
+          "data": {
+            "name": "Mohammad Tawhidul Islam Hridoy",
+            "role": "Director",
+            "fullRole": "Director, Head of IT",
+            "photo": "../assets/Directors/Tawhidul Islam.jpg",
+            "bio": "Mohammad Tawhidul Islam is a Lecturer in the Department of Law at the State University of Bangladesh and currently serves as Director of IT at BCRLS. He previously taught at Feni University and worked at US-Bangla Airlines in Company Secretary and Legal Affairs. He completed his LL.B. and LL.M. from Jahangirnagar University and obtained another LL.M. from South Asian University, New Delhi. His interests include teaching, research, and academic engagement activities."
+          }
+        },
+        {
+          "slug": "nabila-farhin",
+          "index": 5,
+          "data": {
+            "name": "Nabila Farhin",
+            "role": "Director",
+            "fullRole": "Director, Head of Programs",
+            "photo": "../assets/Directors/Nabila.jpg",
+            "bio": "Nabila Farhin completed her LL.B. (Hons.) and LL.M. (Thesis) from the University of Chittagong, where she ranked among the top students of her class. She also earned an MSS in Industrial Relations and Labour Studies from the University of Dhaka and a Diploma in Economic, Social and Development Rights from Kathmandu School of Law, Nepal. She is currently a Senior Lecturer at East West University and an Advocate of the Supreme Court of Bangladesh. Previously, she served as Staff Captain in the Judge Advocate General’s Office of the Bangladesh Army and worked as a consultant with TIB, ILO, and BLAST. Her research focuses on labour rights, gender justice, and climate justice."
+          }
+        },
+        {
+          "slug": "md-riad-mahmud",
+          "index": 6,
+          "data": {
+            "name": "Md. Riad Mahmud",
+            "role": "Director",
+            "fullRole": "Director of Administration and Finance",
+            "photo": "../assets/Directors/Riad.jpg",
+            "bio": "Md. Riad Mahmud is currently serving as a Senior Lecturer in the Department of Law at East West University. He is also an Erasmus Mundus Scholar and serves as an Advisor to Jessup Bangladesh. With experience in legal education, research, and international academic collaboration, he brings strong leadership to BCRLS. As Director of Administration and Finance, he contributes to strengthening the organization’s administrative structure, financial governance, and institutional development."
+          }
+        },
+        {
+          "slug": "sumaiya-islam",
+          "index": 7,
+          "data": {
+            "name": "Sumaiya Islam",
+            "role": "Director",
+            "fullRole": "Director, Head of Public Relations",
+            "photo": "../assets/Directors/Sumaiya Islam.jpg",
+            "bio": "Sumaiya Islam completed her LL.B. (Hons.) and LL.M. from Southern University Bangladesh and an additional LL.M. from South Asian University. She is currently a Lecturer in the Department of Law at Manarat International University. She contributes to public engagement, awareness-building, and institutional networking at BCRLS."
+          }
+        },
+        {
+          "slug": "md-omar-farque",
+          "index": 8,
+          "data": {
+            "name": "Md. Omar Farque",
+            "role": "Executive Director",
+            "fullRole": "Executive Director",
+            "photo": "../assets/Directors/Omar Farque.jpg",
+            "bio": "Md. Omar Farque completed both his LL.B. (Hons.) and LL.M. from Eastern University, where he achieved outstanding academic results, including a Gold Medal in his LL.M. He is currently a Lecturer in Law at Eastern University. Previously, he served as a Lecturer in Law at the European University of Bangladesh. He also works as a Senior Research Associate at I. H. Khan & Associates and as an Assistant Editor at Revival Press. His research interests include Public International Law, Refugee Law, Climate Law, and Islamic Law."
+          }
+        }
+      ]
+    },
+    {
+      "key": "team-operational",
+      "title": "Team - operational team",
+      "pages": [
+        "/pages/team.html"
+      ],
+      "kind": "collection",
+      "sourceType": "js",
+      "containerSelector": "#operationalGrid",
+      "itemSelector": ".member-card",
+      "matchBy": "name",
+      "importedCount": 2,
+      "fields": {
+        "name": {
+          "label": "Name",
+          "type": "text"
+        },
+        "role": {
+          "label": "Role",
+          "type": "text"
+        },
+        "fullRole": {
+          "label": "Full role",
+          "type": "textarea"
+        },
+        "photo": {
+          "label": "Photo",
+          "type": "image"
+        },
+        "bio": {
+          "label": "Bio",
+          "type": "textarea"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "kazi-muhibul-haque",
+          "index": 0,
+          "data": {
+            "name": "Kazi Muhibul Haque",
+            "role": "Associate Head of IT",
+            "fullRole": "Associate Head of IT",
+            "photo": "",
+            "bio": "Associate Head of IT at BCRLS, supporting digital infrastructure, website operations, data management and technical initiatives."
+          }
+        },
+        {
+          "slug": "syed-md-alamgir-hussain",
+          "index": 1,
+          "data": {
+            "name": "Syed Md. Alamgir Hussain",
+            "role": "IT Officer",
+            "fullRole": "IT Officer",
+            "photo": "",
+            "bio": "IT Officer at BCRLS, supporting the organization's website, digital platforms and day-to-day technical operations."
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-hero-eyebrow",
+      "title": "Home hero - eyebrow",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "scalar",
+      "sourceType": "html",
+      "containerSelector": null,
+      "itemSelector": ".hero-content .eyebrow",
+      "matchBy": null,
+      "importedCount": 1,
+      "fields": {
+        "value": {
+          "sel": ".hero-content .eyebrow",
+          "label": "Eyebrow",
+          "type": "text",
+          "mode": "text"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "value",
+          "index": 0,
+          "data": {
+            "value": "BANGLADESH CENTER FOR REFUGEE LAW STUDIES"
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-hero-heading",
+      "title": "Home hero - heading",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "scalar",
+      "sourceType": "html",
+      "containerSelector": null,
+      "itemSelector": ".hero-content h1",
+      "matchBy": null,
+      "importedCount": 1,
+      "fields": {
+        "value": {
+          "sel": ".hero-content h1",
+          "mode": "html",
+          "label": "Heading",
+          "type": "textarea"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "value",
+          "index": 0,
+          "data": {
+            "value": "\n\n                Advancing refugee law\n\n                <span>\n                    through knowledge,\n                    research &amp; justice.\n                </span>\n\n            "
+          }
+        }
+      ]
+    },
+    {
+      "key": "home-hero-paragraph",
+      "title": "Home hero - paragraph",
+      "pages": [
+        "/index.html"
+      ],
+      "kind": "scalar",
+      "sourceType": "html",
+      "containerSelector": null,
+      "itemSelector": ".hero-content > p",
+      "matchBy": null,
+      "importedCount": 1,
+      "fields": {
+        "value": {
+          "sel": ".hero-content > p",
+          "label": "Paragraph",
+          "type": "textarea",
+          "mode": "text"
+        }
+      },
+      "templateHtml": null,
+      "items": [
+        {
+          "slug": "value",
+          "index": 0,
+          "data": {
+            "value": "A platform for research, education, data and dialogue on refugee law, displacement and protection in Bangladesh and beyond."
+          }
+        }
+      ]
+    }
+  ]
+}
