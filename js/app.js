@@ -3,6 +3,42 @@
    Infinite Circular Team Carousel
    ========================================================= */
 
+/* ------------------------------------------------------------ injection
+   Loads js/content-sync.js relative to *this* file, so the same line works
+   from the site root and from every subfolder depth, and without editing a
+   single HTML page.  The overlay only touches the DOM after a successful
+   response of /api/public/content - if the API is down the page stays exactly
+   as shipped.  ---------------------------------------------------------------- */
+(function injectContentSync() {
+    "use strict";
+
+    if (window.__bcrlsContentSyncLoader) return;
+    window.__bcrlsContentSyncLoader = true;
+
+    var script = document.currentScript;
+
+    /* fallback: the tag this file was loaded from */
+    if (!script || !script.src) {
+        var tags = document.scripts || [];
+        for (var i = 0; i < tags.length; i += 1) {
+            if (/\/js\/app\.js(\?.*)?$/.test(tags[i].src)) {
+                script = tags[i];
+                break;
+            }
+        }
+    }
+
+    if (!script || !script.src) return;
+
+    var url = script.src.replace(/(^|\/)app\.js(\?.*)?$/, "$1content-sync.js");
+    if (url === script.src) return;
+
+    var tag = document.createElement("script");
+    tag.src = url;
+    tag.async = false;
+    document.head.appendChild(tag);
+})();
+
 const teamData = {
 
     advisory: [
@@ -2441,3 +2477,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* content-sync hook: js/content-sync.js reads teamData through window
+   (no eval). The binding below is the very same object, so the overlay
+   mutates exactly what renderTeam() renders. */
+window.teamData = teamData;

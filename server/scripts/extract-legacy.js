@@ -138,6 +138,28 @@ function locate(scope, sel) {
   return null;
 }
 
+function cloneNode($, node) {
+  return $(node).clone();
+}
+
+/* Markup of a child element with its text removed - used when the stored
+   value already contains that text (interleaved inline markup). */
+function emptyShell($, node) {
+  const clone = cloneNode($, node);
+
+  const walk = (current) => {
+    $(current)
+      .contents()
+      .each((_, child) => {
+        if (child.type === "text") $(child).remove();
+        else if (child.type === "tag") walk(child);
+      });
+  };
+
+  walk(clone);
+  return $.html(clone);
+}
+
 function extractField($, scope, name, spec, where, { quiet = false } = {}) {
   if (spec.virtual) return { matched: false, virtual: true };
 
@@ -172,10 +194,44 @@ function extractField($, scope, name, spec, where, { quiet = false } = {}) {
   const directText = normalizeWs(textParts.join(" "));
 
   if (elemParts.length && directText) {
+    /* Keep the child elements on the side of the text where they were, so
+       "Label <i></i>" does not render as "<i></i> Label" when edited. */
+    const prefix = [];
+    const suffix = [];
+    let textStarted = false;
+    let interleaved = false;
+
+    el.contents().each((_, node) => {
+      if (node.type === "text") {
+        if (!normalizeWs(node.data)) return;
+        if (suffix.length) interleaved = true;
+        textStarted = true;
+        return;
+      }
+      if (node.type !== "tag") return;
+      if (textStarted) suffix.push(node);
+      else prefix.push(node);
+    });
+
+    if (interleaved) {
+      /* Text runs on both sides of a child element ("Evidence, <em>x</em>
+         and impact."): one value cannot keep the inline markup in place, so
+         the value covers the whole text and the children are stored as
+         empty shells.  Editing then keeps the reading order correct. */
+      return {
+        matched: true,
+        mode: "html",
+        keep: prefix.map((node) => emptyShell($, node)).join(""),
+        keepAfter: suffix.map((node) => emptyShell($, node)).join(""),
+        value: normalizeWs(el.text()),
+      };
+    }
+
     return {
       matched: true,
       mode: "html",
-      keep: elemParts.map((node) => $.html(node)).join(""),
+      keep: prefix.map((node) => $.html(node)).join(""),
+      keepAfter: suffix.map((node) => $.html(node)).join(""),
       value: directText,
     };
   }
@@ -205,8 +261,10 @@ function buildTemplate($, root, fields, results) {
 
     const token = `{{${name}}}`;
     if (result.mode === "attr") el.attr(result.attr, token);
-    else if (result.mode === "html") el.html(result.keep ? `${result.keep} ${token}` : token);
-    else el.text(token);
+    else if (result.mode === "html") {
+      const parts = [result.keep || "", token, result.keepAfter || ""].filter(Boolean);
+      el.html(parts.join(" "));
+    } else el.text(token);
   }
 
   return $.html(tokenClone);
@@ -219,9 +277,51 @@ function publicFields(fields, bestResults) {
     const { slugFrom, ...rest } = spec;
     const best = bestResults && bestResults[name];
     if (best && best.keep) rest.keep = best.keep;
+    if (best && best.keepAfter) rest.keepAfter = best.keepAfter;
     if (best && best.mode) rest.mode = best.mode;
     if (best && best.attr) rest.attr = best.attr;
     out[name] = rest;
+  }
+
+  return out;
+}
+
+/* The inline structure of a field can differ between items (one card wraps
+   its label in <i>, the next in <span>).  keep/keepAfter are stored once per
+   section, so they come from the structure the majority of items share: an
+   edit then reproduces the original markup for the common case. */
+function majorityResults(entries, fields) {
+  const out = {};
+
+  for (const name of Object.keys(fields)) {
+    const tally = new Map();
+
+    for (const entry of entries) {
+      const result = entry.results[name];
+      if (!result || !result.matched || result.virtual) continue;
+
+      const signature = JSON.stringify([
+        result.mode || "text",
+        result.keep || "",
+        result.keepAfter || "",
+        result.attr || "",
+      ]);
+
+      const bucket = tally.get(signature);
+      if (bucket) bucket.count += 1;
+      else tally.set(signature, { count: 1, result });
+    }
+
+    let winner = null;
+    let winningCount = -1;
+    for (const bucket of tally.values()) {
+      if (bucket.count > winningCount) {
+        winningCount = bucket.count;
+        winner = bucket.result;
+      }
+    }
+
+    if (winner) out[name] = winner;
   }
 
   return out;
@@ -282,7 +382,7 @@ function extractHtmlCollection(spec, $) {
     }
   }
 
-  const templateHtml = buildTemplate($, best.$item, spec.fields, best.results);
+  const templateHtml = buildTemplate($, best.$item, spec.fields, majorityResults(entries, spec.fields));
 
   if (spec.enrich) enrichEvents(entries, spec);
 
@@ -297,7 +397,7 @@ function extractHtmlCollection(spec, $) {
     matchBy: spec.matchBy || null,
     importedCount: entries.length,
     optionalFields: optional,
-    fields: publicFields(spec.fields, best.results),
+    fields: publicFields(spec.fields, majorityResults(entries, spec.fields)),
     templateHtml,
     items: entries.map((entry) => ({ slug: entry.slug, index: entry.index, data: entry.data })),
   };

@@ -45,34 +45,19 @@
         }
     }
 
-    function has(name) {
-        try {
-            return typeof window[name] !== "undefined" || eval("typeof " + name) !== "undefined";
-        } catch (err) {
-            return false;
-        }
-    }
-
-    /* References to data declared with const/let in other classic scripts
-       (teamData, upcomingEvents, ...) resolve through the global lexical
-       environment, which typeof alone cannot probe safely. */
+    /*
+      Data declared with const/let in another classic script (teamData,
+      upcomingEvents, archiveEventDetails, archiveDateByTitle) lives in the
+      global lexical environment, which no other script can read without
+      eval.  The declaring scripts therefore publish the very same objects on
+      window (see the "content-sync hook" lines in js/app.js and
+      js/events.js) and the overlay reads them from there.
+    */
     function globalValue(name) {
         try {
-            /* eslint-disable no-eval */
-            return eval(name);
-            /* eslint-enable no-eval */
+            return Object.prototype.hasOwnProperty.call(window, name) ? window[name] : undefined;
         } catch (err) {
             return undefined;
-        }
-    }
-
-    function setGlobal(name, value) {
-        try {
-            /* eslint-disable no-eval */
-            eval(name + " = value");
-            /* eslint-enable no-eval */
-        } catch (err) {
-            /* frozen or missing - nothing we can do */
         }
     }
 
@@ -97,6 +82,34 @@
 
     /* ---------------------------------------------- DOM application */
 
+    var UNSAFE_URL = /^\s*(?:javascript|vbscript|data:text\/html)/i;
+    var URL_ATTRS = { href: true, src: true, action: true, formaction: true };
+
+    /*
+      Replaces the text of an element without destroying a single wrapper
+      such as <p><a href="mailto:...">info@bcrls.org</a></p>: the markup of
+      the page survives, only the text inside it changes.
+    */
+    function setTextValue(el, text) {
+        var hasOwnText = false;
+        var i;
+
+        for (i = 0; i < el.childNodes.length; i += 1) {
+            var node = el.childNodes[i];
+            if (node.nodeType === 3 && node.nodeValue && node.nodeValue.trim()) {
+                hasOwnText = true;
+                break;
+            }
+        }
+
+        if (!hasOwnText && el.children.length === 1) {
+            setTextValue(el.children[0], text);
+            return;
+        }
+
+        el.textContent = text;
+    }
+
     function findTarget(root, selector) {
         if (selector.charAt(0) === "@") return root;
         if (root === document) return document.querySelector(selector);
@@ -110,11 +123,19 @@
         if (!el) return;
 
         if (spec.mode === "attr" || spec.attr) {
-            el.setAttribute(spec.attr || spec.sel.slice(1), String(value));
+            var attrName = spec.attr || spec.sel.slice(1);
+            var attrValue = String(value);
+
+            /* never let a stored value turn a link into executable code */
+            if (URL_ATTRS[attrName] && UNSAFE_URL.test(attrValue)) return;
+
+            el.setAttribute(attrName, attrValue);
         } else if (spec.mode === "html") {
-            el.innerHTML = (spec.keep ? spec.keep + " " : "") + esc(value);
+            el.innerHTML = [spec.keep || "", esc(value), spec.keepAfter || ""]
+                .filter(Boolean)
+                .join(" ");
         } else {
-            el.textContent = String(value);
+            setTextValue(el, String(value));
         }
     }
 

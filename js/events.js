@@ -358,3 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if(close) close.addEventListener("click",closeEventDetails); if(overlay) overlay.addEventListener("click",closeEventDetails);
     document.addEventListener("keydown",e=>{if(e.key==="Escape")closeEventDetails();});
 });
+
+/* content-sync hooks: js/content-sync.js reads these through window
+   (no eval). They are the very same objects the rendering functions above
+   use, so edits and hides applied by the overlay are what the page shows. */
+window.upcomingEvents = upcomingEvents;
+window.archiveEventDetails = archiveEventDetails;
+window.archiveDateByTitle = archiveDateByTitle;

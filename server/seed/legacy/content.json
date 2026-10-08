@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T16:06:21.739Z",
+  "generatedAt": "2026-10-08T16:25:59.851Z",
   "generator": "server/scripts/extract-legacy.js",
   "spec": "server/scripts/legacy-spec.js",
   "sections": [
@@ -602,7 +602,7 @@
           "sel": ".latest-content a.card-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-right\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-right\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -613,7 +613,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"latest-card\">\n\n\n                <div class=\"latest-image\">\n\n                    <div class=\"placeholder-image\">\n\n                        <i class=\"{{icon}}\"></i>\n\n                    </div>\n\n                </div>\n\n\n                <div class=\"latest-content\">\n\n                    <span>{{category}}</span>\n\n\n                    <h3>{{title}}</h3>\n\n\n                    <p>{{description}}</p>\n\n\n                    <a href=\"{{linkUrl}}\" class=\"card-link\"><i class=\"fa-solid fa-arrow-right\"></i> {{linkText}}</a>\n\n                </div>\n\n\n            </article>",
+      "templateHtml": "<article class=\"latest-card\">\n\n\n                <div class=\"latest-image\">\n\n                    <div class=\"placeholder-image\">\n\n                        <i class=\"{{icon}}\"></i>\n\n                    </div>\n\n                </div>\n\n\n                <div class=\"latest-content\">\n\n                    <span>{{category}}</span>\n\n\n                    <h3>{{title}}</h3>\n\n\n                    <p>{{description}}</p>\n\n\n                    <a href=\"{{linkUrl}}\" class=\"card-link\">{{linkText}} <i class=\"fa-solid fa-arrow-right\"></i></a>\n\n                </div>\n\n\n            </article>",
       "items": [
         {
           "slug": "bcrls-newsroom",
@@ -690,7 +690,7 @@
           "sel": ".library-resource-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -701,7 +701,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</article>",
       "items": [
         {
           "slug": "academic-resource-01",
@@ -845,7 +845,7 @@
           "sel": ".library-resource-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -856,7 +856,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</article>",
       "items": [
         {
           "slug": "reports-resource-01",
@@ -961,7 +961,7 @@
           "sel": ".library-resource-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -972,7 +972,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"library-resource-card\">\n<div class=\"library-resource-top\"><div class=\"library-resource-icon\"><i class=\"{{icon}}\"></i></div><span class=\"library-resource-type\">{{type}}</span></div>\n<div class=\"library-resource-meta\">{{meta}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"library-resource-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</article>",
       "items": [
         {
           "slug": "books-resource-01",
@@ -1093,7 +1093,7 @@
           "sel": ".training-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1104,7 +1104,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-clock\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-clock\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</div>\n</div>\n</article>",
       "items": [
         {
           "slug": "university-of-oxford",
@@ -1289,7 +1289,7 @@
           "sel": ".training-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1300,7 +1300,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{subject}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-graduation-cap\"></i>\n<span>{{degree}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{subject}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-location-dot\"></i>\n<span>{{location}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</div>\n</div>\n</article>",
       "items": [
         {
           "slug": "university-of-london",
@@ -1520,7 +1520,7 @@
           "sel": ".training-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1531,7 +1531,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-certificate\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{focus}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-user-tie\"></i>\n<span>{{audience}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</div>\n</article>",
+      "templateHtml": "<article class=\"training-card\">\n<div class=\"training-card-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<div class=\"training-card-content\">\n<span class=\"training-category\">{{category}}</span>\n<h3>{{title}}</h3>\n<h4>{{programme}}</h4>\n<p>{{description}}</p>\n<div class=\"training-meta\">\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-certificate\"></i>\n<span>{{duration}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-scale-balanced\"></i>\n<span>{{focus}}</span>\n</div>\n<div class=\"training-meta-item\">\n<i class=\"fa-solid fa-user-tie\"></i>\n<span>{{audience}}</span>\n</div>\n</div>\n<div class=\"training-details\">\n<p>{{details}}</p>\n<a class=\"training-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</div>\n</div>\n</article>",
       "items": [
         {
           "slug": "university-of-cape-town",
@@ -1618,7 +1618,8 @@
         "iconGlyph": {
           "sel": ".database-card-icon",
           "label": "Icon glyph (text)",
-          "type": "text"
+          "type": "text",
+          "mode": "text"
         },
         "title": {
           "sel": "h3",
@@ -1636,7 +1637,7 @@
           "sel": ".statistics-explore-btn",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<span>→</span>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1647,7 +1648,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"datahub-card\">\n<div class=\"datahub-card-icon\">\n<i class=\"{{iconClass}}\"></i>\n</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"statistics-explore-btn\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"datahub-card\">\n<div class=\"datahub-card-icon\">\n<i class=\"{{iconClass}}\"></i>\n</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"statistics-explore-btn\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <span>→</span></a>\n</article>",
       "items": [
         {
           "slug": "refugee-statistics",
@@ -1742,7 +1743,7 @@
           "sel": ".portal-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<span>→</span>",
+          "keepAfter": "<span>→</span>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1753,7 +1754,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<div class=\"portal-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"portal-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><span>→</span> {{linkText}}</a>\n</div>",
+      "templateHtml": "<div class=\"portal-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"portal-link\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <span>→</span></a>\n</div>",
       "items": [
         {
           "slug": "rohingya-response-resources-data",
@@ -1848,7 +1849,7 @@
           "sel": ".datahub-card-button",
           "label": "Link text",
           "type": "text",
-          "keep": "<span class=\"arrow\">\n                            →\n                        </span>",
+          "keepAfter": "<span>→</span>",
           "mode": "html"
         },
         "linkUrl": {
@@ -1859,7 +1860,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"database-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"datahub-card-button\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\"><span class=\"arrow\">\n                            →\n                        </span> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"database-card\">\n<div class=\"database-card-icon\">{{icon}}</div>\n<h3>{{title}}</h3>\n<p>{{description}}</p>\n<a class=\"datahub-card-button\" href=\"{{linkUrl}}\" rel=\"noopener noreferrer\" target=\"_blank\">{{linkText}} <span>→</span></a>\n</article>",
       "items": [
         {
           "slug": "database",
@@ -1990,7 +1991,7 @@
           "sel": ".newsroom-read",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-up-right-from-square\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -2001,7 +2002,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"newsroom-feature\">\n<div class=\"newsroom-feature-media\">\n<img src=\"{{image}}\" alt=\"{{imageAlt}}\" loading=\"lazy\">\n<div class=\"newsroom-media-tag\"><i class=\"fa-solid fa-camera\"></i> {{mediaTag}}</div>\n</div>\n<div class=\"newsroom-feature-content\">\n<div class=\"newsroom-meta\"><span><i class=\"fa-solid fa-building\"></i> {{outlet}}</span><span><i class=\"fa-regular fa-calendar\"></i> {{date}}</span></div>\n<h2>{{title}}</h2>\n<p class=\"newsroom-lead\">{{lead}}</p>\n<div class=\"newsroom-highlights\">\n<div><i class=\"fa-solid fa-landmark\"></i><span>{{highlight1}}</span></div>\n<div><i class=\"fa-solid fa-users\"></i><span>{{highlight2}}</span></div>\n<div><i class=\"fa-solid fa-scale-balanced\"></i><span>{{highlight3}}</span></div>\n</div>\n<a class=\"newsroom-read\" href=\"{{linkUrl}}\" target=\"_blank\" rel=\"noopener\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> {{linkText}}</a>\n</div>\n</article>",
+      "templateHtml": "<article class=\"newsroom-feature\">\n<div class=\"newsroom-feature-media\">\n<img src=\"{{image}}\" alt=\"{{imageAlt}}\" loading=\"lazy\">\n<div class=\"newsroom-media-tag\"><i class=\"fa-solid fa-camera\"></i> {{mediaTag}}</div>\n</div>\n<div class=\"newsroom-feature-content\">\n<div class=\"newsroom-meta\"><span><i class=\"fa-solid fa-building\"></i> {{outlet}}</span><span><i class=\"fa-regular fa-calendar\"></i> {{date}}</span></div>\n<h2>{{title}}</h2>\n<p class=\"newsroom-lead\">{{lead}}</p>\n<div class=\"newsroom-highlights\">\n<div><i class=\"fa-solid fa-landmark\"></i><span>{{highlight1}}</span></div>\n<div><i class=\"fa-solid fa-users\"></i><span>{{highlight2}}</span></div>\n<div><i class=\"fa-solid fa-scale-balanced\"></i><span>{{highlight3}}</span></div>\n</div>\n<a class=\"newsroom-read\" href=\"{{linkUrl}}\" target=\"_blank\" rel=\"noopener\">{{linkText}} <i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>\n</div>\n</article>",
       "items": [
         {
           "slug": "international-conference-on-refugee-protection-held-at-cu",
@@ -3685,7 +3686,7 @@
           "sel": ".opportunity-link",
           "label": "Link text",
           "type": "text",
-          "keep": "<i class=\"fa-solid fa-arrow-right\"></i>",
+          "keepAfter": "<i class=\"fa-solid fa-arrow-right\"></i>",
           "mode": "html"
         },
         "linkUrl": {
@@ -3696,7 +3697,7 @@
           "mode": "attr"
         }
       },
-      "templateHtml": "<article class=\"opportunity-card\">\n<div class=\"opportunity-top\">\n<div class=\"opportunity-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<span class=\"opportunity-number\">{{number}}</span>\n</div>\n<h3>{{title}}</h3>\n<p>{{text}}</p>\n<a class=\"opportunity-link\" href=\"{{linkUrl}}\"><i class=\"fa-solid fa-arrow-right\"></i> {{linkText}}</a>\n</article>",
+      "templateHtml": "<article class=\"opportunity-card\">\n<div class=\"opportunity-top\">\n<div class=\"opportunity-icon\">\n<i class=\"{{icon}}\"></i>\n</div>\n<span class=\"opportunity-number\">{{number}}</span>\n</div>\n<h3>{{title}}</h3>\n<p>{{text}}</p>\n<a class=\"opportunity-link\" href=\"{{linkUrl}}\">{{linkText}} <i class=\"fa-solid fa-arrow-right\"></i></a>\n</article>",
       "items": [
         {
           "slug": "become-a-member",
@@ -5261,7 +5262,7 @@
           "sel": ".blog-submission-section .submission-intro",
           "label": "Submission intro",
           "type": "textarea",
-          "keep": "<strong>\n                        Microsoft Word (.docx)\n                    </strong><strong>\n                        50–80 words.\n                    </strong>",
+          "keepAfter": "<strong></strong><strong></strong>",
           "mode": "html"
         }
       },
@@ -5271,7 +5272,7 @@
           "slug": "value",
           "index": 0,
           "data": {
-            "value": "Please submit your blog in format, along with a short author biography of"
+            "value": "Please submit your blog in Microsoft Word (.docx) format, along with a short author biography of 50–80 words."
           }
         }
       ]
@@ -5324,7 +5325,7 @@
           "sel": "#about > p:nth-of-type(1)",
           "label": "Paragraph 1",
           "type": "textarea",
-          "keep": "<strong>Non-Refoulement</strong>",
+          "keepAfter": "<strong></strong>",
           "mode": "html"
         }
       },
@@ -5334,7 +5335,7 @@
           "slug": "value",
           "index": 0,
           "data": {
-            "value": "The Bangladesh Center for Refugee Law Studies (BCRLS) invites original blog submissions for its academic blog from students, academics, researchers, legal professionals, and scholars who are interested in refugee law, forced displacement, statelessness, and contemporary humanitarian challenges."
+            "value": "The Bangladesh Center for Refugee Law Studies (BCRLS) invites original blog submissions for its academic blog Non-Refoulement from students, academics, researchers, legal professionals, and scholars who are interested in refugee law, forced displacement, statelessness, and contemporary humanitarian challenges."
           }
         }
       ]
@@ -5418,7 +5419,7 @@
           "sel": "#about > p:nth-of-type(4)",
           "label": "Paragraph 4",
           "type": "textarea",
-          "keep": "<strong>\n                        limitations, inconsistencies, and implementation\n                        challenges of existing refugee law frameworks\n                    </strong><strong>\n                        practical legal, institutional, and policy reforms\n                    </strong>",
+          "keepAfter": "<strong></strong><strong></strong>",
           "mode": "html"
         }
       },
@@ -5428,7 +5429,7 @@
           "slug": "value",
           "index": 0,
           "data": {
-            "value": "We particularly encourage submissions that move beyond description and engage with while proposing capable of addressing contemporary displacement challenges."
+            "value": "We particularly encourage submissions that move beyond description and engage with limitations, inconsistencies, and implementation challenges of existing refugee law frameworks while proposing practical legal, institutional, and policy reforms capable of addressing contemporary displacement challenges."
           }
         }
       ]
@@ -5481,7 +5482,7 @@
           "sel": ".journal-hero-content h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>\n                    Refugee Law and\n                    Displacement Studies\n                </span>",
+          "keepAfter": "<span>\n                    Refugee Law and\n                    Displacement Studies\n                </span>",
           "mode": "html"
         }
       },
@@ -5886,7 +5887,7 @@
           "sel": ".cfp-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<em>Papers</em>",
+          "keepAfter": "<em>Papers</em>",
           "mode": "html"
         }
       },
@@ -5981,7 +5982,7 @@
           "sel": "h1",
           "label": "Heading",
           "type": "textarea",
-          "keep": "<span>\n                    Founder\n                </span>",
+          "keepAfter": "<span>\n                    Founder\n                </span>",
           "mode": "html"
         }
       },
@@ -6417,7 +6418,7 @@
           "sel": "h1",
           "label": "Heading",
           "type": "textarea",
-          "keep": "<span>Protection &amp; Justice</span>",
+          "keepAfter": "<span>Protection &amp; Justice</span>",
           "mode": "html"
         }
       },
@@ -6760,7 +6761,7 @@
           "sel": "h1",
           "label": "Heading",
           "type": "textarea",
-          "keep": "<span>Refugee Law &amp; Protection</span>",
+          "keepAfter": "<span>Refugee Law &amp; Protection</span>",
           "mode": "html"
         }
       },
@@ -7103,7 +7104,7 @@
           "sel": "h1",
           "label": "Heading",
           "type": "textarea",
-          "keep": "<span>Meaningful Action</span>",
+          "keepAfter": "<span>Meaningful Action</span>",
           "mode": "html"
         }
       },
@@ -7445,7 +7446,7 @@
           "sel": ".about-hero-content h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<em>\n                    We Are.\n                </em>",
+          "keepAfter": "<em>\n                    We Are.\n                </em>",
           "mode": "html"
         }
       },
@@ -7539,7 +7540,7 @@
           "sel": "#who-we-are h2",
           "label": "Who we are heading",
           "type": "text",
-          "keep": "<em>\n                    Advancing justice.\n                </em>",
+          "keepAfter": "<em>\n                    Advancing justice.\n                </em>",
           "mode": "html"
         }
       },
@@ -7571,7 +7572,7 @@
           "sel": ".about-approach h2",
           "label": "Approach heading",
           "type": "text",
-          "keep": "<em>\n                    engagement\n                </em>",
+          "keepAfter": "<em></em>",
           "mode": "html"
         }
       },
@@ -7581,7 +7582,7 @@
           "slug": "value",
           "index": 0,
           "data": {
-            "value": "Evidence, and impact."
+            "value": "Evidence, engagement and impact."
           }
         }
       ]
@@ -7603,7 +7604,7 @@
           "sel": ".about-focus-section h2",
           "label": "Focus heading",
           "type": "text",
-          "keep": "<em>\n                        displacement.\n                    </em>",
+          "keepAfter": "<em>\n                        displacement.\n                    </em>",
           "mode": "html"
         }
       },
@@ -7666,7 +7667,7 @@
           "sel": ".about-network h2",
           "label": "Network heading",
           "type": "text",
-          "keep": "<em>\n                        knowledge\n                    </em>",
+          "keepAfter": "<em></em>",
           "mode": "html"
         }
       },
@@ -7676,7 +7677,7 @@
           "slug": "value",
           "index": 0,
           "data": {
-            "value": "Connecting and people."
+            "value": "Connecting knowledge and people."
           }
         }
       ]
@@ -7885,7 +7886,7 @@
           "sel": ".involved-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Something Meaningful</span>",
+          "keepAfter": "<span>Something Meaningful</span>",
           "mode": "html"
         }
       },
@@ -8259,7 +8260,7 @@
           "sel": ".contact-hero-inner h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Hear From You</span>",
+          "keepAfter": "<span>Hear From You</span>",
           "mode": "html"
         }
       },
@@ -8540,7 +8541,7 @@
           "sel": ".member-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>BCRLS Community</span>",
+          "keepAfter": "<span>BCRLS Community</span>",
           "mode": "html"
         }
       },
@@ -8697,7 +8698,7 @@
           "sel": ".fellow-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Lead With Impact</span>",
+          "keepAfter": "<span>Lead With Impact</span>",
           "mode": "html"
         }
       },
@@ -8854,7 +8855,7 @@
           "sel": ".internship-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Grow With BCRLS</span>",
+          "keepAfter": "<span>Grow With BCRLS</span>",
           "mode": "html"
         }
       },
@@ -9011,7 +9012,7 @@
           "sel": ".partner-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Something Meaningful Together</span>",
+          "keepAfter": "<span>Something Meaningful Together</span>",
           "mode": "html"
         }
       },
@@ -9168,7 +9169,7 @@
           "sel": ".volunteer-hero h1",
           "label": "Hero heading",
           "type": "textarea",
-          "keep": "<span>Make an Impact</span>",
+          "keepAfter": "<span>Make an Impact</span>",
           "mode": "html"
         }
       },
