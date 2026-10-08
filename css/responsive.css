@@ -4218,7 +4218,12 @@ html.bcrls-touch-device body .site-header .menu-overlay.active {
    CHROME ANDROID "DESKTOP SITE" MODE
    Touch device + wide CSS viewport should use the same
    horizontal desktop navigation instead of the hamburger.
+   Scoped to min-width 1501px: below that the horizontal
+   navigation does not fit and the hamburger drawer must be
+   used instead (see the max-width 1500px block above).
 ========================================================= */
+@media screen and (min-width: 1501px) {
+
 html.bcrls-desktop-mode body .site-header .menu-toggle {
     display: none !important;
     visibility: hidden !important;
@@ -4332,6 +4337,8 @@ html.bcrls-desktop-mode body .site-header .menu-overlay {
         padding-right: 7px !important;
         font-size: 11px !important;
     }
+}
+
 }
 
 
@@ -4602,4 +4609,30 @@ html.bcrls-touch-device body .site-header .main-nav .dropdown-menu a {
     margin: 0 !important;
     padding: 10px 12px !important;
     transform: none !important;
+}
+
+/* =========================================================
+   NAV ACCESSIBILITY - TOUCH TARGETS (appended)
+   Every hamburger button must give at least a 44 x 44 CSS px
+   target. Applied globally: on wide desktop the button is
+   display:none, so the extra size is never painted.
+   The drawer dropdown links only exist in the drawer layout
+   (max-width 1500px), so they are scoped there in order to
+   leave the wide desktop navigation untouched.
+========================================================= */
+
+html body .site-header .menu-toggle,
+html.bcrls-touch-device body .site-header .menu-toggle,
+html.bcrls-mobile-device body .site-header .menu-toggle {
+    min-width: 44px !important;
+    min-height: 44px !important;
+}
+
+@media screen and (max-width: 1500px) {
+
+    html body .site-header .main-nav .dropdown-menu a,
+    html.bcrls-touch-device body .site-header .main-nav .dropdown-menu a,
+    html.bcrls-mobile-device body .site-header .main-nav .dropdown-menu a {
+        min-height: 44px !important;
+    }
 }
