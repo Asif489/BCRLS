@@ -4,16 +4,17 @@
    ========================================================= */
 
 /* ------------------------------------------------------------ injection
-   Loads js/content-sync.js relative to *this* file, so the same line works
-   from the site root and from every subfolder depth, and without editing a
-   single HTML page.  The overlay only touches the DOM after a successful
-   response of /api/public/content - if the API is down the page stays exactly
-   as shipped.  ---------------------------------------------------------------- */
-(function injectContentSync() {
+   Loads js/content-sync.js and js/form-submit.js relative to *this* file, so
+   the same lines work from the site root and from every subfolder depth, and
+   without editing a single HTML page.  The overlay only touches the DOM after
+   a successful response of /api/public/content - if the API is down the page
+   stays exactly as shipped.  form-submit.js gives every static form one
+   capture-phase submit handler that posts to /api/forms/<key>.  ------------- */
+(function injectSiteScripts() {
     "use strict";
 
-    if (window.__bcrlsContentSyncLoader) return;
-    window.__bcrlsContentSyncLoader = true;
+    if (window.__bcrlsSiteScriptsLoader) return;
+    window.__bcrlsSiteScriptsLoader = true;
 
     var script = document.currentScript;
 
@@ -30,13 +31,15 @@
 
     if (!script || !script.src) return;
 
-    var url = script.src.replace(/(^|\/)app\.js(\?.*)?$/, "$1content-sync.js");
-    if (url === script.src) return;
+    ["content-sync.js", "form-submit.js"].forEach(function (file) {
+        var url = script.src.replace(/(^|\/)app\.js(\?.*)?$/, "$1" + file);
+        if (url === script.src) return;
 
-    var tag = document.createElement("script");
-    tag.src = url;
-    tag.async = false;
-    document.head.appendChild(tag);
+        var tag = document.createElement("script");
+        tag.src = url;
+        tag.async = false;
+        document.head.appendChild(tag);
+    });
 })();
 
 const teamData = {
