@@ -10,7 +10,7 @@
     "db:migrate": "node server/scripts/migrate.js",
     "db:seed": "node server/scripts/seed.js",
     "create-admin": "node server/scripts/create-admin.js",
-    "test": "node --test server/test/",
+    "test": "node --test \"server/test/*.test.js\"",
     "verify:snapshot": "node server/scripts/verify-snapshot.js"
   },
   "dependencies": {
