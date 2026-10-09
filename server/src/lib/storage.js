@@ -46,7 +46,8 @@ async function saveLocal({ buffer, originalName, mimeType }) {
   fs.mkdirSync(config.uploadDir, { recursive: true });
 
   const filename = buildFilename(originalName, mimeType);
-  fs.writeFileSync(path.join(config.uploadDir, filename), buffer);
+  /* 'wx' fails instead of overwriting if the name somehow already exists */
+  fs.writeFileSync(path.join(config.uploadDir, filename), buffer, { flag: "wx" });
 
   return {
     filename,
