@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · BCRLS</title>
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="stylesheet" href="/css/design-system.css">
+<link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="admin-body">
+
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
+<!-- ============================================================ LOGIN -->
+<div class="login-screen" id="loginView" hidden>
+  <div class="login-card">
+    <div class="login-brand">
+      <img src="/assets/logo.png" alt="" width="60" height="60">
+      <span>
+        <strong>BCRLS</strong>
+        <small>Content Admin</small>
+      </span>
+    </div>
+
+    <h1>Sign in</h1>
+
+    <p class="login-notice" id="loginNotice" hidden></p>
+
+    <form id="loginForm" novalidate autocomplete="on">
+      <div class="field">
+        <label for="loginEmail">E-mail</label>
+        <input id="loginEmail" name="email" type="email" inputmode="email"
+               autocomplete="username" autocapitalize="off" spellcheck="false" required
+               aria-describedby="loginError">
+      </div>
+
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" name="password" type="password"
+               autocomplete="current-password" required aria-describedby="loginError">
+      </div>
+
+      <p class="form-error" id="loginError" role="alert" hidden></p>
+
+      <button class="btn btn-primary btn-block" type="submit" id="loginSubmit">Sign in</button>
+    </form>
+
+    <p class="login-foot">Bangladesh Center for Refugee Law Studies</p>
+  </div>
+</div>
+
+<!-- ======================================================== APP SHELL -->
+<div class="app" id="appView" hidden>
+
+  <header class="topbar">
+    <button class="icon-btn topbar-toggle" id="navToggle" type="button"
+            aria-expanded="false" aria-controls="sidebar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+
+    <a class="topbar-brand" href="#/">
+      <img src="/assets/logo.png" alt="" width="34" height="34">
+      <span><strong>BCRLS</strong> Admin</span>
+    </a>
+
+    <div class="topbar-user">
+      <span class="topbar-name" id="topbarName"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <div class="nav-scrim" id="navScrim" hidden></div>
+
+    <nav class="sidebar" id="sidebar" aria-label="Admin sections">
+      <p class="nav-caption">Content</p>
+      <ul class="nav-list" id="navList">
+        <li class="nav-muted">Loading sections…</li>
+      </ul>
+
+      <div class="nav-secondary">
+        <p class="nav-caption">Tools</p>
+        <a class="nav-link" href="#/submissions">
+          Form Submissions <span class="nav-count" id="navSubmissionCount" hidden></span>
+        </a>
+        <a class="nav-link" href="#/account">Account</a>
+        <button class="nav-link nav-button" type="button" data-action="logout">Log out</button>
+      </div>
+    </nav>
+
+    <main class="main" id="mainContent" tabindex="-1"></main>
+  </div>
+</div>
+
+<div class="toast-region" id="toastRegion" role="status" aria-live="polite" aria-atomic="false"></div>
+<div id="modalRoot"></div>
+
+<noscript>
+  <p class="noscript">The admin panel needs JavaScript enabled.</p>
+</noscript>
+
+<script type="module" src="/admin/js/app.js"></script>
+</body>
+</html>
