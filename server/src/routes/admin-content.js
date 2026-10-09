@@ -310,4 +310,91 @@ router.delete(
   })
 );
 
+/* ---------------------------------------------------------------- reorder */
+
+/*
+  The panel reorders with up/down buttons and needs the new order to survive a
+  reload: the body carries every id of the section exactly once, in display
+  order, and item_index is rewritten positionally.
+*/
+router.post(
+  "/:key/reorder",
+  asyncRoute(async (req, res) => {
+    const section = await loadSection(req.params.key);
+
+    /* ids arrive as JSON numbers or as the strings the API itself returns
+       (postgres bigint columns are serialised as strings) */
+    const itemIdSchema = z
+      .union([z.number().int().positive().max(2 ** 52), z.string().regex(/^\d{1,16}$/)])
+      .transform(Number);
+
+    const body = z
+      .object({ order: z.array(itemIdSchema).min(1).max(5000) })
+      .strict()
+      .parse(req.body || {});
+
+    const { rows } = await db.query(
+      "SELECT id FROM content_items WHERE section_id = $1",
+      [section.id]
+    );
+    const current = rows.map((row) => Number(row.id));
+    const incoming = body.order;
+    const unique = new Set(incoming);
+
+    if (
+      unique.size !== incoming.length ||
+      incoming.length !== current.length ||
+      !current.every((id) => unique.has(id))
+    ) {
+      throw badRequest(
+        `Reorder expects every item id of '${section.key}' exactly once ` +
+          `(${current.length} ids, got ${incoming.length})`
+      );
+    }
+
+    /*
+      The public overlay only writes rows that carry edited_at onto their
+      static node, so a row that moved keeps showing its old position unless
+      it is stamped.  Touching only the rows whose index really changed keeps
+      every untouched row byte-identical on the site.
+    */
+    await db.query(
+      `UPDATE content_items i
+          SET item_index = u.ord - 1,
+              edited_at = CASE WHEN i.item_index <> u.ord - 1 THEN now() ELSE i.edited_at END
+         FROM unnest($1::bigint[]) WITH ORDINALITY AS u(id, ord)
+        WHERE i.id = u.id AND i.section_id = $2`,
+      [incoming, section.id]
+    );
+
+    await audit(db, {
+      adminId: req.admin.id,
+      action: "content.reorder",
+      entity: "content_section",
+      entityId: section.id,
+      detail: { section: section.key, order: incoming },
+    });
+
+    const items = await db.many(
+      `SELECT id, slug, item_index, data, is_hidden, is_imported, edited_at
+         FROM content_items
+        WHERE section_id = $1
+        ORDER BY item_index, id`,
+      [section.id]
+    );
+
+    res.json({
+      items: items.map((item) => ({
+        id: item.id,
+        slug: item.slug,
+        index: item.item_index,
+        data: item.data,
+        hidden: item.is_hidden,
+        imported: item.is_imported,
+        editedAt: item.edited_at ? new Date(item.edited_at).toISOString() : null,
+      })),
+    });
+  })
+);
+
 module.exports = router;
