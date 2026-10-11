@@ -21,6 +21,7 @@ import { renderDashboard } from "./screens/dashboard.js";
 import { renderSection } from "./screens/section.js";
 import { renderEditor } from "./screens/editor.js";
 import { renderSubmissions } from "./screens/submissions.js";
+import { renderIssues } from "./screens/issues.js";
 import { renderAccount } from "./screens/account.js";
 import { GROUP_ORDER, groupSections } from "./nav-groups.js";
 
@@ -272,6 +273,12 @@ async function renderRoute() {
       await renderSubmissions(main, { id: Number(parts[1]) });
     } else if (parts[0] === "submissions") {
       await renderSubmissions(main, { id: null });
+    } else if (parts[0] === "issues" && parts[1] === "new") {
+      await renderIssues(main, { mode: "new" });
+    } else if (parts[0] === "issues" && parts[1] === "item" && parts[2]) {
+      await renderIssues(main, { mode: "edit", id: Number(parts[2]) });
+    } else if (parts[0] === "issues") {
+      await renderIssues(main, { mode: "list" });
     } else if (parts[0] === "account") {
       document.title = "Account · BCRLS Admin";
       await renderAccount(main);

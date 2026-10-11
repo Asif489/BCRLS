@@ -171,7 +171,7 @@ async function login(email, password) {
 async function resetDatabase() {
   const { db } = requireState();
   await db.query(
-    "TRUNCATE content_items, content_sections, form_submissions, audit_log, uploads, admins CASCADE"
+    "TRUNCATE content_items, content_sections, form_submissions, audit_log, uploads, admins, journal_issues CASCADE"
   );
 }
 

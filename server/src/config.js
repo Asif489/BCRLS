@@ -21,6 +21,10 @@ const schema = z.object({
   UPLOAD_DIR: z.string().default("server/uploads"),
   CLOUDINARY_URL: z.string().default(""),
   PUBLIC_ORIGIN: z.string().default("http://localhost:4000"),
+  HARDCODED_ADMIN_1_EMAIL: z.string().default("admin1@gmail.com"),
+  HARDCODED_ADMIN_1_PASSWORD: z.string().default("Admin1234@"),
+  HARDCODED_ADMIN_2_EMAIL: z.string().default("admin2@gmail.com"),
+  HARDCODED_ADMIN_2_PASSWORD: z.string().default("ADmin1234@"),
 });
 
 const parsed = schema.safeParse(process.env);
@@ -46,6 +50,43 @@ if (jwtSecret.length < 32) {
   }
 }
 
+const hardcodedAdmins = [
+  {
+    id: "hardcoded-1",
+    email: (env.HARDCODED_ADMIN_1_EMAIL || process.env.ADMIN_1_EMAIL || "admin1@gmail.com").trim().toLowerCase(),
+    password: env.HARDCODED_ADMIN_1_PASSWORD || process.env.ADMIN_1_PASSWORD || "Admin1234@",
+    name: "Admin 1",
+    role: "admin",
+    isHardcoded: true,
+  },
+  {
+    id: "hardcoded-2",
+    email: (env.HARDCODED_ADMIN_2_EMAIL || process.env.ADMIN_2_EMAIL || "admin2@gmail.com").trim().toLowerCase(),
+    password: env.HARDCODED_ADMIN_2_PASSWORD || process.env.ADMIN_2_PASSWORD || "ADmin1234@",
+    name: "Admin 2",
+    role: "admin",
+    isHardcoded: true,
+  },
+];
+
+function findHardcodedAdmin(email, password) {
+  if (!email || !password) return null;
+  const cleanEmail = String(email).trim().toLowerCase();
+  return (
+    hardcodedAdmins.find(
+      (a) => a.email.toLowerCase() === cleanEmail && a.password === password
+    ) || null
+  );
+}
+
+function getHardcodedAdminByEmail(email) {
+  if (!email) return null;
+  const cleanEmail = String(email).trim().toLowerCase();
+  return (
+    hardcodedAdmins.find((a) => a.email.toLowerCase() === cleanEmail) || null
+  );
+}
+
 module.exports = {
   env: env.NODE_ENV,
   isProduction: env.NODE_ENV === "production",
@@ -59,4 +100,7 @@ module.exports = {
   uploadDir: path.resolve(__dirname, "..", "..", env.UPLOAD_DIR),
   cloudinaryUrl: env.CLOUDINARY_URL,
   publicOrigin: env.PUBLIC_ORIGIN,
+  hardcodedAdmins,
+  findHardcodedAdmin,
+  getHardcodedAdminByEmail,
 };

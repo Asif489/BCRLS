@@ -6,8 +6,15 @@ const config = require("../config");
 const { unauthorized, forbidden } = require("../lib/http");
 
 function signToken(admin, expiresIn = config.jwtExpiresIn) {
+  const isHardcoded = Boolean(admin.isHardcoded);
   return jwt.sign(
-    { sub: String(admin.id), email: admin.email, name: admin.display_name, role: admin.role },
+    {
+      sub: isHardcoded ? `hardcoded:${admin.email}` : String(admin.id),
+      email: admin.email,
+      name: admin.display_name || admin.name || "",
+      role: admin.role,
+      isHardcoded,
+    },
     config.jwtSecret,
     { expiresIn }
   );
@@ -35,12 +42,30 @@ function verifyToken(req) {
   Every authenticated request re-reads the admin row, so an account that was
   deactivated (or deleted) while a token was still valid is rejected on the
   very next call instead of at token expiry.
+  For hardcoded admin accounts, the database is bypassed entirely.
 */
 async function requireAuth(req, res, next) {
   const { payload, error } = verifyToken(req);
   if (error) {
     next(error);
     return;
+  }
+
+  // Bypass database check entirely for hardcoded admin accounts
+  const hardcodedAdmin = config.getHardcodedAdminByEmail(payload.email);
+  if (payload.isHardcoded || (payload.sub && String(payload.sub).startsWith("hardcoded:"))) {
+    if (hardcodedAdmin) {
+      req.admin = {
+        id: null,
+        email: hardcodedAdmin.email,
+        name: hardcodedAdmin.name,
+        role: "admin",
+        is_active: true,
+        isHardcoded: true,
+      };
+      return next();
+    }
+    return next(unauthorized("Account no longer exists"));
   }
 
   try {

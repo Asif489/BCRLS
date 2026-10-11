@@ -1508,3 +1508,71 @@
     flex: 1;
   }
 }
+
+/* ------------------------------------------------------ journal issues */
+
+.page-head-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.page-head-row h1 {
+  margin: 6px 0;
+}
+.page-head-row .btn {
+  margin-left: auto;
+}
+
+.status-current {
+  background: #e7f6ee;
+  border-color: #c6e8d6;
+  color: var(--adm-success);
+}
+
+.cell-sub {
+  display: block;
+  margin-top: 2px;
+  color: var(--ds-muted);
+  font-size: 0.82rem;
+}
+
+.item-table tr.is-current td {
+  background: #f4faf7;
+}
+.item-table tr.is-current .cell-item span:first-child {
+  font-weight: 700;
+  color: var(--ds-heading);
+}
+
+.issue-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0 20px;
+  margin-bottom: 8px;
+}
+.issue-form-grid .field-wide {
+  grid-column: 1 / -1;
+}
+.issue-form-grid .field-checkbox {
+  grid-column: 1 / -1;
+}
+
+.field-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.field-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  order: -1;
+}
+.field-checkbox .field-label {
+  margin: 0;
+}
+.field-checkbox .field-error {
+  flex-basis: 100%;
+}
+

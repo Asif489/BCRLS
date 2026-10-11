@@ -8,7 +8,9 @@ const config = require("./config");
 const { notFoundHandler, errorHandler } = require("./middleware/errors");
 const authRoutes = require("./routes/auth");
 const publicContentRoutes = require("./routes/public-content");
+const publicIssueRoutes = require("./routes/public-issues");
 const adminContentRoutes = require("./routes/admin-content");
+const adminIssueRoutes = require("./routes/admin-issues");
 const adminSubmissionRoutes = require("./routes/admin-submissions");
 const uploadsRoutes = require("./routes/uploads");
 const { router: formsRouter } = require("./routes/forms");
@@ -104,7 +106,9 @@ function createApp() {
 
   app.use("/api/auth", authRoutes);
   app.use("/api/public", publicContentRoutes);
+  app.use("/api/public/issues", publicIssueRoutes);
   app.use("/api/admin/content", adminContentRoutes);
+  app.use("/api/admin/issues", adminIssueRoutes);
   app.use("/api/admin/submissions", adminSubmissionRoutes);
   app.use("/api/admin/uploads", uploadsRoutes);
   app.use("/api/forms", formsRouter);

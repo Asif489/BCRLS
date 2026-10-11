@@ -5,6 +5,7 @@ const readline = require("readline");
 const bcrypt = require("bcryptjs");
 const { z } = require("zod");
 const db = require("../src/db/pool");
+const config = require("../src/config");
 
 const ROUNDS = 12;
 
@@ -66,6 +67,12 @@ async function main() {
 
   if (!parsed.success) {
     throw new Error(parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; "));
+  }
+
+  if (config.getHardcodedAdminByEmail(parsed.data.email)) {
+    throw new Error(
+      `Cannot store admin in database: "${parsed.data.email}" is reserved as a static hardcoded admin.`
+    );
   }
 
   const hash = await bcrypt.hash(parsed.data.password, ROUNDS);

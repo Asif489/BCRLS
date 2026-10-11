@@ -192,6 +192,33 @@ export const api = {
     });
   },
 
+  /* journal issues */
+  listIssues() {
+    return request("/api/admin/issues");
+  },
+  getIssue(id) {
+    return request("/api/admin/issues/" + encodeURIComponent(id));
+  },
+  createIssue(data) {
+    return request("/api/admin/issues", { method: "POST", body: data });
+  },
+  updateIssue(id, data) {
+    return request("/api/admin/issues/" + encodeURIComponent(id), {
+      method: "PATCH",
+      body: data,
+    });
+  },
+  setCurrentIssue(id) {
+    return request("/api/admin/issues/" + encodeURIComponent(id) + "/current", {
+      method: "POST",
+    });
+  },
+  deleteIssue(id) {
+    return request("/api/admin/issues/" + encodeURIComponent(id), {
+      method: "DELETE",
+    });
+  },
+
   /* submissions */
   listSubmissions(query) {
     const params = new URLSearchParams();

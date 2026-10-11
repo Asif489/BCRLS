@@ -1007,7 +1007,7 @@
                 CURRENT ISSUE
             </p>
 </div>
-<div class="journal-info-panel">
+<div class="journal-info-panel" id="journalCurrentIssue">
 <div>
 <span class="journal-eyebrow">
                     CURRENT ISSUE
@@ -1052,7 +1052,7 @@
                 </h2>
 </div>
 </div>
-<div class="journal-archive-card">
+<div class="journal-archive-card" id="journalArchiveFallback">
 <div>
 <span>
                     JOURNAL ARCHIVE
@@ -1072,6 +1072,7 @@
                 ARCHIVE
             </span>
 </div>
+<div class="journal-archive-list" id="journalArchiveList" hidden></div>
 </div>
 </section>
 <!-- =========================================================
@@ -1299,6 +1300,10 @@
      APP JS
 ========================================================= -->
 <script src="../js/app.js"></script>
+<!-- =========================================================
+     JOURNAL ISSUES (current issue + archive from the API)
+========================================================= -->
+<script src="../js/journal-issues.js"></script>
 <!-- =========================================================
      EDITORIAL BOARD NAVIGATION
 ========================================================= -->
