@@ -1,0 +1,35 @@
+{
+  "name": "bcrls",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BCRLS website + Express admin API and vanilla JS admin panel",
+  "scripts": {
+    "start": "node server/src/index.js",
+    "dev": "node --watch server/src/index.js",
+    "extract": "node server/scripts/extract-legacy.js",
+    "db:migrate": "node server/scripts/migrate.js",
+    "db:seed": "node server/scripts/seed.js",
+    "create-admin": "node server/scripts/create-admin.js",
+    "test": "node --test \"server/test/*.test.js\"",
+    "verify:snapshot": "node server/scripts/verify-snapshot.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.4.0",
+    "pg": "^8.13.1",
+    "sanitize-html": "^2.13.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

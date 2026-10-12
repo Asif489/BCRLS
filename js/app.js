@@ -3,6 +3,45 @@
    Infinite Circular Team Carousel
    ========================================================= */
 
+/* ------------------------------------------------------------ injection
+   Loads js/content-sync.js and js/form-submit.js relative to *this* file, so
+   the same lines work from the site root and from every subfolder depth, and
+   without editing a single HTML page.  The overlay only touches the DOM after
+   a successful response of /api/public/content - if the API is down the page
+   stays exactly as shipped.  form-submit.js gives every static form one
+   capture-phase submit handler that posts to /api/forms/<key>.  ------------- */
+(function injectSiteScripts() {
+    "use strict";
+
+    if (window.__bcrlsSiteScriptsLoader) return;
+    window.__bcrlsSiteScriptsLoader = true;
+
+    var script = document.currentScript;
+
+    /* fallback: the tag this file was loaded from */
+    if (!script || !script.src) {
+        var tags = document.scripts || [];
+        for (var i = 0; i < tags.length; i += 1) {
+            if (/\/js\/app\.js(\?.*)?$/.test(tags[i].src)) {
+                script = tags[i];
+                break;
+            }
+        }
+    }
+
+    if (!script || !script.src) return;
+
+    ["content-sync.js", "form-submit.js"].forEach(function (file) {
+        var url = script.src.replace(/(^|\/)app\.js(\?.*)?$/, "$1" + file);
+        if (url === script.src) return;
+
+        var tag = document.createElement("script");
+        tag.src = url;
+        tag.async = false;
+        document.head.appendChild(tag);
+    });
+})();
+
 const teamData = {
 
     advisory: [
@@ -1947,7 +1986,11 @@ function escapeHTML(
 })();
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE MENU / RESPONSIVE NAVIGATION
+   Single source of truth for the hamburger drawer, the
+   dropdowns, their ARIA state and keyboard navigation.
+   js/app.js is loaded by every page, so the 20+ HTML files
+   do not need to be edited to pick this up.
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1965,32 +2008,155 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const FOCUSABLE =
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-    /* =========================
-       TOGGLE MENU
-    ========================= */
+    const dropdowns =
+        Array.from(mainNav.querySelectorAll(".nav-dropdown"));
 
-    menuToggle.addEventListener("click", () => {
 
-        const isOpen =
-            mainNav.classList.contains("mobile-open");
+    /* =========================================================
+       ARIA WIRING
+       Attributes are applied from JS so no HTML file changes.
+    ========================================================= */
 
-        if (isOpen) {
+    if (mainNav.id) {
+        menuToggle.setAttribute("aria-controls", mainNav.id);
+    }
 
-            closeMobileMenu();
+    menuToggle.setAttribute("aria-expanded", "false");
 
-        } else {
+    dropdowns.forEach((dropdown, index) => {
 
-            openMobileMenu();
+        const toggle =
+            dropdown.querySelector(".nav-dropdown-toggle");
 
+        const menu =
+            dropdown.querySelector(".dropdown-menu");
+
+        if (!toggle) return;
+
+        if (!toggle.id) {
+            toggle.id = "bcrls-nav-toggle-" + index;
+        }
+
+        toggle.setAttribute("aria-haspopup", "true");
+        toggle.setAttribute("aria-expanded", "false");
+
+        if (menu) {
+            if (!menu.id) {
+                menu.id = "bcrls-nav-menu-" + index;
+            }
+            toggle.setAttribute("aria-controls", menu.id);
         }
 
     });
 
 
-    /* =========================
-       OPEN
-    ========================= */
+    /* =========================================================
+       STATE HELPERS
+       The site ships three navigation state machines: this
+       file toggles .mobile-open, research/blog.html toggles
+       .open and js/get-involved.js + js/team.js toggle
+       .active. They are deliberately complementary, so this
+       file must only ever TOGGLE its own class (.mobile-open)
+       while CLOSE actions clear every class.
+    ========================================================= */
+
+    const isMenuOpenByMe = () =>
+        mainNav.classList.contains("mobile-open");
+
+    const isMenuOpen = () =>
+        mainNav.classList.contains("mobile-open") ||
+        mainNav.classList.contains("active");
+
+    const isDropdownOpenByMe = (dropdown) =>
+        dropdown.classList.contains("mobile-open");
+
+    const isDropdownOpen = (dropdown) =>
+        dropdown.classList.contains("mobile-open") ||
+        dropdown.classList.contains("open");
+
+    const isDrawerLayout = () =>
+        window.innerWidth <= 1310 ||
+        isMenuOpen() ||
+        document.documentElement.classList.contains("bcrls-touch-device") ||
+        document.documentElement.classList.contains("bcrls-mobile-device");
+
+
+    function syncDropdownAria() {
+
+        dropdowns.forEach(dropdown => {
+
+            const toggle =
+                dropdown.querySelector(".nav-dropdown-toggle");
+
+            if (toggle) {
+                toggle.setAttribute(
+                    "aria-expanded",
+                    String(isDropdownOpen(dropdown))
+                );
+            }
+
+        });
+
+    }
+
+
+    function closeDropdowns(except = null) {
+
+        dropdowns.forEach(dropdown => {
+
+            if (dropdown === except) return;
+
+            dropdown.classList.remove("mobile-open");
+            dropdown.classList.remove("open");
+
+        });
+
+        syncDropdownAria();
+
+    }
+
+
+    function listFocusable(root) {
+
+        if (!root) return [];
+
+        return Array.from(root.querySelectorAll(FOCUSABLE)).filter(el => {
+            const cs = getComputedStyle(el);
+            return cs.display !== "none" &&
+                cs.visibility !== "hidden" &&
+                (el.offsetWidth > 0 || el.offsetHeight > 0);
+        });
+
+    }
+
+
+    /* The drawer is revealed with a transition, so the first
+       focusable child is not focusable in the same tick. */
+    function focusWhenVisible(root, tries = 45) {
+
+        if (tries <= 0) return;
+
+        const first = listFocusable(root)[0];
+
+        if (first) {
+
+            first.focus({ preventScroll: true });
+
+            if (document.activeElement === first) return;
+
+        }
+
+        requestAnimationFrame(() => focusWhenVisible(root, tries - 1));
+
+    }
+
+
+    /* =========================================================
+       OPEN / CLOSE
+    ========================================================= */
 
     function openMobileMenu() {
 
@@ -2002,20 +2168,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.classList.add("menu-open");
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
+        menuToggle.setAttribute("aria-expanded", "true");
+
+        focusWhenVisible(mainNav);
+
     }
 
 
-    /* =========================
-       CLOSE
-    ========================= */
-
-    function closeMobileMenu() {
+    function closeMobileMenu(restoreFocus = false) {
 
         mainNav.classList.remove("mobile-open");
+        mainNav.classList.remove("active");
 
         if (menuOverlay) menuOverlay.classList.remove("active");
 
@@ -2023,116 +2186,302 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.classList.remove("menu-open");
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        menuToggle.setAttribute("aria-expanded", "false");
 
-        document
-            .querySelectorAll(".nav-dropdown.mobile-open")
-            .forEach(dropdown => {
+        closeDropdowns();
 
-                dropdown.classList.remove(
-                    "mobile-open"
-                );
+        if (restoreFocus || mainNav.contains(document.activeElement)) {
+            menuToggle.focus({ preventScroll: true });
+        }
 
-            });
     }
 
 
-    if (menuOverlay) {
-        menuOverlay.addEventListener("click", closeMobileMenu);
-    }
+    menuToggle.addEventListener("click", () => {
 
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") closeMobileMenu();
+        if (isMenuOpenByMe()) {
+            closeMobileMenu(false);
+        } else {
+            openMobileMenu();
+        }
+
     });
 
 
-    /* =========================
-       MOBILE DROPDOWNS
-    ========================= */
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", () => closeMobileMenu(false));
+    }
 
-    document
-        .querySelectorAll(".nav-dropdown-toggle")
-        .forEach(toggle => {
 
-            toggle.addEventListener(
-                "click",
-                event => {
+    /* =========================================================
+       DROPDOWNS - tap / click to open
+    ========================================================= */
 
-                    if (mainNav.classList.contains("mobile-open") || window.innerWidth <= 1200 || document.documentElement.classList.contains("bcrls-touch-device")) {
+    dropdowns.forEach(dropdown => {
 
-                        event.preventDefault();
+        const toggle =
+            dropdown.querySelector(".nav-dropdown-toggle");
 
-                        const dropdown =
-                            toggle.closest(
-                                ".nav-dropdown"
-                            );
+        if (!toggle) return;
 
-                        if (!dropdown) {
-                            return;
-                        }
+        toggle.addEventListener("click", event => {
 
-                        dropdown.classList.toggle(
-                            "mobile-open"
-                        );
+            if (!isDrawerLayout()) {
+                return;
+            }
 
-                    }
+            event.preventDefault();
+            event.stopPropagation();
 
-                }
-            );
+            const willOpen = !isDropdownOpenByMe(dropdown);
+
+            closeDropdowns(dropdown);
+
+            dropdown.classList.toggle("mobile-open", willOpen);
+
+            syncDropdownAria();
+
+            if (willOpen) {
+                focusWhenVisible(dropdown.querySelector(".dropdown-menu"));
+            }
 
         });
 
+    });
 
-    /* =========================
+
+    /* =========================================================
        CLOSE AFTER LINK CLICK
-    ========================= */
+    ========================================================= */
 
-    mainNav
-        .querySelectorAll("a")
-        .forEach(link => {
+    mainNav.querySelectorAll("a").forEach(link => {
 
-            link.addEventListener(
-                "click",
-                () => {
+        link.addEventListener("click", () => {
 
-                    if (
-                        mainNav.classList.contains("mobile-open") ||
-                        window.innerWidth <= 1200 ||
-                        document.documentElement.classList.contains("bcrls-touch-device")
-                    ) {
-
-                        closeMobileMenu();
-
-                    }
-
-                }
-            );
+            if (isDrawerLayout()) {
+                closeMobileMenu(false);
+            } else {
+                closeDropdowns();
+            }
 
         });
 
+    });
 
-    /* =========================
-       RESIZE
-    ========================= */
 
-    window.addEventListener(
-        "resize",
-        () => {
+    /* =========================================================
+       OUTSIDE CLICK
+    ========================================================= */
 
-            if (
-                !mainNav.classList.contains("mobile-open") &&
-                window.innerWidth > 1200 &&
-                !document.documentElement.classList.contains("bcrls-touch-device")
-            ) {
+    document.addEventListener("click", event => {
 
-                closeMobileMenu();
+        const insideNav = mainNav.contains(event.target);
+        const insideToggle = menuToggle.contains(event.target);
+
+        if (!insideNav && !insideToggle && dropdowns.some(isDropdownOpen)) {
+            closeDropdowns();
+        }
+
+    });
+
+
+    /* =========================================================
+       KEYBOARD
+       Esc closes the dropdown first, then the drawer.
+       Arrow keys move between items, Tab is trapped while the
+       drawer is open and focus returns to the button on close.
+    ========================================================= */
+
+    const visibleFocusable = listFocusable;
+
+
+    function topLevelItems() {
+        return visibleFocusable(mainNav).filter(el =>
+            el.classList.contains("nav-link") ||
+            el.classList.contains("nav-dropdown-toggle")
+        );
+    }
+
+
+    function moveFocus(list, step) {
+
+        if (!list.length) return;
+
+        const current = list.indexOf(document.activeElement);
+        const next = current === -1
+            ? (step > 0 ? 0 : list.length - 1)
+            : (current + step + list.length) % list.length;
+
+        list[next].focus({ preventScroll: true });
+
+    }
+
+
+    document.addEventListener("keydown", event => {
+
+        const inNav = mainNav.contains(document.activeElement);
+
+        /* --- Escape --- */
+        if (event.key === "Escape") {
+
+            const openDropdown =
+                dropdowns.filter(isDropdownOpen)[0];
+
+            if (openDropdown) {
+
+                closeDropdowns();
+
+                const toggle =
+                    openDropdown.querySelector(".nav-dropdown-toggle");
+
+                if (toggle) toggle.focus({ preventScroll: true });
+
+                event.preventDefault();
+
+                /* research/blog.html owns a second Escape handler
+                   that closes the drawer too - this file has to
+                   swallow the event so only the dropdown closes. */
+                event.stopImmediatePropagation();
+                return;
+
+            }
+
+            /* The page level scripts (research/blog.html) can close
+               the drawer without updating the ARIA state, so the
+               attribute is part of the "is it open" test. */
+            if (isMenuOpen() || menuToggle.getAttribute("aria-expanded") === "true") {
+                closeMobileMenu(true);
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            }
+
+            return;
+
+        }
+
+        if (!inNav) return;
+
+        const active = document.activeElement;
+        const openDropdown =
+            dropdowns.find(d => isDropdownOpen(d) && d.contains(active));
+
+        /* --- inside an open dropdown --- */
+        if (openDropdown) {
+
+            const items =
+                visibleFocusable(openDropdown.querySelector(".dropdown-menu") || openDropdown);
+
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                moveFocus(items, 1);
+            } else if (event.key === "ArrowUp") {
+                event.preventDefault();
+                moveFocus(items, -1);
+            } else if (event.key === "Home") {
+                event.preventDefault();
+                if (items[0]) items[0].focus({ preventScroll: true });
+            } else if (event.key === "End") {
+                event.preventDefault();
+                if (items.length) items[items.length - 1].focus({ preventScroll: true });
+            }
+
+            return;
+
+        }
+
+        /* --- open a closed dropdown with the keyboard --- */
+        if (
+            (event.key === "ArrowDown" || event.key === "ArrowUp") &&
+            active &&
+            active.classList.contains("nav-dropdown-toggle")
+        ) {
+
+            const dropdown = active.closest(".nav-dropdown");
+
+            if (dropdown && !isDropdownOpen(dropdown)) {
+
+                event.preventDefault();
+
+                closeDropdowns(dropdown);
+
+                dropdown.classList.add("mobile-open");
+                dropdown.classList.add("open");
+
+                syncDropdownAria();
+
+                const links =
+                    visibleFocusable(dropdown.querySelector(".dropdown-menu"));
+
+                const target = event.key === "ArrowDown"
+                    ? links[0]
+                    : links[links.length - 1];
+
+                if (target) target.focus({ preventScroll: true });
+
+                return;
 
             }
 
         }
-    );
+
+        /* --- move between top level items --- */
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+            moveFocus(topLevelItems(), 1);
+        } else if (event.key === "ArrowUp") {
+            event.preventDefault();
+            moveFocus(topLevelItems(), -1);
+        }
+
+        /* --- Tab trapping while the drawer is open --- */
+        if (event.key === "Tab" && isMenuOpen()) {
+
+            const items = visibleFocusable(mainNav);
+
+            if (!items.length) return;
+
+            const first = items[0];
+            const last = items[items.length - 1];
+
+            if (!mainNav.contains(document.activeElement)) {
+                event.preventDefault();
+                first.focus({ preventScroll: true });
+            } else if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus({ preventScroll: true });
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus({ preventScroll: true });
+            }
+
+        }
+
+    }, true);
+
+
+    /* =========================================================
+       RESIZE
+       Only leave the drawer when the layout really changed.
+    ========================================================= */
+
+    window.addEventListener("resize", () => {
+
+        if (!isMenuOpen()) return;
+
+        const wideDesktop =
+            window.innerWidth > 1310 &&
+            !document.documentElement.classList.contains("bcrls-touch-device") &&
+            !document.documentElement.classList.contains("bcrls-mobile-device");
+
+        if (wideDesktop) {
+            closeMobileMenu(false);
+        }
+
+    });
 
 });
+
+/* content-sync hook: js/content-sync.js reads teamData through window
+   (no eval). The binding below is the very same object, so the overlay
+   mutates exactly what renderTeam() renders. */
+window.teamData = teamData;

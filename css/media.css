@@ -289,7 +289,7 @@ body .media-gallery-page .media-slide-stage {
     min-height: 520px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1310px) {
     body .media-gallery-page {
         padding-top: 72px !important;
     }

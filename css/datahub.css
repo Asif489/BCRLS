@@ -2016,7 +2016,7 @@ body.datahub-page .datahub-section-heading p {
     color: #66736e !important;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1310px) {
     body.datahub-page .datahub-hero {
         margin-top: 72px !important;
     }
