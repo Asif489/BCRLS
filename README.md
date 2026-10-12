@@ -146,6 +146,11 @@ npm start
 Open <http://localhost:4000> for the site and
 <http://localhost:4000/admin> for the panel.
 
+### 2.6 Admin signup
+
+The admin login page supports account signup using an e-mail and password.
+New accounts receive the admin role and sign in immediately after creation.
+
 ---
 
 ## 3. Commands

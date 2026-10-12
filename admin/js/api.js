@@ -150,6 +150,13 @@ export const api = {
       auth: false,
     });
   },
+  signup(email, password) {
+    return request("/api/auth/signup", {
+      method: "POST",
+      body: { email, password },
+      auth: false,
+    });
+  },
   me() {
     return request("/api/auth/me");
   },

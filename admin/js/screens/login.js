@@ -14,6 +14,32 @@ export function mountLogin({ root, onSignedIn }) {
   const password = root.querySelector("#loginPassword");
   const errorBox = root.querySelector("#loginError");
   const submit = root.querySelector("#loginSubmit");
+  const title = root.querySelector("#loginTitle");
+  const switchLine = root.querySelector("#loginSwitch");
+  const confirmField = root.querySelector("#signupConfirmField");
+  const confirmPassword = root.querySelector("#signupConfirmPassword");
+  let mode = "login";
+
+  function setMode(nextMode) {
+    mode = nextMode;
+    const signup = mode === "signup";
+    title.textContent = signup ? "Create admin account" : "Sign in";
+    submit.textContent = signup ? "Create account" : "Sign in";
+    password.autocomplete = signup ? "new-password" : "current-password";
+    confirmField.hidden = !signup;
+    confirmPassword.required = signup;
+    switchLine.innerHTML = signup
+      ? 'Already have an account? <button class="link-button" id="showLogin" type="button">Sign in</button>'
+      : 'Need an admin account? <button class="link-button" id="showSignup" type="button">Sign up</button>';
+    const toggle = switchLine.querySelector("button");
+    toggle.addEventListener("click", function () {
+      setMode(signup ? "login" : "signup");
+      showError("");
+      form.reset();
+      email.focus();
+    });
+    showError("");
+  }
 
   function showError(message) {
     errorBox.textContent = message || "";
@@ -46,12 +72,27 @@ export function mountLogin({ root, onSignedIn }) {
       return;
     }
 
+    if (mode === "signup") {
+      if (secret.length < 10) {
+        showError("Use a password with at least 10 characters.");
+        password.focus();
+        return;
+      }
+      if (secret !== confirmPassword.value) {
+        showError("The passwords do not match.");
+        confirmPassword.focus();
+        return;
+      }
+    }
+
     submit.disabled = true;
     const originalLabel = submit.textContent;
-    submit.textContent = "Signing in…";
+    submit.textContent = mode === "signup" ? "Creating account…" : "Signing in…";
 
     try {
-      const session = await api.login(address, secret);
+      const session = mode === "signup"
+        ? await api.signup(address, secret)
+        : await api.login(address, secret);
       password.value = ""; /* the password leaves memory as soon as it is used */
       form.reset();
 
@@ -79,6 +120,8 @@ export function mountLogin({ root, onSignedIn }) {
       if (!errorBox.hidden) showError("");
     });
   });
+
+  setMode("login");
 
   return { focusFirstField: focusFirstField };
 }

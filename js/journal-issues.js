@@ -166,6 +166,9 @@
         if (issues.length) {
             if (fallback) fallback.hidden = true;
             list.hidden = false;
+        } else {
+            if (fallback) fallback.hidden = false;
+            list.hidden = true;
         }
     }
 

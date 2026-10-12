@@ -8,7 +8,7 @@ const db = require("../db/pool");
 const config = require("../config");
 const { signToken, requireAuth } = require("../middleware/auth");
 const { validate } = require("../middleware/validate");
-const { asyncRoute, badRequest, unauthorized, notFound } = require("../lib/http");
+const { asyncRoute, HttpError, badRequest, unauthorized, notFound } = require("../lib/http");
 const { audit } = require("../lib/audit");
 
 const router = express.Router();
@@ -30,6 +30,59 @@ const passwordSchema = z.object({
   currentPassword: z.string().min(1).max(400),
   newPassword: z.string().min(10, "New password must be at least 10 characters").max(200),
 });
+
+const signupSchema = z.object({
+  email: z.string().trim().email().max(200),
+  password: z.string().min(10, "Password must be at least 10 characters").max(200),
+});
+
+const signupLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  limit: 5,
+  standardHeaders: "draft-7",
+  legacyHeaders: false,
+  message: { error: { message: "Too many signup attempts, try again later" } },
+});
+
+router.post(
+  "/signup",
+  signupLimiter,
+  validate(signupSchema),
+  asyncRoute(async (req, res) => {
+    const email = req.body.email.toLowerCase();
+    if (config.hardcodedAdmins.some((entry) => entry.email === email)) {
+      throw new HttpError(409, "This e-mail is reserved for a built-in admin account");
+    }
+    const passwordHash = await bcrypt.hash(req.body.password, 12);
+    let admin;
+    try {
+      admin = await db.one(
+        `INSERT INTO admins (email, password_hash, display_name, role, is_active)
+         VALUES ($1, $2, $3, 'admin', true)
+         RETURNING id, email, display_name, role`,
+        [email, passwordHash, email.split("@")[0]]
+      );
+    } catch (err) {
+      if (err && err.code === "23505") {
+        throw new HttpError(409, "An account with this e-mail already exists");
+      }
+      throw err;
+    }
+
+    await audit(db, {
+      adminId: admin.id,
+      action: "signup",
+      entity: "admin",
+      entityId: admin.id,
+      detail: { email: admin.email },
+    });
+
+    res.status(201).json({
+      token: signToken(admin),
+      admin: { id: admin.id, email: admin.email, name: admin.display_name, role: admin.role },
+    });
+  })
+);
 
 router.post(
   "/login",
